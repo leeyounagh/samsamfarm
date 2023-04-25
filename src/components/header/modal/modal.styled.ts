@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Layout = styled.header`
   background-color: #92a8d1;
-  width: 30vw;
+  width: 27vw;
   height: 100%;
   position: absolute;
-  top: 0px;
+  /* top: 0px; */
   z-index: 10;
   animation-name: modalmove;
-  animation-duration: 2s;
+  animation-duration: 1s;
   @keyframes modalmove {
     0% {
       transform: scale(0, 1);
@@ -29,7 +29,7 @@ export const CloseIconDiv = styled.div`
 export const ModalMushroomDiv = styled.div`
   position: absolute;
   top: 50%;
-  left: -20%;
+  left: -5%;
 `;
 
 export const ModalMenuDiv = styled.div`
