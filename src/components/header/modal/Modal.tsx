@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 import * as Styled from "./modal.styled";
 import { GrClose } from "react-icons/gr";
 import animationData from "../../../styles/72873-mushroom-bros.json";
