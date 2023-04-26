@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Styled from "./main.styled";
+import Modal from "./modal/modal";
 
 export default function MainField() {
+  const [isMainModalOpen, setIsMainModalOpen] = useState<boolean>(false);
+
   return (
     <Styled.Layout>
       <Styled.BackGroundImg src="./asset/배경.png" />
+
       <Styled.FieldLayOut>
         {Array.from({ length: 8 })
           .fill(0)
@@ -12,7 +16,19 @@ export default function MainField() {
             return (
               <>
                 {" "}
-                <Styled.FieldDiv id="item" />
+                <Styled.FieldDiv id="item">
+                  {" "}
+                  <Styled.TitleDiv>
+                    <button
+                      onClick={() => {
+                        console.log("클릭");
+                        setIsMainModalOpen(!isMainModalOpen);
+                      }}
+                    >
+                      놀러가기
+                    </button>
+                  </Styled.TitleDiv>
+                </Styled.FieldDiv>
               </>
             );
           })}
@@ -75,6 +91,12 @@ export default function MainField() {
         <Styled.Tree3Img src="./asset/나무.png" width="70px" height="70px" />
         <Styled.Tree4Img src="./asset/나무.png" width="70px" height="70px" />
       </Styled.FieldLayOut>
+      {isMainModalOpen ? (
+        <Modal
+          isMainModalOpen={isMainModalOpen}
+          setIsMainModalOpen={setIsMainModalOpen}
+        />
+      ) : null}
     </Styled.Layout>
   );
 }
