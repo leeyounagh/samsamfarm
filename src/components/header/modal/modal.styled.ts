@@ -3,10 +3,11 @@ import styled from "styled-components";
 export const Layout = styled.header`
   background-color: #92a8d1;
   width: 27vw;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   /* top: 0px; */
   z-index: 10;
+  right: 0vh;
   animation-name: modalmove;
   animation-duration: 1s;
   @keyframes modalmove {
