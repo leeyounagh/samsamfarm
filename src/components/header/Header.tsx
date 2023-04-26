@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as Styled from "./header.styled";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Modal from "./modal/Modal";
-import logoImage from "../../../public/logo/samsamfarm.png";
+import logoImage from "../../../public/logo/logo.png";
 import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -12,9 +12,6 @@ export default function Header() {
   };
   return (
     <>
-      {isModalOpen ? (
-        <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
-      ) : null}
       <Styled.Layout>
         <Link to={"/"}>
           <Styled.Logo src={logoImage} alt="로고 이미지" />
@@ -30,6 +27,9 @@ export default function Header() {
               handleModal();
             }}
           />
+          {isModalOpen ? (
+            <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+          ) : null}
         </Styled.NavBar>
       </Styled.Layout>
     </>
