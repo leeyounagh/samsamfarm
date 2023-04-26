@@ -12,6 +12,7 @@ export const Layout = styled.header`
 `;
 
 export const Logo = styled.img`
+  margin-top: 1vh;
   width: 250px;
   margin-left: 10vh;
 `;
