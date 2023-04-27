@@ -21,7 +21,6 @@ export default function MainField() {
                   <Styled.TitleDiv>
                     <button
                       onClick={() => {
-                        console.log("클릭");
                         setIsMainModalOpen(!isMainModalOpen);
                       }}
                     >
