@@ -1,15 +1,14 @@
-import React, { Dispatch, SetStateAction } from "react";
-import * as Styled from "./modal.styled";
-import { GrClose } from "react-icons/gr";
-import animationData from "../../../styles/72873-mushroom-bros.json";
-import Lottie from "react-lottie";
+import React, { Dispatch, SetStateAction } from 'react';
+import * as Styled from './modal.styled';
+import { GrClose } from 'react-icons/gr';
+import animationData from '../../../styles/72873-mushroom-bros.json';
 const defaultOptions = {
   loop: true,
   autoplay: true,
   animationData: animationData,
   rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice",
-  },
+    preserveAspectRatio: 'xMidYMid slice'
+  }
 };
 type ModalType = {
   isModalOpen: boolean;
