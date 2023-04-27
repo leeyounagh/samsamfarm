@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Layout = styled.main`
   width: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 100vh;
 `;
 
