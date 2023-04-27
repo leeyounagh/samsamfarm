@@ -12,6 +12,7 @@ export const TitleDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
 `;
 
 export const Title = styled.h1`
@@ -20,8 +21,12 @@ export const Title = styled.h1`
   overflow: hidden;
   border-right: 3px solid;
   height: 60%;
-  width: 20ch;
-  font-size: 2.5em;
+  width: 24ch;
+
+  font-family: "bitbit";
+  src: url("//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff"),
+    url("//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff2");
+
   @keyframes typing {
     from {
       width: 0;
