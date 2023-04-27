@@ -7,7 +7,7 @@ export default function Landing() {
   return (
     <Styled.Layout>
       <Styled.TitleDiv>
-        <Styled.Title>메인 타이틀 정해주세요!</Styled.Title>
+        <Styled.Title>소환사의 농장에 오신것을 환영 합니다.</Styled.Title>
       </Styled.TitleDiv>
       <MainField />
       <MainSwiper />
