@@ -1,37 +1,59 @@
-import React, { useState } from "react";
-import * as Styled from "./header.styled";
+import { useState, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import Modal from "./modal/Modal";
-import logoImage from "../../../public/logo/logo.png";
 import { Link } from "react-router-dom";
+import LogoImage from "../../../public/logo/logo.png";
+// import { Nav, NavMenu } from "./header.styled";
+import * as Styled from "./header.styled";
+import Sidebar from "./sidebar/Sidebar";
 
 export default function Header() {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const handleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const [isOpenedSidebar, setIsOpenedSidebar] = useState<boolean>(false);
+
+  const handleSidebarOpen = () => setIsOpenedSidebar(true);
+
+  const handleSidebarClose = () => setIsOpenedSidebar(false);
+
   return (
     <>
-      <Styled.Layout>
-        <Link to={"/"}>
-          <Styled.Logo src={logoImage} alt="로고 이미지" />
+      <Styled.Nav scrolled={scrolled}>
+        <Link to="/">
+          <Styled.Logo src={LogoImage} alt="로고 이미지" />
         </Link>
-        <Styled.NavBar>
-          <Styled.LoginButtun>
-            <Link to={"/Login"}>로그인</Link>
-          </Styled.LoginButtun>
-
+        <Styled.NavMenu>
+          <Link to="/Login">
+            <Styled.LoginButton>로그인</Styled.LoginButton>
+          </Link>
+          {/* <button type="button">로그인</button> */}
           <GiHamburgerMenu
             size={40}
             onClick={() => {
-              handleModal();
+              handleSidebarOpen();
             }}
           />
-          {isModalOpen ? (
-            <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
-          ) : null}
-        </Styled.NavBar>
-      </Styled.Layout>
+        </Styled.NavMenu>
+      </Styled.Nav>
+      <Sidebar
+        isOpen={isOpenedSidebar}
+        handleSidebarClose={handleSidebarClose}
+      />
     </>
   );
 }

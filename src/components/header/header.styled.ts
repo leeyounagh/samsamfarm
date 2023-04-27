@@ -1,28 +1,34 @@
 import styled from "styled-components";
 
-export const Layout = styled.header`
-  border: 1px solid black;
-  width: 100%;
-  height: 8vh;
+export const Nav = styled.nav<{ scrolled: boolean }>`
+  height: fit-content;
   display: flex;
+  position: sticky;
+  top: 0;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 1;
+  padding: 1rem;
+  background-color: ${({ scrolled }) => (scrolled ? "yellow" : "white")};
+  transition: background-color 0.15s ease-in-out;
+  z-index: 150;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 `;
 
+export const NavMenu = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
 export const Logo = styled.img`
-  margin-top: 1vh;
-  width: 250px;
-  margin-left: 10vh;
-`;
-export const NavBar = styled.div`
-  margin-top: 2vw;
-  margin-right: 7vw;
-  cursor: pointer;
+  width: 230px;
+  margin-left: 150px;
+
+  @media screen and (max-width: 768px) {
+    width: 130px;
+    margin-left: 10px;
+  }
 `;
 
-export const LoginButtun = styled.button`
+export const LoginButton = styled.button`
   padding: 10px 20px;
   margin-right: 30px;
   margin-bottom: 10px;
