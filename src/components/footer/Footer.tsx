@@ -1,5 +1,10 @@
 import React from "react";
+import * as Styled from "./footer.styled";
 
 export default function Footer() {
-  return <div>Footer</div>;
+  return (
+    <Styled.FooterContainer>
+      <p>여기는 푸터입니다.</p>
+    </Styled.FooterContainer>
+  );
 }
