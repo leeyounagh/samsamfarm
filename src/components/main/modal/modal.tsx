@@ -22,7 +22,8 @@ export default function Modal({
   const [userInfo, setUserInfo] = useState<MainType>();
   useEffect(() => {
     if (mainData && userId) {
-      setUserInfo((prevUserInfo) => mainData[userId] ?? prevUserInfo);
+      console.log();
+      setUserInfo(mainData[userId]);
     }
   }, [mainData, userId, setUserInfo]);
 
@@ -41,11 +42,11 @@ export default function Modal({
 
       <Styled.FarmDiv>
         <Styled.FarmModalDiv>
-          {MainCharacter && userId ? (
+          {MainCharacter && userId !== undefined ? (
             <Styled.CharacterImg
               src={
                 MainCharacter[userId]
-                  ? String(MainCharacter[userId].img)
+                  ? String(MainCharacter[userId]?.img)
                   : "./asset/곰돌이.gif"
               }
               width="40%"
