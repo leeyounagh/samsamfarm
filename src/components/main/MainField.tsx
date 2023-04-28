@@ -40,13 +40,6 @@ export default function MainField() {
             <>
               <Styled.FieldDiv id="item">
                 <Styled.TitleDiv>
-                  <button
-                    onClick={() => {
-                      setIsMainModalOpen(!isMainModalOpen);
-                    }}
-                  >
-                    놀러가기
-                  </button>
                   <Styled.CharacterImg
                     src={item.img}
                     width="50%"
@@ -70,9 +63,14 @@ export default function MainField() {
                 ) : (
                   <Styled.MainPlantImg src="./asset/꽃.png" id="plants" />
                 )}
+                <button
+                  onClick={() => {
+                    setIsMainModalOpen(!isMainModalOpen);
+                  }}
+                >
+                  놀러가기
+                </button>
               </>
-
-              // 조건문 추가
             );
           })}
         </Styled.MainPlantLayout>
