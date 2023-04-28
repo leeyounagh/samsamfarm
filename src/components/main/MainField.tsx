@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as Styled from "./main.styled";
 import Modal from "./modal/Modal";
-import MainCharacter from "../data/mainCharacter";
+import MainCharacter from "../../data/MainCharacter";
 import axios from "axios";
 
 type MainType = {
