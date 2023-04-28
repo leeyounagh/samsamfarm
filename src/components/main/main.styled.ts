@@ -5,7 +5,6 @@ export const Layout = styled.main`
   z-index: 10;
   height: 60%;
   position: relative;
-  border: 1px solid black;
 `;
 
 export const BackGroundImg = styled.img`
@@ -91,8 +90,6 @@ export const TitleDiv = styled.div`
 `;
 
 export const MainPlantLayout = styled.div`
-  border: 1px solid black;
-
   width: 100%;
   height: 100%;
   #plants:nth-child(1n) {
