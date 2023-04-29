@@ -3,5 +3,6 @@
 ### typeScript 5.0.2
 ### Redux
 ### React-router-dom 6.10.0
+### Node v18.16.0
 # Description
 ### Front-End for SamSamFarm
