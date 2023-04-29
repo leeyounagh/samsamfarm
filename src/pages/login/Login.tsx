@@ -4,7 +4,6 @@ import Button from "../../components/forms/button/Button";
 import { useState } from "react";
 import { emailValidation } from "../../utils/regExp.utils";
 import Checkbox from "../../components/forms/checkbox/Checkbox";
-import { Link } from "react-router-dom";
 
 export default function Login() {
   const [forms, setForms] = useState({

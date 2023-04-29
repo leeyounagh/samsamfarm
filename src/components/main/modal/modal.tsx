@@ -22,7 +22,6 @@ export default function Modal({
   const [userInfo, setUserInfo] = useState<MainType>();
   useEffect(() => {
     if (mainData && userId) {
-      console.log();
       setUserInfo(mainData[userId]);
     }
   }, [mainData, userId, setUserInfo]);
@@ -58,15 +57,15 @@ export default function Modal({
             <h1>이준기님의 농장</h1>
           </Styled.HomeTitleDiv>
           <Styled.GridImg src="./asset/밭누끼.png" width="100%" height="100%" />
-          {userInfo?.plants_id === 1 ? (
+          {userInfo?.plants_id !== undefined && userInfo?.plants_id === 1 ? (
             <>
               <Styled.HomePlantImg src="./asset/씨앗.png" id="plants" />
             </>
-          ) : userInfo?.plants_id === 2 ? (
+          ) : userInfo?.plants_id !== undefined && userInfo?.plants_id === 2 ? (
             <>
               <Styled.HomePlantImg src="./asset/새싹.png" id="plants" />
             </>
-          ) : userInfo?.plants_id === 3 ? (
+          ) : userInfo?.plants_id !== undefined && userInfo?.plants_id === 3 ? (
             <>
               <Styled.HomePlantImg src="./asset/중간새싹.png" id="plants" />
             </>

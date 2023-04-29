@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as Styled from "./main.styled";
-import Modal from "./modal/modal";
+import Modal from "./modal/Modal";
 import MainCharacter from "../../data/mainCharacter";
 import { MainType } from "../../type/type";
 
@@ -16,12 +16,11 @@ export default function MainField() {
       const response = await axios.get("/maintest.json");
       const data = await response.data.data;
       setMainData(data);
-      console.log(mainData);
     } catch (err) {
       console.log(err);
     }
   };
-  console.log("확인", userId, MainCharacter);
+
   useEffect(() => {
     getMainData();
   }, []);

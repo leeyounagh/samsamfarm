@@ -127,7 +127,7 @@ export const HomePlantImg = styled.img`
 export const HomeTitleDiv = styled.div`
   width: 100%;
   position: absolute;
-  top: 61%;
-  left: 56%;
+  top: 31%;
+  left: 53%;
   font-size: 1.3rem;
 `;
