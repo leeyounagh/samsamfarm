@@ -7,7 +7,7 @@ export const Layout = styled.div`
   border: 1px solid lightgray;
   background: white;
   position: absolute;
-  top: -150px;
+  top: -160px;
   left: 15%;
 `;
 
@@ -19,20 +19,21 @@ export const CloseDiv = styled.div`
   padding-top: 30px;
 `;
 export const FarmDiv = styled.div`
-  border: 1px solid black;
   width: 100%;
-  height: 50%;
-  margin-top: 50px;
+  height: 60%;
+  display: flex;
+  justify-content: center;
 `;
 
 export const FarmModalDiv = styled.div`
-  width: 100%;
+  width: 80%;
   height: 100%;
   background-image: url("./asset/모바일배경.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 `;
-export const BearImg = styled.img`
+export const CharacterImg = styled.img`
   margin-left: 10%;
   margin-top: 5%;
 `;
@@ -43,8 +44,8 @@ export const GridImg = styled.img`
 
   position: absolute;
 
-  top: 35%;
-  left: 55%;
+  top: 37%;
+  left: 53%;
 `;
 
 export const PlantImg = styled.img`
@@ -114,4 +115,19 @@ export const CommentUserDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+export const HomePlantImg = styled.img`
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 40%;
+  left: 64%;
+`;
+
+export const HomeTitleDiv = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 61%;
+  left: 56%;
+  font-size: 1.3rem;
 `;
