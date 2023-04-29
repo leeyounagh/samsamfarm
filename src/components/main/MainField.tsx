@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import * as Styled from "./main.styled";
 import Modal from "./modal/modal";
 import MainCharacter from "../../data/mainCharacter";
