@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import * as Styled from "./modal.styled";
 import { GrClose } from "react-icons/gr";
 import { MainType } from "../../../type/type";
