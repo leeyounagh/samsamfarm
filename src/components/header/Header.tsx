@@ -43,10 +43,11 @@ export default function Header() {
           </Link>
           {/* <button type="button">로그인</button> */}
           <GiHamburgerMenu
-            size={40}
+            size={45}
             onClick={() => {
               handleSidebarOpen();
             }}
+            color="#b3933b"
           />
         </Styled.NavMenu>
       </Styled.Nav>
