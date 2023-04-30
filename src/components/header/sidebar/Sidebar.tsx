@@ -13,8 +13,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
 
   useOnClickOutside(asideRef, () => handleSidebarClose());
 
-  // const imageUrl = "/asset/인형뽑기.gif";
-
   return (
     <>
       {isOpen && (

@@ -3,6 +3,7 @@ import * as Styled from "./modal.styled";
 import { GrClose } from "react-icons/gr";
 import { MainType } from "../../../type/type";
 import MainCharacter from "../../../data/mainCharacter";
+import useMediaQuery from "../../../hooks/useMediaQuery";
 
 type ModalType = {
   isMainModalOpen?: boolean;
@@ -26,6 +27,7 @@ export default function Modal({
     delete_at: "dasfdas",
     plants_id: 1,
   });
+  const mobileSize = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
     if (mainData && userId) {
@@ -50,58 +52,63 @@ export default function Modal({
   };
   return (
     <Styled.Layout>
+      {mobileSize ? (
+        <Styled.FiledBackgroundImg src="./asset/후보3.gif" />
+      ) : (
+        <Styled.FiledBackgroundImg src="./asset/후보3.gif" />
+      )}
+
       <Styled.CloseDiv>
-        <GrClose
-          size={50}
-          onClick={() => {
-            if (setIsMainModalOpen) {
-              setIsMainModalOpen(!isMainModalOpen);
-            }
-          }}
-        />
+        {mobileSize ? (
+          <GrClose
+            size={30}
+            onClick={() => {
+              if (setIsMainModalOpen) {
+                setIsMainModalOpen(!isMainModalOpen);
+              }
+            }}
+          />
+        ) : (
+          <GrClose
+            size={50}
+            onClick={() => {
+              if (setIsMainModalOpen) {
+                setIsMainModalOpen(!isMainModalOpen);
+              }
+            }}
+          />
+        )}
       </Styled.CloseDiv>
 
-      <Styled.FarmDiv>
-        <Styled.FarmModalDiv>
-          {MainCharacter && userId !== undefined ? (
-            <Styled.CharacterImg
-              src={
-                MainCharacter[userId]
-                  ? String(MainCharacter[userId]?.img)
-                  : "./asset/곰돌이.gif"
-              }
-              width="40%"
-              height="80%"
-            />
-          ) : null}
-          <Styled.HomeTitleDiv>
-            <h1>이준기님의 농장</h1>
-          </Styled.HomeTitleDiv>
-          <Styled.GridImg src="./asset/밭누끼.png" width="100%" height="100%" />
+      <Styled.FieldDiv>
+        {mobileSize ? (
+          <Styled.FieldImg src="./asset/모달 농장.jpg" />
+        ) : (
+          <Styled.MobileFiledImg src="./asset/모달 농장.jpg" />
+        )}
 
-          {plantsRenderer(userInfo?.plants_id)}
-          <Styled.PaymentImg src="./asset/돈.gif" width="80px" height="80px" />
-        </Styled.FarmModalDiv>
-      </Styled.FarmDiv>
+        {MainCharacter && userId !== undefined ? (
+          <Styled.CharacterImg
+            src={
+              MainCharacter[userId]
+                ? String(MainCharacter[userId]?.img)
+                : "./asset/곰돌이.gif"
+            }
+            width="40%"
+            height="80%"
+          />
+        ) : null}
+        <Styled.GridImg src="./asset/밭누끼.png" width="100%" height="100%" />
+        {plantsRenderer()}
+      </Styled.FieldDiv>
+      <Styled.CommentLayout>
+        <Styled.MobileCommentLayout>
+          <Styled.MobileInput />
+          <Styled.MobileBtn>댓글 등록</Styled.MobileBtn>
+        </Styled.MobileCommentLayout>
 
-      <Styled.CommentDiv>
-        <Styled.CommentInputDiv>
-          <Styled.CommentInput />
-          <Styled.CommentBtn>댓글 달기</Styled.CommentBtn>
-        </Styled.CommentInputDiv>
-        <Styled.CommentAreaDiv>
-          {Array.from({ length: 8 })
-            .fill(0)
-            .map(() => {
-              return (
-                <div style={{ display: "flex" }}>
-                  <Styled.CommentListDiv>fdafdsads</Styled.CommentListDiv>
-                  <Styled.CommentUserDiv>작성자: 이수연</Styled.CommentUserDiv>
-                </div>
-              );
-            })}
-        </Styled.CommentAreaDiv>
-      </Styled.CommentDiv>
+        <h3>온호성: 잘놀다 갑니다~~~</h3>
+      </Styled.CommentLayout>
     </Styled.Layout>
   );
 }
