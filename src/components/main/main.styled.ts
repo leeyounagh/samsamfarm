@@ -7,6 +7,13 @@ export const Layout = styled.main`
   position: relative;
 `;
 
+export const MobileLayout = styled.main`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const BackGroundImg = styled.img`
   width: 60%;
   height: 100%;
@@ -23,21 +30,41 @@ export const FieldLayOut = styled.div`
     position: absolute;
     top: 20%;
     left: 27%;
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 13%;
+      left: 27%;
+    }
   }
   #item:nth-child(2n) {
     position: absolute;
     top: 20%;
     left: 38%;
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 13%;
+      left: 57%;
+    }
   }
   #item:nth-child(3n) {
     position: absolute;
     top: 55%;
     left: 27%;
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 44%;
+      left: 28%;
+    }
   }
   #item:nth-child(4n) {
     position: absolute;
     top: 55%;
     left: 38%;
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 44%;
+      left: 57%;
+    }
   }
   #item:nth-child(5n) {
     position: absolute;
@@ -69,7 +96,12 @@ export const FieldDiv = styled.div`
   background-size: cover;
 `;
 
-export const CharacterImg = styled.img``;
+export const CharacterImg = styled.img`
+  @media (max-width: 768px) {
+    width: 70px;
+    height: 70px;
+  }
+`;
 
 export const MainPlantImg = styled.img`
   width: 5rem;
@@ -96,24 +128,47 @@ export const MainPlantLayout = styled.div`
     top: 22%;
     left: 30%;
     z-index: 100;
+
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 17%;
+      left: 37%;
+      width: 70px;
+      height: 70px;
+    }
   }
   #plants:nth-child(2n) {
     position: absolute;
     top: 22%;
-    left: 41%;
+    left: 45%;
     z-index: 100;
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 17%;
+      left: 65%;
+    }
   }
   #plants:nth-child(3n) {
     position: absolute;
     top: 57%;
     left: 30%;
     z-index: 100;
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 47%;
+      left: 37%;
+    }
   }
   #plants:nth-child(4n) {
     position: absolute;
     top: 57%;
     left: 41%;
     z-index: 100;
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 47%;
+      left: 66%;
+    }
   }
   #plants:nth-child(5n) {
     position: absolute;
@@ -171,7 +226,6 @@ export const BtnStyle = styled.button`
   }
 
   &:hover {
-    /* background: ${(props) => props.theme.pink}; */
     transform: translate(0, 0.25em);
     &::before {
       box-shadow: 0 0 0 2px, 0 0.5em 0 0;
@@ -180,11 +234,15 @@ export const BtnStyle = styled.button`
   }
 
   &:active {
-    /* background: ${(props) => props.theme.pink}; */
     transform: translate(0em, 0.75em);
     &::before {
       box-shadow: 0 0 0 2px, 0 0;
       transform: translate3d(0, 0, -1em);
     }
   }
+`;
+
+export const MobileMaiBackgroundImg = styled.img`
+  width: 30rem;
+  height: 30rem;
 `;
