@@ -38,7 +38,7 @@ export const FieldLayOut = styled.div`
     @media (max-width: 480px) {
       position: absolute;
       top: 13%;
-      left: 12%;
+      left: 18%;
     }
   }
   #item:nth-child(2n) {
@@ -67,8 +67,8 @@ export const FieldLayOut = styled.div`
     }
     @media (max-width: 480px) {
       position: absolute;
-      top: 58%;
-      left: 13%;
+      top: 48%;
+      left: 18%;
     }
   }
   #item:nth-child(4n) {
@@ -82,7 +82,7 @@ export const FieldLayOut = styled.div`
     }
     @media (max-width: 480px) {
       position: absolute;
-      top: 58%;
+      top: 48%;
       left: 54%;
     }
   }
@@ -114,12 +114,24 @@ export const FieldDiv = styled.div`
   height: 100px;
   background-image: url("./asset/밭누끼.png");
   background-size: cover;
+  @media (max-width: 480px) {
+    width: 6rem;
+    z-index: 10;
+    height: 80px;
+  }
 `;
 
 export const CharacterImg = styled.img`
   @media (max-width: 768px) {
     width: 70px;
     height: 70px;
+  }
+  @media (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
   }
 `;
 
@@ -138,6 +150,17 @@ export const TitleDiv = styled.div`
     width: 8rem;
     height: 4rem;
     cursor: pointer;
+    @media (max-width: 768px) {
+      width: 130px;
+      height: 50px;
+    }
+    @media (max-width: 480px) {
+      height: 5vh;
+      width: 100px;
+      height: 30px;
+      position: absolute;
+      top: 80px;
+    }
   }
 `;
 
@@ -148,20 +171,16 @@ export const MainPlantLayout = styled.div`
     top: 22%;
     left: 30%;
     z-index: 100;
-
     @media (max-width: 768px) {
-      width: 70px;
-      height: 70px;
+      width: 50px;
+      height: 50px;
       position: absolute;
-      top: 17%;
-      left: 37%;
+      top: 70px;
+      left: 110px;
     }
     @media (max-width: 480px) {
-      width: 70px;
-      height: 70px;
-      position: absolute;
-      top: 17%;
-      left: 32%;
+      width: 50px;
+      height: 50px;
     }
   }
   #plants:nth-child(2n) {
@@ -180,8 +199,8 @@ export const MainPlantLayout = styled.div`
       width: 70px;
       height: 70px;
       position: absolute;
-      top: 17%;
-      left: 69%;
+      top: 15%;
+      left: 64%;
     }
   }
   #plants:nth-child(3n) {
@@ -200,7 +219,7 @@ export const MainPlantLayout = styled.div`
       width: 70px;
       height: 70px;
       position: absolute;
-      top: 62%;
+      top: 50%;
       left: 30%;
     }
   }
@@ -220,8 +239,8 @@ export const MainPlantLayout = styled.div`
       width: 70px;
       height: 70px;
       position: absolute;
-      top: 62%;
-      left: 70%;
+      top: 50%;
+      left: 66%;
     }
   }
   #plants:nth-child(5n) {
@@ -261,6 +280,10 @@ export const BtnStyle = styled.button`
   border: 2px solid;
   border-radius: 0.75em;
   transform-style: preserve-3d;
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+  }
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
     background 150ms cubic-bezier(0, 0, 0.58, 1);
   &::before {
@@ -268,6 +291,17 @@ export const BtnStyle = styled.button`
     content: "";
     width: 100%;
     height: 100%;
+    @media (max-width: 768px) {
+      width: 100px;
+      height: 100px;
+    }
+    /* @media (max-width: 480px) {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 58%;
+      left: 66%;
+    } */
     top: 0;
     left: 0;
     right: 0;
@@ -300,7 +334,7 @@ export const MobileMaiBackgroundImg = styled.img`
   width: 30rem;
   height: 30rem;
   @media (max-width: 480px) {
-    width: 25rem;
-    height: 28rem;
+    width: 20rem;
+    height: 23rem;
   }
 `;

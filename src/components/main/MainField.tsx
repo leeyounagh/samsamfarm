@@ -144,7 +144,7 @@ export default function MainField() {
                         key={uuidv4()}
                       />
 
-                      <Styled.BtnStyle
+                      <button
                         id="button"
                         key={uuidv4()}
                         onClick={() => {
@@ -153,7 +153,7 @@ export default function MainField() {
                         }}
                       >
                         놀러가기
-                      </Styled.BtnStyle>
+                      </button>
                     </Styled.TitleDiv>
                   </Styled.FieldDiv>
                 </>
