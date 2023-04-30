@@ -81,10 +81,11 @@ export const TitleDiv = styled.div`
 
   button {
     position: absolute;
-    top: 120px;
+    top: 100px;
     left: 5px;
     width: 8rem;
     height: 4rem;
+    cursor: pointer;
   }
 `;
 
@@ -137,5 +138,53 @@ export const MainPlantLayout = styled.div`
     top: 57%;
     left: 60%;
     z-index: 100;
+  }
+`;
+
+export const BtnStyle = styled.button`
+  font-weight: 600;
+  color: #b3933b;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  margin-bottom: 10px;
+  height: 50px;
+  background: white;
+  border: 2px solid;
+  border-radius: 0.75em;
+  transform-style: preserve-3d;
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    background 150ms cubic-bezier(0, 0, 0.58, 1);
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px, 0 0.325em 0 0;
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+      box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  }
+
+  &:hover {
+    /* background: ${(props) => props.theme.pink}; */
+    transform: translate(0, 0.25em);
+    &::before {
+      box-shadow: 0 0 0 2px, 0 0.5em 0 0;
+      transform: translate3d(0, 0.5em, -1em);
+    }
+  }
+
+  &:active {
+    /* background: ${(props) => props.theme.pink}; */
+    transform: translate(0em, 0.75em);
+    &::before {
+      box-shadow: 0 0 0 2px, 0 0;
+      transform: translate3d(0, 0, -1em);
+    }
   }
 `;

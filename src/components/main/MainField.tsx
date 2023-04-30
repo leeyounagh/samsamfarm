@@ -10,7 +10,7 @@ export default function MainField() {
   const [isMainModalOpen, setIsMainModalOpen] = useState<boolean>(false);
   const [mainData, setMainData] = useState<MainType[]>([]);
   const [userId, setUserId] = useState<number>(0);
-  const matches = useMediaQuery("(min-width: 768px)");
+  const mobileSize = useMediaQuery("(min-width: 768px)");
 
   const getMainData = async () => {
     try {
@@ -68,7 +68,7 @@ export default function MainField() {
                     height="60rem"
                   />
 
-                  <button
+                  <Styled.BtnStyle
                     id="button"
                     onClick={() => {
                       setIsMainModalOpen(!isMainModalOpen);
@@ -76,7 +76,7 @@ export default function MainField() {
                     }}
                   >
                     놀러가기
-                  </button>
+                  </Styled.BtnStyle>
                 </Styled.TitleDiv>
               </Styled.FieldDiv>
             </>
