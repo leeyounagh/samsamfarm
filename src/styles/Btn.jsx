@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import color from "../../styles/color";
+import React from 'react';
+import styled from 'styled-components';
+import color from '../../styles/color';
 
 const Slayout = styled.div`
   width: 100%;

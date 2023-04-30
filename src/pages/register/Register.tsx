@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
+import * as Styled from './register.styled';
 
 interface FormValue {
   email: string;
@@ -22,57 +23,60 @@ const SignupForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmitHandler)}>
-      <table>
-        <tr>
+    <Styled.register>
+      <div style={{ fontSize: '2.5em' }}>회원가입</div>
+      <Styled.form onSubmit={handleSubmit(onSubmitHandler)}>
+        <Styled.table>
+          <tr>
+            <Styled.td>
+              <label>이메일</label>
+            </Styled.td>
+            <td>
+              <input {...register('email')} type="email" style={{ width: '90%', fontSize: '1.3em' }} />
+            </td>
+          </tr>
+          <tr>
+            <Styled.td>
+              <label>비밀번호</label>
+            </Styled.td>
+            <td>
+              <input {...register('password')} type="password" style={{ width: '90%', fontSize: '1.3em' }} />
+            </td>
+          </tr>
+          <tr>
+            <Styled.td>
+              <label>비밀번호 확인</label>
+            </Styled.td>
+            <td>
+              <input {...register('password_confirm')} type="password" style={{ width: '90%', fontSize: '1.3em' }} />
+            </td>
+          </tr>
+          <tr>
+            <Styled.td>
+              <label>닉네임</label>
+            </Styled.td>
+            <td>
+              <input {...register('nickname')} style={{ width: '90%', fontSize: '1.3em' }} />
+            </td>
+          </tr>
+          <tr>
+            <Styled.td>
+              <label>휴대폰 번호</label>
+            </Styled.td>
+            <td>
+              <input {...register('phone')} style={{ width: '90%', fontSize: '1.3em' }} />
+            </td>
+          </tr>
+          <Styled.td>
+            <label>MBTI</label>
+          </Styled.td>
           <td>
-            <label>이메일</label>
+            <input {...register('mbti')} style={{ width: '90%', fontSize: '1.3em' }} />
           </td>
-          <td>
-            <input {...register('email')} type="email" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>비밀번호</label>
-          </td>
-          <td>
-            <input {...register('password')} type="password" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>비밀번호 확인</label>
-          </td>
-          <td>
-            <input {...register('password_confirm')} type="password" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>닉네임</label>
-          </td>
-          <td>
-            <input {...register('nickname')} />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>휴대폰 번호</label>
-          </td>
-          <td>
-            <input {...register('phone')} />
-          </td>
-        </tr>
-        <td>
-          <label>MBTI</label>
-        </td>
-        <td>
-          <input {...register('mbti')} />
-        </td>
-      </table>
-      <button type="submit">회원가입</button>
-    </form>
+        </Styled.table>
+        <Styled.RegisterButton type="submit">회원가입</Styled.RegisterButton>
+      </Styled.form>
+    </Styled.register>
   );
 };
 
