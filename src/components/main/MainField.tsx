@@ -5,6 +5,7 @@ import MainCharacter from "../../data/mainCharacter";
 import { MainType } from "../../type/type";
 import axios from "axios";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import { v4 as uuidv4 } from "uuid";
 
 export default function MainField() {
   const [isMainModalOpen, setIsMainModalOpen] = useState<boolean>(false);
@@ -25,6 +26,8 @@ export default function MainField() {
   useEffect(() => {
     getMainData();
   }, []);
+
+  console.log("메인확인", userId);
   return (
     <Styled.Layout>
       <Styled.BackGroundImg src="./asset/배경.png" />
@@ -35,19 +38,35 @@ export default function MainField() {
             <>
               {item?.plants_id === 1 ? (
                 <>
-                  <Styled.MainPlantImg src="./asset/씨앗.png" id="plants" />
+                  <Styled.MainPlantImg
+                    key={uuidv4()}
+                    src="./asset/씨앗.png"
+                    id="plants"
+                  />
                 </>
               ) : item?.plants_id === 2 ? (
                 <>
-                  <Styled.MainPlantImg src="./asset/새싹.png" id="plants" />
+                  <Styled.MainPlantImg
+                    key={uuidv4()}
+                    src="./asset/새싹.png"
+                    id="plants"
+                  />
                 </>
               ) : item?.plants_id === 3 ? (
                 <>
-                  <Styled.MainPlantImg src="./asset/중간새싹.png" id="plants" />
+                  <Styled.MainPlantImg
+                    key={uuidv4()}
+                    src="./asset/중간새싹.png"
+                    id="plants"
+                  />
                 </>
               ) : (
                 <>
-                  <Styled.MainPlantImg src="./asset/꽃.png" id="plants" />
+                  <Styled.MainPlantImg
+                    key={uuidv4()}
+                    src="./asset/꽃.png"
+                    id="plants"
+                  />
                 </>
               )}
             </>
@@ -59,17 +78,19 @@ export default function MainField() {
         {MainCharacter?.map((item) => {
           return (
             <>
-              <Styled.FieldDiv id="item">
+              <Styled.FieldDiv id="item" key={uuidv4()}>
                 {item.id}
                 <Styled.TitleDiv>
                   <Styled.CharacterImg
                     src={item.img}
                     width="60rem"
                     height="60rem"
+                    key={uuidv4()}
                   />
 
                   <Styled.BtnStyle
                     id="button"
+                    key={uuidv4()}
                     onClick={() => {
                       setIsMainModalOpen(!isMainModalOpen);
                       setUserId(item.id);
@@ -88,7 +109,6 @@ export default function MainField() {
           isMainModalOpen={isMainModalOpen}
           setIsMainModalOpen={setIsMainModalOpen}
           mainData={mainData}
-          setMainData={setMainData}
           userId={userId}
         />
       ) : null}

@@ -7,7 +7,6 @@ import MainCharacter from "../../../data/mainCharacter";
 type ModalType = {
   isMainModalOpen?: boolean;
   setIsMainModalOpen?: Dispatch<SetStateAction<boolean>>;
-  setMainData?: Dispatch<SetStateAction<MainType[]>>;
   mainData?: MainType[];
   userId?: number;
 };
@@ -16,16 +15,47 @@ export default function Modal({
   isMainModalOpen,
   setIsMainModalOpen,
   mainData,
-  setMainData,
+
   userId,
 }: ModalType) {
-  const [userInfo, setUserInfo] = useState<MainType>();
+  const [userInfo, setUserInfo] = useState<MainType>({
+    visiter_id: 0,
+    contents: "asfdasd",
+    writer: "dsfasd",
+    create_at: "fdsaf",
+    delete_at: "dasfdas",
+    plants_id: 1,
+  });
+
   useEffect(() => {
     if (mainData && userId) {
       setUserInfo(mainData[userId]);
     }
   }, [mainData, userId, setUserInfo]);
+  console.log("모달 테스트", userInfo.plants_id);
 
+  const plantsRenderer = (id: number | undefined = userInfo?.plants_id) => {
+    interface PlantMapper {
+      [key: string]: JSX.Element | undefined;
+    }
+
+    // const mapper: PlantMapper = {
+    //   "1": <Styled.HomePlantImg src="./asset/씨앗.png" id="plants" />,
+    //   "2": <Styled.HomePlantImg src="./asset/새싹.png" id="plants" />,
+    //   "3": <Styled.HomePlantImg src="./asset/중간새싹.png" id="plants" />,
+    //   default: <Styled.HomePlantImg src="./asset/꽃.png" id="plants" />,
+    // };
+
+    const mapper: any = {
+      "1": `${id}`,
+      "2": { id },
+      "3": { id },
+      default: { id },
+    };
+
+    // id가 undefined일 경우 default 값을 반환하도록 설정
+    return mapper[id !== undefined ? `${id}` : "default"];
+  };
   return (
     <Styled.Layout>
       <Styled.CloseDiv>
@@ -41,7 +71,7 @@ export default function Modal({
 
       <Styled.FarmDiv>
         <Styled.FarmModalDiv>
-          {MainCharacter && userId !== undefined ? (
+          {/* {MainCharacter && userId !== undefined ? (
             <Styled.CharacterImg
               src={
                 MainCharacter[userId]
@@ -51,13 +81,14 @@ export default function Modal({
               width="40%"
               height="80%"
             />
-          ) : null}
-
-          <Styled.HomeTitleDiv>
+          ) : null} */}
+          {/* <Styled.HomeTitleDiv>
             <h1>이준기님의 농장</h1>
           </Styled.HomeTitleDiv>
-          <Styled.GridImg src="./asset/밭누끼.png" width="100%" height="100%" />
-          {userInfo?.plants_id !== undefined && userInfo?.plants_id === 1 ? (
+          <Styled.GridImg src="./asset/밭누끼.png" width="100%" height="100%" /> */}
+          adsfadsf
+          {/* {plantsRenderer(userInfo?.plants_id)} */}
+          {/* {userInfo?.plants_id !== undefined && userInfo?.plants_id === 1 ? (
             <>
               <Styled.HomePlantImg src="./asset/씨앗.png" id="plants" />
             </>
@@ -73,8 +104,7 @@ export default function Modal({
             <>
               <Styled.HomePlantImg src="./asset/꽃.png" id="plants" />
             </>
-          )}
-
+          )} */}
           <Styled.PaymentImg src="./asset/돈.gif" width="80px" height="80px" />
         </Styled.FarmModalDiv>
       </Styled.FarmDiv>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import color from "../../color/color";
+import color from "../../styles/color";
 export const Nav = styled.nav<{ scrolled: boolean }>`
   height: fit-content;
   display: flex;
