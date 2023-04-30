@@ -5,6 +5,7 @@ export const register = styled.div`
   flex-direction: column;
   text-align: center;
   align-items: center;
+  min-width: 375px;
 `;
 export const table = styled.table`
   border: 1px solid #444444;
@@ -31,7 +32,7 @@ export const RegisterButton = styled.button`
   padding: 10px 20px;
   margin-right: 30px;
   margin-bottom: 10px;
-  background-color: rgb(166, 238, 163);
+  background-color: rgb(99, 230, 95);
   color: #fff;
   border-radius: 4px;
   border: none;
@@ -39,6 +40,6 @@ export const RegisterButton = styled.button`
   cursor: pointer;
   text-decoration-line: none;
   &:hover {
-    background-color: rgb(99, 230, 95);
+    background-color: #008000;
   }
 `;
