@@ -16,8 +16,7 @@ export const BackGroundImg = styled.img`
 `;
 
 export const FieldLayOut = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100rem;
   z-index: 10;
 
   #item:nth-child(1n) {
@@ -63,7 +62,7 @@ export const FieldLayOut = styled.div`
 `;
 
 export const FieldDiv = styled.div`
-  width: 6%;
+  width: 8rem;
   z-index: 10;
   height: 100px;
   background-image: url("./asset/밭누끼.png");
@@ -73,8 +72,8 @@ export const FieldDiv = styled.div`
 export const CharacterImg = styled.img``;
 
 export const MainPlantImg = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 5rem;
+  height: 5rem;
 `;
 
 export const TitleDiv = styled.div`
@@ -82,62 +81,61 @@ export const TitleDiv = styled.div`
 
   button {
     position: absolute;
-    top: 100px;
-    left: 10px;
-    width: 90%;
-    height: 50%;
+    top: 120px;
+    left: 5px;
+    width: 8rem;
+    height: 4rem;
   }
 `;
 
 export const MainPlantLayout = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100rem;
   #plants:nth-child(1n) {
     position: absolute;
-    top: 20%;
-    left: 29%;
+    top: 22%;
+    left: 30%;
     z-index: 100;
   }
   #plants:nth-child(2n) {
     position: absolute;
-    top: 20%;
-    left: 40%;
+    top: 22%;
+    left: 41%;
     z-index: 100;
   }
   #plants:nth-child(3n) {
     position: absolute;
-    top: 55%;
-    left: 29%;
+    top: 57%;
+    left: 30%;
     z-index: 100;
   }
   #plants:nth-child(4n) {
     position: absolute;
-    top: 55%;
-    left: 40%;
+    top: 57%;
+    left: 41%;
     z-index: 100;
   }
   #plants:nth-child(5n) {
     position: absolute;
-    top: 20%;
-    left: 59%;
+    top: 22%;
+    left: 60%;
     z-index: 100;
   }
   #plants:nth-child(6n) {
     position: absolute;
-    top: 20%;
-    left: 70%;
+    top: 22%;
+    left: 71%;
     z-index: 100;
   }
   #plants:nth-child(7n) {
     position: absolute;
-    top: 55%;
-    left: 70%;
+    top: 57%;
+    left: 71%;
     z-index: 100;
   }
   #plants:nth-child(8n) {
     position: absolute;
-    top: 55%;
-    left: 59%;
+    top: 57%;
+    left: 60%;
     z-index: 100;
   }
 `;

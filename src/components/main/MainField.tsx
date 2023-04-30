@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import * as Styled from "./main.styled";
 import Modal from "./modal/Modal";
 import MainCharacter from "../../data/mainCharacter";
 import { MainType } from "../../type/type";
-
 import axios from "axios";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 export default function MainField() {
   const [isMainModalOpen, setIsMainModalOpen] = useState<boolean>(false);
   const [mainData, setMainData] = useState<MainType[]>([]);
   const [userId, setUserId] = useState<number>(0);
+  const matches = useMediaQuery("(min-width: 768px)");
 
   const getMainData = async () => {
     try {
@@ -63,8 +64,8 @@ export default function MainField() {
                 <Styled.TitleDiv>
                   <Styled.CharacterImg
                     src={item.img}
-                    width="50%"
-                    height="40%"
+                    width="60rem"
+                    height="60rem"
                   />
 
                   <button

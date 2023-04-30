@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import * as Styled from "./modal.styled";
 import { GrClose } from "react-icons/gr";
 import { MainType } from "../../../type/type";
@@ -87,7 +87,7 @@ export default function Modal({
         <Styled.CommentAreaDiv>
           {Array.from({ length: 8 })
             .fill(0)
-            .map((item) => {
+            .map(() => {
               return (
                 <div style={{ display: "flex" }}>
                   <Styled.CommentListDiv>fdafdsads</Styled.CommentListDiv>

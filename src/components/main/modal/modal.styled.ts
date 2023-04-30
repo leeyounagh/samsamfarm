@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Layout = styled.div`
-  width: 70%;
+  width: 70rem;
   height: 90vh;
   z-index: 100;
   border: 1px solid lightgray;
@@ -62,7 +62,6 @@ export const PaymentImg = styled.img`
 
 export const CommentDiv = styled.div`
   margin-top: 10px;
-
   width: 100%;
   height: 30%;
 `;

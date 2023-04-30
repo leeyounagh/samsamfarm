@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Layout = styled.div`
   width: 100%;
-  padding: 50px 0px 50px 0px;
-  border: 1px solid black;
+  height: 20vh;
+  margin-top: 50px;
 `;
 
 export const ListDiv = styled.div`

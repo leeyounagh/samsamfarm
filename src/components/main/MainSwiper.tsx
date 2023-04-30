@@ -13,7 +13,6 @@ interface SwiperStyle extends CSSProperties {
 export default function MainSwiper() {
   return (
     <Styled.Layout>
-      {" "}
       <Swiper
         style={
           {
@@ -37,7 +36,6 @@ export default function MainSwiper() {
           .map((item) => {
             return (
               <>
-                {" "}
                 <SwiperSlide style={{ marginLeft: "80px" }}>
                   <Styled.ListDiv>
                     <Styled.ListImg src="./asset/게임.gif" />
