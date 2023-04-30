@@ -15,6 +15,11 @@ export const TitleDiv = styled.div`
   font-size: 1.5rem;
   @media (max-width: 768px) {
     font-size: 1rem;
+    text-align: center;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+    text-align: center;
   }
 `;
 

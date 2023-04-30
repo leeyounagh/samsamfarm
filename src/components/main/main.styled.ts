@@ -35,6 +35,11 @@ export const FieldLayOut = styled.div`
       top: 13%;
       left: 27%;
     }
+    @media (max-width: 480px) {
+      position: absolute;
+      top: 13%;
+      left: 12%;
+    }
   }
   #item:nth-child(2n) {
     position: absolute;
@@ -44,6 +49,11 @@ export const FieldLayOut = styled.div`
       position: absolute;
       top: 13%;
       left: 57%;
+    }
+    @media (max-width: 480px) {
+      position: absolute;
+      top: 13%;
+      left: 54%;
     }
   }
   #item:nth-child(3n) {
@@ -55,6 +65,11 @@ export const FieldLayOut = styled.div`
       top: 44%;
       left: 28%;
     }
+    @media (max-width: 480px) {
+      position: absolute;
+      top: 58%;
+      left: 13%;
+    }
   }
   #item:nth-child(4n) {
     position: absolute;
@@ -64,6 +79,11 @@ export const FieldLayOut = styled.div`
       position: absolute;
       top: 44%;
       left: 57%;
+    }
+    @media (max-width: 480px) {
+      position: absolute;
+      top: 58%;
+      left: 54%;
     }
   }
   #item:nth-child(5n) {
@@ -130,11 +150,18 @@ export const MainPlantLayout = styled.div`
     z-index: 100;
 
     @media (max-width: 768px) {
+      width: 70px;
+      height: 70px;
       position: absolute;
       top: 17%;
       left: 37%;
+    }
+    @media (max-width: 480px) {
       width: 70px;
       height: 70px;
+      position: absolute;
+      top: 17%;
+      left: 32%;
     }
   }
   #plants:nth-child(2n) {
@@ -143,9 +170,18 @@ export const MainPlantLayout = styled.div`
     left: 45%;
     z-index: 100;
     @media (max-width: 768px) {
+      width: 70px;
+      height: 70px;
       position: absolute;
       top: 17%;
-      left: 65%;
+      left: 67%;
+    }
+    @media (max-width: 480px) {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 17%;
+      left: 69%;
     }
   }
   #plants:nth-child(3n) {
@@ -154,9 +190,18 @@ export const MainPlantLayout = styled.div`
     left: 30%;
     z-index: 100;
     @media (max-width: 768px) {
+      width: 70px;
+      height: 70px;
       position: absolute;
       top: 47%;
       left: 37%;
+    }
+    @media (max-width: 480px) {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 62%;
+      left: 30%;
     }
   }
   #plants:nth-child(4n) {
@@ -165,9 +210,18 @@ export const MainPlantLayout = styled.div`
     left: 41%;
     z-index: 100;
     @media (max-width: 768px) {
+      width: 70px;
+      height: 70px;
       position: absolute;
-      top: 47%;
-      left: 66%;
+      top: 46%;
+      left: 67%;
+    }
+    @media (max-width: 480px) {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 62%;
+      left: 70%;
     }
   }
   #plants:nth-child(5n) {
@@ -245,4 +299,8 @@ export const BtnStyle = styled.button`
 export const MobileMaiBackgroundImg = styled.img`
   width: 30rem;
   height: 30rem;
+  @media (max-width: 480px) {
+    width: 25rem;
+    height: 28rem;
+  }
 `;

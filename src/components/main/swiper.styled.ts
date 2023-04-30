@@ -11,6 +11,14 @@ export const ListDiv = styled.div`
   width: 300px;
   height: 180px;
   background: white;
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 180px;
+  }
+  @media (max-width: 480px) {
+    width: 150px;
+    height: 100px;
+  }
 `;
 
 export const ListImg = styled.img`

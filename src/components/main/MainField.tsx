@@ -12,7 +12,7 @@ export default function MainField() {
   const [isMainModalOpen, setIsMainModalOpen] = useState<boolean>(false);
   const [mainData, setMainData] = useState<MainType[]>([]);
   const [userId, setUserId] = useState<number>(0);
-  const [mobileData, setMoblieData] = useState<MainType[]>([]);
+  const [mobileData, setMobieData] = useState<MainType[]>([]);
   const mobileSize = useMediaQuery("(max-width: 768px)");
 
   const getMainData = async () => {
@@ -27,7 +27,7 @@ export default function MainField() {
 
   useEffect(() => {
     getMainData();
-    setMoblieData(mainData.slice(0, 4));
+    setMobieData(mainData.slice(0, 4));
   }, []);
 
   console.log(mobileData);
