@@ -33,7 +33,7 @@ export default function MainSwiper() {
       >
         {Array.from({ length: 20 })
           .fill(0)
-          .map((item) => {
+          .map(() => {
             return (
               <>
                 <SwiperSlide style={{ marginLeft: "80px" }} key={uuidv4()}>
