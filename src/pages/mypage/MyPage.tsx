@@ -1,4 +1,3 @@
-import React from "react";
 import * as Styled from "./mypage.styled";
 import { TbArrowBigUpFilled } from "react-icons/tb";
 import { TbArrowBigDownFilled } from "react-icons/tb";
