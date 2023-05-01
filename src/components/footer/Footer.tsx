@@ -1,4 +1,3 @@
-import React from "react";
 import * as Styled from "./footer.styled";
 
 export default function Footer() {

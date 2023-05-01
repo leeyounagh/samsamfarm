@@ -2,17 +2,14 @@ import styled from "styled-components";
 
 export const Aside = styled.div`
   position: fixed;
-  /* background-image: url(${(props) => props.imageUrl}); */
   background-size: cover;
   background-position: center;
   background-color: #fff2d7;
-
   top: 0;
   right: 0;
   width: 300px;
   height: 100%;
   z-index: 150;
-  /* opacity: 0.5; */
 `;
 
 export const CloseButton = styled.div`
