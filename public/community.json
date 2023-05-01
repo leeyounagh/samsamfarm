@@ -82,7 +82,19 @@
       "title": "adfadsf",
       "content": "adfasdf",
       "writer": "차은우",
-      "user_id": 12
+      "user_id": 13
+    },
+    {
+      "title": "adfadsf",
+      "content": "adfasdf",
+      "writer": "임시완",
+      "user_id": 14
+    },
+    {
+      "title": "adfadsf",
+      "content": "adfasdf",
+      "writer": "김민주",
+      "user_id": 15
     }
   ]
 }

@@ -12,6 +12,26 @@ export const SwiperDiv = styled.div`
   width: 90%;
   margin: auto;
   height: 500px;
+  #infobox:nth-child(1n) {
+    position: absolute;
+    top: 31%;
+    left: 13%;
+  }
+  #infobox:nth-child(2n) {
+    position: absolute;
+    top: 25%;
+    left: 33%;
+  }
+  #infobox:nth-child(3n) {
+    position: absolute;
+    top: 35%;
+    left: 53%;
+  }
+  #infobox:nth-child(4n) {
+    position: absolute;
+    top: 4%;
+    left: 73%;
+  }
 `;
 
 export const ListDiv = styled.div`
@@ -60,4 +80,11 @@ export const character4Img = styled.img`
   width: 100px;
   height: 100px;
   cursor: pointer;
+`;
+export const InfoBox = styled.div`
+  border: 1px solid lightgray;
+  width: 180px;
+  height: 120px;
+  background-color: white;
+  text-align: center;
 `;

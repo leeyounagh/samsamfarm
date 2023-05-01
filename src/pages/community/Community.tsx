@@ -94,13 +94,13 @@ const App: React.FC = () => {
     },
     // ... 이하 생략
   ];
-  // const [communityData, setCommunityData] = useState([]);
+
   const dispatch = useDispatch();
   const CommunityData = async () => {
     const response = await axios.get("./community.json");
     const data = await response.data.data;
+
     dispatch(setCommunityList(data));
-    // setCommunityData(data);
   };
 
   useEffect(() => {
@@ -112,7 +112,6 @@ const App: React.FC = () => {
       <Carousel />
       <Board />
       <h1>게시판</h1>
-
       <Community items={boardItems} />
     </div>
   );

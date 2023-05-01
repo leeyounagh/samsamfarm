@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import CommunityData from "../slice/CommunitySlice";
+import CommunityReducer from "../slice/CommunitySlice";
 
 const rootReducer = configureStore({
-  reducer: { CommunityData },
+  reducer: { community: CommunityReducer },
 });
 export default rootReducer;
 

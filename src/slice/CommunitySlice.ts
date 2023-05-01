@@ -15,4 +15,5 @@ export const CommunityDataSlice = createSlice({
 });
 
 export const { setCommunityList } = CommunityDataSlice.actions;
+
 export default CommunityDataSlice.reducer;
