@@ -22,6 +22,7 @@ export default function Carousel() {
   });
   const [newData, setNewData] = useState<any[]>([]); // 자른 데이터 배열
   const [activeIndex, setActiveIndex] = useState<number>(0);
+
   useEffect(() => {
     const dataArr = [];
     for (let i = 0; i < communityData.length; i += 4) {
@@ -29,10 +30,9 @@ export default function Carousel() {
     }
     setNewData(dataArr);
   }, [communityData]);
-  console.log("확인", communityData);
+
   function handleSlideChange(swiper: any) {
     setActiveIndex(swiper.activeIndex);
-    console.log(`Current active slide index: ${swiper.activeIndex}`);
   }
   return (
     <Swiper
