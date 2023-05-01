@@ -1,5 +1,6 @@
 import React from "react";
 import * as Styled from "./community.styled";
+import Board from "../../components/community/Board";
 
 type BoardItem = {
   id: number;
@@ -92,6 +93,7 @@ const App: React.FC = () => {
 
   return (
     <div>
+      <Board />
       <h1>게시판</h1>
       <Community items={boardItems} />
     </div>
