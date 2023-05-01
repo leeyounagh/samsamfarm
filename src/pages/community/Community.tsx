@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as Styled from "./community.styled";
 import Board from "../../components/community/Board";
+import Carousel from "../../components/community/Carousel";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setCommunityList } from "../../slice/CommunitySlice";
 
 type BoardItem = {
   id: number;
@@ -90,11 +94,25 @@ const App: React.FC = () => {
     },
     // ... 이하 생략
   ];
+  // const [communityData, setCommunityData] = useState([]);
+  const dispatch = useDispatch();
+  const CommunityData = async () => {
+    const response = await axios.get("./community.json");
+    const data = await response.data.data;
+    dispatch(setCommunityList(data));
+    // setCommunityData(data);
+  };
+
+  useEffect(() => {
+    CommunityData();
+  }, []);
 
   return (
     <div>
+      <Carousel />
       <Board />
       <h1>게시판</h1>
+
       <Community items={boardItems} />
     </div>
   );
