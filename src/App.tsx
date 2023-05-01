@@ -27,6 +27,7 @@ function App() {
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/introduce" element={<Introduce />} />
+        <Route path="/introduce2" element={<Introduce2 />} />
       </Routes>
       <Footer />
     </>
