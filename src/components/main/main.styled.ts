@@ -191,7 +191,7 @@ export const MainPlantLayout = styled.div`
   #plants:nth-child(2n) {
     position: absolute;
     top: 22%;
-    left: 45%;
+    left: 41%;
     z-index: 100;
     @media (max-width: 768px) {
       width: 70px;

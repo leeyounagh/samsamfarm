@@ -28,9 +28,6 @@ export default function MainSwiper() {
         pagination={{
           clickable: false,
         }}
-        navigation={
-          window.matchMedia("(max-width: 768px)").matches ? false : true
-        }
         modules={[Pagination, Navigation, HashNavigation]}
         className="mySwiper"
       >
