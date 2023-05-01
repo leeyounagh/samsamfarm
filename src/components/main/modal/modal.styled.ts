@@ -47,6 +47,13 @@ export const HomePlantImg = styled.img`
   position: absolute;
   top: 48%;
   left: 63%;
+  @media (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 52%;
+    left: 75%;
+  }
 `;
 export const FarmDiv = styled.div`
   width: 100%;

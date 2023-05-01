@@ -6,7 +6,7 @@ import { MainType } from "../../type/type";
 import axios from "axios";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { v4 as uuidv4 } from "uuid";
-import MobileCharacter from "../../data/mobileCharacter";
+import MobileCharacter from "../../data/MobileCharacter";
 
 export default function MainField() {
   const [isMainModalOpen, setIsMainModalOpen] = useState<boolean>(false);

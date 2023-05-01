@@ -24,6 +24,7 @@ export const BackGroundImg = styled.img`
 
 export const FieldLayOut = styled.div`
   width: 100rem;
+
   z-index: 10;
 
   #item:nth-child(1n) {
@@ -67,7 +68,7 @@ export const FieldLayOut = styled.div`
     }
     @media (max-width: 480px) {
       position: absolute;
-      top: 48%;
+      top: 12rem;
       left: 18%;
     }
   }
@@ -82,7 +83,7 @@ export const FieldLayOut = styled.div`
     }
     @media (max-width: 480px) {
       position: absolute;
-      top: 48%;
+      top: 12rem;
       left: 54%;
     }
   }
@@ -166,6 +167,7 @@ export const TitleDiv = styled.div`
 
 export const MainPlantLayout = styled.div`
   width: 100rem;
+
   #plants:nth-child(1n) {
     position: absolute;
     top: 22%;
@@ -175,12 +177,15 @@ export const MainPlantLayout = styled.div`
       width: 50px;
       height: 50px;
       position: absolute;
-      top: 70px;
-      left: 110px;
+      top: 6rem;
+      left: 40%;
     }
     @media (max-width: 480px) {
       width: 50px;
       height: 50px;
+      position: absolute;
+      top: 5rem;
+      left: 8rem;
     }
   }
   #plants:nth-child(2n) {
@@ -192,15 +197,15 @@ export const MainPlantLayout = styled.div`
       width: 70px;
       height: 70px;
       position: absolute;
-      top: 17%;
+      top: 6rem;
       left: 67%;
     }
     @media (max-width: 480px) {
-      width: 70px;
-      height: 70px;
+      width: 50px;
+      height: 50px;
       position: absolute;
-      top: 15%;
-      left: 64%;
+      top: 5rem;
+      left: 16rem;
     }
   }
   #plants:nth-child(3n) {
@@ -212,15 +217,15 @@ export const MainPlantLayout = styled.div`
       width: 70px;
       height: 70px;
       position: absolute;
-      top: 47%;
-      left: 37%;
+      top: 16.5rem;
+      left: 38%;
     }
     @media (max-width: 480px) {
-      width: 70px;
-      height: 70px;
+      width: 50px;
+      height: 50px;
       position: absolute;
-      top: 50%;
-      left: 30%;
+      top: 13rem;
+      left: 8rem;
     }
   }
   #plants:nth-child(4n) {
@@ -232,15 +237,15 @@ export const MainPlantLayout = styled.div`
       width: 70px;
       height: 70px;
       position: absolute;
-      top: 46%;
-      left: 67%;
+      top: 17rem;
+      left: 68%;
     }
     @media (max-width: 480px) {
-      width: 70px;
-      height: 70px;
+      width: 50px;
+      height: 50px;
       position: absolute;
-      top: 50%;
-      left: 66%;
+      top: 13rem;
+      left: 16rem;
     }
   }
   #plants:nth-child(5n) {
