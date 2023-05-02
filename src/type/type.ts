@@ -6,3 +6,10 @@ export interface MainType {
   delete_at: string;
   plants_id: number;
 }
+
+export interface CommunityType {
+  title: string;
+  content: string;
+  writer: string;
+  user_id: number;
+}

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as Styled from "./community.styled";
 import Board from "../../components/community/Board";
+import Carousel from "../../components/community/Carousel";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setCommunityList } from "../../slice/CommunitySlice";
 
 type BoardItem = {
   id: number;
@@ -34,9 +38,9 @@ const Community: React.FC<BoardListProps> = ({ items = [] }) => {
             <tr key={item.id}>
               <td>{item.id}</td>
               <td>
-                <Styled.TitleLink href={`/boards/${item.id}`}>
+                {/* <Styled.TitleLink href={`/boards/${item.id}`}>
                   {item.title}
-                </Styled.TitleLink>
+                </Styled.TitleLink> */}
               </td>
               <td>{item.author}</td>
               <td>{item.date}</td>
@@ -91,8 +95,21 @@ const App: React.FC = () => {
     // ... 이하 생략
   ];
 
+  const dispatch = useDispatch();
+  const CommunityData = async () => {
+    const response = await axios.get("./community.json");
+    const data = await response.data.data;
+
+    dispatch(setCommunityList(data));
+  };
+
+  useEffect(() => {
+    CommunityData();
+  }, []);
+
   return (
     <div>
+      <Carousel />
       <Board />
       <h1>게시판</h1>
       <Community items={boardItems} />

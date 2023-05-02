@@ -1,12 +1,14 @@
 import * as Styled from "./button.styled";
-interface ButtonProps {
-  id?: string;
+
+type ButtonProps = {
+  id: string;
   disabled?: boolean;
   children: React.ReactNode;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick: () => void;
   outline?: boolean;
   cancel?: boolean;
-}
+};
+
 export default function Button({
   id,
   disabled = false,

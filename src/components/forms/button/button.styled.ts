@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const ButtonStyled = styled.button`
+interface ButtonProps {
+  outline?: boolean;
+  cancel?: boolean;
+}
+
+export const ButtonStyled = styled.button<ButtonProps>`
   color: #fff;
   background-color: #14b36b;
   font-size: 16px;
@@ -27,13 +32,13 @@ export const ButtonStyled = styled.button`
       : ``}
 
   ${(props) =>
-    props.cencel
+    props.cancel
       ? `
     background-color: #fff;
     color: #666;
     border: 1px solid #c4c4c4;
     &:hover {
-          border-color: #787878
+      border-color: #787878;
     }
   `
       : ``}
