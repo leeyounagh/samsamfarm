@@ -34,6 +34,7 @@ export default function Carousel() {
   function handleSlideChange(swiper: any) {
     setActiveIndex(swiper.activeIndex);
   }
+
   return (
     <Swiper
       style={
@@ -48,7 +49,7 @@ export default function Carousel() {
       onSlideChange={handleSlideChange}
     >
       <Styled.Layout key={uuidv4()}>
-        {CommunityImg?.map((item, index) => {
+        {CommunityImg?.map((item) => {
           return (
             <>
               <SwiperSlide
