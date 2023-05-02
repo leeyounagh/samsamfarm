@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import * as Styled from "./community.styled";
 import Board from "../../components/community/Board";
 import Carousel from "../../components/community/Carousel";

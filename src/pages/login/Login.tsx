@@ -63,12 +63,12 @@ export default function Login() {
     alert("로그인 API");
   };
 
-  const handleFindEmailClick = (e) => {
+  const handleFindEmailClick = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     alert("이메일 찾기 중비중..");
   };
 
-  const handleFindPasswordClick = (e) => {
+  const handleFindPasswordClick = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     alert("비밀번호 찾기 중비중..");
   };
