@@ -2,6 +2,7 @@ import { useRef } from "react";
 import useOnClickOutside from "../../../hooks/useOnclickOutside";
 import { GrClose } from "react-icons/gr";
 import * as Styled from "./sidebar.styled";
+import { Link } from "react-router-dom";
 
 type SidebarProps = {
   isOpen: boolean;
@@ -13,12 +14,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
 
   useOnClickOutside(asideRef, () => handleSidebarClose());
 
-  const imageUrl = "/asset/인형뽑기.gif";
-
   return (
     <>
       {isOpen && (
-        <Styled.Aside ref={asideRef} imageUrl={imageUrl}>
+        <Styled.Aside ref={asideRef}>
           <Styled.CloseButton>
             <GrClose
               size={45}
@@ -29,7 +28,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
             />
           </Styled.CloseButton>
           <Styled.SidebarButton>
-            <Styled.SidebarButtonDetail>커뮤니티</Styled.SidebarButtonDetail>
+            <Link to="/community">
+              <Styled.SidebarButtonDetail>커뮤니티</Styled.SidebarButtonDetail>
+            </Link>
             <Styled.SidebarButtonDetail>마이페이지</Styled.SidebarButtonDetail>
             <Styled.SidebarButtonDetail>요건 모하징</Styled.SidebarButtonDetail>
           </Styled.SidebarButton>

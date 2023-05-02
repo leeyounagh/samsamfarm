@@ -7,7 +7,7 @@ import * as Styled from "./header.styled";
 import Sidebar from "./sidebar/Sidebar";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import color from "../../color/color";
+import color from "../../styles/color";
 export const Nav = styled.nav<{ scrolled: boolean }>`
   height: fit-content;
   display: flex;
@@ -10,7 +10,7 @@ export const Nav = styled.nav<{ scrolled: boolean }>`
   padding: 1rem;
   background-color: ${({ scrolled }) => (scrolled ? `${color.main}` : "white")};
   transition: background-color 0.15s ease-in-out;
-  z-index: 150;
+  z-index: 100;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 `;
 
