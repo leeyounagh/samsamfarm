@@ -2,6 +2,7 @@ import { CSSProperties } from "react";
 import * as Styled from "./swiper.styled";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, HashNavigation } from "swiper";
+import { v4 as uuidv4 } from "uuid";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -13,7 +14,6 @@ interface SwiperStyle extends CSSProperties {
 export default function MainSwiper() {
   return (
     <Styled.Layout>
-      {" "}
       <Swiper
         style={
           {
@@ -28,17 +28,15 @@ export default function MainSwiper() {
         pagination={{
           clickable: false,
         }}
-        navigation={true}
         modules={[Pagination, Navigation, HashNavigation]}
         className="mySwiper"
       >
         {Array.from({ length: 20 })
           .fill(0)
-          .map((item) => {
+          .map(() => {
             return (
               <>
-                {" "}
-                <SwiperSlide style={{ marginLeft: "80px" }}>
+                <SwiperSlide style={{ marginLeft: "80px" }} key={uuidv4()}>
                   <Styled.ListDiv>
                     <Styled.ListImg src="./asset/게임.gif" />
                     <Styled.TitleDiv>안녕하세요!</Styled.TitleDiv>

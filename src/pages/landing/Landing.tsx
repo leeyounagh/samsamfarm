@@ -1,4 +1,3 @@
-import React from "react";
 import * as Styled from "./landing.styled";
 import MainField from "../../components/main/MainField";
 import MainSwiper from "../../components/main/MainSwiper";
