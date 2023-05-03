@@ -111,19 +111,19 @@ const posts: PostList = [
   },
   {
     id: 3,
-    title: "두 번째 게시글",
+    title: "세 번째 게시글",
     author: "김철수",
     date: "2022-01-02",
   },
   {
     id: 4,
-    title: "두 번째 게시글",
+    title: "네 번째 게시글",
     author: "김철수",
     date: "2022-01-02",
   },
   {
     id: 5,
-    title: "두 번째 게시글",
+    title: "다섯 번째 게시글",
     author: "김철수",
     date: "2022-01-02",
   },
@@ -169,13 +169,11 @@ const posts: PostList = [
 const Community: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태값
   const [searchKeyword, setSearchKeyword] = useState(""); // 검색어 상태값
+  const [filteredPosts, setFilteredPosts] = useState<Post[]>([]); // 검색된 게시글 목록 상태값
   const postsPerPage = 10; // 페이지 당 게시글 수
   const totalPages = Math.ceil(posts.length / postsPerPage); // 총 페이지 수
   const indexOfLastPost = currentPage * postsPerPage; // 마지막 게시글 인덱스
   const indexOfFirstPost = indexOfLastPost - postsPerPage; // 첫 번째 게시글 인덱스
-  const filteredPosts = posts.filter((post) =>
-    post.title.includes(searchKeyword)
-  ); // 검색어와 일치하는 게시글만 필터링한 목록
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost); // 현재 페이지의 게시글 목록
 
   // 페이지 변경 핸들러 함수
@@ -189,6 +187,21 @@ const Community: React.FC = () => {
   ) => {
     setSearchKeyword(event.target.value);
   };
+
+  // 검색 버튼 클릭 핸들러 함수
+  const handleSearchClick = () => {
+    const searchResult = posts.filter((post) =>
+      post.title.includes(searchKeyword)
+    );
+    setFilteredPosts(searchResult);
+    setCurrentPage(1);
+  };
+
+  // 초기 게시글 목록 설정
+  useState(() => {
+    setFilteredPosts(posts);
+  }, [posts]);
+  // 이거 왜 오류징 데헷
 
   const dispatch = useDispatch();
   const CommunityData = async () => {
@@ -207,11 +220,14 @@ const Community: React.FC = () => {
       <Carousel />
       <Board />
       <Styled.Container>
-        <input
-          type="text"
-          value={searchKeyword}
-          onChange={handleSearchKeywordChange}
-        />
+        <div>
+          <input
+            type="text"
+            value={searchKeyword}
+            onChange={handleSearchKeywordChange}
+          />
+          <button onClick={handleSearchClick}>검색</button>
+        </div>
         <h1>게시판</h1>
         <PostList posts={currentPosts} />
         <Pagination
