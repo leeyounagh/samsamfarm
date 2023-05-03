@@ -4,8 +4,9 @@ export const Container = styled.div`
   max-width: 1300px;
   margin: 0 auto;
   padding: 40px;
-  p {
-    text-align: right;
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
   }
 `;
 
