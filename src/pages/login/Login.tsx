@@ -1,8 +1,9 @@
 import * as Styled from "./login.styled";
+import { ChangeEvent, FormEvent, useState } from "react";
 import Input from "../../components/forms/input/Input";
-// import Button from "../../components/forms/button/Button";
-import { useState } from "react";
-import { emailValidation } from "../../utils/regExp.utils";
+import Button from "../../components/forms/button/Button";
+
+// import { emailValidation } from "../../utils/regExp.utils";
 import Checkbox from "../../components/forms/checkbox/Checkbox";
 
 export default function Login() {
@@ -17,16 +18,18 @@ export default function Login() {
     password: true,
   });
 
-  const handleChange = (e) => {
-    const { type } = e.target;
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement> | FormEvent<HTMLFormElement>
+  ) => {
+    const { type } = e.target as HTMLInputElement;
     if (type === "checkbox") {
-      const { name, checked } = e.target;
+      const { name, checked } = e.target as HTMLInputElement;
       setForms((current) => ({
         ...current,
         [name]: checked,
       }));
     } else {
-      const { name, value } = e.target;
+      const { name, value } = e.target as HTMLInputElement;
       setForms((current) => ({
         ...current,
         [name]: value.trim(),
@@ -34,8 +37,8 @@ export default function Login() {
     }
   };
 
-  const handleEmailKeyUp = (e) => {
-    const value = e.target.value;
+  const handleEmailKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const value = (e.target as HTMLInputElement).value;
     if (emailValidation(value)) {
       setValid((current) => ({
         ...current,
@@ -60,15 +63,15 @@ export default function Login() {
     alert("로그인 API");
   };
 
-  const handleFindEmailClick = (e) => {
-    e.preventDefault();
-    alert("이메일 찾기 중비중..");
-  };
+  // const handleFindEmailClick = (e: ChangeEvent<HTMLInputElement>) => {
+  //   e.preventDefault();
+  //   alert("이메일 찾기 중비중..");
+  // };
 
-  const handleFindPasswordClick = (e) => {
-    e.preventDefault();
-    alert("비밀번호 찾기 중비중..");
-  };
+  // const handleFindPasswordClick = (e: ChangeEvent<HTMLInputElement>) => {
+  //   e.preventDefault();
+  //   alert("비밀번호 찾기 중비중..");
+  // };
 
   const handleJoinClick = () => {
     alert("회원가입 페이지 이동");
@@ -118,19 +121,20 @@ export default function Login() {
         </Styled.LoginFormsValidStyled>
       )}
       <Styled.LoginButtonWrapStyled>
-        <button
+        <Button
+          id="login-button"
           disabled={forms.password === "" || forms.email === "" || !valid.email}
           onClick={handleLoginClick}
         >
           로그인
-        </button>
+        </Button>
         <Styled.LoginFindIdAndPasswordStyled>
-          <a onClick={handleFindEmailClick}>이메일 찾기</a> <span />{" "}
-          <a onClick={handleFindPasswordClick}>비밀번호 찾기</a>
+          {/* <a onClick={handleFindEmailClick}>이메일 찾기</a> <span />{" "}
+          <a onClick={handleFindPasswordClick}>비밀번호 찾기</a> */}
         </Styled.LoginFindIdAndPasswordStyled>
-        <button outline onClick={handleJoinClick}>
+        <Button id="join-button" outline onClick={handleJoinClick}>
           회원가입
-        </button>
+        </Button>
       </Styled.LoginButtonWrapStyled>
     </Styled.LoginStyled>
   );
