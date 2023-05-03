@@ -19,7 +19,7 @@ export default function Carousel() {
   const communityData = useSelector((state: RootState) => {
     return state?.community?.list;
   });
-  const [newData, setNewData] = useState<any[]>([]); // 자른 데이터 배열
+  const [newData, setNewData] = useState<any>([]); // 자른 데이터 배열
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   useEffect(() => {
