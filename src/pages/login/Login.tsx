@@ -1,6 +1,6 @@
 import * as Styled from "./login.styled";
 import Input from "../../components/forms/input/Input";
-import Button from "../../components/forms/button/Button";
+// import Button from "../../components/forms/button/Button";
 import { useState } from "react";
 import { emailValidation } from "../../utils/regExp.utils";
 import Checkbox from "../../components/forms/checkbox/Checkbox";
@@ -118,19 +118,19 @@ export default function Login() {
         </Styled.LoginFormsValidStyled>
       )}
       <Styled.LoginButtonWrapStyled>
-        <Button
+        <button
           disabled={forms.password === "" || forms.email === "" || !valid.email}
           onClick={handleLoginClick}
         >
           로그인
-        </Button>
+        </button>
         <Styled.LoginFindIdAndPasswordStyled>
           <a onClick={handleFindEmailClick}>이메일 찾기</a> <span />{" "}
           <a onClick={handleFindPasswordClick}>비밀번호 찾기</a>
         </Styled.LoginFindIdAndPasswordStyled>
-        <Button outline onClick={handleJoinClick}>
+        <button outline onClick={handleJoinClick}>
           회원가입
-        </Button>
+        </button>
       </Styled.LoginButtonWrapStyled>
     </Styled.LoginStyled>
   );
