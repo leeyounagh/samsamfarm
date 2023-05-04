@@ -80,6 +80,7 @@ export default function Carousel() {
                                 <button
                                   onClick={() => {
                                     setIsOpenModal(true);
+                                    console.log(item, "테스트");
                                     setClickedData(item);
                                   }}
                                 >
@@ -101,6 +102,7 @@ export default function Carousel() {
                                 <button
                                   onClick={() => {
                                     setIsOpenModal(true);
+                                    setClickedData(item);
                                   }}
                                 >
                                   바로가기
@@ -121,6 +123,7 @@ export default function Carousel() {
                                 <button
                                   onClick={() => {
                                     setIsOpenModal(true);
+                                    setClickedData(item);
                                   }}
                                 >
                                   바로가기
@@ -141,6 +144,7 @@ export default function Carousel() {
                                 <button
                                   onClick={() => {
                                     setIsOpenModal(true);
+                                    setClickedData(item);
                                   }}
                                 >
                                   바로가기
