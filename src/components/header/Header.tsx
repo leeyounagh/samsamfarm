@@ -41,7 +41,6 @@ export default function Header() {
           <Link to="/Login">
             <Styled.LoginButton>로그인</Styled.LoginButton>
           </Link>
-          {/* <button type="button">로그인</button> */}
           <GiHamburgerMenu
             size={45}
             onClick={() => {

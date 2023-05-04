@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import * as Styled from "./main.styled";
-import Modal from "./modal/Modal";
+import Modal from "./modal/modal";
 import MainCharacter from "../../data/mainCharacter";
 import { MainType } from "../../type/type";
 import axios from "axios";
@@ -30,7 +30,6 @@ export default function MainField() {
     setMobieData(mainData.slice(0, 4));
   }, []);
 
-  console.log(mobileData);
   return (
     <Styled.Layout>
       {mobileSize ? (

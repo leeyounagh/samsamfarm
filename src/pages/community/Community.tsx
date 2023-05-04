@@ -38,9 +38,9 @@ const Community: React.FC<BoardListProps> = ({ items = [] }) => {
             <tr key={item.id}>
               <td>{item.id}</td>
               <td>
-                <Styled.TitleLink href={`/boards/${item.id}`}>
+                {/* <Styled.TitleLink href={`/boards/${item.id}`}>
                   {item.title}
-                </Styled.TitleLink>
+                </Styled.TitleLink> */}
               </td>
               <td>{item.author}</td>
               <td>{item.date}</td>
