@@ -18,7 +18,7 @@ interface SwiperStyle extends React.CSSProperties {
 
 export default function Carousel() {
   const communityData = useSelector((state: RootState) => {
-    return state?.community?.list;
+    return state?.community;
   });
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
   const [newData, setNewData] = useState<any[]>([]); // 자른 데이터 배열
@@ -66,7 +66,7 @@ export default function Carousel() {
                   <Styled.SwiperDiv key={uuidv4()}>
                     {activeIndex === 0 ? (
                       <>
-                        {newData?.[0]?.map((item) => {
+                        {newData?.[0]?.map((item: CommunityType) => {
                           return (
                             <>
                               <Styled.InfoBox id="infobox">
