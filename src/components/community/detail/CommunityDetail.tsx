@@ -1,12 +1,16 @@
 import { Dispatch, SetStateAction } from "react";
 import * as Styled from "./communitydetail.styled";
 import { GrClose } from "react-icons/gr";
-
+import { CommunityType } from "../../../type/type";
 interface ModalType {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;
+  clickedData: CommunityType;
 }
 
-export default function CommunityDetail({ setIsOpenModal }: ModalType) {
+export default function CommunityDetail({
+  setIsOpenModal,
+  clickedData,
+}: ModalType) {
   return (
     <Styled.Layout>
       <Styled.CloseDiv
@@ -18,10 +22,11 @@ export default function CommunityDetail({ setIsOpenModal }: ModalType) {
       </Styled.CloseDiv>
 
       <Styled.TitleDiv>
-        <h1>adsfasdf</h1>
+        <h1>{clickedData?.title}</h1>
+        <h3>작성자:{clickedData?.writer}</h3>
       </Styled.TitleDiv>
       <Styled.DescDiv>
-        <h3>asdfadsf</h3>
+        <h3>{clickedData?.content}</h3>
       </Styled.DescDiv>
 
       <Styled.CommentDiv>

@@ -23,6 +23,12 @@ export default function Carousel() {
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
   const [newData, setNewData] = useState<any[]>([]); // 자른 데이터 배열
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [clickedData, setClickedData] = useState<CommunityType>({
+    title: "test",
+    content: "adfdasfa",
+    writer: "이수욘",
+    user_id: 0,
+  });
 
   useEffect(() => {
     const dataArr = [];
@@ -75,6 +81,7 @@ export default function Carousel() {
                                 <button
                                   onClick={() => {
                                     setIsOpenModal(true);
+                                    setClickedData(item);
                                   }}
                                 >
                                   바로가기
@@ -158,7 +165,12 @@ export default function Carousel() {
           })}
         </Styled.Layout>
       </Swiper>
-      {isOpenModal ? <CommunityDetail setIsOpenModal={setIsOpenModal} /> : null}
+      {isOpenModal ? (
+        <CommunityDetail
+          setIsOpenModal={setIsOpenModal}
+          clickedData={clickedData}
+        />
+      ) : null}
     </>
   );
 }
