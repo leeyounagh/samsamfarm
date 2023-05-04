@@ -203,6 +203,13 @@ const Community: React.FC = () => {
   }, [posts]);
   // 이거 왜 오류징 데헷
 
+  // enter 기능
+  function handleKeyPress(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === "Enter") {
+      handleSearchClick();
+    }
+  }
+
   const dispatch = useDispatch();
   const CommunityData = async () => {
     const response = await axios.get("./community.json");
@@ -220,15 +227,17 @@ const Community: React.FC = () => {
       <Carousel />
       <Board />
       <Styled.Container>
-        <div>
-          <input
+        <h1>게시판</h1>
+        <Styled.Search>
+          <Styled.Searchinput
             type="text"
             value={searchKeyword}
             onChange={handleSearchKeywordChange}
+            onKeyPress={handleKeyPress}
+            placeholder="제목을 입력하세요"
           />
-          <button onClick={handleSearchClick}>검색</button>
-        </div>
-        <h1>게시판</h1>
+          <Styled.SearchBtn onClick={handleSearchClick}>검색</Styled.SearchBtn>
+        </Styled.Search>
         <PostList posts={currentPosts} />
         <Pagination
           currentPage={currentPage}

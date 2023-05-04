@@ -6,7 +6,38 @@ export const Container = styled.div`
   padding: 40px;
   h1 {
     text-align: center;
-    margin-bottom: 30px;
+  }
+`;
+
+export const Search = styled.div`
+  float: right;
+  margin-bottom: 30px;
+`;
+export const Searchinput = styled.input`
+  width: 300px;
+  height: 30px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  margin-right: 10px;
+`;
+
+export const SearchBtn = styled.button`
+  padding: 8px;
+  border: none;
+  background-color: #e6b619;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    background-color: #b48a01;
+  }
+
+  &:active {
+    background-color: #a07b01;
   }
 `;
 
