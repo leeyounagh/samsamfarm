@@ -12,6 +12,10 @@ import Mbti from './pages/mbti/Mbti';
 import MyPage from './pages/mypage/MyPage';
 import Register from './pages/register/Register';
 import Introduce from './pages/story/introduce';
+import IntroduceReturnPage from './pages/story/introduceReturnPage';
+import SelectPlantPage from './pages/story/selectPlantPage';
+import PlantConfirmPage from './pages/story/plantConfirmPage';
+import PlantConfirmReturnPage from './pages/story/PlantConfirmReturnPage';
 
 function App() {
   return (
@@ -27,7 +31,10 @@ function App() {
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/introduce" element={<Introduce />} />
-        <Route path="/introduce2" element={<Introduce2 />} />
+        <Route path="/introduceReturnPage" element={<IntroduceReturnPage />} />
+        <Route path="/selectPlantPage" element={<SelectPlantPage />} />
+        <Route path="/plantConfirmPage" element={<PlantConfirmPage />} />
+        <Route path="/plantConfirmReturnPage" element={<PlantConfirmReturnPage />} />
       </Routes>
       <Footer />
     </>
