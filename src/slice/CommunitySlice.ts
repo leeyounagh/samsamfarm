@@ -8,19 +8,14 @@ const initialState: CommunityType[] = [
     writer: "test writer",
     user_id: 1234,
   },
-  // {
-  //   title: "test",
-  //   content: "test contents",
-  //   writer: "test writer",
-  //   user_id: 1234,
-  // },
 ];
+
 export const CommunityDataSlice = createSlice({
   name: "community",
   initialState,
   reducers: {
     setCommunityList: (state, action) => {
-      state = action.payload;
+      return action.payload;
     },
   },
 });

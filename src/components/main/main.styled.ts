@@ -49,7 +49,7 @@ export const FieldLayOut = styled.div`
     @media (max-width: 768px) {
       position: absolute;
       top: 13%;
-      left: 57%;
+      left: 52%;
     }
     @media (max-width: 480px) {
       position: absolute;
@@ -79,7 +79,7 @@ export const FieldLayOut = styled.div`
     @media (max-width: 768px) {
       position: absolute;
       top: 44%;
-      left: 57%;
+      left: 52%;
     }
     @media (max-width: 480px) {
       position: absolute;
@@ -178,7 +178,7 @@ export const MainPlantLayout = styled.div`
       height: 50px;
       position: absolute;
       top: 6rem;
-      left: 40%;
+      left: 38%;
     }
     @media (max-width: 480px) {
       width: 50px;
@@ -198,7 +198,7 @@ export const MainPlantLayout = styled.div`
       height: 70px;
       position: absolute;
       top: 6rem;
-      left: 67%;
+      left: 62%;
     }
     @media (max-width: 480px) {
       width: 50px;
@@ -238,7 +238,7 @@ export const MainPlantLayout = styled.div`
       height: 70px;
       position: absolute;
       top: 17rem;
-      left: 68%;
+      left: 62%;
     }
     @media (max-width: 480px) {
       width: 50px;

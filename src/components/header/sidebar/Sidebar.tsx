@@ -36,6 +36,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
                 마이페이지
               </Styled.SidebarButtonDetail>
             </Link>
+
             <Styled.SidebarButtonDetail>요건 모하징</Styled.SidebarButtonDetail>
           </Styled.SidebarButton>
         </Styled.Aside>

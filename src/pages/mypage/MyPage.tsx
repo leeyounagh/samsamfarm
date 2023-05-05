@@ -1,6 +1,4 @@
 import * as Styled from "./mypage.styled";
-import { TbArrowBigUpFilled } from "react-icons/tb";
-import { TbArrowBigDownFilled } from "react-icons/tb";
 
 export default function MyPage() {
   return (
@@ -13,37 +11,14 @@ export default function MyPage() {
           <Styled.IconBoardLayout>
             <Styled.IconBoardDiv>
               <Styled.IconDiv>
-                <Styled.IconImg src="./asset/온도계.png" />
-                <Styled.StatusDiv>
-                  <TbArrowBigUpFilled size={30} />
-                  10
-                  <TbArrowBigDownFilled size={30} />
-                </Styled.StatusDiv>
-              </Styled.IconDiv>
-              <Styled.IconDiv>
-                <Styled.IconImg src="./asset/땅.png" />
-                <Styled.StatusDiv>
-                  <TbArrowBigUpFilled size={30} />
-                  10 <TbArrowBigDownFilled size={30} />
-                </Styled.StatusDiv>
+                <Styled.IconImg src="./asset/temperature.png" />
               </Styled.IconDiv>
               <Styled.IconDiv>
                 <Styled.IconImg src="./asset/태양.png" />
-                <Styled.StatusDiv>
-                  {" "}
-                  <TbArrowBigUpFilled size={30} />
-                  10
-                  <TbArrowBigDownFilled size={30} />
-                </Styled.StatusDiv>
+                <Styled.StatusDiv></Styled.StatusDiv>
               </Styled.IconDiv>
               <Styled.IconDiv>
                 <Styled.IconImg src="./asset/물방울.png" />
-                <Styled.StatusDiv>
-                  {" "}
-                  <TbArrowBigUpFilled size={30} />
-                  10
-                  <TbArrowBigDownFilled size={30} />
-                </Styled.StatusDiv>
               </Styled.IconDiv>
             </Styled.IconBoardDiv>
           </Styled.IconBoardLayout>

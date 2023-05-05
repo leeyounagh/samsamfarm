@@ -12,6 +12,7 @@ export const SwiperDiv = styled.div`
   width: 90%;
   margin: auto;
   height: 500px;
+  z-index: 100;
   #infobox:nth-child(1n) {
     position: absolute;
     top: 31%;

@@ -30,7 +30,6 @@ export default function MainField() {
     setMobieData(mainData.slice(0, 4));
   }, []);
 
-  console.log(mobileData);
   return (
     <Styled.Layout>
       {mobileSize ? (

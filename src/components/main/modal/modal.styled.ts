@@ -7,7 +7,8 @@ export const Layout = styled.div`
   background: white;
   position: absolute;
   top: -130px;
-  left: 15%;
+  left: 14rem;
+  /* left: 15%; */
   @media (max-width: 768px) {
     position: absolute;
     top: -100px;
