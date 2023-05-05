@@ -6,7 +6,7 @@ export default function PlantConfirmPage() {
   const no = '아닌데?';
   const navigate = useNavigate();
   const yesClickHandler = () => {
-    navigate(`/selectPlantPage`);
+    navigate(`/accessPage`);
   };
   const noClickHandler = () => {
     navigate(`/plantConfirmReturnPage`);

@@ -16,6 +16,9 @@ import IntroduceReturnPage from './pages/story/introduceReturnPage';
 import SelectPlantPage from './pages/story/selectPlantPage';
 import PlantConfirmPage from './pages/story/plantConfirmPage';
 import PlantConfirmReturnPage from './pages/story/PlantConfirmReturnPage';
+import SelectMbtiPlantPage from './pages/story/SelectMbtiPlantPage';
+import AccessPage from './pages/story/accessPage';
+import PlantDescriptionPage from './pages/story/plantDescriptionPage';
 
 function App() {
   return (
@@ -35,6 +38,9 @@ function App() {
         <Route path="/selectPlantPage" element={<SelectPlantPage />} />
         <Route path="/plantConfirmPage" element={<PlantConfirmPage />} />
         <Route path="/plantConfirmReturnPage" element={<PlantConfirmReturnPage />} />
+        <Route path="/selectMbtiPlantPage" element={<SelectMbtiPlantPage />} />
+        <Route path="/accessPage" element={<AccessPage />} />
+        <Route path="/plantDescriptionPage" element={<PlantDescriptionPage />} />
       </Routes>
       <Footer />
     </>

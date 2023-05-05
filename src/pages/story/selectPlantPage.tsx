@@ -9,7 +9,7 @@ export default function SelectPlantPage() {
     navigate(`/plantConfirmPage`);
   };
   const otherPlant = () => {
-    navigate(`/plantMbtiPage`);
+    navigate(`/selectMbtiPlantPage`);
   };
 
   return (
