@@ -26,6 +26,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/community" element={<Community />} />
+
         <Route path="/mbti" element={<Mbti />} />
         <Route path="/communityupdate" element={<CommunityUpdate />} />
         <Route path="/mypage" element={<MyPage />} />
