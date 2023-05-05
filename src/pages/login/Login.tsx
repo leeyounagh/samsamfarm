@@ -2,8 +2,7 @@ import * as Styled from "./login.styled";
 import { ChangeEvent, FormEvent, useState } from "react";
 import Input from "../../components/forms/input/Input";
 import Button from "../../components/forms/button/Button";
-
-// import { emailValidation } from "../../utils/regExp.utils";
+import { emailValidation } from "../../utils/regExp.utils";
 import Checkbox from "../../components/forms/checkbox/Checkbox";
 
 export default function Login() {
@@ -63,16 +62,6 @@ export default function Login() {
     alert("로그인 API");
   };
 
-  // const handleFindEmailClick = (e: ChangeEvent<HTMLInputElement>) => {
-  //   e.preventDefault();
-  //   alert("이메일 찾기 중비중..");
-  // };
-
-  // const handleFindPasswordClick = (e: ChangeEvent<HTMLInputElement>) => {
-  //   e.preventDefault();
-  //   alert("비밀번호 찾기 중비중..");
-  // };
-
   const handleJoinClick = () => {
     alert("회원가입 페이지 이동");
   };
@@ -129,8 +118,8 @@ export default function Login() {
           로그인
         </Button>
         <Styled.LoginFindIdAndPasswordStyled>
-          {/* <a onClick={handleFindEmailClick}>이메일 찾기</a> <span />{" "}
-          <a onClick={handleFindPasswordClick}>비밀번호 찾기</a> */}
+          <a onClick={handleFindEmailClick}>이메일 찾기</a> <span />{" "}
+          <a onClick={handleFindPasswordClick}>비밀번호 찾기</a>
         </Styled.LoginFindIdAndPasswordStyled>
         <Button id="join-button" outline onClick={handleJoinClick}>
           회원가입
