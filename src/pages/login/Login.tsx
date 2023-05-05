@@ -118,10 +118,7 @@ export default function Login() {
         >
           로그인
         </Button>
-        <Styled.LoginFindIdAndPasswordStyled>
-          {/* <a onClick={handleFindEmailClick}>이메일 찾기</a> <span />{" "}
-          <a onClick={handleFindPasswordClick}>비밀번호 찾기</a> */}
-        </Styled.LoginFindIdAndPasswordStyled>
+        <Styled.LoginFindIdAndPasswordStyled></Styled.LoginFindIdAndPasswordStyled>
         <Button id="join-button" outline onClick={handleJoinClick}>
           회원가입
         </Button>

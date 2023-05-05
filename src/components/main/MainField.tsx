@@ -12,23 +12,50 @@ export default function MainField() {
   const [isMainModalOpen, setIsMainModalOpen] = useState<boolean>(false);
   const [mainData, setMainData] = useState<MainType[]>([]);
   const [userId, setUserId] = useState<number>(0);
-  const [mobileData, setMobieData] = useState<MainType[]>([]);
+  const [mobileData, setMobieData] = useState<MainType[]>([
+    {
+      visiter_id: 0,
+      contents: "asfdasd",
+      writer: "dsfasd",
+      create_at: "fdsaf",
+      delete_at: "dasfdas",
+      plants_id: 1,
+    },
+  ]);
   const mobileSize = useMediaQuery("(max-width: 768px)");
 
-  const getMainData = async () => {
-    try {
-      const response = await axios.get("/maintest.json");
-      const data = await response.data.data;
-      setMainData(data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   useEffect(() => {
+    const getMainData = async () => {
+      try {
+        const response = await axios.get("/maintest.json");
+        const data = await response.data.data;
+        setMainData(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
     getMainData();
-    setMobieData(mainData.slice(0, 4));
   }, []);
+  const plantsRenderer = (id: number | undefined) => {
+    interface PlantMapper {
+      [key: string]: string | undefined;
+    }
+
+    const mapper: PlantMapper = {
+      "1": "./asset/씨앗.png",
+      "2": "./asset/새싹.png",
+      "3": "./asset/중간새싹.png",
+      "4": "./asset/꽃.png",
+    };
+    return (
+      <Styled.MainPlantImg key={uuidv4()} src={mapper[`${id}`]} id="plants" />
+    );
+  };
+  useEffect(() => {
+    {
+      mobileSize && setMobieData(mainData.slice(0, 4));
+    }
+  }, [mobileSize, mainData]);
 
   return (
     <Styled.Layout>
@@ -44,85 +71,13 @@ export default function MainField() {
         {mobileSize ? (
           <>
             {mobileData.map((item) => {
-              return (
-                <>
-                  {item?.plants_id === 1 ? (
-                    <>
-                      <Styled.MainPlantImg
-                        key={uuidv4()}
-                        src="./asset/씨앗.png"
-                        id="plants"
-                      />
-                    </>
-                  ) : item?.plants_id === 2 ? (
-                    <>
-                      <Styled.MainPlantImg
-                        key={uuidv4()}
-                        src="./asset/새싹.png"
-                        id="plants"
-                      />
-                    </>
-                  ) : item?.plants_id === 3 ? (
-                    <>
-                      <Styled.MainPlantImg
-                        key={uuidv4()}
-                        src="./asset/중간새싹.png"
-                        id="plants"
-                      />
-                    </>
-                  ) : (
-                    <>
-                      <Styled.MainPlantImg
-                        key={uuidv4()}
-                        src="./asset/꽃.png"
-                        id="plants"
-                      />
-                    </>
-                  )}
-                </>
-              );
+              return <>{plantsRenderer(item?.plants_id)}</>;
             })}
           </>
         ) : (
           <>
             {mainData?.map((item) => {
-              return (
-                <>
-                  {item?.plants_id === 1 ? (
-                    <>
-                      <Styled.MainPlantImg
-                        key={uuidv4()}
-                        src="./asset/씨앗.png"
-                        id="plants"
-                      />
-                    </>
-                  ) : item?.plants_id === 2 ? (
-                    <>
-                      <Styled.MainPlantImg
-                        key={uuidv4()}
-                        src="./asset/새싹.png"
-                        id="plants"
-                      />
-                    </>
-                  ) : item?.plants_id === 3 ? (
-                    <>
-                      <Styled.MainPlantImg
-                        key={uuidv4()}
-                        src="./asset/중간새싹.png"
-                        id="plants"
-                      />
-                    </>
-                  ) : (
-                    <>
-                      <Styled.MainPlantImg
-                        key={uuidv4()}
-                        src="./asset/꽃.png"
-                        id="plants"
-                      />
-                    </>
-                  )}
-                </>
-              );
+              return <>{plantsRenderer(item?.plants_id)}</>;
             })}
           </>
         )}
