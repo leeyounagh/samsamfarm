@@ -12,12 +12,12 @@ export const Layout = styled.main`
 export const BoardDiv = styled.div`
   width: 80%;
   height: 100%;
-  background-image: url("./asset/마이페이지배경2.jpg");
+  background-image: url("./asset/마이페이지배경후보2.jpg");
   background-size: cover;
   display: flex;
 `;
 export const BearDiv = styled.div`
-  width: 50%;
+  width: 30%;
   height: 100%;
   display: flex;
   align-items: flex-end;
@@ -25,11 +25,11 @@ export const BearDiv = styled.div`
 `;
 export const BearImg = styled.img`
   display: flex;
-  width: 70%;
-  height: 70%;
+  width: 50%;
+  height: 50%;
 `;
 export const SensorIconDiv = styled.div`
-  width: 50%;
+  width: 70%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -41,6 +41,7 @@ export const IconBoardLayout = styled.div`
   height: 80%;
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 export const IconBoardDiv = styled.div`

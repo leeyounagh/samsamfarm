@@ -47,7 +47,6 @@ export default function Modal({
       "4": <Styled.HomePlantImg src="./asset/꽃.png" id="plants" />,
     };
 
-    // id가 undefined일 경우 default 값을 반환하도록 설정
     return mapper[id !== undefined ? `${id}` : "4"];
   };
   return (

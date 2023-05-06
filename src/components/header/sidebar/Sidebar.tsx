@@ -31,7 +31,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
             <Link to="/community">
               <Styled.SidebarButtonDetail>커뮤니티</Styled.SidebarButtonDetail>
             </Link>
-            <Styled.SidebarButtonDetail>마이페이지</Styled.SidebarButtonDetail>
+            <Link to="/mypage">
+              <Styled.SidebarButtonDetail>
+                마이페이지
+              </Styled.SidebarButtonDetail>
+            </Link>
+
             <Styled.SidebarButtonDetail>요건 모하징</Styled.SidebarButtonDetail>
           </Styled.SidebarButton>
         </Styled.Aside>
