@@ -30,18 +30,33 @@ export default function Carousel() {
   });
 
   useEffect(() => {
-    const dataArr = [];
-
-    for (let i = 0; i < 16; i += 4) {
-      dataArr.push(communityData?.slice(i, i + 4));
-      setNewData(dataArr);
-    }
+    const splitedData = Array.from({ length: 4 }, (_, index) =>
+      communityData.slice(index * 4, (index + 1) * 4)
+    );
+    setNewData(splitedData);
   }, [communityData]);
 
   function handleSlideChange(swiper: any) {
     setActiveIndex(swiper.activeIndex);
   }
-
+  const dataRenderer = (activeIndex: number) => {
+    return newData?.[activeIndex]?.map((item: CommunityType) => {
+      return (
+        <Styled.InfoBox id="infobox">
+          <h1>{item?.title}</h1>
+          <h3>글쓴이: {item?.writer}</h3>
+          <button
+            onClick={() => {
+              setIsOpenModal(true);
+              setClickedData(item);
+            }}
+          >
+            바로가기
+          </button>
+        </Styled.InfoBox>
+      );
+    });
+  };
   return (
     <>
       <Swiper
@@ -69,92 +84,7 @@ export default function Carousel() {
                   }}
                 >
                   <Styled.SwiperDiv key={uuidv4()}>
-                    {activeIndex === 0 ? (
-                      <>
-                        {newData?.[0]?.map((item: CommunityType) => {
-                          return (
-                            <>
-                              <Styled.InfoBox id="infobox">
-                                <h1>{item?.title}</h1>
-                                <h3>글쓴이: {item?.writer}</h3>
-                                <button
-                                  onClick={() => {
-                                    setIsOpenModal(true);
-                                    console.log(item, "테스트");
-                                    setClickedData(item);
-                                  }}
-                                >
-                                  바로가기
-                                </button>
-                              </Styled.InfoBox>
-                            </>
-                          );
-                        })}
-                      </>
-                    ) : activeIndex === 1 ? (
-                      <>
-                        {newData?.[1]?.map((item: CommunityType) => {
-                          return (
-                            <>
-                              <Styled.InfoBox id="infobox">
-                                <h1>{item?.title}</h1>
-                                <h3>글쓴이: {item?.writer}</h3>
-                                <button
-                                  onClick={() => {
-                                    setIsOpenModal(true);
-                                    setClickedData(item);
-                                  }}
-                                >
-                                  바로가기
-                                </button>
-                              </Styled.InfoBox>
-                            </>
-                          );
-                        })}
-                      </>
-                    ) : activeIndex === 2 ? (
-                      <>
-                        {newData?.[2]?.map((item: CommunityType) => {
-                          return (
-                            <>
-                              <Styled.InfoBox id="infobox">
-                                <h1>{item?.title}</h1>
-                                <h3>글쓴이: {item?.writer}</h3>
-                                <button
-                                  onClick={() => {
-                                    setIsOpenModal(true);
-                                    setClickedData(item);
-                                  }}
-                                >
-                                  바로가기
-                                </button>
-                              </Styled.InfoBox>
-                            </>
-                          );
-                        })}
-                      </>
-                    ) : (
-                      <>
-                        {newData?.[3]?.map((item: CommunityType) => {
-                          return (
-                            <>
-                              <Styled.InfoBox id="infobox">
-                                <h1>{item?.title}</h1>
-                                <h3>글쓴이: {item?.writer}</h3>
-                                <button
-                                  onClick={() => {
-                                    setIsOpenModal(true);
-                                    setClickedData(item);
-                                  }}
-                                >
-                                  바로가기
-                                </button>
-                              </Styled.InfoBox>
-                            </>
-                          );
-                        })}
-                      </>
-                    )}
+                    {dataRenderer(activeIndex)}
 
                     <Styled.BackgroundImg src={item.backgroundImg} />
                     <Styled.character1Img src={item.characterImg1} />

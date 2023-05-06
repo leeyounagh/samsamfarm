@@ -211,14 +211,14 @@ const Community: React.FC = () => {
   }
 
   const dispatch = useDispatch();
-  const CommunityData = async () => {
-    const response = await axios.get("./community.json");
-    const data = await response.data.data;
-
-    dispatch(setCommunityList(data));
-  };
 
   useEffect(() => {
+    const CommunityData = async () => {
+      const response = await axios.get("./community.json");
+      const data = await response.data.data;
+
+      dispatch(setCommunityList(data));
+    };
     CommunityData();
   }, []);
 

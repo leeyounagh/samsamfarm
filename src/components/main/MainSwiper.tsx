@@ -15,6 +15,7 @@ export default function MainSwiper() {
   return (
     <Styled.Layout>
       <Swiper
+        key={uuidv4()}
         style={
           {
             "--swiper-navigation-color": "black",
@@ -33,18 +34,14 @@ export default function MainSwiper() {
       >
         {Array.from({ length: 20 })
           .fill(0)
-          .map(() => {
-            return (
-              <>
-                <SwiperSlide style={{ marginLeft: "80px" }} key={uuidv4()}>
-                  <Styled.ListDiv>
-                    <Styled.ListImg src="./asset/게임.gif" />
-                    <Styled.TitleDiv>안녕하세요!</Styled.TitleDiv>
-                  </Styled.ListDiv>
-                </SwiperSlide>
-              </>
-            );
-          })}
+          .map(() => (
+            <SwiperSlide style={{ marginLeft: "80px" }} key={uuidv4()}>
+              <Styled.ListDiv key={uuidv4()}>
+                <Styled.ListImg src="./asset/게임.gif" />
+                <Styled.TitleDiv>안녕하세요!</Styled.TitleDiv>
+              </Styled.ListDiv>
+            </SwiperSlide>
+          ))}
       </Swiper>
     </Styled.Layout>
   );
