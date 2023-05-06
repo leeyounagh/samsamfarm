@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import * as Styled from "./modal.styled";
 import { GrClose } from "react-icons/gr";
 import { MainType } from "../../../type/type";
@@ -12,34 +12,19 @@ type ModalType = {
   userId?: number;
 };
 
+interface PlantMapper {
+  [key: string]: JSX.Element | undefined;
+}
+
 export default function Modal({
   isMainModalOpen,
   setIsMainModalOpen,
   mainData,
-
   userId,
 }: ModalType) {
-  const [userInfo, setUserInfo] = useState<MainType>({
-    visiter_id: 0,
-    contents: "asfdasd",
-    writer: "dsfasd",
-    create_at: "fdsaf",
-    delete_at: "dasfdas",
-    plants_id: 1,
-  });
   const mobileSize = useMediaQuery("(max-width: 768px)");
 
-  useEffect(() => {
-    if (mainData && userId) {
-      setUserInfo(mainData[userId]);
-    }
-  }, [mainData, userId, setUserInfo]);
-
-  const plantsRenderer = (id: number | undefined = userInfo?.plants_id) => {
-    interface PlantMapper {
-      [key: string]: JSX.Element | undefined;
-    }
-
+  const plantsRenderer = (id: number) => {
     const mapper: PlantMapper = {
       "1": <Styled.HomePlantImg src="./asset/씨앗.png" id="plants" />,
       "2": <Styled.HomePlantImg src="./asset/새싹.png" id="plants" />,
@@ -98,7 +83,9 @@ export default function Modal({
           />
         ) : null}
         <Styled.GridImg src="./asset/밭누끼.png" width="100%" height="100%" />
-        {plantsRenderer()}
+        {plantsRenderer(
+          mainData && userId !== undefined ? mainData[userId].plants_id : 1
+        )}
       </Styled.FieldDiv>
       <Styled.CommentLayout>
         <Styled.MobileCommentLayout>
