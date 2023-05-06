@@ -9,14 +9,14 @@ import CommunityUpdate from "./pages/communityupdate/CommunityUpdate";
 import Mbti from "./pages/mbti/Mbti";
 import MyPage from "./pages/mypage/MyPage";
 import Register from "./pages/register/Register";
-import Introduce from "./pages/story/introduce";
-import IntroduceReturnPage from "./pages/story/introduceReturnPage";
-import SelectPlantPage from "./pages/story/selectPlantPage";
-import PlantConfirmPage from "./pages/story/plantConfirmPage";
-import PlantConfirmReturnPage from "./pages/story/plantConfirmReturnPage";
-import SelectMbtiPlantPage from "./pages/story/selectMbtiPlantPage";
-import AccessPage from "./pages/story/accessPage";
-import PlantDescriptionPage from "./pages/story/plantDescriptionPage";
+import Introduce from "./pages/story/Introduce";
+import IntroduceReturnPage from "./pages/story/IntroduceReturnPage";
+import SelectPlantPage from "./pages/story/SelectPlantPage";
+import PlantConfirmPage from "./pages/story/PlantConfirmPage";
+import PlantConfirmReturnPage from "./pages/story/PlantConfirmReturnPage";
+import SelectMbtiPlantPage from "./pages/story/SelectMbtiPlantPage";
+import AccessPage from "./pages/story/AccessPage";
+import PlantDescriptionPage from "./pages/story/PlantDescriptionPage";
 
 function App() {
   return (
