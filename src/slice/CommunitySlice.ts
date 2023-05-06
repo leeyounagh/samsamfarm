@@ -14,7 +14,7 @@ export const CommunityDataSlice = createSlice({
   name: "community",
   initialState,
   reducers: {
-    setCommunityList: (state, action) => {
+    setCommunityList: (_state, action) => {
       return action.payload;
     },
   },
