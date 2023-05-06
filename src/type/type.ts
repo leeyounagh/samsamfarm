@@ -13,3 +13,8 @@ export interface CommunityType {
   writer: string;
   user_id: number;
 }
+
+export interface MbtiType {
+  mbti: string;
+  description: string;
+}
