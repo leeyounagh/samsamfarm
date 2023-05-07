@@ -51,7 +51,7 @@ export const IconDiv = styled.div`
 `;
 export const IconImg = styled.img`
   z-index: 50;
-  width: 100px;
+  width: 15%;
   height: 100px;
   margin-top: 30px;
 `;
