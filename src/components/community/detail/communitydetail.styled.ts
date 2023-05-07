@@ -22,6 +22,9 @@ export const TitleDiv = styled.div`
   text-align: center;
   padding-top: 30px;
   margin-top: 30px;
+  h3 {
+    margin-top: 15px;
+  }
 `;
 
 export const CloseDiv = styled.div`
@@ -34,7 +37,7 @@ export const DescDiv = styled.div`
   background-color: white;
   opacity: 0.6;
   width: 80%;
-  height: 30vh;
+  height: 20vh;
   text-align: center;
   padding-top: 30px;
 `;
