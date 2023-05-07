@@ -5,7 +5,6 @@ import "swiper/css/navigation";
 import * as Styled from "./carousel.styled";
 import CommunityImg from "../../data/CommunityImg";
 import { v4 as uuidv4 } from "uuid";
-// import required modules
 import { Navigation } from "swiper";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
