@@ -245,7 +245,7 @@ const Community: React.FC = () => {
           totalPages={totalPages}
           onPageChange={handlePageChange}
         />
-        <Link to="/Login">
+        <Link to="/CommunityUpdate">
           <Styled.WritingBtn> 글쓰기 </Styled.WritingBtn>
         </Link>
       </Styled.Container>
