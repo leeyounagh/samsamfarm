@@ -198,7 +198,7 @@ const Community: React.FC = () => {
   };
 
   // 초기 게시글 목록 설정
-  useState(() => {
+  useEffect(() => {
     setFilteredPosts(posts);
   }, [posts]);
   // 이거 왜 오류징 데헷
