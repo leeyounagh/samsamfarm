@@ -87,3 +87,20 @@ export const PaginationButton = styled.button<{ active?: boolean }>`
     cursor: not-allowed;
   }
 `;
+
+export const WritingBtn = styled.button`
+  padding: 8px;
+  border: none;
+  background-color: #e6b619;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  /* margin: 0 30px 30px 0; */
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #b48a01;
+  }
+  float: right;
+`;
