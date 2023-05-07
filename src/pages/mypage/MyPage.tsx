@@ -5,13 +5,20 @@ import { useState } from "react";
 
 export default function MyPage() {
   const [isOpenStatus, setIsOpenStatus] = useState<boolean>(false);
+  const [isOpenUserInfo, setIsOpenUserInfo] = useState<boolean>(false);
   return (
     <Styled.Layout>
       <Styled.BackgroundDiv>
         <Styled.UILayout>
           <Styled.CharacterDiv>
             <Styled.CharacterImg src="./asset/님피아.gif" />
-            <button>내정보</button>
+            <button
+              onClick={() => {
+                setIsOpenUserInfo(true);
+              }}
+            >
+              내정보
+            </button>
           </Styled.CharacterDiv>
 
           <Styled.ConsoleDiv>
@@ -51,6 +58,10 @@ export default function MyPage() {
           </Styled.ConsoleDiv>
         </Styled.UILayout>
       </Styled.BackgroundDiv>
+      {isOpenUserInfo ? (
+        <UserInfo setIsOpenUserInfo={setIsOpenUserInfo} />
+      ) : null}
+
       {isOpenStatus ? <StatusInfo setIsOpenStatus={setIsOpenStatus} /> : null}
     </Styled.Layout>
   );
