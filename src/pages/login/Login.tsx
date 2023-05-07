@@ -2,8 +2,6 @@ import * as Styled from "./login.styled";
 import { ChangeEvent, FormEvent, useState } from "react";
 import Input from "../../components/forms/input/Input";
 import Button from "../../components/forms/button/Button";
-
-// import { emailValidation } from "../../utils/regExp.utils";
 import Checkbox from "../../components/forms/checkbox/Checkbox";
 
 export default function Login() {
