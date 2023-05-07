@@ -42,7 +42,10 @@ export default function Carousel() {
     return newData?.[activeIndex]?.map((item: CommunityType) => {
       return (
         <Styled.InfoBox id="infobox">
-          <h1>{item?.title}</h1>
+          <h1>
+            제목:
+            {item?.title.length > 8 ? item?.title.substring(0, 6) : item?.title}
+          </h1>
           <h3>글쓴이: {item?.writer}</h3>
           <button
             onClick={() => {

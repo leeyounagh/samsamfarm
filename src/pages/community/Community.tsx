@@ -218,7 +218,7 @@ const Community: React.FC = () => {
       const response = await axios.get("./community.json");
       const data = await response.data.data;
 
-      dispatch(setCommunityList(data));
+      dispatch(setCommunityList(data.reverse()));
     };
     CommunityData();
   }, []);

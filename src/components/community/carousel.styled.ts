@@ -88,4 +88,14 @@ export const InfoBox = styled.div`
   height: 120px;
   background-color: white;
   text-align: center;
+  opacity: 0.8;
+  h1 {
+    font-size: 1.2rem;
+    height: 30%;
+    padding-top: 10px;
+  }
+  h3 {
+    font-size: 1rem;
+    height: 30%;
+  }
 `;
