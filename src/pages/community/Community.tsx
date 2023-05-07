@@ -5,6 +5,7 @@ import Carousel from "../../components/community/Carousel";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setCommunityList } from "../../slice/CommunitySlice";
+import { Link } from "react-router-dom";
 
 interface Post {
   id: number;
@@ -129,37 +130,37 @@ const posts: PostList = [
   },
   {
     id: 6,
-    title: "두 번째 게시글",
+    title: "여슷 번째 게시글",
     author: "김철수",
     date: "2022-01-02",
   },
   {
     id: 7,
-    title: "두 번째 게시글",
+    title: "이힐곱 번째 게시글",
     author: "김철수",
     date: "2022-01-02",
   },
   {
     id: 8,
-    title: "두 번째 게시글",
+    title: "여더럴 번째 게시글",
     author: "김철수",
     date: "2022-01-02",
   },
   {
     id: 9,
-    title: "두 번째 게시글",
+    title: "구 번째 게시글",
     author: "김철수",
     date: "2022-01-02",
   },
   {
     id: 10,
-    title: "두 번째 게시글",
+    title: "이열 번째 게시글",
     author: "김철수",
     date: "2022-01-02",
   },
   {
     id: 11,
-    title: "두 번째 게시글",
+    title: "이열하나 번째 게시글",
     author: "김철수",
     date: "2022-01-02",
   },
@@ -244,6 +245,9 @@ const Community: React.FC = () => {
           totalPages={totalPages}
           onPageChange={handlePageChange}
         />
+        <Link to="/CommunityUpdate">
+          <Styled.WritingBtn> 글쓰기 </Styled.WritingBtn>
+        </Link>
       </Styled.Container>
     </div>
   );
