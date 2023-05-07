@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { MbtiType } from "../../type/type";
 
 export default function PlantDesriptionPage() {
@@ -26,16 +26,16 @@ export default function PlantDesriptionPage() {
   // 해당하는 mbti에 맞는 key값을 mbtiDesc에서 찾고, 그 값에 해당하는 로직을 렌더링 하면 될것 같아요!
   //  리덕스 세팅 관련하여 혹시라도 모르시는 부분 있으면 세팅 같이 도와드릴게요! 꼭 질문 부탁드립니다.
 
-  const yesClickHandler = () => {
-    navigate(`/accessPage`);
-  };
-  const NoClickHandler = () => {
-    navigate(`/accessPage`);
-  };
+  // const yesClickHandler = () => {
+  //   navigate(`/accessPage`);
+  // };
+  // const NoClickHandler = () => {
+  //   navigate(`/accessPage`);
+  // };
 
   return (
     <div>
-      <div>이미지</div>
+      <div>{mbtiDesc[0].mbti}</div>
       <div>글</div>
       <div>선택1</div>
       <div>선택2</div>
