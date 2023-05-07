@@ -58,7 +58,7 @@ export const IconImg = styled.img`
 export const ConsoleInnerDiv = styled.div`
   width: 80%;
   height: 100%;
-  background-image: url("./asset/게임기누끼.png");
+  background-image: url("./asset/게임기누끼2.png");
   background-size: 100% 100%;
 `;
 export const StatusDiv = styled.div`
@@ -72,7 +72,7 @@ export const StatusTextDiv = styled.div`
   h2 {
     margin-right: 10px;
     margin-bottom: 100px;
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 `;
 export const CharacterDiv = styled.div`

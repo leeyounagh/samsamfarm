@@ -1,6 +1,6 @@
 import * as Styled from "./mypage.styled";
 import UserInfo from "../../components/mypage/userinfo/UserInfo";
-import StatusInfo from "../../components/mypage/statusinfo/SatatusInfo";
+import StatusInfo from "../../components/mypage/statusinfo/StatusInfo";
 import { useState } from "react";
 
 export default function MyPage() {
@@ -37,7 +37,7 @@ export default function MyPage() {
                   }}
                 />
                 <Styled.IconImg
-                  src="./asset/물방울.png"
+                  src="./asset/습도1.png"
                   onClick={() => {
                     setIsOpenStatus(true);
                   }}
