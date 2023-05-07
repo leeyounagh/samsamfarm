@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { MbtiType } from "../../type/type";
 
 export default function PlantDesriptionPage() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [mbtiDesc, setMbtiDesc] = useState<MbtiType[]>([
     {
       mbti: "ISTJ",
