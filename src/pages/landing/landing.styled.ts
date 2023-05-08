@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const Layout = styled.main`
   width: 100%;
-  /* border: 1px solid black; */
-  height: 100vh;
 `;
 
 export const TitleDiv = styled.div`
@@ -30,9 +28,17 @@ export const Title = styled.h1`
   border-right: 3px solid;
   height: 60%;
   width: 24ch;
+  @media (max-width: 1024px) {
+    height: 20%;
+    font-size: 3rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
   @media (max-width: 768px) {
     height: 30%;
+    font-size: 1.5rem;
   }
+
   font-family: "bitbit";
   src: url("//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff"),
     url("//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff2");

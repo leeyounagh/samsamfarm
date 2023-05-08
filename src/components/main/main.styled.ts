@@ -22,6 +22,12 @@ export const BackGroundImg = styled.img`
   position: absolute;
   left: 20%;
   z-index: 10;
+  @media (max-width: 1024px) {
+    height: 50rem;
+  }
+  @media (max-width: 768px) {
+    height: 10rem;
+  }
 `;
 
 export const FieldLayOut = styled.div`
@@ -44,6 +50,10 @@ export const FieldDiv = styled.div`
   z-index: 10;
   height: 25%;
   margin-right: 100px;
+  @media (max-width: 1024px) {
+    width: 25%;
+    height: 10%;
+  }
 
   @media (max-width: 768px) {
     width: 30%;
@@ -99,8 +109,12 @@ export const FieldLayoutDiv = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-
   padding-left: 100px;
+  @media (max-width: 1024px) {
+    height: 50rem;
+    width: 60%;
+    padding-top: 100px;
+  }
 `;
 export const BtnStyle = styled.button`
   font-weight: 600;
@@ -169,7 +183,6 @@ export const MobileMaiBackgroundImg = styled.img`
 `;
 
 export const MobileInnerLayout = styled.div`
-  border: 2px solid blue;
   z-index: 10;
   display: flex;
   justify-content: center;
@@ -180,5 +193,6 @@ export const MobileInnerLayout = styled.div`
   @media (max-width: 768px) {
     width: 80%;
     height: 80%;
+    padding-left: 50px;
   }
 `;

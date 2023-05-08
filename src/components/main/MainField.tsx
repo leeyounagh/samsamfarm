@@ -108,6 +108,7 @@ export default function MainField() {
                   <Styled.MainPlantLayout>
                     {plantsRenderer(mainData[index]?.plants_id)}
                   </Styled.MainPlantLayout>
+
                   <img
                     src="./asset/밭누끼.png"
                     width="100%"
