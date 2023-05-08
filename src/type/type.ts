@@ -8,10 +8,13 @@ export interface MainType {
 }
 
 export interface CommunityType {
+  id: number;
   title: string;
   content: string;
   writer: string;
-  user_id: number;
+  date: string;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface MbtiType {

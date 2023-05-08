@@ -59,35 +59,33 @@ export default function MainField() {
 
   return (
     <Styled.Layout>
-      {mobileSize ? (
-        <Styled.MobileLayout>
-          <Styled.MobileMaiBackgroundImg src="./asset/모바일배경.jpg" />
-        </Styled.MobileLayout>
-      ) : (
+      {mobileSize ? null : (
         <Styled.BackGroundImg src="./asset/메인농장후보.jpg" />
       )}
 
-      <Styled.MainPlantLayout>
-        {/* {mobileSize
-          ? mobileData.map((item) => {
-              return plantsRenderer(item?.plants_id);
-            })
-          : mainData?.map((item) => {
-              return plantsRenderer(item?.plants_id);
-            })} */}
-      </Styled.MainPlantLayout>
-
       <Styled.FieldLayOut>
         {mobileSize ? (
-          <Styled.FieldDiv>
-            {MobileCharacter?.map((item) => (
-              <Styled.FieldDiv key={item.id}>
-                <Styled.TitleDiv>
-                  <Styled.CharacterImg
-                    src={item.img}
-                    width="60rem"
-                    height="60rem"
-                  />
+          <Styled.MobileLayout>
+            <Styled.MobileMaiBackgroundImg src="./asset/모바일배경.jpg" />
+            <Styled.MobileInnerLayout>
+              {MobileCharacter?.map((item, index) => (
+                <Styled.FieldDiv key={item.id}>
+                  <Styled.TitleDiv>
+                    <Styled.CharacterImg
+                      src={item.img}
+                      width="60rem"
+                      height="60rem"
+                    />
+                    <Styled.MainPlantLayout>
+                      {plantsRenderer(mobileData[index]?.plants_id)}
+                    </Styled.MainPlantLayout>
+                    <img
+                      src="./asset/밭누끼.png"
+                      width="100%"
+                      height="100%"
+                      style={{ position: "absolute" }}
+                    ></img>
+                  </Styled.TitleDiv>
                   <button
                     id={`button-${item.id}`}
                     onClick={() => {
@@ -97,23 +95,25 @@ export default function MainField() {
                   >
                     놀러가기
                   </button>
-                </Styled.TitleDiv>
-              </Styled.FieldDiv>
-            ))}
-          </Styled.FieldDiv>
+                </Styled.FieldDiv>
+              ))}
+            </Styled.MobileInnerLayout>
+          </Styled.MobileLayout>
         ) : (
           <Styled.FieldLayoutDiv>
             {MainCharacter?.map((item, index) => (
               <Styled.FieldDiv key={item.id} id="item">
                 <Styled.TitleDiv>
-                  <Styled.CharacterImg
-                    src={item.img}
-                    width="60rem"
-                    height="60rem"
-                  />
+                  <Styled.CharacterImg src={item.img} />
                   <Styled.MainPlantLayout>
-                    {plantsRenderer(mainData[index].plants_id)}
+                    {plantsRenderer(mainData[index]?.plants_id)}
                   </Styled.MainPlantLayout>
+                  <img
+                    src="./asset/밭누끼.png"
+                    width="100%"
+                    height="100%"
+                    style={{ position: "absolute" }}
+                  ></img>
                 </Styled.TitleDiv>
                 <Styled.BtnStyle
                   id={`button-${item.id}`}

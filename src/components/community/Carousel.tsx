@@ -22,10 +22,13 @@ export default function Carousel() {
   const [newData, setNewData] = useState<any[]>([]); // 자른 데이터 배열
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [clickedData, setClickedData] = useState<CommunityType>({
+    id: 0,
     title: "test",
-    content: "adfdasfa",
-    writer: "이수욘",
-    user_id: 0,
+    content: "test contents",
+    writer: "test writer",
+    date: "2023-05-09",
+    created_at: "2023-05-09",
+    updated_at: "2023-05-09",
   });
 
   useEffect(() => {

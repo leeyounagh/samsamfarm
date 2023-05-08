@@ -8,7 +8,9 @@ export const Layout = styled.main`
 `;
 
 export const MobileLayout = styled.main`
-  width: 100%;
+  width: 80%;
+  height: 100%;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,15 +31,27 @@ export const FieldLayOut = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const FieldDiv = styled.div`
-  width: 14%;
+  position: relative;
+  width: 13%;
   z-index: 10;
   height: 25%;
   margin-right: 100px;
-  background-image: url("./asset/밭누끼.png");
-  background-size: cover;
+
+  @media (max-width: 768px) {
+    width: 30%;
+    height: 30%;
+    margin-right: 50px;
+    margin-left: 10px;
+  }
+
   @media (max-width: 480px) {
     width: 6rem;
     z-index: 10;
@@ -46,8 +60,9 @@ export const FieldDiv = styled.div`
 `;
 
 export const CharacterImg = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 4rem;
+  height: 4rem;
+  z-index: 10;
   @media (max-width: 768px) {
     width: 70px;
     height: 70px;
@@ -75,6 +90,7 @@ export const TitleDiv = styled.div`
 
 export const MainPlantLayout = styled.div`
   width: 100rem;
+  z-index: 10;
 `;
 export const FieldLayoutDiv = styled.div`
   width: 60%;
@@ -93,7 +109,7 @@ export const BtnStyle = styled.button`
   padding: 1.25em 2em;
   margin-bottom: 10px;
   width: 100%;
-  height: 50px;
+  height: 60%;
   background: white;
   border: 2px solid;
   border-radius: 0.75em;
@@ -143,10 +159,26 @@ export const BtnStyle = styled.button`
 `;
 
 export const MobileMaiBackgroundImg = styled.img`
-  width: 30rem;
-  height: 30rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
   @media (max-width: 480px) {
     width: 20rem;
     height: 23rem;
+  }
+`;
+
+export const MobileInnerLayout = styled.div`
+  border: 2px solid blue;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 80%;
+  @media (max-width: 768px) {
+    width: 80%;
+    height: 80%;
   }
 `;
