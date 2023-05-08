@@ -74,13 +74,13 @@ function Board() {
 
   // 검색 버튼 클릭 핸들러 함수
   const handleSearchClick = () => {
-    const searchResult = communityData?.filter((test: any) =>
-      test.title.includes(searchKeyword)
+    const searchResult = communityData?.filter((data: any) =>
+      data.title.includes(searchKeyword)
     );
     setFilteredPosts(searchResult);
     setCurrentPage(1);
   };
-  console.log(totalPages);
+
   // enter 기능
   function handleKeyPress(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Enter") {
