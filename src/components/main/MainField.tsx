@@ -59,74 +59,76 @@ export default function MainField() {
 
   return (
     <Styled.Layout>
-      {mobileSize ? (
-        <Styled.MobileLayout>
-          <Styled.MobileMaiBackgroundImg src="./asset/모바일배경.jpg" />
-        </Styled.MobileLayout>
-      ) : (
-        <Styled.BackGroundImg src="./asset/배경.png" />
+      {mobileSize ? null : (
+        <Styled.BackGroundImg src="./asset/메인농장후보.jpg" />
       )}
 
-      <Styled.MainPlantLayout>
-        {mobileSize
-          ? mobileData.map((item) => {
-              return plantsRenderer(item?.plants_id);
-            })
-          : mainData?.map((item) => {
-              return plantsRenderer(item?.plants_id);
-            })}
-      </Styled.MainPlantLayout>
-
       <Styled.FieldLayOut>
-        {mobileSize
-          ? MobileCharacter?.map((item) => {
-              return (
-                <Styled.FieldDiv id="item" key={uuidv4()}>
+        {mobileSize ? (
+          <Styled.MobileLayout>
+            <Styled.MobileMaiBackgroundImg src="./asset/모바일배경.jpg" />
+            <Styled.MobileInnerLayout>
+              {MobileCharacter?.map((item, index) => (
+                <Styled.FieldDiv key={item.id}>
                   <Styled.TitleDiv>
                     <Styled.CharacterImg
                       src={item.img}
                       width="60rem"
                       height="60rem"
-                      key={uuidv4()}
                     />
-                    <button
-                      id="button"
-                      key={uuidv4()}
-                      onClick={() => {
-                        setIsMainModalOpen(!isMainModalOpen);
-                        setUserId(item.id);
-                      }}
-                    >
-                      놀러가기
-                    </button>
+                    <Styled.MainPlantLayout>
+                      {plantsRenderer(mobileData[index]?.plants_id)}
+                    </Styled.MainPlantLayout>
+                    <img
+                      src="./asset/밭누끼.png"
+                      width="100%"
+                      height="100%"
+                      style={{ position: "absolute" }}
+                    ></img>
                   </Styled.TitleDiv>
+                  <button
+                    id={`button-${item.id}`}
+                    onClick={() => {
+                      setIsMainModalOpen(!isMainModalOpen);
+                      setUserId(item.id);
+                    }}
+                  >
+                    놀러가기
+                  </button>
                 </Styled.FieldDiv>
-              );
-            })
-          : MainCharacter?.map((item) => {
-              return (
-                <Styled.FieldDiv id="item" key={uuidv4()}>
-                  <Styled.TitleDiv>
-                    <Styled.CharacterImg
-                      src={item.img}
-                      width="60rem"
-                      height="60rem"
-                      key={uuidv4()}
-                    />
-                    <Styled.BtnStyle
-                      id="button"
-                      key={uuidv4()}
-                      onClick={() => {
-                        setIsMainModalOpen(!isMainModalOpen);
-                        setUserId(item.id);
-                      }}
-                    >
-                      놀러가기
-                    </Styled.BtnStyle>
-                  </Styled.TitleDiv>
-                </Styled.FieldDiv>
-              );
-            })}
+              ))}
+            </Styled.MobileInnerLayout>
+          </Styled.MobileLayout>
+        ) : (
+          <Styled.FieldLayoutDiv>
+            {MainCharacter?.map((item, index) => (
+              <Styled.FieldDiv key={item.id} id="item">
+                <Styled.TitleDiv>
+                  <Styled.CharacterImg src={item.img} />
+                  <Styled.MainPlantLayout>
+                    {plantsRenderer(mainData[index]?.plants_id)}
+                  </Styled.MainPlantLayout>
+
+                  <img
+                    src="./asset/밭누끼.png"
+                    width="100%"
+                    height="100%"
+                    style={{ position: "absolute" }}
+                  ></img>
+                </Styled.TitleDiv>
+                <Styled.BtnStyle
+                  id={`button-${item.id}`}
+                  onClick={() => {
+                    setIsMainModalOpen(!isMainModalOpen);
+                    setUserId(item.id);
+                  }}
+                >
+                  놀러가기
+                </Styled.BtnStyle>
+              </Styled.FieldDiv>
+            ))}
+          </Styled.FieldLayoutDiv>
+        )}
       </Styled.FieldLayOut>
       {isMainModalOpen ? (
         <Modal

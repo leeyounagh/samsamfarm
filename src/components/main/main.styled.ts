@@ -8,7 +8,9 @@ export const Layout = styled.main`
 `;
 
 export const MobileLayout = styled.main`
-  width: 100%;
+  width: 80%;
+  height: 100%;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,105 +18,50 @@ export const MobileLayout = styled.main`
 
 export const BackGroundImg = styled.img`
   width: 60%;
-  height: 100%;
+  height: 35rem;
   position: absolute;
   left: 20%;
   z-index: 10;
+  @media (max-width: 1024px) {
+    height: 50rem;
+  }
+  @media (max-width: 768px) {
+    height: 10rem;
+  }
 `;
 
 export const FieldLayOut = styled.div`
-  width: 100rem;
-
+  width: 100%;
+  height: 60vh;
   z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  #item:nth-child(1n) {
-    position: absolute;
-    top: 20%;
-    left: 27%;
-    @media (max-width: 768px) {
-      position: absolute;
-      top: 13%;
-      left: 27%;
-    }
-    @media (max-width: 480px) {
-      position: absolute;
-      top: 13%;
-      left: 18%;
-    }
-  }
-  #item:nth-child(2n) {
-    position: absolute;
-    top: 20%;
-    left: 38%;
-    @media (max-width: 768px) {
-      position: absolute;
-      top: 13%;
-      left: 52%;
-    }
-    @media (max-width: 480px) {
-      position: absolute;
-      top: 13%;
-      left: 54%;
-    }
-  }
-  #item:nth-child(3n) {
-    position: absolute;
-    top: 55%;
-    left: 27%;
-    @media (max-width: 768px) {
-      position: absolute;
-      top: 44%;
-      left: 28%;
-    }
-    @media (max-width: 480px) {
-      position: absolute;
-      top: 12rem;
-      left: 18%;
-    }
-  }
-  #item:nth-child(4n) {
-    position: absolute;
-    top: 55%;
-    left: 38%;
-    @media (max-width: 768px) {
-      position: absolute;
-      top: 44%;
-      left: 52%;
-    }
-    @media (max-width: 480px) {
-      position: absolute;
-      top: 12rem;
-      left: 54%;
-    }
-  }
-  #item:nth-child(5n) {
-    position: absolute;
-    top: 20%;
-    left: 57%;
-  }
-  #item:nth-child(6n) {
-    position: absolute;
-    top: 20%;
-    left: 68%;
-  }
-  #item:nth-child(7n) {
-    position: absolute;
-    top: 55%;
-    left: 68%;
-  }
-  #item:nth-child(8n) {
-    position: absolute;
-    top: 55%;
-    left: 57%;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
   }
 `;
 
 export const FieldDiv = styled.div`
-  width: 8rem;
+  position: relative;
+  width: 13%;
   z-index: 10;
-  height: 100px;
-  background-image: url("./asset/밭누끼.png");
-  background-size: cover;
+  height: 25%;
+  margin-right: 100px;
+  @media (max-width: 1024px) {
+    width: 25%;
+    height: 10%;
+  }
+
+  @media (max-width: 768px) {
+    width: 30%;
+    height: 30%;
+    margin-right: 50px;
+    margin-left: 10px;
+  }
+
   @media (max-width: 480px) {
     width: 6rem;
     z-index: 10;
@@ -123,6 +70,9 @@ export const FieldDiv = styled.div`
 `;
 
 export const CharacterImg = styled.img`
+  width: 4rem;
+  height: 4rem;
+  z-index: 10;
   @media (max-width: 768px) {
     width: 70px;
     height: 70px;
@@ -137,150 +87,43 @@ export const CharacterImg = styled.img`
 `;
 
 export const MainPlantImg = styled.img`
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
 `;
 
 export const TitleDiv = styled.div`
-  height: 20vh;
-
-  button {
-    position: absolute;
-    top: 100px;
-    left: 5px;
-    width: 8rem;
-    height: 4rem;
-    cursor: pointer;
-    @media (max-width: 768px) {
-      width: 130px;
-      height: 50px;
-    }
-    @media (max-width: 480px) {
-      height: 5vh;
-      width: 100px;
-      height: 30px;
-      position: absolute;
-      top: 80px;
-    }
-  }
+  height: 13vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const MainPlantLayout = styled.div`
   width: 100rem;
-
-  #plants:nth-child(1n) {
-    position: absolute;
-    top: 22%;
-    left: 30%;
-    z-index: 100;
-    @media (max-width: 768px) {
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      top: 6rem;
-      left: 38%;
-    }
-    @media (max-width: 480px) {
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      top: 5rem;
-      left: 8rem;
-    }
-  }
-  #plants:nth-child(2n) {
-    position: absolute;
-    top: 22%;
-    left: 41%;
-    z-index: 100;
-    @media (max-width: 768px) {
-      width: 70px;
-      height: 70px;
-      position: absolute;
-      top: 6rem;
-      left: 62%;
-    }
-    @media (max-width: 480px) {
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      top: 5rem;
-      left: 16rem;
-    }
-  }
-  #plants:nth-child(3n) {
-    position: absolute;
-    top: 57%;
-    left: 30%;
-    z-index: 100;
-    @media (max-width: 768px) {
-      width: 70px;
-      height: 70px;
-      position: absolute;
-      top: 16.5rem;
-      left: 38%;
-    }
-    @media (max-width: 480px) {
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      top: 13rem;
-      left: 8rem;
-    }
-  }
-  #plants:nth-child(4n) {
-    position: absolute;
-    top: 57%;
-    left: 41%;
-    z-index: 100;
-    @media (max-width: 768px) {
-      width: 70px;
-      height: 70px;
-      position: absolute;
-      top: 17rem;
-      left: 62%;
-    }
-    @media (max-width: 480px) {
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      top: 13rem;
-      left: 16rem;
-    }
-  }
-  #plants:nth-child(5n) {
-    position: absolute;
-    top: 22%;
-    left: 60%;
-    z-index: 100;
-  }
-  #plants:nth-child(6n) {
-    position: absolute;
-    top: 22%;
-    left: 71%;
-    z-index: 100;
-  }
-  #plants:nth-child(7n) {
-    position: absolute;
-    top: 57%;
-    left: 71%;
-    z-index: 100;
-  }
-  #plants:nth-child(8n) {
-    position: absolute;
-    top: 57%;
-    left: 60%;
-    z-index: 100;
+  z-index: 10;
+`;
+export const FieldLayoutDiv = styled.div`
+  width: 60%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 100px;
+  @media (max-width: 1024px) {
+    height: 50rem;
+    width: 60%;
+    padding-top: 100px;
   }
 `;
-
 export const BtnStyle = styled.button`
   font-weight: 600;
   color: #b3933b;
   text-transform: uppercase;
   padding: 1.25em 2em;
   margin-bottom: 10px;
-  height: 50px;
+  width: 100%;
+  height: 60%;
   background: white;
   border: 2px solid;
   border-radius: 0.75em;
@@ -300,13 +143,7 @@ export const BtnStyle = styled.button`
       width: 100px;
       height: 100px;
     }
-    /* @media (max-width: 480px) {
-      width: 70px;
-      height: 70px;
-      position: absolute;
-      top: 58%;
-      left: 66%;
-    } */
+
     top: 0;
     left: 0;
     right: 0;
@@ -336,10 +173,26 @@ export const BtnStyle = styled.button`
 `;
 
 export const MobileMaiBackgroundImg = styled.img`
-  width: 30rem;
-  height: 30rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
   @media (max-width: 480px) {
     width: 20rem;
     height: 23rem;
+  }
+`;
+
+export const MobileInnerLayout = styled.div`
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 80%;
+  @media (max-width: 768px) {
+    width: 80%;
+    height: 80%;
+    padding-left: 50px;
   }
 `;
