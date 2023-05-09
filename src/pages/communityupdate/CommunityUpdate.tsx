@@ -8,9 +8,10 @@ const CommunityUpdate = () => {
 
   const handleSubmit = async () => {
     try {
-      await axios.post("/api/posts", {
-        title,
-        content,
+      await axios.post("http://34.64.51.215/samsamfarm/api/article", {
+        title: title,
+        content: content,
+        user_id: 1,
       });
       alert("글이 작성되었습니다.");
       window.location.href = "/";

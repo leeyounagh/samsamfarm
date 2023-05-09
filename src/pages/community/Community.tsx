@@ -10,8 +10,10 @@ import { Link } from "react-router-dom";
 interface Post {
   id: number;
   title: string;
-  author: string;
+  writer: string;
   date: string;
+  created_at: string;
+  updated_at: string;
 }
 
 //검색
@@ -86,8 +88,8 @@ const PostList: React.FC<PostListProps> = ({ posts }) => {
             <Styled.TableRow key={post.id}>
               <Styled.TableData>{post.id}</Styled.TableData>
               <Styled.TableData>{post.title}</Styled.TableData>
-              <Styled.TableData>{post.author}</Styled.TableData>
-              <Styled.TableData>{post.date}</Styled.TableData>
+              <Styled.TableData>{post.writer}</Styled.TableData>
+              <Styled.TableData>{post.created_at}</Styled.TableData>
             </Styled.TableRow>
           ))}
         </tbody>
@@ -96,87 +98,27 @@ const PostList: React.FC<PostListProps> = ({ posts }) => {
   );
 };
 
-// 게시글 데이터
-const posts: PostList = [
-  {
-    id: 1,
-    title: "첫 번째 게시글",
-    author: "홍길동",
-    date: "2022-01-01",
-  },
-  {
-    id: 2,
-    title: "두 번째 게시글",
-    author: "김철수",
-    date: "2022-01-02",
-  },
-  {
-    id: 3,
-    title: "세 번째 게시글",
-    author: "김철수",
-    date: "2022-01-02",
-  },
-  {
-    id: 4,
-    title: "네 번째 게시글",
-    author: "김철수",
-    date: "2022-01-02",
-  },
-  {
-    id: 5,
-    title: "다섯 번째 게시글",
-    author: "김철수",
-    date: "2022-01-02",
-  },
-  {
-    id: 6,
-    title: "여슷 번째 게시글",
-    author: "김철수",
-    date: "2022-01-02",
-  },
-  {
-    id: 7,
-    title: "이힐곱 번째 게시글",
-    author: "김철수",
-    date: "2022-01-02",
-  },
-  {
-    id: 8,
-    title: "여더럴 번째 게시글",
-    author: "김철수",
-    date: "2022-01-02",
-  },
-  {
-    id: 9,
-    title: "구 번째 게시글",
-    author: "김철수",
-    date: "2022-01-02",
-  },
-  {
-    id: 10,
-    title: "이열 번째 게시글",
-    author: "김철수",
-    date: "2022-01-02",
-  },
-  {
-    id: 11,
-    title: "이열하나 번째 게시글",
-    author: "김철수",
-    date: "2022-01-02",
-  },
-];
-
 // 게시글 목록 페이지 컴포넌트
 const Community: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태값
+  const [test, setTest] = useState([]);
   const [searchKeyword, setSearchKeyword] = useState(""); // 검색어 상태값
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]); // 검색된 게시글 목록 상태값
   const postsPerPage = 10; // 페이지 당 게시글 수
-  const totalPages = Math.ceil(posts.length / postsPerPage); // 총 페이지 수
+  const totalPages = Math.ceil(test.length / postsPerPage); // 총 페이지 수
   const indexOfLastPost = currentPage * postsPerPage; // 마지막 게시글 인덱스
   const indexOfFirstPost = indexOfLastPost - postsPerPage; // 첫 번째 게시글 인덱스
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost); // 현재 페이지의 게시글 목록
-
+  useEffect(() => {
+    const CommunityData = async () => {
+      const response = await axios.get("./community.json");
+      const data = await response.data.data;
+      setFilteredPosts(data);
+      setTest(data);
+      dispatch(setCommunityList(data.reverse()));
+    };
+    CommunityData();
+  }, []);
   // 페이지 변경 핸들러 함수
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -191,17 +133,13 @@ const Community: React.FC = () => {
 
   // 검색 버튼 클릭 핸들러 함수
   const handleSearchClick = () => {
-    const searchResult = posts.filter((post) =>
-      post.title.includes(searchKeyword)
+    const searchResult = test.filter((test: any) =>
+      test.title.includes(searchKeyword)
     );
     setFilteredPosts(searchResult);
     setCurrentPage(1);
   };
 
-  // 초기 게시글 목록 설정
-  useEffect(() => {
-    setFilteredPosts(posts);
-  }, [posts]);
   // 이거 왜 오류징 데헷
 
   // enter 기능
@@ -212,16 +150,6 @@ const Community: React.FC = () => {
   }
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    const CommunityData = async () => {
-      const response = await axios.get("./community.json");
-      const data = await response.data.data;
-
-      dispatch(setCommunityList(data.reverse()));
-    };
-    CommunityData();
-  }, []);
 
   return (
     <div>
