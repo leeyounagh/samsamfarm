@@ -6,8 +6,9 @@ export const Layout = styled.div`
   z-index: 400;
   background: white;
   position: absolute;
-  top: -130px;
-  left: 14rem;
+  top: 0px;
+  left: 15vw;
+  /* left: 14rem; */
   /* left: 15%; */
   @media (max-width: 768px) {
     position: absolute;
@@ -25,10 +26,11 @@ export const FiledBackgroundImg = styled.img`
 `;
 export const CloseDiv = styled.div`
   cursor: pointer;
+  width: 100%;
   padding-top: 30px;
   z-index: 50;
   position: absolute;
-  top: 5px;
+  top: 0px;
   left: 95%;
   @media (max-width: 768px) {
     position: absolute;
@@ -43,11 +45,11 @@ export const CloseDiv = styled.div`
   }
 `;
 export const HomePlantImg = styled.img`
-  width: 150px;
+  width: 100px;
   height: 100px;
   position: absolute;
   top: 48%;
-  left: 63%;
+  left: 60%;
   @media (max-width: 480px) {
     width: 50px;
     height: 50px;
@@ -86,6 +88,8 @@ export const CharacterImg = styled.img`
   position: absolute;
   top: 15%;
   left: 11%;
+  width: 300px;
+  height: 300px;
 `;
 
 export const GridImg = styled.img`
@@ -143,9 +147,7 @@ export const CommentLayout = styled.div`
   width: 80%;
   height: 15rem;
   z-index: 400;
-  position: absolute;
-  top: 60%;
-  left: 10%;
+
   overflow-y: auto;
   background-color: white;
   margin-top: 20px;

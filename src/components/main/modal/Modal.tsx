@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
 import * as Styled from "./modal.styled";
-import { GrClose } from "react-icons/gr";
 import { MainType } from "../../../type/type";
 import MainCharacter from "../../../data/mainCharacter";
 import useMediaQuery from "../../../hooks/useMediaQuery";
@@ -41,29 +40,20 @@ export default function Modal({
       ) : (
         <Styled.FiledBackgroundImg src="./asset/후보3.gif" />
       )}
-
-      <Styled.CloseDiv>
-        {mobileSize ? (
-          <GrClose
-            size={30}
-            onClick={() => {
-              if (setIsMainModalOpen) {
-                setIsMainModalOpen(!isMainModalOpen);
-              }
-            }}
-          />
-        ) : (
-          <GrClose
-            size={50}
-            onClick={() => {
-              if (setIsMainModalOpen) {
-                setIsMainModalOpen(!isMainModalOpen);
-              }
-            }}
-          />
-        )}
+      <Styled.CloseDiv
+        onClick={() => {
+          if (setIsMainModalOpen) {
+            setIsMainModalOpen(!isMainModalOpen);
+          }
+        }}
+      >
+        <img
+          src="./asset/closebtnblack.png"
+          width="50px"
+          height="50px"
+          alt="버튼"
+        />
       </Styled.CloseDiv>
-
       <Styled.FieldDiv>
         {mobileSize ? (
           <Styled.FieldImg src="./asset/모달 농장.jpg" />
@@ -87,14 +77,6 @@ export default function Modal({
           mainData && userId !== undefined ? mainData[userId].plants_id : 1
         )}
       </Styled.FieldDiv>
-      <Styled.CommentLayout>
-        <Styled.MobileCommentLayout>
-          <Styled.MobileInput />
-          <Styled.MobileBtn>댓글 등록</Styled.MobileBtn>
-        </Styled.MobileCommentLayout>
-
-        <h3>온호성: 잘놀다 갑니다~~~</h3>
-      </Styled.CommentLayout>
     </Styled.Layout>
   );
 }
