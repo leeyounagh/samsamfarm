@@ -50,15 +50,15 @@ function Board() {
   const communityData = useSelector((state: RootState) => {
     return state?.community;
   });
-  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태값
+  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태값 =>백엔드에 보내줄값
   const [searchKeyword, setSearchKeyword] = useState(""); // 검색어 상태값
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]); // 검색된 게시글 목록 상태값
   const postsPerPage = 10; // 페이지 당 게시글 수
-  const totalPages = Math.ceil(communityData?.length / postsPerPage); // 총 페이지 수
+  const totalPages = Math.ceil(communityData?.length / postsPerPage); // 총 페이지 수 =>예는 백엔드에서 보내줄거임
   const indexOfLastPost = currentPage * postsPerPage; // 마지막 게시글 인덱스
   const indexOfFirstPost = indexOfLastPost - postsPerPage; // 첫 번째 게시글 인덱스
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost); // 현재 페이지의 게시글 목록
-  console.log(communityData);
+
   useEffect(() => {
     setFilteredPosts(communityData);
     // 리덕스 state

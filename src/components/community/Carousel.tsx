@@ -37,7 +37,7 @@ export default function Carousel() {
     );
     setNewData(splitedData);
   }, [communityData]);
-
+  // 여기에는 perPage 4,다음 페이지 될때마다 page 불러오는 처리해야됨
   function handleSlideChange(swiper: any) {
     setActiveIndex(swiper.activeIndex);
   }

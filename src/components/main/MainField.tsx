@@ -60,7 +60,7 @@ export default function MainField() {
   return (
     <Styled.Layout>
       {mobileSize ? null : (
-        <Styled.BackGroundImg src="./asset/메인농장후보.jpg" />
+        <Styled.BackGroundImg src="./asset/농장배경후보5.jpg" />
       )}
 
       <Styled.FieldLayOut>

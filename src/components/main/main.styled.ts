@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Layout = styled.main`
   width: 100%;
   z-index: 10;
-  height: 60%;
+  height: 70vh;
   position: relative;
 `;
 
@@ -18,12 +18,12 @@ export const MobileLayout = styled.main`
 
 export const BackGroundImg = styled.img`
   width: 60%;
-  height: 35rem;
+  height: 100%;
   position: absolute;
   left: 20%;
   z-index: 10;
   @media (max-width: 1024px) {
-    height: 50rem;
+    height: 95vh;
   }
   @media (max-width: 768px) {
     height: 10rem;
@@ -32,7 +32,7 @@ export const BackGroundImg = styled.img`
 
 export const FieldLayOut = styled.div`
   width: 100%;
-  height: 60vh;
+  height: 100%;
   z-index: 10;
   display: flex;
   justify-content: center;
@@ -87,8 +87,8 @@ export const CharacterImg = styled.img`
 `;
 
 export const MainPlantImg = styled.img`
-  width: 4rem;
-  height: 4rem;
+  width: 70px;
+  height: 70px;
 `;
 
 export const TitleDiv = styled.div`
@@ -122,8 +122,8 @@ export const BtnStyle = styled.button`
   text-transform: uppercase;
   padding: 1.25em 2em;
   margin-bottom: 10px;
+  margin-top: 10px;
   width: 100%;
-  height: 60%;
   background: white;
   border: 2px solid;
   border-radius: 0.75em;
