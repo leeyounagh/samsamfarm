@@ -66,7 +66,6 @@ export default function MainField() {
       <Styled.FieldLayOut>
         {mobileSize ? (
           <Styled.MobileLayout>
-            <Styled.MobileMaiBackgroundImg src="./asset/모바일배경.jpg" />
             <Styled.MobileInnerLayout>
               {MobileCharacter?.map((item, index) => (
                 <Styled.FieldDiv key={item.id}>

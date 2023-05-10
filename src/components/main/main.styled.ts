@@ -39,8 +39,18 @@ export const FieldLayOut = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
+    width: 100%;
     display: flex;
     justify-content: center;
+  }
+  @media (max-width: 480px) {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    background-image: url("./asset/모바일배경.jpg");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 `;
 
@@ -50,22 +60,26 @@ export const FieldDiv = styled.div`
   z-index: 10;
   height: 25%;
   margin-right: 100px;
+
   @media (max-width: 1024px) {
     width: 25%;
     height: 10%;
   }
 
   @media (max-width: 768px) {
-    width: 30%;
-    height: 30%;
-    margin-right: 50px;
-    margin-left: 10px;
+    /* width: 30%;
+    height: 30%; */
+    width: 10rem;
+    height: 9rem;
+    /* margin-right: 50px;
+    margin-left: 10px; */
   }
 
   @media (max-width: 480px) {
     width: 6rem;
     z-index: 10;
     height: 80px;
+    margin-left: 30px;
   }
 `;
 
@@ -78,17 +92,18 @@ export const CharacterImg = styled.img`
     height: 70px;
   }
   @media (max-width: 480px) {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    width: 70px;
+    height: 70px;
   }
 `;
 
 export const MainPlantImg = styled.img`
   width: 100px;
   height: 100px;
+  @media (max-width: 480px) {
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 export const TitleDiv = styled.div`
@@ -176,23 +191,51 @@ export const MobileMaiBackgroundImg = styled.img`
   width: 100%;
   height: 100%;
   position: absolute;
-  @media (max-width: 480px) {
-    width: 20rem;
-    height: 23rem;
-  }
+  left: 0px;
 `;
 
 export const MobileInnerLayout = styled.div`
   z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
   width: 80%;
   height: 80%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  /* padding-right: 30px; */
+  height: 20rem;
+
   @media (max-width: 768px) {
-    width: 80%;
-    height: 80%;
-    padding-left: 50px;
+    width: 100%;
+    height: 40rem;
+    /* height: 20rem; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 40rem;
+    background-image: url("./asset/모바일배경.jpg");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-left: 90px;
   }
+  @media (max-width: 480px) {
+    /* border: 3px solid blue; */
+    width: 100%;
+    height: 100%;
+
+    /* border: 3px solid black; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding-right: 30px;
+    height: 20rem;
+  }
+`;
+
+export const Div = styled.div`
+  border: 3px solid red;
+  width: 30rem;
+  height: 60%;
 `;

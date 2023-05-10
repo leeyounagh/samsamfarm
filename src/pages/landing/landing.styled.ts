@@ -16,14 +16,6 @@ export const TitleDiv = styled.div`
     margin-top: 0px;
     margin-bottom: 0px;
   }
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    text-align: center;
-  }
-  @media (max-width: 480px) {
-    font-size: 0.7rem;
-    text-align: center;
-  }
 `;
 
 export const Title = styled.h1`
@@ -44,7 +36,7 @@ export const Title = styled.h1`
   }
   @media (max-width: 768px) {
     height: 30%;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   font-family: "bitbit";
