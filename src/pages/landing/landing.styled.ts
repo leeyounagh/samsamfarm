@@ -6,11 +6,16 @@ export const Layout = styled.main`
 
 export const TitleDiv = styled.div`
   width: 100%;
-  height: 15%;
+  height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
+
+  @media (max-width: 1024px) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
   @media (max-width: 768px) {
     font-size: 1rem;
     text-align: center;
@@ -26,7 +31,9 @@ export const Title = styled.h1`
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
-  height: 60%;
+  display: flex;
+  align-items: center;
+  height: 10vh;
   width: 24ch;
   @media (max-width: 1024px) {
     height: 20%;

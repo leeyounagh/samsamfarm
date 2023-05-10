@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import * as Styled from "./main.styled";
-import Modal from "./modal/modal";
+import Modal from "./modal/Modal";
 import MainCharacter from "../../data/mainCharacter";
 import { MainType } from "../../type/type";
 import axios from "axios";
@@ -60,7 +60,7 @@ export default function MainField() {
   return (
     <Styled.Layout>
       {mobileSize ? null : (
-        <Styled.BackGroundImg src="./asset/메인농장후보.jpg" />
+        <Styled.BackGroundImg src="./asset/농장배경후보5.jpg" />
       )}
 
       <Styled.FieldLayOut>
@@ -111,8 +111,8 @@ export default function MainField() {
 
                   <img
                     src="./asset/밭누끼.png"
-                    width="100%"
-                    height="100%"
+                    width="150px"
+                    height="150px"
                     style={{ position: "absolute" }}
                   ></img>
                 </Styled.TitleDiv>
