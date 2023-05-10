@@ -111,8 +111,8 @@ export default function MainField() {
 
                   <img
                     src="./asset/밭누끼.png"
-                    width="100%"
-                    height="100%"
+                    width="150px"
+                    height="150px"
                     style={{ position: "absolute" }}
                   ></img>
                 </Styled.TitleDiv>

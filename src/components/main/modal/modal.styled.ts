@@ -183,20 +183,6 @@ export const MobileFiledImg = styled.img`
   width: 100%;
   height: 100%;
 `;
-export const MobileInput = styled.input`
-  width: 80%;
-  height: 2rem;
-  margin-left: 10px;
-  @media (max-width: 480px) {
-    width: 70%;
-    height: 1rem;
-  }
-`;
-export const MobileCommentLayout = styled.div`
-  width: 100%;
-  display: flex;
-  margin-top: 10px;
-`;
 
 export const MobileBtn = styled.button`
   margin-left: 10px;

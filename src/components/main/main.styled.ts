@@ -46,7 +46,7 @@ export const FieldLayOut = styled.div`
 
 export const FieldDiv = styled.div`
   position: relative;
-  width: 13%;
+  width: 150px;
   z-index: 10;
   height: 25%;
   margin-right: 100px;
