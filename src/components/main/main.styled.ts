@@ -87,8 +87,8 @@ export const CharacterImg = styled.img`
 `;
 
 export const MainPlantImg = styled.img`
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
 `;
 
 export const TitleDiv = styled.div`
