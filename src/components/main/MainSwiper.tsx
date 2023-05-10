@@ -3,6 +3,7 @@ import * as Styled from "./swiper.styled";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, HashNavigation } from "swiper";
 import { v4 as uuidv4 } from "uuid";
+import CommunityThumbnail from "../../data/CommunityThumbnail";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -32,16 +33,14 @@ export default function MainSwiper() {
         modules={[Pagination, Navigation, HashNavigation]}
         className="mySwiper"
       >
-        {Array.from({ length: 20 })
-          .fill(0)
-          .map(() => (
-            <SwiperSlide style={{ marginLeft: "80px" }} key={uuidv4()}>
-              <Styled.ListDiv key={uuidv4()}>
-                <Styled.ListImg src="./asset/게임.gif" />
-                <Styled.TitleDiv>안녕하세요!</Styled.TitleDiv>
-              </Styled.ListDiv>
-            </SwiperSlide>
-          ))}
+        {CommunityThumbnail.map((item) => (
+          <SwiperSlide style={{ marginLeft: "80px" }} key={uuidv4()}>
+            <Styled.ListDiv key={uuidv4()}>
+              <Styled.ListImg src={item.img} />
+              <Styled.TitleDiv>안녕하세요!</Styled.TitleDiv>
+            </Styled.ListDiv>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Styled.Layout>
   );

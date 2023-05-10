@@ -1,6 +1,5 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import * as Styled from "./communitydetail.styled";
-import { GrClose } from "react-icons/gr";
 import { CommunityType } from "../../../type/type";
 interface ModalType {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;
@@ -18,7 +17,13 @@ export default function CommunityDetail({
           setIsOpenModal(false);
         }}
       >
-        <GrClose size={50} />
+        <img
+          src="./asset/closebtnblack.png"
+          style={{ marginRight: "50px" }}
+          width="50px"
+          height="50px"
+          alt="버튼"
+        />
       </Styled.CloseDiv>
 
       <Styled.TitleDiv>

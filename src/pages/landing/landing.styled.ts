@@ -35,6 +35,7 @@ export const Title = styled.h1`
   align-items: center;
   height: 10vh;
   width: 24ch;
+  font-weight: 500;
   @media (max-width: 1024px) {
     height: 20%;
     font-size: 3rem;

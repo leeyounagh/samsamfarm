@@ -71,11 +71,7 @@ export default function MainField() {
               {MobileCharacter?.map((item, index) => (
                 <Styled.FieldDiv key={item.id}>
                   <Styled.TitleDiv>
-                    <Styled.CharacterImg
-                      src={item.img}
-                      width="60rem"
-                      height="60rem"
-                    />
+                    <Styled.CharacterImg src={item.img} />
                     <Styled.MainPlantLayout>
                       {plantsRenderer(mobileData[index]?.plants_id)}
                     </Styled.MainPlantLayout>

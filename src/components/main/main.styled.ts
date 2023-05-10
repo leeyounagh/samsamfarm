@@ -70,8 +70,8 @@ export const FieldDiv = styled.div`
 `;
 
 export const CharacterImg = styled.img`
-  width: 4rem;
-  height: 4rem;
+  width: 6rem;
+  height: 6rem;
   z-index: 10;
   @media (max-width: 768px) {
     width: 70px;
