@@ -3,6 +3,8 @@ import useOnClickOutside from "../../../hooks/useOnclickOutside";
 import { GrClose } from "react-icons/gr";
 import * as Styled from "./sidebar.styled";
 import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import KakaoSharing from "./KakaoSharing";
 
 type SidebarProps = {
   isOpen: boolean;
@@ -29,16 +31,17 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
           </Styled.CloseButton>
           <Styled.SidebarButton>
             <Link to="/community">
-              <Styled.SidebarButtonDetail>커뮤니티</Styled.SidebarButtonDetail>
+              <Styled.SidebarButtonDetail>Community</Styled.SidebarButtonDetail>
             </Link>
             <Link to="/mypage">
-              <Styled.SidebarButtonDetail>
-                마이페이지
-              </Styled.SidebarButtonDetail>
+              <Styled.SidebarButtonDetail>My Page</Styled.SidebarButtonDetail>
             </Link>
 
-            <Styled.SidebarButtonDetail>요건 모하징</Styled.SidebarButtonDetail>
+            <Styled.SidebarButtonDetail>Main Page</Styled.SidebarButtonDetail>
+            <Styled.SidebarButtonDetail>LogOut</Styled.SidebarButtonDetail>
           </Styled.SidebarButton>
+
+          <KakaoSharing />
         </Styled.Aside>
       )}
     </>
