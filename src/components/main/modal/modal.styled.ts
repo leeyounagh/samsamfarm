@@ -3,7 +3,8 @@ import color from "../../../styles/color";
 
 export const Layout = styled.div`
   width: 65vw;
-  height: 90vh;
+  height: 83vh;
+  margin-top: 50px;
   z-index: 400;
   background: white;
   border: 1px solid lightgray;
@@ -66,7 +67,7 @@ export const FarmDiv = styled.div`
 
 export const FieldDiv = styled.div`
   width: 100%;
-  height: 60%;
+  height: 50%;
   z-index: 300;
 
   @media (max-width: 768px) {
@@ -139,7 +140,8 @@ export const Button = styled.button`
 
 export const CommentLayout = styled.div`
   width: 100%;
-  height: 20rem;
+  height: 50%;
+  background-color: ${color.main};
 `;
 export const MobileFiledImg = styled.img`
   width: 100%;
@@ -184,13 +186,15 @@ export const CommentDiv = styled.div`
   border-bottom: 1px solid ${color.main};
 `;
 export const CommentInput = styled.input`
-  height: 80%;
+  height: 60%;
   width: 80%;
   padding-left: 50px;
   font-size: 1.2rem;
   border: none;
   border-bottom: 1px solid ${color.main};
   outline-color: ${color.main};
+  border-radius: 20px;
+  margin-left: 10px;
 `;
 
 export const CommentBtn = styled.button`

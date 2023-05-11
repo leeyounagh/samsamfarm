@@ -9,7 +9,8 @@ export const Layout = styled.main`
 
 export const MobileLayout = styled.main`
   width: 80%;
-  height: 100%;
+  height: 30rem;
+  /* height: 100%; */
   position: relative;
   display: flex;
   justify-content: center;
@@ -37,7 +38,6 @@ export const FieldLayOut = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   @media (max-width: 768px) {
     width: 100%;
     display: flex;
@@ -47,7 +47,7 @@ export const FieldLayOut = styled.div`
     height: 80%;
     display: flex;
     justify-content: center;
-    background-image: url("./asset/모바일배경.jpg");
+    background-image: url("./asset/모바일배경2.png");
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -197,7 +197,6 @@ export const MobileMaiBackgroundImg = styled.img`
 export const MobileInnerLayout = styled.div`
   z-index: 10;
   width: 80%;
-  height: 80%;
   display: grid;
   justify-content: center;
   grid-template-columns: 1fr 1fr;
@@ -214,7 +213,7 @@ export const MobileInnerLayout = styled.div`
     justify-content: center;
     align-items: center;
     height: 40rem;
-    background-image: url("./asset/모바일배경.jpg");
+    background-image: url("./asset/모바일배경2.png");
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -222,20 +221,20 @@ export const MobileInnerLayout = styled.div`
   }
   @media (max-width: 480px) {
     /* border: 3px solid blue; */
-    width: 100%;
+    width: 80%;
     height: 100%;
-
+    background-image: none;
+    /* border: 3px solid red; */
     /* border: 3px solid black; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    padding-right: 30px;
+    /* padding-right: 30px; */
     height: 20rem;
   }
 `;
 
 export const Div = styled.div`
-  border: 3px solid red;
   width: 30rem;
   height: 60%;
 `;

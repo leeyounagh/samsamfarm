@@ -25,9 +25,10 @@ export const Title = styled.h1`
   border-right: 3px solid;
   display: flex;
   align-items: center;
-  height: 10vh;
+  height: 8vh;
   width: 24ch;
   font-weight: 500;
+  font-size: 2.5rem;
   @media (max-width: 1024px) {
     height: 20%;
     font-size: 3rem;
@@ -37,6 +38,10 @@ export const Title = styled.h1`
   @media (max-width: 768px) {
     height: 30%;
     font-size: 2rem;
+  }
+  @media (max-width: 468px) {
+    height: 30%;
+    font-size: 1.5rem;
   }
 
   font-family: "bitbit";
