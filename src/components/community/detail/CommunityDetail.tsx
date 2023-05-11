@@ -1,11 +1,7 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
 import * as Styled from "./communitydetail.styled";
-<<<<<<< HEAD
-import { GrClose } from "react-icons/gr";
+// import { GrClose } from "react-icons/gr";
 import { CommunityType } from "../../../types";
-=======
-import { CommunityType } from "../../../types/type";
->>>>>>> 9e5fa3434b6c247963b20f13d57492609864071d
 interface ModalType {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;
   clickedData: CommunityType;
