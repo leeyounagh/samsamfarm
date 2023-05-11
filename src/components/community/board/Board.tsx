@@ -3,7 +3,9 @@ import { useSelector } from "react-redux";
 import * as Styled from "../community.styled";
 import Pagination from "./Pagenation";
 import { Link } from "react-router-dom";
-import { RootState } from "../../../store/store";
+import { RootState } from "../../../store";
+import { CommunityType } from "../../../types";
+import CommunityDetail from "../detail/CommunityDetail";
 
 interface Post {
   id: number;
@@ -20,7 +22,18 @@ type PostList = Post[];
 interface PostListProps {
   posts: PostList;
 }
+
 const PostList: React.FC<PostListProps> = ({ posts }) => {
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+  const [clickedData, setClickedData] = useState<CommunityType>({
+    id: 0,
+    title: "test",
+    content: "test contents",
+    writer: "test writer",
+    date: "2023-05-09",
+    created_at: "2023-05-09",
+    updated_at: "2023-05-09",
+  });
   return (
     <>
       <Styled.Table>
@@ -34,7 +47,13 @@ const PostList: React.FC<PostListProps> = ({ posts }) => {
         </Styled.TableHead>
         <tbody>
           {posts.map((post) => (
-            <Styled.TableRow key={post.id}>
+            <Styled.TableRow
+              key={post.id}
+              onClick={() => {
+                setIsOpenModal(true);
+                setClickedData(post);
+              }}
+            >
               <Styled.TableData>{post.id}</Styled.TableData>
               <Styled.TableData>{post.title}</Styled.TableData>
               <Styled.TableData>{post.writer}</Styled.TableData>
@@ -43,6 +62,12 @@ const PostList: React.FC<PostListProps> = ({ posts }) => {
           ))}
         </tbody>
       </Styled.Table>
+      {isOpenModal ? (
+        <CommunityDetail
+          setIsOpenModal={setIsOpenModal}
+          clickedData={clickedData}
+        />
+      ) : null}
     </>
   );
 };
@@ -50,6 +75,7 @@ function Board() {
   const communityData = useSelector((state: RootState) => {
     return state?.community;
   });
+
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태값 =>백엔드에 보내줄값
   const [searchKeyword, setSearchKeyword] = useState(""); // 검색어 상태값
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]); // 검색된 게시글 목록 상태값
