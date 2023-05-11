@@ -13,7 +13,7 @@ export default function Landing() {
       </Styled.TitleDiv>
       <MainField />
       {middleSize ? (
-        <div style={{ marginTop: "300px" }}>
+        <div>
           <MainSwiper />
         </div>
       ) : mobileSize ? (

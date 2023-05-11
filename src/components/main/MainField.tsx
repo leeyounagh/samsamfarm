@@ -40,6 +40,14 @@ export default function MainField() {
     };
     getMainData();
   }, []);
+  useEffect(() => {
+    if (isMainModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMainModalOpen]);
+
   const plantsRenderer = (id: number | undefined) => {
     const mapper: PlantMapper = {
       "1": "./asset/씨앗.png",
@@ -66,16 +74,11 @@ export default function MainField() {
       <Styled.FieldLayOut>
         {mobileSize ? (
           <Styled.MobileLayout>
-            <Styled.MobileMaiBackgroundImg src="./asset/모바일배경.jpg" />
             <Styled.MobileInnerLayout>
               {MobileCharacter?.map((item, index) => (
                 <Styled.FieldDiv key={item.id}>
                   <Styled.TitleDiv>
-                    <Styled.CharacterImg
-                      src={item.img}
-                      width="60rem"
-                      height="60rem"
-                    />
+                    <Styled.CharacterImg src={item.img} />
                     <Styled.MainPlantLayout>
                       {plantsRenderer(mobileData[index]?.plants_id)}
                     </Styled.MainPlantLayout>
