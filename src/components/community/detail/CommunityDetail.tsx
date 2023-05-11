@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
 import * as Styled from "./communitydetail.styled";
-import { CommunityType } from "../../../type/type";
+import { CommunityType } from "../../../types/type";
 interface ModalType {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;
   clickedData: CommunityType;

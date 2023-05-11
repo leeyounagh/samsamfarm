@@ -36,7 +36,7 @@ export const CloseDiv = styled.div`
   z-index: 50;
   position: absolute;
   left: 90%;
-  top: 1%;
+  top: 5%;
 
   @media (max-width: 768px) {
     /* position: absolute;

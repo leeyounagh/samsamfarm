@@ -6,7 +6,7 @@ import {
   useEffect,
 } from "react";
 import * as Styled from "./modal.styled";
-import { MainType } from "../../../type/type";
+import { MainType } from "../../../types/type";
 import MainCharacter from "../../../data/mainCharacter";
 
 type ModalType = {
