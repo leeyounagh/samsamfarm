@@ -92,6 +92,7 @@ export const FieldDiv = styled.div`
 
   @media (max-width: 480px) {
     width: 7rem;
+    height: 6rem;
     /* height: 6rem; */
     z-index: 10;
     margin-left: 30px;
@@ -250,7 +251,6 @@ export const MobileInnerLayout = styled.div`
   grid-template-columns: 1fr 1fr;
   align-items: center;
   height: 20rem;
-
   @media (max-width: 768px) {
     width: 100%;
     height: 40rem;

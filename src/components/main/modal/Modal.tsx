@@ -56,7 +56,7 @@ export default function Modal({
       "1": <Styled.HomePlantImg src="./asset/씨앗.png" id="plants" />,
       "2": <Styled.HomePlantImg src="./asset/새싹.png" id="plants" />,
       "3": <Styled.HomePlantImg src="./asset/중간새싹.png" id="plants" />,
-      "4": <Styled.HomePlantImg src="./asset/꽃.png" id="plants" />,
+      "4": <Styled.HomePlantImg src="./asset/2번꽃.png" id="plants" />,
     };
 
     return mapper[id !== undefined ? `${id}` : "4"];
