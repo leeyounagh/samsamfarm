@@ -9,11 +9,8 @@ import { Navigation } from "swiper";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { useEffect, useState } from "react";
-<<<<<<< HEAD
-import { CommunityType } from "../../types/type";
-=======
 import { CommunityType } from "../../types";
->>>>>>> 4530c0e978bd32d7a0043968d299152190eb6da3
+
 interface SwiperStyle extends React.CSSProperties {
   "--swiper-navigation-color": string;
 }

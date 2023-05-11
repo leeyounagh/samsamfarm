@@ -10,11 +10,17 @@ export const Layout = styled.main`
 export const MobileLayout = styled.main`
   width: 80%;
   height: 30rem;
-  /* height: 100%; */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) {
+    height: 16rem;
+  }
+  @media (max-width: 480px) {
+    height: 100%;
+    height: 30rem;
+  }
 `;
 
 export const BackGroundImg = styled.img`
@@ -23,6 +29,10 @@ export const BackGroundImg = styled.img`
   position: absolute;
   left: 20%;
   z-index: 10;
+  @media (max-width: 1400px) {
+    width: 60%;
+    height: 90vh;
+  }
   @media (max-width: 1024px) {
     height: 95vh;
   }
@@ -38,55 +48,61 @@ export const FieldLayOut = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   @media (max-width: 768px) {
     width: 100%;
     display: flex;
     justify-content: center;
-  }
-  @media (max-width: 480px) {
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    background-image: url("./asset/모바일배경2.png");
+    background-image: url("./asset/농장배경2.png");
     background-size: 100%;
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  @media (max-width: 480px) {
+    display: flex;
+    justify-content: center;
+    background-image: url("./asset/농장배경2.png");
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
   }
 `;
 
 export const FieldDiv = styled.div`
   position: relative;
-  width: 150px;
+  width: 10rem;
+  height: 8rem;
   z-index: 10;
-  height: 25%;
   margin-right: 100px;
-
+  background-image: url("./asset/밭누끼.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   @media (max-width: 1024px) {
-    width: 25%;
-    height: 10%;
+    width: 180px;
+    height: 100px;
   }
 
   @media (max-width: 768px) {
-    /* width: 30%;
-    height: 30%; */
     width: 10rem;
     height: 9rem;
-    /* margin-right: 50px;
-    margin-left: 10px; */
   }
 
   @media (max-width: 480px) {
-    width: 6rem;
+    width: 7rem;
+    /* height: 6rem; */
     z-index: 10;
-    height: 80px;
     margin-left: 30px;
   }
 `;
 
 export const CharacterImg = styled.img`
-  width: 6rem;
-  height: 6rem;
+  width: 90px;
+  height: 100px;
   z-index: 10;
+
   @media (max-width: 768px) {
     width: 70px;
     height: 70px;
@@ -100,6 +116,10 @@ export const CharacterImg = styled.img`
 export const MainPlantImg = styled.img`
   width: 100px;
   height: 100px;
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+  }
   @media (max-width: 480px) {
     width: 60px;
     height: 60px;
@@ -107,10 +127,20 @@ export const MainPlantImg = styled.img`
 `;
 
 export const TitleDiv = styled.div`
-  height: 13vh;
+  height: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0px 35px 0px 35px;
+  @media (max-width: 1400px) {
+    height: 6rem;
+  }
+  @media (max-width: 748px) {
+    height: 8rem;
+  }
+  @media (max-width: 480px) {
+    height: 6rem;
+  }
 `;
 
 export const MainPlantLayout = styled.div`
@@ -119,16 +149,27 @@ export const MainPlantLayout = styled.div`
 `;
 export const FieldLayoutDiv = styled.div`
   width: 60%;
-  height: 80%;
+  height: 80vh;
   display: flex;
+  margin-top: 50px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding-left: 100px;
-  @media (max-width: 1024px) {
-    height: 50rem;
+  background-image: url("./asset/농장배경2.png");
+  background-size: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @media (max-width: 1400px) {
     width: 60%;
-    padding-top: 100px;
+    height: 60rem;
+    margin-top: 250px;
+  }
+  @media (max-width: 1024px) {
+    height: 68rem;
+    width: 40rem;
+    margin-top: 400px;
   }
 `;
 export const BtnStyle = styled.button`
@@ -139,13 +180,25 @@ export const BtnStyle = styled.button`
   margin-bottom: 10px;
   margin-top: 10px;
   width: 100%;
+  height: 3rem;
   background: white;
   border: 2px solid;
   border-radius: 0.75em;
   transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+  }
   @media (max-width: 768px) {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 50px;
+  }
+  @media (max-width: 480px) {
+    width: 100%;
+    height: 15px;
+    font-size: 0.8rem;
   }
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
     background 150ms cubic-bezier(0, 0, 0.58, 1);
@@ -154,11 +207,6 @@ export const BtnStyle = styled.button`
     content: "";
     width: 100%;
     height: 100%;
-    @media (max-width: 768px) {
-      width: 100px;
-      height: 100px;
-    }
-
     top: 0;
     left: 0;
     right: 0;
@@ -201,35 +249,24 @@ export const MobileInnerLayout = styled.div`
   justify-content: center;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  /* padding-right: 30px; */
   height: 20rem;
 
   @media (max-width: 768px) {
     width: 100%;
     height: 40rem;
-    /* height: 20rem; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
     height: 40rem;
-    background-image: url("./asset/모바일배경2.png");
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
     padding-left: 90px;
   }
   @media (max-width: 480px) {
-    /* border: 3px solid blue; */
     width: 80%;
-    height: 100%;
     background-image: none;
-    /* border: 3px solid red; */
-    /* border: 3px solid black; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    /* padding-right: 30px; */
-    height: 20rem;
+    height: 30rem;
   }
 `;
