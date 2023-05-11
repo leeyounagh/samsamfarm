@@ -85,17 +85,18 @@ export const character4Img = styled.img`
 export const InfoBox = styled.div`
   border: 1px solid lightgray;
   width: 180px;
-  height: 120px;
+  height: 150px;
   background-color: white;
   text-align: center;
   opacity: 0.8;
+  padding: 15px 0px 0px 15px;
   h1 {
     font-size: 1.2rem;
-    height: 30%;
+    height: 1.5rem;
     padding-top: 10px;
   }
   h3 {
     font-size: 1rem;
-    height: 30%;
+    height: 1.5rem;
   }
 `;

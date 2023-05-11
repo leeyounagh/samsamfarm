@@ -42,6 +42,7 @@ export default function MainField() {
     };
     getMainData();
   }, []);
+
   useEffect(() => {
     if (isMainModalOpen) {
       document.body.style.overflow = "hidden";

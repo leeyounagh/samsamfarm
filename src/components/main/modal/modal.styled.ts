@@ -15,6 +15,8 @@ export const Layout = styled.div`
     format("woff2");
   font-weight: normal;
   font-style: normal;
+  position: fixed;
+  top: 120px;
   @media (max-width: 768px) {
     width: 100%;
     height: 100%;
