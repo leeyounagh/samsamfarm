@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import * as Styled from "./modal.styled";
-import { MainType } from "../../../type/type";
+import { MainType } from "../../../types";
 import MainCharacter from "../../../data/mainCharacter";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 

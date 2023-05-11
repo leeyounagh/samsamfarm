@@ -7,9 +7,9 @@ import CommunityImg from "../../data/CommunityImg";
 import { v4 as uuidv4 } from "uuid";
 import { Navigation } from "swiper";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import { RootState } from "../../store";
 import { useEffect, useState } from "react";
-import { CommunityType } from "../../type/type";
+import { CommunityType } from "../../types";
 interface SwiperStyle extends React.CSSProperties {
   "--swiper-navigation-color": string;
 }

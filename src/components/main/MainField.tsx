@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import * as Styled from "./main.styled";
 import Modal from "./modal/Modal";
 import MainCharacter from "../../data/mainCharacter";
-import { MainType } from "../../type/type";
+import { MainType } from "../../types";
 import axios from "axios";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { v4 as uuidv4 } from "uuid";
