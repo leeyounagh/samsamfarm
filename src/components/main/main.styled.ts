@@ -233,8 +233,3 @@ export const MobileInnerLayout = styled.div`
     height: 20rem;
   }
 `;
-
-export const Div = styled.div`
-  width: 30rem;
-  height: 60%;
-`;

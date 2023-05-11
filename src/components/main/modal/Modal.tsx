@@ -1,8 +1,13 @@
-import { Dispatch, SetStateAction } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  useState,
+  ChangeEvent,
+  useEffect,
+} from "react";
 import * as Styled from "./modal.styled";
 import { MainType } from "../../../type/type";
 import MainCharacter from "../../../data/mainCharacter";
-import useMediaQuery from "../../../hooks/useMediaQuery";
 
 type ModalType = {
   isMainModalOpen?: boolean;
@@ -14,6 +19,11 @@ type ModalType = {
 interface PlantMapper {
   [key: string]: JSX.Element | undefined;
 }
+interface ContentType {
+  content: string;
+  writer: string;
+  ownerId: number;
+}
 
 export default function Modal({
   isMainModalOpen,
@@ -21,8 +31,23 @@ export default function Modal({
   mainData,
   userId,
 }: ModalType) {
-  const mobileSize = useMediaQuery("(max-width: 768px)");
-
+  const getInitialGuestBook = () => {
+    const guestBook = localStorage.getItem("guestbook");
+    const guestBookData = guestBook ? JSON.parse(guestBook) : [];
+    const getCommentList: any[] = [];
+    guestBookData?.map((item: any) => {
+      if (Number(item.ownerId) === userId) {
+        getCommentList.push(item);
+      }
+    });
+    return guestBook ? getCommentList : [];
+  };
+  const [content, setContent] = useState<string>("");
+  const [writer, setWriter] = useState<string>("");
+  const [commentList, setCommentList] = useState(getInitialGuestBook());
+  useEffect(() => {
+    getInitialGuestBook();
+  }, []);
   const plantsRenderer = (id: number) => {
     const mapper: PlantMapper = {
       "1": <Styled.HomePlantImg src="./asset/씨앗.png" id="plants" />,
@@ -33,6 +58,30 @@ export default function Modal({
 
     return mapper[id !== undefined ? `${id}` : "4"];
   };
+  const handleSubmit = () => {
+    const body = {
+      content: content,
+      writer: writer,
+      ownerId: userId,
+    };
+    if (body.content.length === 0 || body.writer.length === 0) {
+      alert("값을 모두 입력해주셔야됩니다.");
+      setWriter("");
+      setContent("");
+      return;
+    }
+    const guestBook = localStorage.getItem("guestbook");
+    const guestBookData = guestBook ? JSON.parse(guestBook) : [];
+    guestBookData.push(body);
+    const newArr: any = [];
+    newArr.concat(body);
+    setCommentList(newArr);
+    setWriter("");
+    setContent("");
+
+    localStorage.setItem("guestbook", JSON.stringify(guestBookData));
+  };
+
   return (
     <Styled.Layout>
       <Styled.FieldDiv>
@@ -71,16 +120,35 @@ export default function Modal({
           </Styled.GridDiv>
         </Styled.GridLayout>
       </Styled.FieldDiv>
-      <Styled.CommentLayout>
+      <Styled.CommentLayout onSubmit={handleSubmit}>
         <Styled.CommentDiv>
-          <Styled.CommentInput placeholder="댓글을 작성해 주세요...." />
-          <Styled.CommentBtn>댓글 작성</Styled.CommentBtn>
+          <Styled.CommentInput
+            placeholder="댓글을 작성해 주세요...."
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setContent(event.target.value)
+            }
+          />
+          <Styled.WriterInput
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setWriter(event.target.value)
+            }
+            placeholder="작성자"
+          />
+          <Styled.CommentBtn type="submit">댓글 작성</Styled.CommentBtn>
         </Styled.CommentDiv>
         <Styled.CommentArea>
-          <Styled.CommentDiv>
-            <Styled.Comment>잘 놀다 갑니다~~~~</Styled.Comment>
-            <Styled.Writer>작성자: 온호성</Styled.Writer>
-          </Styled.CommentDiv>
+          {commentList?.length !== 0
+            ? commentList?.map((item: ContentType) => {
+                return (
+                  <>
+                    <Styled.CommentDiv>
+                      <Styled.Comment>{item.content}</Styled.Comment>
+                      <Styled.Writer>작성자: {item.writer}</Styled.Writer>
+                    </Styled.CommentDiv>
+                  </>
+                );
+              })
+            : null}
         </Styled.CommentArea>
       </Styled.CommentLayout>
     </Styled.Layout>

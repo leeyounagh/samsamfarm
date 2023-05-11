@@ -138,7 +138,7 @@ export const Button = styled.button`
   height: 2rem;
 `;
 
-export const CommentLayout = styled.div`
+export const CommentLayout = styled.form`
   width: 100%;
   height: 50%;
   background-color: ${color.main};
@@ -183,13 +183,13 @@ export const CommentDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid ${color.main};
+  border-bottom: 1px solid #b3933b;
 `;
 export const CommentInput = styled.input`
-  height: 60%;
-  width: 80%;
+  height: 50%;
+  width: 60%;
   padding-left: 50px;
-  font-size: 1.2rem;
+  font-size: 2rem;
   border: none;
   border-bottom: 1px solid ${color.main};
   outline-color: ${color.main};
@@ -269,4 +269,15 @@ export const Writer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+export const WriterInput = styled.input`
+  width: 10%;
+  height: 50%;
+  padding-left: 20px;
+  font-size: 2rem;
+  border: none;
+  border-bottom: 1px solid ${color.main};
+  outline-color: ${color.main};
+  border-radius: 20px;
+  margin-left: 10px;
 `;
