@@ -40,6 +40,14 @@ export default function MainField() {
     };
     getMainData();
   }, []);
+  useEffect(() => {
+    if (isMainModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMainModalOpen]);
+
   const plantsRenderer = (id: number | undefined) => {
     const mapper: PlantMapper = {
       "1": "./asset/씨앗.png",

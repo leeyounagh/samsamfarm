@@ -4,7 +4,6 @@ import color from "../../../styles/color";
 export const Layout = styled.div`
   width: 65vw;
   height: 83vh;
-  margin-top: 50px;
   z-index: 400;
   background: white;
   border: 1px solid lightgray;
@@ -21,6 +20,9 @@ export const Layout = styled.div`
     height: 100%;
     z-index: 200;
   }
+  h1 {
+    text-align: center;
+  }
 `;
 export const FiledBackgroundImg = styled.img`
   width: 100%;
@@ -33,7 +35,7 @@ export const CloseDiv = styled.div`
   padding-top: 30px;
   z-index: 50;
   position: absolute;
-  left: 95%;
+  left: 90%;
   top: 1%;
 
   @media (max-width: 768px) {
@@ -142,6 +144,10 @@ export const CommentLayout = styled.form`
   width: 100%;
   height: 50%;
   background-color: ${color.main};
+  padding-top: 30px;
+  h1 {
+    text-align: center;
+  }
 `;
 export const MobileFiledImg = styled.img`
   width: 100%;

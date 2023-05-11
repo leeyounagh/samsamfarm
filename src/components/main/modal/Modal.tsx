@@ -42,9 +42,11 @@ export default function Modal({
     });
     return guestBook ? getCommentList : [];
   };
+
   const [content, setContent] = useState<string>("");
   const [writer, setWriter] = useState<string>("");
   const [commentList, setCommentList] = useState(getInitialGuestBook());
+
   useEffect(() => {
     getInitialGuestBook();
   }, []);
@@ -121,6 +123,11 @@ export default function Modal({
         </Styled.GridLayout>
       </Styled.FieldDiv>
       <Styled.CommentLayout onSubmit={handleSubmit}>
+        <h1>
+          {mainData && userId !== undefined
+            ? `${mainData[userId].writer}님 농장`
+            : ""}
+        </h1>
         <Styled.CommentDiv>
           <Styled.CommentInput
             placeholder="댓글을 작성해 주세요...."
