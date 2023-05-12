@@ -1,33 +1,43 @@
-import * as Styled from "../intoduce/intoduce..styled";
+import * as Styled from "./selectplant.syled";
 import { useNavigate } from "react-router-dom";
+import FlowerImg from "../../data/FlowerImg";
 
 export default function SelectPlantPage() {
-  const MBTIPlant = "백합";
-  // const space = '\n';
+  const RandomNum = Math.floor(Math.random() * 7);
+
+  // 꽃을 랜덤으로 섞는로직을 구현한다
+  console.log(RandomNum, FlowerImg[RandomNum].flower);
   const navigate = useNavigate();
   const userPlant = () => {
-    navigate(`/plantConfirmPage`);
+    navigate(`/story/plantDescriptionPage/${RandomNum}`);
   };
   const otherPlant = () => {
-    navigate(`/selectMbtiPlantPage`);
+    navigate(`/story/selectMbtiPlantPage`);
   };
 
   return (
-    <div style={{ width: "100vw", height: "70vh" }}>
-      <Styled.SelectPlantPage_div>
-        <Styled.SelectPlantPage_userPlant onClick={userPlant}>
-          {" "}
-        </Styled.SelectPlantPage_userPlant>
-        <Styled.SelectPlantPage_otherPlant onClick={otherPlant}>
-          {" "}
-        </Styled.SelectPlantPage_otherPlant>
-      </Styled.SelectPlantPage_div>
-      <Styled.IntroduceReturnPage_div>
-        <p style={{ fontSize: "1.2em" }}>
-          너의 MBTI에 맞는 꽃은 {MBTIPlant}이야. <br /> 하지만 다른 꽃도 키울 수
-          있어 원하는 걸 선택할래?
-        </p>
-      </Styled.IntroduceReturnPage_div>
-    </div>
+    <Styled.Layout>
+      <Styled.LayoutInnerDiv>
+        <Styled.FlowerDiv
+          onClick={() => {
+            userPlant();
+          }}
+        >
+          <Styled.FlowerImg src={`${FlowerImg[RandomNum]?.flower}`} />
+        </Styled.FlowerDiv>
+        <Styled.OtherDiv
+          onClick={() => {
+            otherPlant();
+          }}
+        >
+          <Styled.OtherImg src="/public/asset/other.png" />
+        </Styled.OtherDiv>
+      </Styled.LayoutInnerDiv>
+
+      <Styled.TextDiv>
+        <h2>너에게 맞는 꽃은 {FlowerImg[RandomNum].name}이야. </h2>
+        <h2>하지만 다른꽃도 선택 할수 있어 어떤걸 선택할래?</h2>
+      </Styled.TextDiv>
+    </Styled.Layout>
   );
 }

@@ -1,4 +1,4 @@
-import * as Styled from "./intoduce..styled";
+import * as Styled from "./intoduce.styled";
 import { useNavigate } from "react-router-dom";
 
 export default function Introduce() {
@@ -17,6 +17,13 @@ export default function Introduce() {
   return (
     <div>
       <Styled.Introduce_backgroundImg />
+      <button
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        메인 페이지로 가기
+      </button>
       <Styled.Introduce_Script>
         <p style={{ fontSize: "1.8rem" }}>{title1}</p>
         <Styled.Introduce_span>

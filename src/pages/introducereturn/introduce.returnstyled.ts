@@ -1,35 +1,17 @@
-import styled from 'styled-components';
-import street from '../../../public/asset/스타벅스.gif';
-import sunflower from '../../../public/asset/해바라기.png';
-import otherPlant from '../../../public/asset/other.png';
-
-export const Introduce_backgroundImg = styled.div`
-  background-image: url(${street});
-  background-size: 100% 100%;
-  width: 100vw;
-  height: 70vh;
-  background-repeat: no-repeat;
-`;
-
-export const Introduce_Script = styled.div`
-  width: 100%;
-  display: flex;
-`;
-
-export const Introduce_span = styled.span`
-  margin-left: 30%;
-  margin-top: 5%;
-`;
-
-export const Introduce_button = styled.button`
-  font-size: 1.5em;
-`;
+import styled from "styled-components";
+import sunflower from "../../../public/asset/해바라기.png";
+import otherPlant from "../../../public/asset/other.png";
 
 export const IntroduceReturnPage_div = styled.div`
   display: flex;
   justify-content: center;
-  align-item: center;
-  maring: 30%;
+  align-items: center;
+  margin: auto;
+  font-family: "DOSPilgiMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 `;
 
 export const IntroduceReturnPage_p = styled.p`
@@ -67,3 +49,7 @@ export const SelectPlantPage_otherPlant = styled.div`
     transform: scale(1.2);
   }
 `;
+export const Introduce_button = styled.button`
+  font-size: 1.5em;
+`;
+export const Introuduce_Character = styled.img``;
