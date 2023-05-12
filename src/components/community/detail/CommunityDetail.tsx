@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { Dispatch, SetStateAction } from "react";
 import * as Styled from "./communitydetail.styled";
 import { CommunityType } from "../../../types";
 

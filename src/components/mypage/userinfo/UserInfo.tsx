@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
 import * as Styled from "./userinfo.styled";
-import React from "react"; // React import 추가
 
 interface userInfoType {
   setIsOpenUserInfo: Dispatch<SetStateAction<boolean>>;

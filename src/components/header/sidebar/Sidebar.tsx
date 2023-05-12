@@ -3,7 +3,7 @@ import useOnClickOutside from "../../../hooks/useOnclickOutside";
 import { GrClose } from "react-icons/gr";
 import * as Styled from "./sidebar.styled";
 import { Link } from "react-router-dom";
-import React, { useEffect } from "react";
+import React from "react";
 import KakaoSharing from "./KakaoSharing";
 
 type SidebarProps = {
