@@ -22,7 +22,7 @@ import We from "./pages/register/We";
 
 function App() {
   const location = useLocation();
-  const isMainPage = location.pathname === "/mainpage";
+  const isMainPage = location.pathname === "/startpage";
   return (
     <>
       {!isMainPage && <Header />}
