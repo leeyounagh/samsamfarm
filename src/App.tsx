@@ -17,6 +17,8 @@ import PlantConfirmReturnPage from "./pages/story/PlantConfirmReturnPage";
 import SelectMbtiPlantPage from "./pages/story/SelectMbtiPlantPage";
 import AccessPage from "./pages/story/AccessPage";
 import PlantDescriptionPage from "./pages/story/PlantDescriptionPage";
+import MainPage from "./pages/MainPage/MainPage";
+import We from "./pages/register/We";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/community" element={<Community />} />
+        <Route path="/mainpage" element={<MainPage />} />
+        <Route path="/we" element={<We />} />
 
         <Route path="/mbti" element={<Mbti />} />
         <Route path="/communityupdate" element={<CommunityUpdate />} />

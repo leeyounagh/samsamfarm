@@ -6,7 +6,7 @@
       "writer": "이수연",
       "create_at": "ㅁㄴㅇㄻㄴㅇㄹ",
       "delete_at": "ㄻㅇㄴㄻㄴㅇㄹ",
-      "plants_id": 1
+      "plants_id": 4
     },
     {
       "home_user_id": 1,
@@ -14,7 +14,7 @@
       "writer": "루카스",
       "create_at": "ㅁㄴㅇㄻㄴㅇㄹ",
       "delete_at": "ㄻㅇㄴㄻㄴㅇㄹ",
-      "plants_id": 2
+      "plants_id": 4
     },
     {
       "home_user_id": 2,

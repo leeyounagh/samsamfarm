@@ -3,6 +3,8 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import Input from "../../components/forms/input/Input";
 import Button from "../../components/forms/button/Button";
 import Checkbox from "../../components/forms/checkbox/Checkbox";
+import { emailValidation } from "../../utils/regExp.utils";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [forms, setForms] = useState({
@@ -117,9 +119,11 @@ export default function Login() {
           로그인
         </Button>
         <Styled.LoginFindIdAndPasswordStyled></Styled.LoginFindIdAndPasswordStyled>
-        <Button id="join-button" outline onClick={handleJoinClick}>
-          회원가입
-        </Button>
+        <Link to={"/register"}>
+          <Button id="join-button" outline onClick={handleJoinClick}>
+            회원가입
+          </Button>
+        </Link>
       </Styled.LoginButtonWrapStyled>
     </Styled.LoginStyled>
   );

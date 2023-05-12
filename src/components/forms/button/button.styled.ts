@@ -7,13 +7,13 @@ interface ButtonProps {
 
 export const ButtonStyled = styled.button<ButtonProps>`
   color: #fff;
-  background-color: #14b36b;
+  background-color: #b3933b;
   font-size: 16px;
   padding: 16px;
   width: 100%;
   font-weight: 600;
   border-radius: 4px;
-  border: 1px solid #14b36b;
+  border: 1px solid #b3933b;
   cursor: pointer;
 
   &:disabled {
@@ -26,8 +26,8 @@ export const ButtonStyled = styled.button<ButtonProps>`
     props.outline
       ? `
     background-color: #fff;
-    color: #14b36b;
-    border: 1px solid #14b36b;  
+    color: #b3933b;
+    border: 1px solid #b3933b;  
   `
       : ``}
 

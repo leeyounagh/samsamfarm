@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { useEffect, useState } from "react";
 import { CommunityType } from "../../types";
+
 interface SwiperStyle extends React.CSSProperties {
   "--swiper-navigation-color": string;
 }
@@ -30,7 +31,13 @@ export default function Carousel() {
     created_at: "2023-05-09",
     updated_at: "2023-05-09",
   });
-
+  useEffect(() => {
+    if (isOpenModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpenModal]);
   useEffect(() => {
     const splitedData = Array.from({ length: 4 }, (_, index) =>
       communityData.slice(index * 4, (index + 1) * 4)

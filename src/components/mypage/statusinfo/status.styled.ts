@@ -4,7 +4,7 @@ export const Layout = styled.div`
   border: 1px solid black;
   width: 60vw;
   height: 85vh;
-  position: absolute;
+  position: fixed;
   z-index: 50;
   background-image: url("./asset/status배경.gif");
 `;

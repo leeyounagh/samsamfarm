@@ -71,6 +71,7 @@ const Button = styled.button`
   cursor: pointer;
   background-color: rgb(255, 251, 30);
   margin-left: 40%;
+  border-radius: 20px;
 `;
 
 export default ShareKakaotalk;

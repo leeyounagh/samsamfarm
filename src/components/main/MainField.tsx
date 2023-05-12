@@ -3,6 +3,7 @@ import * as Styled from "./main.styled";
 import Modal from "./modal/Modal";
 import MainCharacter from "../../data/mainCharacter";
 import { MainType } from "../../types";
+
 import axios from "axios";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { v4 as uuidv4 } from "uuid";
@@ -40,6 +41,7 @@ export default function MainField() {
     };
     getMainData();
   }, []);
+
   useEffect(() => {
     if (isMainModalOpen) {
       document.body.style.overflow = "hidden";
@@ -53,7 +55,7 @@ export default function MainField() {
       "1": "./asset/씨앗.png",
       "2": "./asset/새싹.png",
       "3": "./asset/중간새싹.png",
-      "4": "./asset/꽃.png",
+      "4": "./asset/2번꽃.png",
     };
     return (
       <Styled.MainPlantImg key={uuidv4()} src={mapper[`${id}`]} id="plants" />
@@ -67,10 +69,6 @@ export default function MainField() {
 
   return (
     <Styled.Layout>
-      {mobileSize ? null : (
-        <Styled.BackGroundImg src="./asset/농장배경후보5.jpg" />
-      )}
-
       <Styled.FieldLayOut>
         {mobileSize ? (
           <Styled.MobileLayout>
@@ -82,14 +80,8 @@ export default function MainField() {
                     <Styled.MainPlantLayout>
                       {plantsRenderer(mobileData[index]?.plants_id)}
                     </Styled.MainPlantLayout>
-                    <img
-                      src="./asset/밭누끼.png"
-                      width="100%"
-                      height="100%"
-                      style={{ position: "absolute" }}
-                    ></img>
                   </Styled.TitleDiv>
-                  <button
+                  <Styled.BtnStyle
                     id={`button-${item.id}`}
                     onClick={() => {
                       setIsMainModalOpen(!isMainModalOpen);
@@ -97,7 +89,7 @@ export default function MainField() {
                     }}
                   >
                     놀러가기
-                  </button>
+                  </Styled.BtnStyle>
                 </Styled.FieldDiv>
               ))}
             </Styled.MobileInnerLayout>
@@ -111,13 +103,6 @@ export default function MainField() {
                   <Styled.MainPlantLayout>
                     {plantsRenderer(mainData[index]?.plants_id)}
                   </Styled.MainPlantLayout>
-
-                  <img
-                    src="./asset/밭누끼.png"
-                    width="150px"
-                    height="150px"
-                    style={{ position: "absolute" }}
-                  ></img>
                 </Styled.TitleDiv>
                 <Styled.BtnStyle
                   id={`button-${item.id}`}

@@ -11,11 +11,11 @@ export const InputStyled = styled.input`
   transition: border-color 0.15s ease-in-out;
 
   &:focus {
-    border-color: #7a99ff;
+    border-color: #b3933b;
   }
 
   &:hover {
-    border-color: #7a99ff;
+    border-color: #b3933b;
   }
 
   &:disabled {

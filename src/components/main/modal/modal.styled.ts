@@ -6,7 +6,6 @@ export const Layout = styled.div`
   height: 83vh;
   z-index: 400;
   background: white;
-  border: 1px solid lightgray;
   position: fixed;
   top: 5rem;
   left: 20rem;
@@ -15,10 +14,24 @@ export const Layout = styled.div`
     format("woff2");
   font-weight: normal;
   font-style: normal;
+  position: fixed;
+  top: 120px;
+  background-color: ${color.main};
+  @media (max-width: 1024px) {
+    position: fixed;
+    top: 120px;
+    left: 20%;
+    font-size: 1rem;
+  }
+
   @media (max-width: 768px) {
-    width: 100%;
-    height: 100%;
-    z-index: 200;
+    position: fixed;
+    top: 120px;
+  }
+  @media (max-width: 480px) {
+    width: 100vw;
+    height: 75vh;
+    left: 0px;
   }
   h1 {
     text-align: center;
@@ -39,15 +52,22 @@ export const CloseDiv = styled.div`
   top: 5%;
 
   @media (max-width: 768px) {
-    /* position: absolute;
-    top: -10px;
-    left: 90%; */
+    position: absolute;
+    top: 2%;
+    left: 85%;
     color: white;
   }
   @media (max-width: 480px) {
     position: absolute;
-    left: 90%;
+    left: 88%;
+    top: 1%;
     color: white;
+  }
+  img {
+    @media (max-width: 480px) {
+      width: 30px;
+      height: 30px;
+    }
   }
 `;
 export const HomePlantImg = styled.img`
@@ -57,9 +77,6 @@ export const HomePlantImg = styled.img`
   @media (max-width: 480px) {
     width: 50px;
     height: 50px;
-    position: absolute;
-    top: 52%;
-    left: 75%;
   }
 `;
 export const FarmDiv = styled.div`
@@ -73,11 +90,7 @@ export const FieldDiv = styled.div`
   z-index: 300;
 
   @media (max-width: 768px) {
-    width: 85%;
     height: 50%;
-    position: absolute;
-    top: 15%;
-    left: 8%;
   }
 `;
 export const FieldImg = styled.img`
@@ -89,6 +102,14 @@ export const FieldImg = styled.img`
 export const CharacterImg = styled.img`
   width: 300px;
   height: 300px;
+  @media (max-width: 1024px) {
+    width: 150px;
+    height: 150px;
+  }
+  @media (max-width: 480px) {
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 export const GridImg = styled.img`
@@ -147,7 +168,15 @@ export const CommentLayout = styled.form`
   padding-top: 30px;
   h1 {
     text-align: center;
+    @media (max-width: 1024px) {
+      font-size: 1rem;
+    }
   }
+  font-family: "DOSPilgiMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 `;
 export const MobileFiledImg = styled.img`
   width: 100%;
@@ -170,6 +199,9 @@ export const GridLayout = styled.div`
   align-items: center;
   background-image: url("./asset/모달 농장.jpg");
   background-size: cover;
+  @media (max-width: 768px) {
+    height: 20rem;
+  }
 `;
 
 export const GridDiv = styled.div`
@@ -183,6 +215,11 @@ export const GridDiv = styled.div`
   margin-left: 100px;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 480px) {
+    width: 50vw;
+    height: 250px;
+  }
 `;
 export const CommentDiv = styled.div`
   height: 30%;
@@ -190,22 +227,43 @@ export const CommentDiv = styled.div`
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #b3933b;
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
 export const CommentInput = styled.input`
-  height: 50%;
+  height: 40%;
   width: 60%;
   padding-left: 50px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border: none;
   border-bottom: 1px solid ${color.main};
   outline-color: ${color.main};
   border-radius: 20px;
   margin-left: 10px;
+  @media (max-width: 1024px) {
+    width: 40%;
+    font-size: 1rem;
+  }
+  @media (max-width: 768px) {
+    padding-left: 10px;
+    font-size: 0.8rem;
+  }
 `;
 
 export const CommentBtn = styled.button`
+  @media (max-width: 768px) {
+    width: 8rem;
+    height: 30%;
+    font-size: 0.8rem;
+  }
+  @media (max-width: 480px) {
+    width: 6.5rem;
+    height: 20%;
+    white-space: nowrap;
+  }
   width: 10rem;
-  height: 80%;
+  height: 40%;
   margin-left: 20px;
   font-weight: 600;
   color: #b3933b;
@@ -258,16 +316,22 @@ export const CommentArea = styled.div`
   width: 100%;
   height: 50%;
   overflow-y: auto;
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
 export const CommentList = styled.div`
   width: 80%;
 `;
 export const Comment = styled.div`
-  width: 100%;
+  width: 80%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1024px) {
+    width: 60%;
+  }
 `;
 export const Writer = styled.div`
   width: 20%;
@@ -275,15 +339,29 @@ export const Writer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  white-space: nowrap;
+  @media (max-width: 1024px) {
+    width: 15%;
+  }
 `;
 export const WriterInput = styled.input`
   width: 10%;
-  height: 50%;
+  height: 40%;
   padding-left: 20px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border: none;
   border-bottom: 1px solid ${color.main};
   outline-color: ${color.main};
   border-radius: 20px;
   margin-left: 10px;
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 768px) {
+    padding-left: 10px;
+    width: 15%;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
