@@ -1,7 +1,6 @@
 import { useState, Dispatch, SetStateAction } from "react";
 import GuideBook from "../guidebook/GuideBook";
 import * as Styled from "./status.styled";
-import { AiFillCaretDown } from "react-icons/ai";
 import axios from "axios";
 
 interface StatusType {
