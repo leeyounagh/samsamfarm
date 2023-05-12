@@ -4,8 +4,7 @@ export const Layout = styled.div`
   z-index: 100;
   width: 60vw;
   height: 85vh;
-  background-color: black;
-  position: absolute;
+  position: fixed;
   background-image: url("./asset/유저정보배경.gif");
 `;
 export const CloseBtn = styled.div`

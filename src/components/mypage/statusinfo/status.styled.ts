@@ -4,7 +4,7 @@ export const Layout = styled.div`
   border: 1px solid black;
   width: 60vw;
   height: 85vh;
-  position: absolute;
+  position: fixed;
   z-index: 50;
   background-image: url("./asset/status배경.gif");
 `;
@@ -31,6 +31,7 @@ export const StatusDiv = styled.div`
   width: 50%;
   height: 100%;
   border-radius: 50px;
+
   h1 {
     text-align: center;
     margin-top: 30px;
@@ -43,10 +44,14 @@ export const StatusTextDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   h3 {
-    width: 100%;
+    width: 50%;
     text-align: center;
     font-size: 1.5rem;
+  }
+  h2 {
+    display: inline-block;
   }
 `;
 export const StatusInnerDiv = styled.div`

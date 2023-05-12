@@ -1,12 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { CommunityType } from "../type/type";
+import { CommunityType } from "../types/type";
 
 const initialState: CommunityType[] = [
   {
+    id: 0,
     title: "test",
     content: "test contents",
     writer: "test writer",
-    user_id: 1234,
+    date: "2023-05-09",
+    created_at: "2023-05-09",
+    updated_at: "2023-05-09",
   },
 ];
 

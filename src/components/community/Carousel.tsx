@@ -7,9 +7,10 @@ import CommunityImg from "../../data/CommunityImg";
 import { v4 as uuidv4 } from "uuid";
 import { Navigation } from "swiper";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import { RootState } from "../../store";
 import { useEffect, useState } from "react";
-import { CommunityType } from "../../type/type";
+import { CommunityType } from "../../types";
+
 interface SwiperStyle extends React.CSSProperties {
   "--swiper-navigation-color": string;
 }
@@ -22,19 +23,28 @@ export default function Carousel() {
   const [newData, setNewData] = useState<any[]>([]); // 자른 데이터 배열
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [clickedData, setClickedData] = useState<CommunityType>({
+    id: 0,
     title: "test",
-    content: "adfdasfa",
-    writer: "이수욘",
-    user_id: 0,
+    content: "test contents",
+    writer: "test writer",
+    date: "2023-05-09",
+    created_at: "2023-05-09",
+    updated_at: "2023-05-09",
   });
-
+  useEffect(() => {
+    if (isOpenModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpenModal]);
   useEffect(() => {
     const splitedData = Array.from({ length: 4 }, (_, index) =>
       communityData.slice(index * 4, (index + 1) * 4)
     );
     setNewData(splitedData);
   }, [communityData]);
-
+  // 여기에는 perPage 4,다음 페이지 될때마다 page 불러오는 처리해야됨
   function handleSlideChange(swiper: any) {
     setActiveIndex(swiper.activeIndex);
   }

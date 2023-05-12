@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import * as Styled from "./main.styled";
-import Modal from "./modal/modal";
+import Modal from "./modal/Modal";
 import MainCharacter from "../../data/mainCharacter";
-import { MainType } from "../../type/type";
+
+import { MainType } from "../../types";
+
 import axios from "axios";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { v4 as uuidv4 } from "uuid";
@@ -40,12 +42,21 @@ export default function MainField() {
     };
     getMainData();
   }, []);
+
+  useEffect(() => {
+    if (isMainModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMainModalOpen]);
+
   const plantsRenderer = (id: number | undefined) => {
     const mapper: PlantMapper = {
       "1": "./asset/씨앗.png",
       "2": "./asset/새싹.png",
       "3": "./asset/중간새싹.png",
-      "4": "./asset/꽃.png",
+      "4": "./asset/2번꽃.png",
     };
     return (
       <Styled.MainPlantImg key={uuidv4()} src={mapper[`${id}`]} id="plants" />
@@ -59,74 +70,54 @@ export default function MainField() {
 
   return (
     <Styled.Layout>
-      {mobileSize ? (
-        <Styled.MobileLayout>
-          <Styled.MobileMaiBackgroundImg src="./asset/모바일배경.jpg" />
-        </Styled.MobileLayout>
-      ) : (
-        <Styled.BackGroundImg src="./asset/배경.png" />
-      )}
-
-      <Styled.MainPlantLayout>
-        {mobileSize
-          ? mobileData.map((item) => {
-              return plantsRenderer(item?.plants_id);
-            })
-          : mainData?.map((item) => {
-              return plantsRenderer(item?.plants_id);
-            })}
-      </Styled.MainPlantLayout>
-
       <Styled.FieldLayOut>
-        {mobileSize
-          ? MobileCharacter?.map((item) => {
-              return (
-                <Styled.FieldDiv id="item" key={uuidv4()}>
+        {mobileSize ? (
+          <Styled.MobileLayout>
+            <Styled.MobileInnerLayout>
+              {MobileCharacter?.map((item, index) => (
+                <Styled.FieldDiv key={item.id}>
                   <Styled.TitleDiv>
-                    <Styled.CharacterImg
-                      src={item.img}
-                      width="60rem"
-                      height="60rem"
-                      key={uuidv4()}
-                    />
-                    <button
-                      id="button"
-                      key={uuidv4()}
-                      onClick={() => {
-                        setIsMainModalOpen(!isMainModalOpen);
-                        setUserId(item.id);
-                      }}
-                    >
-                      놀러가기
-                    </button>
+                    <Styled.CharacterImg src={item.img} />
+                    <Styled.MainPlantLayout>
+                      {plantsRenderer(mobileData[index]?.plants_id)}
+                    </Styled.MainPlantLayout>
                   </Styled.TitleDiv>
+                  <Styled.BtnStyle
+                    id={`button-${item.id}`}
+                    onClick={() => {
+                      setIsMainModalOpen(!isMainModalOpen);
+                      setUserId(item.id);
+                    }}
+                  >
+                    놀러가기
+                  </Styled.BtnStyle>
                 </Styled.FieldDiv>
-              );
-            })
-          : MainCharacter?.map((item) => {
-              return (
-                <Styled.FieldDiv id="item" key={uuidv4()}>
-                  <Styled.TitleDiv>
-                    <Styled.CharacterImg
-                      src={item.img}
-                      width="60rem"
-                      height="60rem"
-                      key={uuidv4()}
-                    />
-                    <Styled.BtnStyle
-                      id="button"
-                      key={uuidv4()}
-                      onClick={() => {
-                        setIsMainModalOpen(!isMainModalOpen);
-                        setUserId(item.id);
-                      }}
-                    >
-                      놀러가기
-                    </Styled.BtnStyle>
-                  </Styled.TitleDiv>
-                </Styled.FieldDiv>
-              );
-            })}
+              ))}
+            </Styled.MobileInnerLayout>
+          </Styled.MobileLayout>
+        ) : (
+          <Styled.FieldLayoutDiv>
+            {MainCharacter?.map((item, index) => (
+              <Styled.FieldDiv key={item.id} id="item">
+                <Styled.TitleDiv>
+                  <Styled.CharacterImg src={item.img} />
+                  <Styled.MainPlantLayout>
+                    {plantsRenderer(mainData[index]?.plants_id)}
+                  </Styled.MainPlantLayout>
+                </Styled.TitleDiv>
+                <Styled.BtnStyle
+                  id={`button-${item.id}`}
+                  onClick={() => {
+                    setIsMainModalOpen(!isMainModalOpen);
+                    setUserId(item.id);
+                  }}
+                >
+                  놀러가기
+                </Styled.BtnStyle>
+              </Styled.FieldDiv>
+            ))}
+          </Styled.FieldLayoutDiv>
+        )}
       </Styled.FieldLayOut>
       {isMainModalOpen ? (
         <Modal

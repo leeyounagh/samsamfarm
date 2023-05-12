@@ -10,13 +10,11 @@ function useMediaQuery(query: string): boolean {
 
   const [matches, setMatches] = useState<boolean>(getMatches(query));
 
-  function handleChange() {
-    setMatches(getMatches(query));
-  }
-
   useEffect(() => {
     const matchMedia = window.matchMedia(query);
-
+    function handleChange() {
+      setMatches(getMatches(query));
+    }
     handleChange();
 
     if (matchMedia.addListener) {

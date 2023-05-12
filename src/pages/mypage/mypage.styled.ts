@@ -26,12 +26,21 @@ export const UILayout = styled.div`
 export const CharacterImg = styled.img`
   width: 300px;
   height: 300px;
+  @media (max-width: 1024px) {
+    width: 200px;
+    height: 200px;
+  }
 `;
 export const ConsoleDiv = styled.div`
   width: 60%;
   height: 60vh;
   display: flex;
   justify-content: center;
+  border: 1px solid white;
+  @media (max-width: 1024px) {
+    width: 50%;
+    height: 50vh;
+  }
 `;
 export const ConsoleImg = styled.img`
   width: 50vw;
@@ -51,28 +60,36 @@ export const IconDiv = styled.div`
 `;
 export const IconImg = styled.img`
   z-index: 50;
-  width: 100px;
+  width: 15%;
   height: 100px;
   margin-top: 30px;
+  @media (max-width: 1024px) {
+    width: 3rem;
+    height: 2.5rem;
+  }
 `;
 export const ConsoleInnerDiv = styled.div`
   width: 80%;
   height: 100%;
-  background-image: url("./asset/게임기누끼.png");
+  background-image: url("./asset/게임기누끼2.png");
   background-size: 100% 100%;
 `;
 export const StatusDiv = styled.div`
   width: 100%;
-  height: 50%;
+  height: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid red;
 `;
 export const StatusTextDiv = styled.div`
   h2 {
     margin-right: 10px;
     margin-bottom: 100px;
-    font-size: 1.3rem;
+    font-size: 1rem;
+    @media (max-width: 1024px) {
+      font-size: 0.8rem;
+    }
   }
 `;
 export const CharacterDiv = styled.div`
@@ -81,9 +98,16 @@ export const CharacterDiv = styled.div`
   display: grid;
   justify-content: center;
   align-items: center;
-
+  border: 1px solid white;
+  @media (max-width: 1024px) {
+    width: 30%;
+    height: 60%;
+  }
   button {
     width: 100%;
     height: 5vh;
   }
+`;
+export const TextDiv = styled.div`
+  text-align: center;
 `;
