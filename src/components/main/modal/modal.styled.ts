@@ -27,6 +27,7 @@ export const Layout = styled.div`
   @media (max-width: 768px) {
     position: fixed;
     top: 120px;
+    height: 63vh;
   }
   @media (max-width: 480px) {
     width: 100vw;

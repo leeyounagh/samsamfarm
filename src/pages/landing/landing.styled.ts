@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import color from "../../styles/color";
 
 export const Layout = styled.main`
   width: 100%;
+  background-color: white;
 `;
 
 export const TitleDiv = styled.div`
@@ -11,7 +13,7 @@ export const TitleDiv = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-
+  margin-bottom: 100px;
   @media (max-width: 1024px) {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -33,6 +35,7 @@ export const Title = styled.h1`
   width: 24ch;
   font-weight: 500;
   font-size: 2.5rem;
+  color: ${color.main};
   @media (max-width: 1024px) {
     height: 20%;
     font-size: 2.5rem;

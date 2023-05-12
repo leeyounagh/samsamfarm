@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
-import { MbtiType } from "../../types/type";
+import { MbtiType } from "../../types";
 
 export default function PlantDesriptionPage() {
   // const navigate = useNavigate();

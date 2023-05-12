@@ -1,4 +1,4 @@
-import * as Styled from "./story.styled";
+import * as Styled from "../intoduce/intoduce..styled";
 import { useNavigate } from "react-router-dom";
 
 export default function SelectPlantPage() {
