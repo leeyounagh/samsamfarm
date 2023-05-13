@@ -1,0 +1,9 @@
+{
+  "data": {
+    "temperature": "24.8",
+    "humid": "37.0",
+    "moisture": "100.0",
+    "bright": 100,
+    "id": 1
+  }
+}

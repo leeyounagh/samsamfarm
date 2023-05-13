@@ -62,6 +62,7 @@ export default function MainField() {
       <Styled.MainPlantImg key={uuidv4()} src={mapper[`${id}`]} id="plants" />
     );
   };
+
   useEffect(() => {
     {
       mobileSize && setMobieData(mainData.slice(0, 4));

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import * as Styled from "./introduce.returnstyled";
+import Btn1 from "../../components/button/Btn1";
 
 export default function IntroduceReturnPage() {
   const navigate = useNavigate();
@@ -14,13 +15,13 @@ export default function IntroduceReturnPage() {
         </Styled.IntroduceReturnPage_p>
       </Styled.IntroduceReturnPage_div>
       <Styled.IntroduceReturnPage_div>
-        <Styled.Introduce_button
+        <Styled.Introduce_button_div
           onClick={() => {
             navigate("/story/introduce");
           }}
         >
-          Replay
-        </Styled.Introduce_button>
+          <Btn1 title="ReTry" />
+        </Styled.Introduce_button_div>
       </Styled.IntroduceReturnPage_div>
     </div>
   );

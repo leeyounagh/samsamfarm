@@ -1,24 +1,46 @@
 import * as Styled from "./mypage.styled";
 import UserInfo from "../../components/mypage/userinfo/UserInfo";
 import StatusInfo from "../../components/mypage/statusinfo/StatusInfo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Btn1 from "../../components/button/Btn1";
+import axios from "axios";
+
+interface plantType {
+  bright: number;
+  humid: string;
+  id: number;
+  moisture: string;
+  temperature: string;
+}
 
 export default function MyPage() {
   const [isOpenStatus, setIsOpenStatus] = useState<boolean>(false);
   const [isOpenUserInfo, setIsOpenUserInfo] = useState<boolean>(false);
+  const [getPlantData, setPlantData] = useState<plantType[]>([]);
+
+  useEffect(() => {
+    const handleDevice = async () => {
+      const response = await axios.get("deviceplant.json");
+      const data = response.data.data;
+      const newItems = getPlantData.concat(data);
+      setPlantData(newItems);
+      console.log(newItems);
+    };
+    handleDevice();
+  }, []);
   return (
     <Styled.Layout>
       <Styled.BackgroundDiv>
         <Styled.UILayout>
           <Styled.CharacterDiv>
             <Styled.CharacterImg src="./asset/님피아.gif" />
-            <button
+            <Styled.MypageBtnDiv
               onClick={() => {
                 setIsOpenUserInfo(true);
               }}
             >
-              내정보
-            </button>
+              <Btn1 title="내정보" />
+            </Styled.MypageBtnDiv>
           </Styled.CharacterDiv>
 
           <Styled.ConsoleDiv>
@@ -51,7 +73,6 @@ export default function MyPage() {
                     width="80px"
                     height="80px"
                   />
-                  {/* <h2>정상</h2> */}
                 </Styled.StatusTextDiv>
                 <Styled.StatusTextDiv>
                   <Styled.TextDiv>조도</Styled.TextDiv>
@@ -60,7 +81,6 @@ export default function MyPage() {
                     width="80px"
                     height="80px"
                   />
-                  {/* <h2>위험</h2> */}
                 </Styled.StatusTextDiv>
                 <Styled.StatusTextDiv>
                   <Styled.TextDiv>습도</Styled.TextDiv>
@@ -69,7 +89,6 @@ export default function MyPage() {
                     width="80px"
                     height="80px"
                   />
-                  {/* <h2>정상</h2> */}
                 </Styled.StatusTextDiv>
               </Styled.StatusDiv>
             </Styled.ConsoleInnerDiv>

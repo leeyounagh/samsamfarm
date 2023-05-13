@@ -14,7 +14,6 @@ import SelectPlantPage from "./pages/selectplant/SelectPlantPage";
 import PlantConfirmPage from "./pages/plantconfirmpage/PlantConfirmPage";
 import PlantConfirmReturnPage from "./pages/plantconfirmreturn/PlantConfirmReturnPage";
 import SelectMbtiPlantPage from "./pages/selectmbti/SelectMbtiPlantPage";
-import AccessPage from "./pages/access/AccessPage";
 import PlantDescriptionPage from "./pages/plantdescription/PlantDescriptionPage";
 import GetPlant from "./pages/getplant/GetPlant";
 
@@ -44,7 +43,7 @@ function App() {
           path="/story/selectMbtiPlantPage"
           element={<SelectMbtiPlantPage />}
         />
-        <Route path="/story/accessPage" element={<AccessPage />} />
+
         <Route
           path="/story/plantDescriptionPage/:plantId"
           element={<PlantDescriptionPage />}

@@ -67,6 +67,10 @@ export const IconImg = styled.img`
   width: 15%;
   height: 100px;
   margin-top: 30px;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.2);
+  }
   @media (max-width: 1024px) {
     width: 3rem;
     height: 2.5rem;
@@ -113,3 +117,5 @@ export const CharacterDiv = styled.div`
 export const TextDiv = styled.div`
   text-align: center;
 `;
+
+export const MypageBtnDiv = styled.div``;
