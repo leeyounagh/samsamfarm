@@ -1,64 +1,45 @@
 import styled from "styled-components";
 
-export const JoinStyled = styled.div`
+export const register = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  min-width: 375px;
+`;
+export const table = styled.table`
+  border: 1px solid #444444;
+  font-size: 1.2em;
+  border-collapse: collapse;
+  width: 70%;
+`;
+export const form = styled.form`
+  width: 60%;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
-  width: 100%;
-  max-width: 700px;
-  padding: 50px;
-  background-color: #ffffff;
-  margin: 30px auto;
-  height: 1500px;
-  box-shadow: 0px 1px 1px rgb(0 0 0 / 10%), 2px 2px 4px rgb(0 0 0 / 20%);
+  align-items: center;
+`;
+export const td = styled.td`
+  background-color: whitesmoke;
+  padding: 5%;
+  width: 35%;
+  text-align: left;
 `;
 
-export const JoinTitleStyled = styled.h1`
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  margin-bottom: 40px;
-  text-align: center;
-  margin-top: 50px;
-`;
-
-export const JoinFormsTitleStyled = styled.h3`
-  width: 100%;
-  font-size: 18px;
-  font-weight: 600;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e3e3e3;
-  margin-bottom: 20px;
-`;
-
-export const JoinFormStyled = styled.div`
-  width: 100%;
-  input {
-    margin-bottom: 10px;
+export const RegisterButton = styled.button`
+  margin-top: 10px;
+  padding: 10px 20px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  background-color: rgb(99, 230, 95);
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  font-size: 1.3em;
+  cursor: pointer;
+  text-decoration-line: none;
+  &:hover {
+    background-color: #008000;
   }
-  margin-bottom: 30px;
-`;
-
-export const JoinAgreeFormStyled = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  column-gap: 24px;
-  margin-bottom: 30px;
-`;
-
-export const JoinFormsValidStyled = styled.p`
-  width: 100%;
-  color: #ff0000;
-  font-size: 12px;
-  letter-spacing: -0.5px;
-`;
-
-export const JoinButtonWrapStyled = styled.div`
-  width: 100%;
-  margin-top: 60px;
-  display: flex;
-  column-gap: 8px;
-  align-items: center;
 `;

@@ -18,7 +18,6 @@ import AccessPage from "./pages/access/AccessPage";
 import PlantDescriptionPage from "./pages/plantdescription/PlantDescriptionPage";
 import GetPlant from "./pages/getplant/GetPlant";
 import StartPage from "./pages/StartPage/StartPage";
-import We from "./pages/register/We";
 
 function App() {
   const location = useLocation();
@@ -31,7 +30,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/community" element={<Community />} />
         <Route path="/startpage" element={<StartPage />} />
-        <Route path="/we" element={<We />} />
 
         <Route path="/communityupdate" element={<CommunityUpdate />} />
         <Route path="/mypage" element={<MyPage />} />
