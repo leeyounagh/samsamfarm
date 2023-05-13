@@ -2,7 +2,6 @@ import * as Styled from "./login.styled";
 import { ChangeEvent, FormEvent, useState } from "react";
 import Input from "../../components/forms/input/Input";
 import Button from "../../components/forms/button/Button";
-import Checkbox from "../../components/forms/checkbox/Checkbox";
 import { emailValidation } from "../../utils/regExp.utils";
 import { Link } from "react-router-dom";
 
@@ -10,7 +9,6 @@ export default function Login() {
   const [forms, setForms] = useState({
     email: "",
     password: "",
-    isRemember: false,
   });
 
   const [valid, setValid] = useState({
@@ -91,15 +89,6 @@ export default function Login() {
           onChange={handleChange}
         />
       </Styled.LoginFormStyled>
-      <Styled.LoginRememberStyled>
-        <Checkbox
-          checked={forms.isRemember}
-          onChange={handleChange}
-          name="isRemember"
-        >
-          로그인 상태 유지
-        </Checkbox>
-      </Styled.LoginRememberStyled>
       {!valid.email && (
         <Styled.LoginFormsValidStyled>
           올바른 이메일 형식이 아닙니다.

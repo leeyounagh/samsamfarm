@@ -31,13 +31,6 @@ export const LoginFormStyled = styled.div`
   }
 `;
 
-export const LoginRememberStyled = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-`;
-
 export const LoginFormsValidStyled = styled.p`
   width: 100%;
   color: #ff0000;

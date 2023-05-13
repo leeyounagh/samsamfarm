@@ -11,8 +11,8 @@ export const SnowContainer = styled.div`
 `;
 
 export const CenteredImage = styled.img`
-  width: 900px;
-  height: 600px;
+  width: 800px;
+  height: 550px;
 `;
 
 export const StartButton = styled.button`
