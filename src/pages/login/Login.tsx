@@ -7,6 +7,7 @@ import axios from "axios";
 import { decodeToken } from "react-jwt";
 import { setUser } from "../../slice/UserSlice";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [forms, setForms] = useState({
@@ -20,7 +21,7 @@ export default function Login() {
   });
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleChange = (
@@ -41,7 +42,7 @@ export default function Login() {
       }));
     }
   };
-  console.log(forms);
+
   const handleEmailKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value;
     if (emailValidation(value)) {
@@ -63,17 +64,6 @@ export default function Login() {
       }
     }
   };
-  // const handleSubmit = async () => {
-  //   const body = {
-  //     email: "ghskfen.dev@elice.io",
-  //     password: "missingaaaa",
-  //   };
-  //   const response = await axios.post(
-  //     "http://34.64.51.215/samsamfarm/api/v1/auth/sign-in",
-  //     body
-  //   );
-  //   console.log(response);
-  // };
 
   const handleLoginClick = async () => {
     const body = {
@@ -85,12 +75,9 @@ export default function Login() {
         "http://34.64.51.215/samsamfarm/api/v1/auth/sign-in",
         body
       );
-      localStorage.setItem("JWtTokken", response.data.data.accessToken);
-      console.log(
-        response.data.data.accessToken,
-        decodeToken(response.data.data.accessToken)
-      );
+      localStorage.setItem("JWtToken", response.data.data.accessToken);
       dispatch(setUser(decodeToken(response.data.data.accessToken)));
+      navigate("/story/introduce");
     } catch (err) {
       if (err) {
         alert(err);
@@ -101,7 +88,7 @@ export default function Login() {
   const handleJoinClick = () => {
     alert("회원가입 페이지 이동");
   };
-  console.log(email, password);
+
   return (
     <Styled.LoginStyled>
       <img

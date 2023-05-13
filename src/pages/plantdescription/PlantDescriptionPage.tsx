@@ -4,6 +4,7 @@ import * as Styled from "./plantdescription.styled";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Btn1 from "../../components/button/Btn1";
+import AxiosInstance from "../../api/AxiosIntance";
 
 export default function PlantDesriptionPage() {
   const { plantId } = useParams();
@@ -18,15 +19,12 @@ export default function PlantDesriptionPage() {
 
   const handleSubmit = async () => {
     const body = {
-      userId: 1,
+      userId: 17,
       deviceId: 1,
       plantType: flowerName,
     };
     try {
-      const response = await axios.post(
-        "http://34.64.51.215/samsamfarm/api/v1/plant",
-        body
-      );
+      const response = await AxiosInstance.post("/plant", body);
       console.log(response);
       navigate(`/story/getplant`);
     } catch (err) {

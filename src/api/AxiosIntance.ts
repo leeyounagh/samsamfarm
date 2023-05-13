@@ -6,7 +6,7 @@ const AxiosInstance = axios.create({
 const excludeIncludeTokenURL = ["/login", "/register"];
 
 AxiosInstance.interceptors.request.use((config) => {
-  const token = localStorage.getItem("JWtTokken");
+  const token = localStorage.getItem("JWtToken");
 
   if (config?.url && !excludeIncludeTokenURL.includes(config.url) && token) {
     // eslint-disable-next-line no-param-reassign
