@@ -7,7 +7,6 @@ import {
 } from "react";
 import * as Styled from "./modal.styled";
 import { MainType } from "../../../types";
-
 import MainCharacter from "../../../data/mainCharacter";
 
 type ModalType = {

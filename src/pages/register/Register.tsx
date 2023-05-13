@@ -1,5 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import * as Styled from "./register.styled";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 interface FormValue {
   email: string;
@@ -18,9 +20,32 @@ const SignupForm = () => {
     // getValues,
     formState: { errors },
   } = useForm<FormValue>();
-
-  const onSubmitHandler: SubmitHandler<FormValue> = (data: FormValue) => {
+  const navigate = useNavigate();
+  const onSubmitHandler: SubmitHandler<FormValue> = async (data: FormValue) => {
     console.log(data);
+    const body = {
+      email: data.email,
+      password: data.password,
+      password_confirm: data.password_confirm,
+      phone: data.phone,
+      mbti: data.mbti,
+      nickname: data.nickname,
+      name: data.nickname,
+    };
+    // 디바이스 아이디 추가
+    try {
+      const response = await axios.post(
+        "http://34.64.51.215/samsamfarm/api/v1/auth/sign-up",
+        body
+      );
+      if (response.status === 200) {
+        navigate("/login");
+      }
+    } catch (err) {
+      if (err) {
+        alert(err);
+      }
+    }
   };
 
   return (

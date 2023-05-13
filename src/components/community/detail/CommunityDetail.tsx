@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import * as Styled from "./communitydetail.styled";
+// import { GrClose } from "react-icons/gr";
 import { CommunityType } from "../../../types";
 
 interface ModalType {

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Layout = styled.div`
-  border: 3px solid blue;
   width: 100%;
   height: 80vh;
   display: flex;
+  justify-content: center;
   font-family: "DOSPilgiMedium";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2")
     format("woff2");
@@ -12,16 +12,14 @@ export const Layout = styled.div`
   font-style: normal;
 `;
 export const FlowerDiv = styled.div`
-  border: 3px solid red;
   width: 30%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-export const DescForm = styled.form`
-  border: 3px solid yellow;
-  width: 70%;
+export const DescForm = styled.div`
+  width: 40%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -39,6 +37,7 @@ export const BtnDiv = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const Btn = styled.button`
+export const BtnLayout = styled.div`
   margin-right: 50px;
+  white-space: nowrap;
 `;

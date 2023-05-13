@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import FlowerImg from "../../data/FlowerImg";
 
 export default function SelectPlantPage() {
-  const RandomNum = Math.floor(Math.random() * 7);
+  const RandomNum = Math.floor(Math.random() * 16);
 
   // 꽃을 랜덤으로 섞는로직을 구현한다
   console.log(RandomNum, FlowerImg[RandomNum].flower);
