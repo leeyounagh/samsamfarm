@@ -4,10 +4,14 @@ type FlowerImgType = {
   id: number;
   story1: string;
   story2: string;
+  mbti: string;
+  character: string;
 };
 
 const FlowerImg: FlowerImgType[] = [
   {
+    character: "/public/asset/istj.png",
+    mbti: "ISTJ",
     flower: "/public/asset/벚꽃.gif",
     name: "벚꽃",
     story1:
@@ -17,6 +21,8 @@ const FlowerImg: FlowerImgType[] = [
     id: 0,
   },
   {
+    character: "/public/asset/isfj.png",
+    mbti: "ISFJ",
     flower: "/public/asset/장미.png",
     name: "장미",
     story1:
@@ -26,6 +32,8 @@ const FlowerImg: FlowerImgType[] = [
     id: 1,
   },
   {
+    character: "/public/asset/infj.png",
+    mbti: "INFJ",
     flower: "/public//asset/해바라기.png",
     name: "해바라기",
     story1:
@@ -35,6 +43,8 @@ const FlowerImg: FlowerImgType[] = [
     id: 2,
   },
   {
+    character: "/public/asset/intj.png",
+    mbti: "INTJ",
     flower: "/public//asset/5번꽃.png",
     name: "아메시아",
     story1:
@@ -44,6 +54,8 @@ const FlowerImg: FlowerImgType[] = [
     id: 3,
   },
   {
+    character: "/public/asset/istp.png",
+    mbti: "ISTP",
     flower: "/public/asset/선인장.png",
     name: "선인장",
     story1: "선인장은 독특한 형태와 내구성을 가지고 있습니다. ",
@@ -52,6 +64,8 @@ const FlowerImg: FlowerImgType[] = [
     id: 4,
   },
   {
+    character: "/public/asset/isfp.png",
+    mbti: "ISFP",
     flower: "/public/asset/5번꽃.png",
     name: "라일락",
     story1: "라일락은 감성적이고 아름다운 향기를 풍긴다는 점이 있습니다.",
@@ -60,6 +74,8 @@ const FlowerImg: FlowerImgType[] = [
     id: 5,
   },
   {
+    character: "/public/asset/infp.png",
+    mbti: "INFP",
     flower: "/public/asset/연꽃.png",
     name: "연꽃",
     story1:
@@ -69,12 +85,95 @@ const FlowerImg: FlowerImgType[] = [
     id: 6,
   },
   {
+    character: "/public/asset/intp.png",
+    mbti: "INTP",
     flower: "/public/asset/수수꽃다리.png",
     name: "수수꽃다리",
     story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
     story2:
       "당신은 문제 해결에 대한 실용적인 접근과 관찰력을 가지고 있으며, 수수꽃다리의 실용적인 형태와 조용한 아름다움에 공감할 수 있을 것입니다. 그들은 고요한 환경에서 자신만의 공간을 찾으며, 수수꽃다리의 조용한 아름다움을 즐길 수 있을 것입니다.",
     id: 7,
+  },
+  {
+    character: "/public/asset/estp.png",
+    mbti: "ESTP",
+    flower: "/public/asset/수수꽃다리.png",
+    name: "수수꽃다리",
+    story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
+    story2:
+      "당신은 문제 해결에 대한 실용적인 접근과 관찰력을 가지고 있으며, 수수꽃다리의 실용적인 형태와 조용한 아름다움에 공감할 수 있을 것입니다. 그들은 고요한 환경에서 자신만의 공간을 찾으며, 수수꽃다리의 조용한 아름다움을 즐길 수 있을 것입니다.",
+    id: 8,
+  },
+  {
+    character: "/public/asset/esfp.png",
+    mbti: "ESFP",
+    flower: "/public/asset/수수꽃다리.png",
+    name: "수수꽃다리",
+    story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
+    story2:
+      "당신은 문제 해결에 대한 실용적인 접근과 관찰력을 가지고 있으며, 수수꽃다리의 실용적인 형태와 조용한 아름다움에 공감할 수 있을 것입니다. 그들은 고요한 환경에서 자신만의 공간을 찾으며, 수수꽃다리의 조용한 아름다움을 즐길 수 있을 것입니다.",
+    id: 9,
+  },
+
+  {
+    character: "/public/asset/enfp.png",
+    mbti: "ENFP",
+    flower: "/public/asset/수수꽃다리.png",
+    name: "수수꽃다리",
+    story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
+    story2:
+      "당신은 문제 해결에 대한 실용적인 접근과 관찰력을 가지고 있으며, 수수꽃다리의 실용적인 형태와 조용한 아름다움에 공감할 수 있을 것입니다. 그들은 고요한 환경에서 자신만의 공간을 찾으며, 수수꽃다리의 조용한 아름다움을 즐길 수 있을 것입니다.",
+    id: 10,
+  },
+  {
+    character: "/public/asset/estj.png",
+    mbti: "ESTJ",
+    flower: "/public/asset/수수꽃다리.png",
+    name: "수수꽃다리",
+    story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
+    story2:
+      "당신은 문제 해결에 대한 실용적인 접근과 관찰력을 가지고 있으며, 수수꽃다리의 실용적인 형태와 조용한 아름다움에 공감할 수 있을 것입니다. 그들은 고요한 환경에서 자신만의 공간을 찾으며, 수수꽃다리의 조용한 아름다움을 즐길 수 있을 것입니다.",
+    id: 11,
+  },
+  {
+    character: "/public/asset/esfj.png",
+    mbti: "ESFJ",
+    flower: "/public/asset/수수꽃다리.png",
+    name: "수수꽃다리",
+    story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
+    story2:
+      "당신은 문제 해결에 대한 실용적인 접근과 관찰력을 가지고 있으며, 수수꽃다리의 실용적인 형태와 조용한 아름다움에 공감할 수 있을 것입니다. 그들은 고요한 환경에서 자신만의 공간을 찾으며, 수수꽃다리의 조용한 아름다움을 즐길 수 있을 것입니다.",
+    id: 12,
+  },
+  {
+    character: "/public/asset/enfj.png",
+    mbti: "ENFJ",
+    flower: "/public/asset/수수꽃다리.png",
+    name: "수수꽃다리",
+    story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
+    story2:
+      "당신은 문제 해결에 대한 실용적인 접근과 관찰력을 가지고 있으며, 수수꽃다리의 실용적인 형태와 조용한 아름다움에 공감할 수 있을 것입니다. 그들은 고요한 환경에서 자신만의 공간을 찾으며, 수수꽃다리의 조용한 아름다움을 즐길 수 있을 것입니다.",
+    id: 13,
+  },
+  {
+    character: "/public/asset/entj.png",
+    mbti: "ENTJ",
+    flower: "/public/asset/수수꽃다리.png",
+    name: "수수꽃다리",
+    story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
+    story2:
+      "당신은 문제 해결에 대한 실용적인 접근과 관찰력을 가지고 있으며, 수수꽃다리의 실용적인 형태와 조용한 아름다움에 공감할 수 있을 것입니다. 그들은 고요한 환경에서 자신만의 공간을 찾으며, 수수꽃다리의 조용한 아름다움을 즐길 수 있을 것입니다.",
+    id: 14,
+  },
+  {
+    character: "/public/asset/entp.png",
+    mbti: "ENTP",
+    flower: "/public/asset/수수꽃다리.png",
+    name: "수수꽃다리",
+    story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
+    story2:
+      "당신은 문제 해결에 대한 실용적인 접근과 관찰력을 가지고 있으며, 수수꽃다리의 실용적인 형태와 조용한 아름다움에 공감할 수 있을 것입니다. 그들은 고요한 환경에서 자신만의 공간을 찾으며, 수수꽃다리의 조용한 아름다움을 즐길 수 있을 것입니다.",
+    id: 15,
   },
 ];
 

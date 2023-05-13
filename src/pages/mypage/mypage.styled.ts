@@ -5,6 +5,11 @@ export const Layout = styled.main`
   height: 80vh;
   display: flex;
   justify-content: center;
+  font-family: "DOSPilgiMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 `;
 
 export const BackgroundDiv = styled.div`
@@ -36,7 +41,6 @@ export const ConsoleDiv = styled.div`
   height: 60vh;
   display: flex;
   justify-content: center;
-  border: 1px solid white;
   @media (max-width: 1024px) {
     width: 50%;
     height: 50vh;
@@ -80,7 +84,6 @@ export const StatusDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
 `;
 export const StatusTextDiv = styled.div`
   h2 {
@@ -98,7 +101,6 @@ export const CharacterDiv = styled.div`
   display: grid;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
   @media (max-width: 1024px) {
     width: 30%;
     height: 60%;

@@ -27,7 +27,7 @@ export default function PlantDesriptionPage() {
         body
       );
       console.log(response);
-      navigate("/story/getplant");
+      navigate(`/story/getplant`);
     } catch (err) {
       console.log(err);
     }
@@ -49,14 +49,21 @@ export default function PlantDesriptionPage() {
           <br />
           <Styled.BtnDiv>
             <Styled.Btn
-              type="submit"
               onClick={() => {
-                handleSubmit();
+                if (plantId) {
+                  handleSubmit();
+                }
               }}
             >
               너로 정했어!
             </Styled.Btn>
-            <Styled.Btn>다른걸 선택할래....!</Styled.Btn>
+            <Styled.Btn
+              onClick={() => {
+                navigate("/story/selectMbtiPlantPage");
+              }}
+            >
+              다른걸 선택할래....!
+            </Styled.Btn>
           </Styled.BtnDiv>
         </Styled.DescInnerDiv>
       </Styled.DescForm>
