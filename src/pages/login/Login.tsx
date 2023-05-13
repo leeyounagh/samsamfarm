@@ -2,14 +2,16 @@ import * as Styled from "./login.styled";
 import { ChangeEvent, FormEvent, useState } from "react";
 import Input from "../../components/forms/input/Input";
 import Button from "../../components/forms/button/Button";
-import Checkbox from "../../components/forms/checkbox/Checkbox";
+import { emailValidation } from "../../utils/regExp.utils";
 import axios from "axios";
+import { decodeToken } from "react-jwt";
+import { setUser } from "../../slice/UserSlice";
+import { useDispatch } from "react-redux";
 
 export default function Login() {
   const [forms, setForms] = useState({
     email: "",
     password: "",
-    isRemember: false,
   });
 
   const [valid, setValid] = useState({
@@ -18,6 +20,9 @@ export default function Login() {
   });
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const dispatch = useDispatch();
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement> | FormEvent<HTMLFormElement>
   ) => {
@@ -58,20 +63,39 @@ export default function Login() {
       }
     }
   };
-  const handleSubmit = async () => {
-    const body = {
-      email: "ghskfen.dev@elice.io",
-      password: "missingaaaa",
-    };
-    const response = await axios.post(
-      "http://34.64.51.215/samsamfarm/api/v1/auth/sign-in",
-      body
-    );
-    console.log(response);
-  };
+  // const handleSubmit = async () => {
+  //   const body = {
+  //     email: "ghskfen.dev@elice.io",
+  //     password: "missingaaaa",
+  //   };
+  //   const response = await axios.post(
+  //     "http://34.64.51.215/samsamfarm/api/v1/auth/sign-in",
+  //     body
+  //   );
+  //   console.log(response);
+  // };
 
-  const handleLoginClick = () => {
-    alert("로그인 API");
+  const handleLoginClick = async () => {
+    const body = {
+      email: "test@gmail.com",
+      password: "test",
+    };
+    try {
+      const response = await axios.post(
+        "http://34.64.51.215/samsamfarm/api/v1/auth/sign-in",
+        body
+      );
+      localStorage.setItem("JWtTokken", response.data.data.accessToken);
+      console.log(
+        response.data.data.accessToken,
+        decodeToken(response.data.data.accessToken)
+      );
+      dispatch(setUser(decodeToken(response.data.data.accessToken)));
+    } catch (err) {
+      if (err) {
+        alert(err);
+      }
+    }
   };
 
   const handleJoinClick = () => {
@@ -79,82 +103,52 @@ export default function Login() {
   };
   console.log(email, password);
   return (
-    <div>
-      <input
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      ></input>
-      <input
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-      ></input>
-      <button
-        onClick={() => {
-          handleSubmit();
-        }}
-      >
-        확인
-      </button>
-    </div>
-    // <Styled.LoginStyled>
-    //   <img
-    //     className="logo"
-    //     style={{ width: "450px", height: "140px" }}
-    //     src="/logo/logo.png"
-    //   />
-    //   <Styled.LoginTitleStyled>로그인</Styled.LoginTitleStyled>
-    //   <Styled.LoginFormStyled>
-    //     <Input
-    //       placeholder="이메일을 입력하세요"
-    //       value={forms.email}
-    //       name="email"
-    //       onChange={handleChange}
-    //       onKeyUp={handleEmailKeyUp}
-    //     />
-    //     <Input
-    //       type="password"
-    //       placeholder="비밀번호를 입력하세요"
-    //       value={forms.password}
-    //       name="password"
-    //       onChange={handleChange}
-    //     />
-    //   </Styled.LoginFormStyled>
-    //   <Styled.LoginRememberStyled>
-    //     <Checkbox
-    //       checked={forms.isRemember}
-    //       onChange={handleChange}
-    //       name="isRemember"
-    //     >
-    //       로그인 상태 유지
-    //     </Checkbox>
-    //   </Styled.LoginRememberStyled>
-    //   {!valid.email && (
-    //     <Styled.LoginFormsValidStyled>
-    //       올바른 이메일 형식이 아닙니다.
-    //     </Styled.LoginFormsValidStyled>
-    //   )}
-    //   {!valid.password && (
-    //     <Styled.LoginFormsValidStyled>
-    //       올바른 비밀번호가 아닙니다.
-    //     </Styled.LoginFormsValidStyled>
-    //   )}
-    //   <Styled.LoginButtonWrapStyled>
-    //     <Button
-    //       id="login-button"
-    //       disabled={forms.password === "" || forms.email === "" || !valid.email}
-    //       onClick={handleLoginClick}
-    //     >
-    //       로그인
-    //     </Button>
-    //     <Styled.LoginFindIdAndPasswordStyled></Styled.LoginFindIdAndPasswordStyled>
-    //     <Button id="join-button" outline onClick={handleJoinClick}>
-    //       회원가입
-    //     </Button>
-    //   </Styled.LoginButtonWrapStyled>
-    // </Styled.LoginStyled>
+    <Styled.LoginStyled>
+      <img
+        className="logo"
+        style={{ width: "450px", height: "140px" }}
+        src="/logo/logo.png"
+      />
+      <Styled.LoginTitleStyled>로그인</Styled.LoginTitleStyled>
+      <Styled.LoginFormStyled>
+        <Input
+          placeholder="이메일을 입력하세요"
+          value={forms.email}
+          name="email"
+          onChange={handleChange}
+          onKeyUp={handleEmailKeyUp}
+        />
+        <Input
+          type="password"
+          placeholder="비밀번호를 입력하세요"
+          value={forms.password}
+          name="password"
+          onChange={handleChange}
+        />
+      </Styled.LoginFormStyled>
+      {!valid.email && (
+        <Styled.LoginFormsValidStyled>
+          올바른 이메일 형식이 아닙니다.
+        </Styled.LoginFormsValidStyled>
+      )}
+      {!valid.password && (
+        <Styled.LoginFormsValidStyled>
+          올바른 비밀번호가 아닙니다.
+        </Styled.LoginFormsValidStyled>
+      )}
+      <Styled.LoginButtonWrapStyled>
+        <Button
+          id="login-button"
+          disabled={forms.password === "" || forms.email === "" || !valid.email}
+          onClick={handleLoginClick}
+        >
+          로그인
+        </Button>
+        <Styled.LoginFindIdAndPasswordStyled></Styled.LoginFindIdAndPasswordStyled>
+        <Button id="join-button" outline onClick={handleJoinClick}>
+          회원가입
+        </Button>
+      </Styled.LoginButtonWrapStyled>
+    </Styled.LoginStyled>
   );
 }

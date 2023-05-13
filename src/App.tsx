@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Landing from "./pages/landing/Landing";
 import Login from "./pages/login/Login";
 import "./App.css";
@@ -16,15 +16,20 @@ import PlantConfirmReturnPage from "./pages/plantconfirmreturn/PlantConfirmRetur
 import SelectMbtiPlantPage from "./pages/selectmbti/SelectMbtiPlantPage";
 import PlantDescriptionPage from "./pages/plantdescription/PlantDescriptionPage";
 import GetPlant from "./pages/getplant/GetPlant";
+import StartPage from "./pages/StartPage/StartPage";
 
 function App() {
+  const location = useLocation();
+  const isMainPage = location.pathname === "/startpage";
   return (
     <>
-      <Header />
+      {!isMainPage && <Header />}
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/community" element={<Community />} />
+        <Route path="/startpage" element={<StartPage />} />
+
         <Route path="/communityupdate" element={<CommunityUpdate />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/register" element={<Register />} />
@@ -50,7 +55,7 @@ function App() {
         />
         <Route path="/story/getplant" element={<GetPlant />} />
       </Routes>
-      <Footer />
+      {!isMainPage && <Footer />}
     </>
   );
 }
