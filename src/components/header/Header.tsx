@@ -8,7 +8,6 @@ import Sidebar from "./sidebar/Sidebar";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState<boolean>(false);
-  const [Login, setLogin] = useState("");
   const JwtToken = localStorage.getItem("JWtToken");
 
   useEffect(() => {
@@ -37,7 +36,7 @@ export default function Header() {
       document.body.removeChild(script);
     };
   }, []);
-  console.log(JwtToken);
+
   const [isOpenedSidebar, setIsOpenedSidebar] = useState<boolean>(false);
 
   const handleSidebarOpen = () => setIsOpenedSidebar(true);

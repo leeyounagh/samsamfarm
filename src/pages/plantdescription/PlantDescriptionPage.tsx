@@ -1,7 +1,6 @@
 import FlowerImg from "../../data/FlowerImg";
 import { useNavigate, useParams } from "react-router-dom";
 import * as Styled from "./plantdescription.styled";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import Btn1 from "../../components/button/Btn1";
 import AxiosInstance from "../../api/AxiosIntance";
