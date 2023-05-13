@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Layout = styled.main`
-  width: 100%;
+  width: 100vw;
   z-index: 10;
   height: 70vh;
   position: relative;
@@ -150,7 +150,7 @@ export const MainPlantLayout = styled.div`
 `;
 export const FieldLayoutDiv = styled.div`
   width: 60%;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   margin-top: 50px;
   justify-content: center;

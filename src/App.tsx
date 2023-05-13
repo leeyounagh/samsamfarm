@@ -6,17 +6,17 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Community from "./pages/community/Community";
 import CommunityUpdate from "./pages/communityupdate/CommunityUpdate";
-import Mbti from "./pages/mbti/Mbti";
 import MyPage from "./pages/mypage/MyPage";
 import Register from "./pages/register/Register";
-import Introduce from "./pages/story/Introduce";
-import IntroduceReturnPage from "./pages/story/IntroduceReturnPage";
-import SelectPlantPage from "./pages/story/SelectPlantPage";
-import PlantConfirmPage from "./pages/story/PlantConfirmPage";
-import PlantConfirmReturnPage from "./pages/story/PlantConfirmReturnPage";
-import SelectMbtiPlantPage from "./pages/story/SelectMbtiPlantPage";
-import AccessPage from "./pages/story/AccessPage";
-import PlantDescriptionPage from "./pages/story/PlantDescriptionPage";
+import Introduce from "./pages/intoduce/Introduce";
+import IntroduceReturnPage from "./pages/introducereturn/IntroduceReturnPage";
+import SelectPlantPage from "./pages/selectplant/SelectPlantPage";
+import PlantConfirmPage from "./pages/plantconfirmpage/PlantConfirmPage";
+import PlantConfirmReturnPage from "./pages/plantconfirmreturn/PlantConfirmReturnPage";
+import SelectMbtiPlantPage from "./pages/selectmbti/SelectMbtiPlantPage";
+import AccessPage from "./pages/access/AccessPage";
+import PlantDescriptionPage from "./pages/plantdescription/PlantDescriptionPage";
+import GetPlant from "./pages/getplant/GetPlant";
 import StartPage from "./pages/StartPage/StartPage";
 import We from "./pages/register/We";
 
@@ -33,24 +33,30 @@ function App() {
         <Route path="/startpage" element={<StartPage />} />
         <Route path="/we" element={<We />} />
 
-        <Route path="/mbti" element={<Mbti />} />
         <Route path="/communityupdate" element={<CommunityUpdate />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/introduce" element={<Introduce />} />
-        <Route path="/introduceReturnPage" element={<IntroduceReturnPage />} />
-        <Route path="/selectPlantPage" element={<SelectPlantPage />} />
-        <Route path="/plantConfirmPage" element={<PlantConfirmPage />} />
+        <Route path="/story/introduce" element={<Introduce />} />
         <Route
-          path="/plantConfirmReturnPage"
+          path="/story/introduceReturnPage"
+          element={<IntroduceReturnPage />}
+        />
+        <Route path="/story/selectPlantPage" element={<SelectPlantPage />} />
+        <Route path="/story/plantConfirmPage" element={<PlantConfirmPage />} />
+        <Route
+          path="/story/plantConfirmReturnPage"
           element={<PlantConfirmReturnPage />}
         />
-        <Route path="/selectMbtiPlantPage" element={<SelectMbtiPlantPage />} />
-        <Route path="/accessPage" element={<AccessPage />} />
         <Route
-          path="/plantDescriptionPage"
+          path="/story/selectMbtiPlantPage"
+          element={<SelectMbtiPlantPage />}
+        />
+        <Route path="/story/accessPage" element={<AccessPage />} />
+        <Route
+          path="/story/plantDescriptionPage/:plantId"
           element={<PlantDescriptionPage />}
         />
+        <Route path="/story/getplant" element={<GetPlant />} />
       </Routes>
       {!isMainPage && <Footer />}
     </>

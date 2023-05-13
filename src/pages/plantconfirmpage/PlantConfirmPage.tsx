@@ -1,9 +1,9 @@
-import * as Styled from './story.styled';
-import { useNavigate } from 'react-router-dom';
+import * as Styled from "../intoduce/intoduce.styled";
+import { useNavigate } from "react-router-dom";
 
 export default function PlantConfirmPage() {
-  const yes = '맞아!';
-  const no = '아닌데?';
+  const yes = "맞아!";
+  const no = "아닌데?";
   const navigate = useNavigate();
   const yesClickHandler = () => {
     navigate(`/accessPage`);
@@ -20,8 +20,12 @@ export default function PlantConfirmPage() {
       </div>
       <div>글</div>
       <div>
-        <Styled.Introduce_button onClick={yesClickHandler}>{yes}</Styled.Introduce_button>
-        <Styled.Introduce_button onClick={noClickHandler}>{no}</Styled.Introduce_button>
+        <Styled.Introduce_button onClick={yesClickHandler}>
+          {yes}
+        </Styled.Introduce_button>
+        <Styled.Introduce_button onClick={noClickHandler}>
+          {no}
+        </Styled.Introduce_button>
       </div>
     </div>
   );
