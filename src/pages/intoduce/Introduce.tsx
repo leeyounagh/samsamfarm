@@ -18,24 +18,26 @@ export default function Introduce() {
   return (
     <Styled.Layout>
       <Styled.Introduce_backgroundImg />
-      <Styled.GOBackMainDiv
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        <Btn1 title="메인 페이지로 가기"></Btn1>
-      </Styled.GOBackMainDiv>
 
       <Styled.Introduce_Script>
-        <p style={{ fontSize: "1.8rem" }}>{title1}</p>
-        <Styled.Introduce_span>
+        <Styled.GOBackMainDiv
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          <Btn1 title="메인 페이지로 가기"></Btn1>
+        </Styled.GOBackMainDiv>
+        <Styled.Introduce_div>
+          <Styled.TextDiv style={{ fontSize: "1.8rem" }}>
+            {title1}
+          </Styled.TextDiv>
           <Styled.Introduce_buttonDiv onClick={yesClickHandler}>
-            <Btn1 title={yes}></Btn1>
+            <Btn1 title={yes} />
           </Styled.Introduce_buttonDiv>
           <Styled.Introduce_buttonDiv onClick={() => noClickHandler()}>
-            <Btn1 title={no}></Btn1>
+            <Btn1 title={no} />
           </Styled.Introduce_buttonDiv>
-        </Styled.Introduce_span>
+        </Styled.Introduce_div>
       </Styled.Introduce_Script>
     </Styled.Layout>
   );

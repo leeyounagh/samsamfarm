@@ -37,6 +37,7 @@ export const BtnDiv = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const Btn = styled.button`
+export const BtnLayout = styled.div`
   margin-right: 50px;
+  white-space: nowrap;
 `;

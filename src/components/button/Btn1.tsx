@@ -6,6 +6,8 @@ const Slayout = styled.div`
 `;
 
 const SBtn1 = styled.button`
+  cursor: pointer;
+  overflow: hidden;
   font-weight: 600;
   color: #b3933b;
   text-transform: uppercase;
@@ -21,18 +23,7 @@ const SBtn1 = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 50px;
-  }
-  @media (max-width: 480px) {
-    width: 100%;
-    height: 15px;
-    font-size: 0.8rem;
-  }
+
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
     background 150ms cubic-bezier(0, 0, 0.58, 1);
   &::before {

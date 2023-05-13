@@ -12,28 +12,32 @@ export const Introduce_backgroundImg = styled.div`
 
 export const Introduce_Script = styled.div`
   width: 100%;
+  height: 20vh;
   display: flex;
   font-family: "DOSPilgiMedium";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2")
     format("woff2");
   font-weight: normal;
   font-style: normal;
-  p {
-    display: flex;
-    align-items: center;
-    margin-left: 50px;
-  }
 `;
 
-export const Introduce_span = styled.span`
-  margin-left: 30%;
+export const Introduce_div = styled.div`
   margin-top: 5%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  p {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const Introduce_buttonDiv = styled.div`
   font-size: 1.5em;
   width: 8rem;
   height: 6rem;
+  white-space: nowrap;
+  padding-top: 10px;
 `;
 
 export const GOBackMainDiv = styled.div`
@@ -42,4 +46,13 @@ export const GOBackMainDiv = styled.div`
     format("woff2");
   font-weight: normal;
   font-style: normal;
+  width: 20%;
+  height: 10%;
+`;
+
+export const TextDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
 `;

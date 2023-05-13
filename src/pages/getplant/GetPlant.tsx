@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import * as Styled from "./getplant.styled";
 import { useNavigate } from "react-router-dom";
+import Btn1 from "../../components/button/Btn1";
 
 export default function GetPlant() {
   const [isShowOpen, setIsShowOpen] = useState(false);
@@ -9,7 +10,7 @@ export default function GetPlant() {
   useEffect(() => {
     setTimeout(() => {
       setIsShowOpen(true);
-    }, 2000);
+    }, 3000);
   }, []);
 
   return (
@@ -17,14 +18,12 @@ export default function GetPlant() {
       <Styled.TitleDiv>
         <h2>꽃 배정이 완료 되었습니다.</h2>
         {isShowOpen ? (
-          <Styled.BtnDiv>
-            <Styled.Btn
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              메인으로 가기
-            </Styled.Btn>
+          <Styled.BtnDiv
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            <Btn1 title="메인으로 가기"></Btn1>
           </Styled.BtnDiv>
         ) : null}
       </Styled.TitleDiv>
