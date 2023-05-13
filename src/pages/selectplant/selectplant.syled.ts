@@ -18,7 +18,7 @@ export const FlowerDiv = styled.div`
   justify-content: center;
 `;
 export const OtherDiv = styled.div`
-  width: 50%;
+  width: 40%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -43,7 +43,7 @@ export const TextDiv = styled.div`
 `;
 export const LayoutInnerDiv = styled.div`
   width: 100%;
-  height: 80%;
+  height: 60%;
   display: flex;
   padding-top: 50px;
 `;

@@ -1,5 +1,6 @@
 import * as Styled from "./intoduce.styled";
 import { useNavigate } from "react-router-dom";
+import Btn1 from "../../components/button/Btn1";
 
 export default function Introduce() {
   const title1 =
@@ -15,26 +16,27 @@ export default function Introduce() {
   };
 
   return (
-    <div>
+    <Styled.Layout>
       <Styled.Introduce_backgroundImg />
-      <button
+      <Styled.GOBackMainDiv
         onClick={() => {
           navigate("/");
         }}
       >
-        메인 페이지로 가기
-      </button>
+        <Btn1 title="메인 페이지로 가기"></Btn1>
+      </Styled.GOBackMainDiv>
+
       <Styled.Introduce_Script>
         <p style={{ fontSize: "1.8rem" }}>{title1}</p>
         <Styled.Introduce_span>
-          <Styled.Introduce_button onClick={yesClickHandler}>
-            {yes}
-          </Styled.Introduce_button>
-          <Styled.Introduce_button onClick={noClickHandler}>
-            {no}
-          </Styled.Introduce_button>
+          <Styled.Introduce_buttonDiv onClick={yesClickHandler}>
+            <Btn1 title={yes}></Btn1>
+          </Styled.Introduce_buttonDiv>
+          <Styled.Introduce_buttonDiv onClick={() => noClickHandler()}>
+            <Btn1 title={no}></Btn1>
+          </Styled.Introduce_buttonDiv>
         </Styled.Introduce_span>
       </Styled.Introduce_Script>
-    </div>
+    </Styled.Layout>
   );
 }
