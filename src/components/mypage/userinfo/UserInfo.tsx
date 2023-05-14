@@ -5,20 +5,39 @@ interface userInfoType {
   setIsOpenUserInfo: Dispatch<SetStateAction<boolean>>;
 }
 
+interface userType {
+  created_at: string;
+  email: string;
+  mbti: string;
+  name: string;
+  nickname: string;
+  phone: string;
+  updated_at: string;
+}
 export default function UserInfo({ setIsOpenUserInfo }: userInfoType) {
-  const [userInfo, setUserInfo] = useState([]);
+  const [userInfo, setUserInfo] = useState<userType>({
+    created_at: "",
+    email: "",
+    mbti: "",
+    name: "",
+    nickname: "",
+    phone: "",
+    updated_at: "",
+  });
 
   useEffect(() => {
     const getUserInfo = async () => {
       try {
         const response = await AxiosInstance.get("/user");
-        console.log(response);
+        const { data } = await response.data;
+        setUserInfo(data);
       } catch (err) {
         alert(err);
       }
     };
     getUserInfo();
   }, []);
+  console.log(userInfo);
   return (
     <Styled.Layout>
       <Styled.CloseBtn>
@@ -35,13 +54,13 @@ export default function UserInfo({ setIsOpenUserInfo }: userInfoType) {
       <Styled.userInfoDiv>
         <Styled.userInfoBox>
           <Styled.InfoText>
-            <h2>루카스님</h2>
+            <h2>{userInfo && userInfo?.nickname}</h2>
           </Styled.InfoText>
           <Styled.InfoText>
-            <h3>Email: adsfasdf@naver.com</h3>
+            <h3>Email:{userInfo?.email}</h3>
           </Styled.InfoText>
           <Styled.InfoText>
-            <h3>Mbti: INTP</h3>
+            <h3>Mbti: {userInfo?.mbti}</h3>
           </Styled.InfoText>
         </Styled.userInfoBox>
       </Styled.userInfoDiv>

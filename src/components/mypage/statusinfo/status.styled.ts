@@ -34,7 +34,7 @@ export const StatusDiv = styled.div`
   width: 50%;
   height: 100%;
   border-radius: 50px;
-
+  text-align: center;
   h1 {
     text-align: center;
     margin-top: 30px;
