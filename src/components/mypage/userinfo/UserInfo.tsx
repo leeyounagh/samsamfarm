@@ -1,11 +1,24 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import * as Styled from "./userinfo.styled";
-
+import AxiosInstance from "../../../api/AxiosIntance";
 interface userInfoType {
   setIsOpenUserInfo: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function UserInfo({ setIsOpenUserInfo }: userInfoType) {
+  const [userInfo, setUserInfo] = useState([]);
+
+  useEffect(() => {
+    const getUserInfo = async () => {
+      try {
+        const response = await AxiosInstance.get("/user");
+        console.log(response);
+      } catch (err) {
+        alert(err);
+      }
+    };
+    getUserInfo();
+  }, []);
   return (
     <Styled.Layout>
       <Styled.CloseBtn>

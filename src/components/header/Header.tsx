@@ -8,6 +8,7 @@ import Sidebar from "./sidebar/Sidebar";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const JwtToken = localStorage.getItem("JWtToken");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,10 +50,23 @@ export default function Header() {
           <Styled.Logo src={LogoImage} alt="로고 이미지" />
         </Link>
         <Styled.NavMenu>
-          <Link to="/Login">
-            <Styled.LoginButton>로그인</Styled.LoginButton>
-          </Link>
+          {JwtToken ? (
+            <Styled.LoginButton
+              onClick={() => {
+                localStorage.removeItem("JWtToken");
+                window.location.reload();
+              }}
+            >
+              로그아웃
+            </Styled.LoginButton>
+          ) : (
+            <Link to="/startpage">
+              <Styled.LoginButton>로그인</Styled.LoginButton>
+            </Link>
+          )}
+
           <GiHamburgerMenu
+            style={{ cursor: "pointer" }}
             size={45}
             onClick={() => {
               handleSidebarOpen();

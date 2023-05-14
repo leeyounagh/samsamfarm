@@ -22,8 +22,13 @@ export const TitleDiv = styled.div`
   text-align: center;
   padding-top: 30px;
   margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   h3 {
     margin-top: 15px;
+    font-size: 1.5rem;
+    margin-left: 10px;
   }
 `;
 

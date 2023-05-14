@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Landing from "./pages/landing/Landing";
 import Login from "./pages/login/Login";
 import "./App.css";
@@ -11,17 +11,22 @@ import Register from "./pages/register/Register";
 import Introduce from "./pages/intoduce/Introduce";
 import IntroduceReturnPage from "./pages/introducereturn/IntroduceReturnPage";
 import SelectPlantPage from "./pages/selectplant/SelectPlantPage";
-import PlantConfirmPage from "./pages/plantconfirmpage/PlantConfirmPage";
-import PlantConfirmReturnPage from "./pages/plantconfirmreturn/PlantConfirmReturnPage";
 import SelectMbtiPlantPage from "./pages/selectmbti/SelectMbtiPlantPage";
-import AccessPage from "./pages/access/AccessPage";
 import PlantDescriptionPage from "./pages/plantdescription/PlantDescriptionPage";
 import GetPlant from "./pages/getplant/GetPlant";
-import StartPage from "./pages/StartPage/StartPage";
+import StartPage from "./pages/startpage/StartPage";
+import { useEffect } from "react";
 
 function App() {
   const location = useLocation();
   const isMainPage = location.pathname === "/startpage";
+  const jwtToken = localStorage.getItem("JWtToken");
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!jwtToken) {
+      navigate("/");
+    }
+  }, []);
   return (
     <>
       {!isMainPage && <Header />}
@@ -40,16 +45,12 @@ function App() {
           element={<IntroduceReturnPage />}
         />
         <Route path="/story/selectPlantPage" element={<SelectPlantPage />} />
-        <Route path="/story/plantConfirmPage" element={<PlantConfirmPage />} />
-        <Route
-          path="/story/plantConfirmReturnPage"
-          element={<PlantConfirmReturnPage />}
-        />
+
         <Route
           path="/story/selectMbtiPlantPage"
           element={<SelectMbtiPlantPage />}
         />
-        <Route path="/story/accessPage" element={<AccessPage />} />
+
         <Route
           path="/story/plantDescriptionPage/:plantId"
           element={<PlantDescriptionPage />}

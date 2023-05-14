@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { useEffect, useState } from "react";
 import { CommunityType } from "../../types";
+import Btn1 from "../button/Btn1";
 
 interface SwiperStyle extends React.CSSProperties {
   "--swiper-navigation-color": string;
@@ -57,14 +58,14 @@ export default function Carousel() {
             {item?.title.length > 8 ? item?.title.substring(0, 6) : item?.title}
           </h1>
           <h3>글쓴이: {item?.writer}</h3>
-          <button
+          <div
             onClick={() => {
               setIsOpenModal(true);
               setClickedData(item);
             }}
           >
-            바로가기
-          </button>
+            <Btn1 title="바로가기" />
+          </div>
         </Styled.InfoBox>
       );
     });

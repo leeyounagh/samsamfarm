@@ -84,6 +84,7 @@ function Board() {
   const indexOfLastPost = currentPage * postsPerPage; // 마지막 게시글 인덱스
   const indexOfFirstPost = indexOfLastPost - postsPerPage; // 첫 번째 게시글 인덱스
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost); // 현재 페이지의 게시글 목록
+  const jwtToken = localStorage.getItem("JWtToken");
 
   useEffect(() => {
     setFilteredPosts(communityData);
@@ -134,9 +135,11 @@ function Board() {
           totalPages={totalPages}
           onPageChange={handlePageChange}
         />
-        <Link to="/CommunityUpdate">
-          <Styled.WritingBtn> 글쓰기 </Styled.WritingBtn>
-        </Link>
+        {jwtToken && (
+          <Link to="/CommunityUpdate">
+            <Styled.WritingBtn> 글쓰기 </Styled.WritingBtn>
+          </Link>
+        )}
       </Styled.Container>
     </>
   );

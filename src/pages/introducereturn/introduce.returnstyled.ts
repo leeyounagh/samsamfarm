@@ -49,7 +49,7 @@ export const SelectPlantPage_otherPlant = styled.div`
     transform: scale(1.2);
   }
 `;
-export const Introduce_button = styled.button`
+export const Introduce_button_div = styled.div`
   font-size: 1.5em;
 `;
 export const Introuduce_Character = styled.img``;

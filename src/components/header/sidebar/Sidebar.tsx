@@ -13,7 +13,7 @@ type SidebarProps = {
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
   const asideRef = useRef<HTMLDivElement | null>(null);
-
+  const JwtToken = localStorage.getItem("JWtToken");
   useOnClickOutside(asideRef, () => handleSidebarClose());
 
   return (
@@ -30,15 +30,36 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
             />
           </Styled.CloseButton>
           <Styled.SidebarButton>
-            <Link to="/community">
-              <Styled.SidebarButtonDetail>Community</Styled.SidebarButtonDetail>
-            </Link>
-            <Link to="/mypage">
-              <Styled.SidebarButtonDetail>My Page</Styled.SidebarButtonDetail>
+            <Link to="/">
+              <Styled.SidebarButtonDetail>Main Page</Styled.SidebarButtonDetail>
             </Link>
 
-            <Styled.SidebarButtonDetail>Main Page</Styled.SidebarButtonDetail>
-            <Styled.SidebarButtonDetail>LogOut</Styled.SidebarButtonDetail>
+            {JwtToken ? (
+              <>
+                <Link to="/community">
+                  <Styled.SidebarButtonDetail>
+                    Community
+                  </Styled.SidebarButtonDetail>
+                </Link>
+                <Link to="/mypage">
+                  <Styled.SidebarButtonDetail>
+                    My Page
+                  </Styled.SidebarButtonDetail>
+                </Link>
+                <Styled.SidebarButtonDetail
+                  onClick={() => {
+                    localStorage.removeItem("JWtToken");
+                    window.location.reload();
+                  }}
+                >
+                  LogOut
+                </Styled.SidebarButtonDetail>
+              </>
+            ) : (
+              <Link to="/login">
+                <Styled.SidebarButtonDetail>Login</Styled.SidebarButtonDetail>
+              </Link>
+            )}
           </Styled.SidebarButton>
 
           <KakaoSharing />

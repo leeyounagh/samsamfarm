@@ -3,11 +3,11 @@ import { UserType } from "../types";
 
 const initialState: UserType[] = [
   {
-    id: 17,
-    email: "test@gmail.com",
-    iat: 1683982139,
-    exp: 1684025339,
-    iss: "samsamfarm",
+    id: 0,
+    email: "",
+    iat: 0,
+    exp: 0,
+    iss: "",
   },
 ];
 
