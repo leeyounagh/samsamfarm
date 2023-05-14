@@ -16,6 +16,11 @@ export const Footerbox = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const FooterText = styled.div`
@@ -23,16 +28,21 @@ export const FooterText = styled.div`
   float: right;
   /* margin: 45px 0 0 30px; */
   color: #555;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1rem;
+  }
 `;
 
 export const FooterLogo = styled.img`
-  float: left;
+  /* float: left; */
   width: 250px;
-  /* margin: 45px 0 0 30px; */
-  /* margin-left: 150px; */
 
   @media screen and (max-width: 768px) {
-    width: 130px;
+    width: 150px;
     margin-left: 10px;
   }
 `;
