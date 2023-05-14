@@ -25,6 +25,7 @@ export default function MyPage() {
   const [isOpenUserInfo, setIsOpenUserInfo] = useState<boolean>(false);
   const [getPlantData, setPlantData] = useState<plantType[]>([]);
   const [ClickedStatus, setClickedStatus] = useState<number>(0);
+
   useEffect(() => {
     const handleDevice = async () => {
       const response = await axios.get("deviceplant.json");
