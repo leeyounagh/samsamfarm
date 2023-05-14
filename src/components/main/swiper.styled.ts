@@ -4,6 +4,8 @@ export const Layout = styled.div`
   width: 100%;
   height: 20vh;
   margin-top: 200px;
+  display: flex;
+  justify-content: center;
   @media (max-width: 1400px) {
     margin-top: 300px;
   }
@@ -44,4 +46,8 @@ export const TitleDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const InnerLayout = styled.div`
+  width: 80%;
 `;

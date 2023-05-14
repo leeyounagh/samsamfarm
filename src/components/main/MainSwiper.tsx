@@ -15,33 +15,35 @@ interface SwiperStyle extends CSSProperties {
 export default function MainSwiper() {
   return (
     <Styled.Layout>
-      <Swiper
-        key={uuidv4()}
-        style={
-          {
-            "--swiper-navigation-color": "black",
-          } as SwiperStyle
-        }
-        slidesPerView={3}
-        spaceBetween={30}
-        hashNavigation={{
-          watchState: true,
-        }}
-        pagination={{
-          clickable: false,
-        }}
-        modules={[Pagination, Navigation, HashNavigation]}
-        className="mySwiper"
-      >
-        {CommunityThumbnail.map((item) => (
-          <SwiperSlide style={{ marginLeft: "80px" }} key={uuidv4()}>
-            <Styled.ListDiv key={uuidv4()}>
-              <Styled.ListImg src={item.img} />
-              <Styled.TitleDiv>안녕하세요!</Styled.TitleDiv>
-            </Styled.ListDiv>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <Styled.InnerLayout>
+        <Swiper
+          key={uuidv4()}
+          style={
+            {
+              "--swiper-navigation-color": "black",
+            } as SwiperStyle
+          }
+          slidesPerView={3}
+          spaceBetween={30}
+          hashNavigation={{
+            watchState: true,
+          }}
+          pagination={{
+            clickable: false,
+          }}
+          modules={[Pagination, Navigation, HashNavigation]}
+          className="mySwiper"
+        >
+          {CommunityThumbnail.map((item) => (
+            <SwiperSlide style={{ marginLeft: "80px" }} key={uuidv4()}>
+              <Styled.ListDiv key={uuidv4()}>
+                <Styled.ListImg src={item.img} />
+                <Styled.TitleDiv>안녕하세요!</Styled.TitleDiv>
+              </Styled.ListDiv>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Styled.InnerLayout>
     </Styled.Layout>
   );
 }

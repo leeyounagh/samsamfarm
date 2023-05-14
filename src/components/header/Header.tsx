@@ -60,7 +60,7 @@ export default function Header() {
               로그아웃
             </Styled.LoginButton>
           ) : (
-            <Link to="/Login">
+            <Link to="/startpage">
               <Styled.LoginButton>로그인</Styled.LoginButton>
             </Link>
           )}

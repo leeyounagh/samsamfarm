@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Landing from "./pages/landing/Landing";
 import Login from "./pages/login/Login";
 import "./App.css";
@@ -16,11 +16,19 @@ import PlantConfirmReturnPage from "./pages/plantconfirmreturn/PlantConfirmRetur
 import SelectMbtiPlantPage from "./pages/selectmbti/SelectMbtiPlantPage";
 import PlantDescriptionPage from "./pages/plantdescription/PlantDescriptionPage";
 import GetPlant from "./pages/getplant/GetPlant";
-import StartPage from "./pages/StartPage/StartPage";
+import StartPage from "./pages/startpage/StartPage";
+import { useEffect } from "react";
 
 function App() {
   const location = useLocation();
   const isMainPage = location.pathname === "/startpage";
+  const jwtToken = localStorage.getItem("JWtToken");
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!jwtToken) {
+      navigate("/");
+    }
+  }, []);
   return (
     <>
       {!isMainPage && <Header />}
