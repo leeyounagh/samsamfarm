@@ -6,6 +6,11 @@ export const Layout = styled.div`
   height: 85vh;
   position: fixed;
   background-image: url("./asset/유저정보배경.gif");
+  font-family: "양진체";
+  src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 `;
 export const CloseBtn = styled.div`
   width: 100%;

@@ -30,25 +30,31 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
             />
           </Styled.CloseButton>
           <Styled.SidebarButton>
-            <Link to="/community">
-              <Styled.SidebarButtonDetail>Community</Styled.SidebarButtonDetail>
-            </Link>
-            <Link to="/mypage">
-              <Styled.SidebarButtonDetail>My Page</Styled.SidebarButtonDetail>
-            </Link>
             <Link to="/">
               <Styled.SidebarButtonDetail>Main Page</Styled.SidebarButtonDetail>
             </Link>
 
             {JwtToken ? (
-              <Styled.SidebarButtonDetail
-                onClick={() => {
-                  localStorage.removeItem("JWtToken");
-                  window.location.reload();
-                }}
-              >
-                LogOut
-              </Styled.SidebarButtonDetail>
+              <>
+                <Link to="/community">
+                  <Styled.SidebarButtonDetail>
+                    Community
+                  </Styled.SidebarButtonDetail>
+                </Link>
+                <Link to="/mypage">
+                  <Styled.SidebarButtonDetail>
+                    My Page
+                  </Styled.SidebarButtonDetail>
+                </Link>
+                <Styled.SidebarButtonDetail
+                  onClick={() => {
+                    localStorage.removeItem("JWtToken");
+                    window.location.reload();
+                  }}
+                >
+                  LogOut
+                </Styled.SidebarButtonDetail>
+              </>
             ) : (
               <Link to="/login">
                 <Styled.SidebarButtonDetail>Login</Styled.SidebarButtonDetail>

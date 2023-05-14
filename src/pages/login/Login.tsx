@@ -19,8 +19,6 @@ export default function Login() {
     email: true,
     password: true,
   });
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -64,11 +62,11 @@ export default function Login() {
       }
     }
   };
-
+  console.log(forms.email, forms.password);
   const handleLoginClick = async () => {
     const body = {
-      email: "test@gmail.com",
-      password: "test",
+      email: forms.email,
+      password: forms.password,
     };
     try {
       const response = await axios.post(
@@ -83,10 +81,6 @@ export default function Login() {
         alert(err);
       }
     }
-  };
-
-  const handleJoinClick = () => {
-    alert("회원가입 페이지 이동");
   };
 
   return (
@@ -131,8 +125,14 @@ export default function Login() {
         >
           로그인
         </Button>
-        <Styled.LoginFindIdAndPasswordStyled></Styled.LoginFindIdAndPasswordStyled>
-        <Button id="join-button" outline onClick={handleJoinClick}>
+
+        <Button
+          id="join-button"
+          outline
+          onClick={() => {
+            navigate("/register");
+          }}
+        >
           회원가입
         </Button>
       </Styled.LoginButtonWrapStyled>

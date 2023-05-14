@@ -11,8 +11,6 @@ import Register from "./pages/register/Register";
 import Introduce from "./pages/intoduce/Introduce";
 import IntroduceReturnPage from "./pages/introducereturn/IntroduceReturnPage";
 import SelectPlantPage from "./pages/selectplant/SelectPlantPage";
-import PlantConfirmPage from "./pages/plantconfirmpage/PlantConfirmPage";
-import PlantConfirmReturnPage from "./pages/plantconfirmreturn/PlantConfirmReturnPage";
 import SelectMbtiPlantPage from "./pages/selectmbti/SelectMbtiPlantPage";
 import PlantDescriptionPage from "./pages/plantdescription/PlantDescriptionPage";
 import GetPlant from "./pages/getplant/GetPlant";
@@ -47,11 +45,7 @@ function App() {
           element={<IntroduceReturnPage />}
         />
         <Route path="/story/selectPlantPage" element={<SelectPlantPage />} />
-        <Route path="/story/plantConfirmPage" element={<PlantConfirmPage />} />
-        <Route
-          path="/story/plantConfirmReturnPage"
-          element={<PlantConfirmReturnPage />}
-        />
+
         <Route
           path="/story/selectMbtiPlantPage"
           element={<SelectMbtiPlantPage />}

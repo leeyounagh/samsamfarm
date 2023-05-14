@@ -5,22 +5,31 @@ import axios from "axios";
 
 interface StatusType {
   setIsOpenStatus: Dispatch<SetStateAction<boolean>>;
+  element: {
+    bright: number;
+    humid: string;
+    id: number;
+    moisture: string;
+    temperature: string;
+  };
+  ClickedStatus: number;
 }
 
-function StatusInfo({ setIsOpenStatus }: StatusType) {
+function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
   const [isChangeBtn, setIsChangeBtn] = useState<boolean>(false);
   const [isGuideOpen, setIsGuideOpen] = useState<boolean>(false);
+  const [status, setStatus] = useState(0);
 
   const handleSwitch = async () => {
-    console.log("클릭");
+    setIsChangeBtn(true);
     const body = {
       temperature: 11,
     };
-    const response = await axios.post(
-      "http://34.64.51.215/samsamfarm/api/device/control",
-      body
-    );
-    console.log(response);
+    // const response = await axios.post(
+    //   "http://34.64.51.215/samsamfarm/api/device/control",
+    //   body
+    // );
+    // console.log(response);
   };
 
   return (
@@ -37,22 +46,27 @@ function StatusInfo({ setIsOpenStatus }: StatusType) {
 
       <Styled.MainInfoDiv>
         <Styled.StatusDiv>
-          <h1>현재 온도</h1>
+          {ClickedStatus === 0 ? (
+            <h1>현재 온도</h1>
+          ) : ClickedStatus === 1 ? (
+            <h1>조도</h1>
+          ) : ClickedStatus === 2 ? (
+            <h1>습도</h1>
+          ) : null}
+
           <Styled.StatusTextDiv>
-            <h3>36.5도</h3>
-            <h2>fan이 돌아가고 있습니다.</h2>
+            {ClickedStatus === 0 ? (
+              <h3>{element.temperature}도</h3>
+            ) : ClickedStatus === 1 ? (
+              <h3>{element.bright}</h3>
+            ) : ClickedStatus === 2 ? (
+              <h3>{element.humid}</h3>
+            ) : null}
           </Styled.StatusTextDiv>
         </Styled.StatusDiv>
 
         <Styled.ButtonDiv>
-          <Styled.ButtonImg
-            src="./asset/off버튼.png"
-            onClick={() => {
-              setIsChangeBtn(!isChangeBtn);
-              handleSwitch();
-            }}
-          />
-          {/* {isChangeBtn === false ? (
+          {isChangeBtn === false ? (
             <Styled.ButtonImg
               src="./asset/off버튼.png"
               onClick={() => {
@@ -66,7 +80,8 @@ function StatusInfo({ setIsOpenStatus }: StatusType) {
                 setIsChangeBtn(!isChangeBtn);
               }}
             />
-          )} */}
+          )}
+          {isChangeBtn && <h2>fan이 돌아가고 있습니다.</h2>}
         </Styled.ButtonDiv>
       </Styled.MainInfoDiv>
       <Styled.GuideBookDiv

@@ -24,8 +24,7 @@ export default function MyPage() {
   const [isOpenStatus, setIsOpenStatus] = useState<boolean>(false);
   const [isOpenUserInfo, setIsOpenUserInfo] = useState<boolean>(false);
   const [getPlantData, setPlantData] = useState<plantType[]>([]);
-  const [changeStatus, setChangeStatus] = useState<boolean>(false);
-
+  const [ClickedStatus, setClickedStatus] = useState<number>(0);
   useEffect(() => {
     const handleDevice = async () => {
       const response = await axios.get("deviceplant.json");
@@ -52,7 +51,7 @@ export default function MyPage() {
     ) : (
       <>
         <Styled.TextDiv>{status}</Styled.TextDiv>
-        <Styled.StatusImg src="./asset/스마일.png" />
+        <Styled.StatusImg src="./asset/스마일2.png" />
       </>
     );
   };
@@ -87,6 +86,7 @@ export default function MyPage() {
                           src={item.img}
                           onClick={() => {
                             setIsOpenStatus(true);
+                            setClickedStatus(item.id);
                           }}
                         />
                       </Styled.IconDiv>
@@ -102,6 +102,13 @@ export default function MyPage() {
                   )
                   .map((element) => (
                     <>
+                      {isOpenStatus && (
+                        <StatusInfo
+                          element={element}
+                          setIsOpenStatus={setIsOpenStatus}
+                          ClickedStatus={ClickedStatus}
+                        />
+                      )}
                       <Styled.StatusTextDiv>
                         {handleStatus("bright", element.bright)}
                       </Styled.StatusTextDiv>
@@ -121,8 +128,6 @@ export default function MyPage() {
       {isOpenUserInfo ? (
         <UserInfo setIsOpenUserInfo={setIsOpenUserInfo} />
       ) : null}
-
-      {isOpenStatus ? <StatusInfo setIsOpenStatus={setIsOpenStatus} /> : null}
     </Styled.Layout>
   );
 }

@@ -66,6 +66,7 @@ export default function Header() {
           )}
 
           <GiHamburgerMenu
+            style={{ cursor: "pointer" }}
             size={45}
             onClick={() => {
               handleSidebarOpen();
