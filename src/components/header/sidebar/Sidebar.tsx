@@ -44,6 +44,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
               <Styled.SidebarButtonDetail
                 onClick={() => {
                   localStorage.removeItem("JWtToken");
+                  window.location.reload();
                 }}
               >
                 LogOut

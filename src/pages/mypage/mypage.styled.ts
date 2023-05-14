@@ -54,17 +54,18 @@ export const ConsoleImg = styled.img`
   left: 33%;
   z-index: 10;
 `;
-export const IconDiv = styled.div`
+export const IconLayout = styled.div`
   width: 100%;
-  height: 50%;
+  height: 13rem;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  padding-top: 10%;
 `;
 export const IconImg = styled.img`
   z-index: 50;
-  width: 15%;
+  width: 100%;
   height: 100px;
   margin-top: 30px;
   transition: transform 0.3s ease;
@@ -81,10 +82,12 @@ export const ConsoleInnerDiv = styled.div`
   height: 100%;
   background-image: url("./asset/게임기누끼2.png");
   background-size: 100% 100%;
+  display: grid;
+  justify-content: center;
 `;
 export const StatusDiv = styled.div`
   width: 100%;
-  height: 40%;
+  height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,3 +122,15 @@ export const TextDiv = styled.div`
 `;
 
 export const MypageBtnDiv = styled.div``;
+
+export const StatusImg = styled.img`
+  width: 5rem;
+  height: 5rem;
+`;
+
+export const IconDiv = styled.div`
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+`;

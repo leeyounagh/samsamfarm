@@ -4,6 +4,7 @@ import StatusInfo from "../../components/mypage/statusinfo/StatusInfo";
 import { useEffect, useState } from "react";
 import Btn1 from "../../components/button/Btn1";
 import axios from "axios";
+import MypageImg from "../../data/mypageImg";
 
 interface plantType {
   bright: number;
@@ -13,10 +14,17 @@ interface plantType {
   temperature: string;
 }
 
+interface plantMapperType {
+  bright: number;
+  humid: string;
+  temperature: string;
+  [key: string]: number | string;
+}
 export default function MyPage() {
   const [isOpenStatus, setIsOpenStatus] = useState<boolean>(false);
   const [isOpenUserInfo, setIsOpenUserInfo] = useState<boolean>(false);
   const [getPlantData, setPlantData] = useState<plantType[]>([]);
+  const [changeStatus, setChangeStatus] = useState<boolean>(false);
 
   useEffect(() => {
     const handleDevice = async () => {
@@ -28,6 +36,31 @@ export default function MyPage() {
     };
     handleDevice();
   }, []);
+
+  const handleStatus = (status: string, value: string | number) => {
+    const mapper: plantMapperType = {
+      bright: 30,
+      humid: "80",
+      temperature: "60",
+    };
+
+    return Number(value) > Number(mapper[status]) ? (
+      <>
+        <Styled.TextDiv>{status}</Styled.TextDiv>
+        <Styled.StatusImg src="./asset/위험.png" />
+      </>
+    ) : (
+      <>
+        <Styled.TextDiv>{status}</Styled.TextDiv>
+        <Styled.StatusImg src="./asset/스마일.png" />
+      </>
+    );
+  };
+  console.log(
+    getPlantData?.filter((_element, index) => {
+      return index === getPlantData.length - 1;
+    })
+  );
   return (
     <Styled.Layout>
       <Styled.BackgroundDiv>
@@ -45,51 +78,41 @@ export default function MyPage() {
 
           <Styled.ConsoleDiv>
             <Styled.ConsoleInnerDiv>
-              <Styled.IconDiv>
-                <Styled.IconImg
-                  src="./asset/temperature.png"
-                  onClick={() => {
-                    setIsOpenStatus(true);
-                  }}
-                />
-                <Styled.IconImg
-                  src="./asset/전구.png"
-                  onClick={() => {
-                    setIsOpenStatus(true);
-                  }}
-                />
-                <Styled.IconImg
-                  src="./asset/습도1.png"
-                  onClick={() => {
-                    setIsOpenStatus(true);
-                  }}
-                />
-              </Styled.IconDiv>
+              <Styled.IconLayout>
+                {MypageImg.map((item) => {
+                  return (
+                    <>
+                      <Styled.IconDiv>
+                        <Styled.IconImg
+                          src={item.img}
+                          onClick={() => {
+                            setIsOpenStatus(true);
+                          }}
+                        />
+                      </Styled.IconDiv>
+                    </>
+                  );
+                })}
+              </Styled.IconLayout>
+
               <Styled.StatusDiv>
-                <Styled.StatusTextDiv>
-                  <Styled.TextDiv>온도</Styled.TextDiv>
-                  <img
-                    src="./asset/스마일-removebg-preview (1).png"
-                    width="80px"
-                    height="80px"
-                  />
-                </Styled.StatusTextDiv>
-                <Styled.StatusTextDiv>
-                  <Styled.TextDiv>조도</Styled.TextDiv>
-                  <img
-                    src="./asset/위험-removebg-preview.png"
-                    width="80px"
-                    height="80px"
-                  />
-                </Styled.StatusTextDiv>
-                <Styled.StatusTextDiv>
-                  <Styled.TextDiv>습도</Styled.TextDiv>
-                  <img
-                    src="./asset/스마일-removebg-preview (1).png"
-                    width="80px"
-                    height="80px"
-                  />
-                </Styled.StatusTextDiv>
+                {getPlantData
+                  ?.filter(
+                    (_element, index) => index === getPlantData.length - 1
+                  )
+                  .map((element) => (
+                    <>
+                      <Styled.StatusTextDiv>
+                        {handleStatus("bright", element.bright)}
+                      </Styled.StatusTextDiv>
+                      <Styled.StatusTextDiv>
+                        {handleStatus("humid", element.humid)}
+                      </Styled.StatusTextDiv>
+                      <Styled.StatusTextDiv>
+                        {handleStatus("temperature", element.temperature)}
+                      </Styled.StatusTextDiv>
+                    </>
+                  ))}
               </Styled.StatusDiv>
             </Styled.ConsoleInnerDiv>
           </Styled.ConsoleDiv>
