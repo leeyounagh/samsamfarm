@@ -3,11 +3,9 @@ import UserInfo from "../../components/mypage/userinfo/UserInfo";
 import StatusInfo from "../../components/mypage/statusinfo/StatusInfo";
 import { useEffect, useState } from "react";
 import Btn1 from "../../components/button/Btn1";
-import axios from "axios";
 import MypageImg from "../../data/mypageImg";
 import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
-import { UserType } from "../../types";
 import NoticeDevice from "../../components/mypage/NoticeDevice";
 
 interface plantType {
