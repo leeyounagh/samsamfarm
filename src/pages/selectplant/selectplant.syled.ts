@@ -9,6 +9,10 @@ export const Layout = styled.div`
     format("woff2");
   font-weight: normal;
   font-style: normal;
+
+  @media (max-width: 768px) {
+    height: 60vh;
+  }
 `;
 
 export const FlowerDiv = styled.div`
@@ -16,22 +20,42 @@ export const FlowerDiv = styled.div`
   height: 100%;
   display: grid;
   justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
+
 export const OtherDiv = styled.div`
   width: 40%;
   height: 100%;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px;
+  }
 `;
+
 export const FlowerImg = styled.img`
-  width: 30rem;
-  height: 30rem;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   transition: transform 0.3s ease;
+
   &:hover {
     transform: scale(1.2);
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    width: 10rem;
+  }
 `;
+
 export const InfoText = styled.div``;
 
 export const TextDiv = styled.div`
@@ -40,20 +64,37 @@ export const TextDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
+
 export const LayoutInnerDiv = styled.div`
   width: 100%;
   height: 60%;
   display: flex;
   padding-top: 50px;
+
+  @media (max-width: 768px) {
+    /* flex-direction: column-reverse; */
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+  }
 `;
 
 export const OtherImg = styled.img`
   width: 80%;
   height: 90%;
+  transition: transform 0.3s ease;
+
   &:hover {
-    transition: transform 0.3s ease;
     transform: scale(1.2);
     cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    width: 65%;
+    height: auto;
   }
 `;
