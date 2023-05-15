@@ -5,8 +5,6 @@ import FlowerImg from "../../data/FlowerImg";
 export default function SelectPlantPage() {
   const RandomNum = Math.floor(Math.random() * 16);
 
-  // 꽃을 랜덤으로 섞는로직을 구현한다
-  console.log(RandomNum, FlowerImg[RandomNum].flower);
   const navigate = useNavigate();
   const userPlant = () => {
     navigate(`/story/plantDescriptionPage/${RandomNum}`);

@@ -4,6 +4,11 @@ export const Container = styled.div`
   max-width: 1300px;
   margin: 0 auto;
   padding: 40px;
+  font-family: "양진체";
+  src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
   h1 {
     text-align: center;
   }

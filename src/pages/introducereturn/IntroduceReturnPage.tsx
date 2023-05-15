@@ -4,6 +4,7 @@ import Btn1 from "../../components/button/Btn1";
 
 export default function IntroduceReturnPage() {
   const navigate = useNavigate();
+
   return (
     <div style={{ height: "70vh" }}>
       <Styled.IntroduceReturnPage_div>

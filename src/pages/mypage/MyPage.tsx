@@ -40,7 +40,7 @@ export default function MyPage() {
     };
     handleDevice();
   }, []);
-  console.log("확인", isOpenUserInfo);
+
   const handleStatus = (status: string, value: string | number) => {
     const mapper: plantMapperType = {
       bright: 30,
@@ -60,11 +60,7 @@ export default function MyPage() {
       </>
     );
   };
-  console.log(
-    getPlantData?.filter((_element, index) => {
-      return index === getPlantData.length - 1;
-    })
-  );
+
   return (
     <Styled.Layout>
       <Styled.BackgroundDiv>

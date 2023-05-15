@@ -7,10 +7,11 @@ interface MusicContextProps {
 
 export const AudioPlayer = createContext<MusicContextProps>({
   isPlaying: false,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   togglePlay: () => {},
 });
 
-export const MusicProvider: React.FC<React.PropsWithChildren<{}>> = ({
+export const MusicProvider: React.FC<React.PropsWithChildren<object>> = ({
   children,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);

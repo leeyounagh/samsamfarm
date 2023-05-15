@@ -33,6 +33,10 @@ export const SwiperDiv = styled.div`
     top: 4%;
     left: 73%;
   }
+  @media screen and (max-width: 480px) {
+    height: 40vh;
+    width: 80%;
+  }
 `;
 
 export const ListDiv = styled.div`
@@ -84,12 +88,18 @@ export const character4Img = styled.img`
 `;
 export const InfoBox = styled.div`
   border: 1px solid lightgray;
+  border-radius: 10px;
   width: 180px;
   height: 150px;
   background-color: white;
   text-align: center;
   opacity: 0.8;
   padding: 15px 0px 0px 15px;
+  font-family: "양진체";
+  src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
   h1 {
     font-size: 1.2rem;
     height: 1.5rem;
@@ -98,5 +108,26 @@ export const InfoBox = styled.div`
   h3 {
     font-size: 1rem;
     height: 1.5rem;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 120px;
+    height: 120px;
+    padding: 0px 0px 0px 0px;
+    h1 {
+      font-size: 1rem;
+      height: 1rem;
+      padding-top: 10px;
+    }
+    h3 {
+      font-size: 0.8rem;
+      height: 1rem;
+    }
+  }
+`;
+
+export const BtnDiv = styled.div`
+  @media screen and (max-width: 1024px) {
+    height: 4rem;
+    white-space: nowrap;
   }
 `;

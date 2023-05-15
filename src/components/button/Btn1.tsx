@@ -15,7 +15,7 @@ const SBtn1 = styled.button`
   margin-bottom: 10px;
   margin-top: 10px;
   width: 100%;
-  height: 3rem;
+  height: 2rem;
   background: white;
   border: 2px solid;
   border-radius: 0.75em;
