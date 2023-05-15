@@ -28,9 +28,7 @@ export default function Introduce() {
           <Btn1 title="메인 페이지로 가기"></Btn1>
         </Styled.GOBackMainDiv>
         <Styled.Introduce_div>
-          <Styled.TextDiv style={{ fontSize: "1.8rem" }}>
-            {title1}
-          </Styled.TextDiv>
+          <Styled.TextDiv>{title1}</Styled.TextDiv>
           <Styled.Introduce_buttonDiv onClick={yesClickHandler}>
             <Btn1 title={yes} />
           </Styled.Introduce_buttonDiv>
