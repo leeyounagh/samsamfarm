@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import * as Styled from "../community.styled";
 import Pagination from "./Pagenation";
 import { Link } from "react-router-dom";
-import { RootState } from "../../../store";
 import PostList from "./PostList";
 import AxiosInstance from "../../../api/AxiosIntance";
 
