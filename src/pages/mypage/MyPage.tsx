@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 import Btn1 from "../../components/button/Btn1";
 import axios from "axios";
 import MypageImg from "../../data/mypageImg";
+import AxiosInstance from "../../api/AxiosIntance";
+import { decodeToken } from "react-jwt";
+import { UserType } from "../../types";
+import NoticeDevice from "../../components/mypage/NoticeDevice";
 
 interface plantType {
   bright: number;
@@ -25,18 +29,18 @@ export default function MyPage() {
   const [isOpenUserInfo, setIsOpenUserInfo] = useState<boolean>(false);
   const [getPlantData, setPlantData] = useState<plantType[]>([]);
   const [ClickedStatus, setClickedStatus] = useState<number>(0);
+  const JwtToken: any = decodeToken(localStorage.JWtToken);
 
   useEffect(() => {
     const handleDevice = async () => {
-      const response = await axios.get("deviceplant.json");
+      const response = await AxiosInstance.get(`/device/plant-data/1`);
       const data = response.data.data;
-      const newItems = getPlantData.concat(data);
+      const newItems = [data, ...getPlantData];
       setPlantData(newItems);
-      console.log(newItems);
     };
     handleDevice();
   }, []);
-
+  console.log("확인", isOpenUserInfo);
   const handleStatus = (status: string, value: string | number) => {
     const mapper: plantMapperType = {
       bright: 30,
@@ -77,58 +81,58 @@ export default function MyPage() {
           </Styled.CharacterDiv>
 
           <Styled.ConsoleDiv>
-            <Styled.ConsoleInnerDiv>
-              <Styled.IconLayout>
-                {MypageImg.map((item) => {
-                  return (
-                    <>
-                      <Styled.IconDiv>
-                        <Styled.IconImg
-                          src={item.img}
-                          onClick={() => {
-                            setIsOpenStatus(true);
-                            setClickedStatus(item.id);
-                          }}
-                        />
-                      </Styled.IconDiv>
-                    </>
-                  );
-                })}
-              </Styled.IconLayout>
+            {JwtToken?.deivce_id == null ? (
+              <NoticeDevice />
+            ) : (
+              <Styled.ConsoleInnerDiv>
+                <Styled.IconLayout>
+                  {MypageImg.map((item) => {
+                    return (
+                      <>
+                        <Styled.IconDiv>
+                          <Styled.IconImg
+                            src={item.img}
+                            onClick={() => {
+                              setIsOpenStatus(!isOpenStatus);
+                              setClickedStatus(item.id);
+                            }}
+                          />
+                        </Styled.IconDiv>
+                      </>
+                    );
+                  })}
+                </Styled.IconLayout>
 
-              <Styled.StatusDiv>
-                {getPlantData
-                  ?.filter(
-                    (_element, index) => index === getPlantData.length - 1
-                  )
-                  .map((element) => (
-                    <>
-                      {isOpenStatus && (
-                        <StatusInfo
-                          element={element}
-                          setIsOpenStatus={setIsOpenStatus}
-                          ClickedStatus={ClickedStatus}
-                        />
-                      )}
-                      <Styled.StatusTextDiv>
-                        {handleStatus("bright", element.bright)}
-                      </Styled.StatusTextDiv>
-                      <Styled.StatusTextDiv>
-                        {handleStatus("humid", element.humid)}
-                      </Styled.StatusTextDiv>
-                      <Styled.StatusTextDiv>
-                        {handleStatus("temperature", element.temperature)}
-                      </Styled.StatusTextDiv>
-                    </>
-                  ))}
-              </Styled.StatusDiv>
-            </Styled.ConsoleInnerDiv>
+                <Styled.StatusDiv>
+                  {getPlantData
+                    ?.filter((_element, index) => index === 0)
+                    .map((element) => (
+                      <>
+                        {isOpenStatus && (
+                          <StatusInfo
+                            element={element}
+                            setIsOpenStatus={setIsOpenStatus}
+                            ClickedStatus={ClickedStatus}
+                          />
+                        )}
+                        <Styled.StatusTextDiv>
+                          {handleStatus("bright", element.bright)}
+                        </Styled.StatusTextDiv>
+                        <Styled.StatusTextDiv>
+                          {handleStatus("humid", element.humid)}
+                        </Styled.StatusTextDiv>
+                        <Styled.StatusTextDiv>
+                          {handleStatus("temperature", element.temperature)}
+                        </Styled.StatusTextDiv>
+                      </>
+                    ))}
+                </Styled.StatusDiv>
+              </Styled.ConsoleInnerDiv>
+            )}
           </Styled.ConsoleDiv>
         </Styled.UILayout>
       </Styled.BackgroundDiv>
-      {isOpenUserInfo ? (
-        <UserInfo setIsOpenUserInfo={setIsOpenUserInfo} />
-      ) : null}
+      {isOpenUserInfo && <UserInfo setIsOpenUserInfo={setIsOpenUserInfo} />}
     </Styled.Layout>
   );
 }

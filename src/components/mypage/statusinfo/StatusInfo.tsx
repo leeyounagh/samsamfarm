@@ -1,9 +1,8 @@
 import { useState, Dispatch, SetStateAction, useEffect } from "react";
 import GuideBook from "../guidebook/GuideBook";
 import * as Styled from "./status.styled";
-// import axios from "axios";
 import { DataChart } from "../DataChart";
-
+import AxiosInstance from "../../../api/AxiosIntance";
 interface StatusType {
   setIsOpenStatus: Dispatch<SetStateAction<boolean>>;
   element: {
@@ -20,7 +19,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
   const [isChangeBtn, setIsChangeBtn] = useState<boolean>(false);
   const [isGuideOpen, setIsGuideOpen] = useState<boolean>(false);
   const [currentStatus, setCurrentStatus] = useState<number>(0);
-
+  console.log(currentStatus);
   useEffect(() => {
     if (ClickedStatus === 0) {
       setCurrentStatus(Number(element?.temperature));
@@ -41,6 +40,37 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
     setCurrentStatus((prev) => {
       return prev - 30;
     });
+    try {
+      const body = {
+        device_id: 1,
+        wind_command: true,
+        water_command: false,
+        light_command: false,
+      };
+      const response = await AxiosInstance.post("/device/control", body);
+      console.log(response);
+    } catch (err) {
+      alert(err);
+    }
+
+    {
+      ClickedStatus === 0 ? (
+        <>
+          <h1>현재 온도</h1>
+          {currentStatus}
+        </>
+      ) : ClickedStatus === 1 ? (
+        <>
+          <h1>조도</h1>
+          {currentStatus}
+        </>
+      ) : ClickedStatus === 2 ? (
+        <>
+          <h1>습도</h1>
+          {currentStatus}
+        </>
+      ) : null;
+    }
   };
 
   return (
@@ -59,11 +89,20 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
         <Styled.StatusDiv>
           <DataChart />
           {ClickedStatus === 0 ? (
-            <h1>현재 온도</h1>
+            <>
+              <h1>현재 온도</h1>
+              {currentStatus}
+            </>
           ) : ClickedStatus === 1 ? (
-            <h1>조도</h1>
+            <>
+              <h1>조도</h1>
+              {currentStatus}
+            </>
           ) : ClickedStatus === 2 ? (
-            <h1>습도</h1>
+            <>
+              <h1>습도</h1>
+              {currentStatus}
+            </>
           ) : null}
 
           <Styled.StatusTextDiv>{currentStatus}</Styled.StatusTextDiv>
