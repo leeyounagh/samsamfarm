@@ -1,7 +1,6 @@
 import FlowerImg from "../../data/FlowerImg";
 import { useNavigate, useParams } from "react-router-dom";
 import * as Styled from "./plantdescription.styled";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import Btn1 from "../../components/button/Btn1";
 
@@ -16,23 +15,6 @@ export default function PlantDesriptionPage() {
     }
   }, []);
 
-  const handleSubmit = async () => {
-    const body = {
-      userId: 1,
-      deviceId: 1,
-      plantType: flowerName,
-    };
-    try {
-      const response = await axios.post(
-        "http://34.64.51.215/samsamfarm/api/v1/plant",
-        body
-      );
-      console.log(response);
-      navigate(`/story/getplant`);
-    } catch (err) {
-      console.log(err);
-    }
-  };
   return (
     <Styled.Layout>
       <Styled.FlowerDiv>
@@ -52,7 +34,8 @@ export default function PlantDesriptionPage() {
             <Styled.BtnLayout
               onClick={() => {
                 if (plantId) {
-                  handleSubmit();
+                  alert(`당신이 선택한 꽃은 ${flowerName} 입니다.`);
+                  navigate("/story/getplant");
                 }
               }}
             >

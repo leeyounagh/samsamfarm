@@ -8,16 +8,26 @@ export const SnowContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    /* 화면 너비가 768px 이하일 때 적용되는 스타일 */
+    padding: 20px;
+  }
 `;
 
 export const CenteredImage = styled.img`
   width: 800px;
   height: 550px;
-`;
 
+  @media (max-width: 768px) {
+    /* 화면 너비가 768px 이하일 때 적용되는 스타일 */
+    width: 100%;
+    height: auto;
+  }
+`;
 export const StartButton = styled.button`
   padding: 10px 20px;
-  margin-top: 20px; /* Add margin to separate button from image */
+  margin-top: 20px;
   font-size: 35px;
   font-weight: 800;
   background-color: #ffe600;
@@ -30,7 +40,7 @@ export const StartButton = styled.button`
   width: 200px;
   height: 100px;
   z-index: 1;
-  transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1); // ease-in-out-quartic;
+  transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1);
 
   &::before {
     position: absolute;
@@ -54,5 +64,13 @@ export const StartButton = styled.button`
       transform: scaleX(1);
       transform-origin: left;
     }
+  }
+
+  @media (max-width: 768px) {
+    /* 화면 너비가 768px 이하일 때 적용되는 스타일 */
+    font-size: 24px;
+    width: 130px;
+    height: 65px;
+    margin-top: 80px;
   }
 `;

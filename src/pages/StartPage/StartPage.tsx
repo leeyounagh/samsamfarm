@@ -1,9 +1,8 @@
 import React from "react";
-import useSnowData from "./StartPageData";
+import useSnowData from "../../hooks/useSnowData";
 import * as Styled from "./startpage.styled";
 import mainImage from "../../../public/asset/mainimg.png";
 import { useNavigate } from "react-router-dom";
-// 눈의 색상은 props로 받음, useSnowData 훅으로 눈들의 데이터를 가져오고 적용
 
 const Snows = ({ color }: { color?: string }) => {
   const navigate = useNavigate();
@@ -11,7 +10,9 @@ const Snows = ({ color }: { color?: string }) => {
   const handleStartClick = () => {
     navigate("/login");
   };
+
   const [snows] = useSnowData(30);
+
   return (
     <>
       <Styled.SnowContainer>
@@ -21,7 +22,7 @@ const Snows = ({ color }: { color?: string }) => {
             key={idx}
             style={{
               position: "absolute",
-              fontSize: "35px",
+              fontSize: window.innerWidth <= 768 ? "20px" : "35px",
               color: `${color}`,
               left: `${data.x}px`,
               top: `${data.y}px`,

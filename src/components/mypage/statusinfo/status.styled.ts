@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import color from "../../../styles/color";
 
 export const Layout = styled.div`
   border: 1px solid black;
   width: 60vw;
   height: 85vh;
   position: fixed;
+  top: 13%;
+  left: 22%;
   z-index: 50;
   background-image: url("./asset/status배경.gif");
 `;
@@ -31,7 +34,7 @@ export const StatusDiv = styled.div`
   width: 50%;
   height: 100%;
   border-radius: 50px;
-
+  text-align: center;
   h1 {
     text-align: center;
     margin-top: 30px;
@@ -68,6 +71,9 @@ export const ButtonDiv = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  h2 {
+    color: ${color.main};
+  }
 `;
 export const ButtonImg = styled.img`
   width: 200px;

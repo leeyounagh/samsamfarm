@@ -17,22 +17,21 @@ const SignupForm = () => {
     register,
     handleSubmit,
     watch,
-    // getValues,
     formState: { errors },
   } = useForm<FormValue>();
+
   const navigate = useNavigate();
   const onSubmitHandler: SubmitHandler<FormValue> = async (data: FormValue) => {
-    console.log(data);
     const body = {
       email: data.email,
       password: data.password,
       password_confirm: data.password_confirm,
       phone: data.phone,
-      mbti: data.mbti,
+      mbti: data.mbti.toUpperCase(),
       nickname: data.nickname,
       name: data.nickname,
     };
-    // 디바이스 아이디 추가
+
     try {
       const response = await axios.post(
         "http://34.64.51.215/samsamfarm/api/v1/auth/sign-up",

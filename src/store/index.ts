@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import CommunityReducer from "../slice/CommunitySlice";
-import MbtiReducer from "../slice/MbtiSlice";
 
 const rootReducer = configureStore({
-  reducer: { community: CommunityReducer, mbti: MbtiReducer },
+  reducer: {
+    community: CommunityReducer,
+  },
 });
 export default rootReducer;
 

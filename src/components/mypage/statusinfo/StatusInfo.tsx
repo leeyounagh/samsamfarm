@@ -1,26 +1,81 @@
-import { useState, Dispatch, SetStateAction } from "react";
+import { useState, Dispatch, SetStateAction, useEffect } from "react";
 import GuideBook from "../guidebook/GuideBook";
 import * as Styled from "./status.styled";
-import axios from "axios";
-
+import { DataChart } from "../DataChart";
+import AxiosInstance from "../../../api/AxiosIntance";
 interface StatusType {
   setIsOpenStatus: Dispatch<SetStateAction<boolean>>;
+  element: {
+    bright: number;
+    humid: string;
+    id: number;
+    moisture: string;
+    temperature: string;
+  };
+  ClickedStatus: number;
 }
 
-function StatusInfo({ setIsOpenStatus }: StatusType) {
+function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
   const [isChangeBtn, setIsChangeBtn] = useState<boolean>(false);
   const [isGuideOpen, setIsGuideOpen] = useState<boolean>(false);
+  const [currentStatus, setCurrentStatus] = useState<number>(0);
+  console.log(currentStatus);
+  useEffect(() => {
+    if (ClickedStatus === 0) {
+      setCurrentStatus(Number(element?.temperature));
+    }
+    if (ClickedStatus === 1) {
+      setCurrentStatus(Number(element?.bright));
+    }
+    if (ClickedStatus === 2) {
+      setCurrentStatus(Number(element?.humid));
+    }
+  }, []);
 
   const handleSwitch = async () => {
-    console.log("클릭");
-    const body = {
-      temperature: 11,
-    };
-    const response = await axios.post(
-      "http://34.64.51.215/samsamfarm/api/device/control",
-      body
-    );
-    console.log(response);
+    setIsChangeBtn(true);
+    if (currentStatus < -50) {
+      return setIsChangeBtn(false);
+    }
+    setCurrentStatus((prev) => {
+      return prev - 30;
+    });
+    try {
+      const body = {
+        device_id: 1,
+        wind_command: true,
+        water_command: false,
+        light_command: false,
+      };
+      const response = await AxiosInstance.post("/device/control", body);
+      const { data } = response.data;
+      if (data === "success") {
+        alert("수치가 내려가고 있습니다.");
+      }
+
+      console.log(data);
+    } catch (err) {
+      alert(err);
+    }
+
+    {
+      ClickedStatus === 0 ? (
+        <>
+          <h1>현재 온도</h1>
+          {currentStatus}
+        </>
+      ) : ClickedStatus === 1 ? (
+        <>
+          <h1>조도</h1>
+          {currentStatus}
+        </>
+      ) : ClickedStatus === 2 ? (
+        <>
+          <h1>습도</h1>
+          {currentStatus}
+        </>
+      ) : null;
+    }
   };
 
   return (
@@ -37,26 +92,34 @@ function StatusInfo({ setIsOpenStatus }: StatusType) {
 
       <Styled.MainInfoDiv>
         <Styled.StatusDiv>
-          <h1>현재 온도</h1>
-          <Styled.StatusTextDiv>
-            <h3>36.5도</h3>
-            <h2>fan이 돌아가고 있습니다.</h2>
-          </Styled.StatusTextDiv>
+          <DataChart />
+          {ClickedStatus === 0 ? (
+            <>
+              <h1>현재 온도</h1>
+              {currentStatus}
+            </>
+          ) : ClickedStatus === 1 ? (
+            <>
+              <h1>조도</h1>
+              {currentStatus}
+            </>
+          ) : ClickedStatus === 2 ? (
+            <>
+              <h1>습도</h1>
+              {currentStatus}
+            </>
+          ) : null}
+
+          <Styled.StatusTextDiv>{currentStatus}</Styled.StatusTextDiv>
         </Styled.StatusDiv>
 
         <Styled.ButtonDiv>
-          <Styled.ButtonImg
-            src="./asset/off버튼.png"
-            onClick={() => {
-              setIsChangeBtn(!isChangeBtn);
-              handleSwitch();
-            }}
-          />
-          {/* {isChangeBtn === false ? (
+          {isChangeBtn === false ? (
             <Styled.ButtonImg
               src="./asset/off버튼.png"
               onClick={() => {
                 setIsChangeBtn(!isChangeBtn);
+                handleSwitch();
               }}
             />
           ) : (
@@ -66,7 +129,12 @@ function StatusInfo({ setIsOpenStatus }: StatusType) {
                 setIsChangeBtn(!isChangeBtn);
               }}
             />
-          )} */}
+          )}
+          {isChangeBtn ? (
+            <h2>fan이 돌아가고 있습니다.</h2>
+          ) : currentStatus < -50 ? (
+            <h2>더이상 낮출수 없습니다. 돌아 가세요</h2>
+          ) : null}
         </Styled.ButtonDiv>
       </Styled.MainInfoDiv>
       <Styled.GuideBookDiv

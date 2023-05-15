@@ -17,7 +17,26 @@ export interface CommunityType {
   updated_at: string;
 }
 
+export interface UserType {
+  id: number;
+  email: string;
+  iat: number;
+  exp: number;
+  iss: string;
+}
+
 export interface MbtiType {
   mbti: string;
   description: string;
+}
+
+export interface DataType {
+  time: string;
+  data: {
+    temperature: string;
+    humid: string;
+    moisture: string;
+    bright: number;
+    id: number;
+  };
 }
