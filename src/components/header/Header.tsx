@@ -61,6 +61,22 @@ export default function Header() {
     }
   };
 
+  useEffect(() => {
+    const audioElement = audioRef.current;
+    if (audioElement) {
+      audioElement.play();
+      togglePlay();
+    }
+
+    return () => {
+      if (audioElement) {
+        audioElement.play();
+        audioElement.currentTime = 0;
+        togglePlay();
+      }
+    };
+  }, []);
+
   return (
     <>
       <Styled.Nav scrolled={scrolled}>
