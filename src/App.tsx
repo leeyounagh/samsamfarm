@@ -17,15 +17,12 @@ import GetPlant from "./pages/getplant/GetPlant";
 import StartPage from "./pages/StartPage/StartPage";
 import { useEffect } from "react";
 import { MusicProvider } from "./components/audioplayer/AudioPlayer";
-import { setData } from "./slice/DataSlice";
-import { useDispatch } from "react-redux";
 
 function App() {
   const location = useLocation();
   const isMainPage = location.pathname === "/startpage";
   const jwtToken = localStorage.getItem("JWtToken");
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!jwtToken) {

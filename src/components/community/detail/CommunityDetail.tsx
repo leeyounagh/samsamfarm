@@ -51,7 +51,7 @@ export default function CommunityDetail({
         <Styled.CommentAreaDiv>
           <Styled.CommentListDiv>
             <Styled.CommentInnerDiv>
-              <h3 className="content">adsfadsf</h3>
+              <h3 className="content">좋은 말씀 감사합니다</h3>
               <h3 className="writer">작성자:이수연</h3>
             </Styled.CommentInnerDiv>
           </Styled.CommentListDiv>

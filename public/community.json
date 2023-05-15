@@ -1,87 +1,6 @@
 {
   "data": [
     {
-      "title": "안녕하세요 질문있습니다.",
-      "content": "adfasdf",
-      "writer": "이수연",
-      "user_id": 1,
-      "created_at": "2023-05-08",
-      "updated_at": "2023-05-08",
-      "deleted_at": "2023-05-08"
-    },
-    {
-      "title": "adfadsf",
-      "content": "adfasdf",
-      "writer": "루카스",
-      "user_id": 2,
-      "created_at": "2023-05-08",
-      "updated_at": "2023-05-08",
-      "deleted_at": "2023-05-08"
-    },
-    {
-      "title": "adfadsf",
-      "content": "adfasdf",
-      "writer": "전우리",
-      "user_id": 3,
-      "created_at": "2023-05-08",
-      "updated_at": "2023-05-08",
-      "deleted_at": "2023-05-08"
-    },
-    {
-      "title": "adfadsf",
-      "content": "adfasdf",
-      "writer": "온호성",
-      "user_id": 4,
-      "created_at": "2023-05-08",
-      "updated_at": "2023-05-08",
-      "deleted_at": "2023-05-08"
-    },
-    {
-      "title": "adfadsf",
-      "content": "adfasdf",
-      "writer": "박경서",
-      "user_id": 4,
-      "created_at": "2023-05-08",
-      "updated_at": "2023-05-08",
-      "deleted_at": "2023-05-08"
-    },
-    {
-      "title": "adfadsf",
-      "content": "adfasdf",
-      "writer": "송강",
-      "user_id": 5,
-      "created_at": "2023-05-08",
-      "updated_at": "2023-05-08",
-      "deleted_at": "2023-05-08"
-    },
-    {
-      "title": "adfadsf",
-      "content": "adfasdf",
-      "writer": "배인혁",
-      "user_id": 6,
-      "created_at": "2023-05-08",
-      "updated_at": "2023-05-08",
-      "deleted_at": "2023-05-08"
-    },
-    {
-      "title": "adfadsf",
-      "content": "adfasdf",
-      "writer": "박영준",
-      "user_id": 7,
-      "created_at": "2023-05-08",
-      "updated_at": "2023-05-08",
-      "deleted_at": "2023-05-08"
-    },
-    {
-      "title": "adfadsf",
-      "content": "adfasdf",
-      "writer": "원빈",
-      "user_id": 8,
-      "created_at": "2023-05-08",
-      "updated_at": "2023-05-08",
-      "deleted_at": "2023-05-08"
-    },
-    {
       "title": "adfadsf",
       "content": "adfasdf",
       "writer": "솔라",
@@ -140,6 +59,87 @@
       "content": "adfasdf",
       "writer": "김민주",
       "user_id": 15,
+      "created_at": "2023-05-08",
+      "updated_at": "2023-05-08",
+      "deleted_at": "2023-05-08"
+    },
+    {
+      "title": "안녕하세요 질문있습니다.",
+      "content": "질문 내용은 비밀입니다.",
+      "writer": "이수연",
+      "user_id": 1,
+      "created_at": "2023-05-08",
+      "updated_at": "2023-05-08",
+      "deleted_at": "2023-05-08"
+    },
+    {
+      "title": "리팩토링이 중요해요!",
+      "content": "여러분~~만드는건 쉽지만 고치는건 어려워요!",
+      "writer": "루카스",
+      "user_id": 2,
+      "created_at": "2023-05-08",
+      "updated_at": "2023-05-08",
+      "deleted_at": "2023-05-08"
+    },
+    {
+      "title": "코딩 테스트 볼거에요!",
+      "content": "건들이지 마세요!",
+      "writer": "전우리",
+      "user_id": 3,
+      "created_at": "2023-05-08",
+      "updated_at": "2023-05-08",
+      "deleted_at": "2023-05-08"
+    },
+    {
+      "title": "안녕하세요 제이름은 짤부자 입니다.",
+      "content": "어떤 짤이든 다 찾아 드릴게요.",
+      "writer": "온호성",
+      "user_id": 4,
+      "created_at": "2023-05-08",
+      "updated_at": "2023-05-08",
+      "deleted_at": "2023-05-08"
+    },
+    {
+      "title": "절대 당황하지 마세요",
+      "content": "여러분! 절대 당황하시면 안됩니다.",
+      "writer": "박경서",
+      "user_id": 4,
+      "created_at": "2023-05-08",
+      "updated_at": "2023-05-08",
+      "deleted_at": "2023-05-08"
+    },
+    {
+      "title": "안녕하세요",
+      "content": "안녕하세요",
+      "writer": "송강",
+      "user_id": 5,
+      "created_at": "2023-05-08",
+      "updated_at": "2023-05-08",
+      "deleted_at": "2023-05-08"
+    },
+    {
+      "title": "안녕하세요",
+      "content": "안녕하세요",
+      "writer": "배인혁",
+      "user_id": 6,
+      "created_at": "2023-05-08",
+      "updated_at": "2023-05-08",
+      "deleted_at": "2023-05-08"
+    },
+    {
+      "title": "혼자 만드려니 힘들어요",
+      "content": "너무 힘들어요ㅜㅜ",
+      "writer": "박영준",
+      "user_id": 7,
+      "created_at": "2023-05-08",
+      "updated_at": "2023-05-08",
+      "deleted_at": "2023-05-08"
+    },
+    {
+      "title": "저기 있는 소나무의 몸 값은 1억입니다.",
+      "content": "제 몸값 보다 비싸군요.",
+      "writer": "이준기",
+      "user_id": 8,
       "created_at": "2023-05-08",
       "updated_at": "2023-05-08",
       "deleted_at": "2023-05-08"
