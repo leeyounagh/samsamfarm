@@ -21,4 +21,9 @@ export const InputStyled = styled.input`
   &:disabled {
     border-color: #e3e3e3;
   }
+  @media (max-width: 768px) {
+    height: 40px;
+    font-size: 14px;
+    padding: 12px;
+  }
 `;

@@ -82,8 +82,14 @@ export default function Login() {
     <Styled.LoginStyled>
       <img
         className="logo"
-        style={{ width: "450px", height: "140px" }}
+        style={{
+          width: "100%",
+          maxWidth: "450px",
+          height: "auto",
+          maxHeight: "140px",
+        }}
         src="/logo/logo.png"
+        alt="Logo"
       />
       <Styled.LoginTitleStyled>로그인</Styled.LoginTitleStyled>
       <Styled.LoginFormStyled>
