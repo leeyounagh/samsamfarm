@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import * as Styled from "./communitydetail.styled";
-// import { GrClose } from "react-icons/gr";
 import { CommunityType } from "../../../types";
+import Btn1 from "../../button/Btn1";
 
 interface ModalType {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;
@@ -19,8 +19,8 @@ export default function CommunityDetail({
           setIsOpenModal(false);
         }}
       >
-        <img
-          src="./asset/closebtnblack.png"
+        <Styled.CloseImg
+          src="./asset/closebtn.png"
           style={{ marginRight: "50px" }}
           width="50px"
           height="50px"
@@ -29,13 +29,14 @@ export default function CommunityDetail({
       </Styled.CloseDiv>
 
       <Styled.TitleDiv>
-        <div>
-          <h1>{clickedData?.title}</h1>
-        </div>
-        <div>
+        <Styled.TitleTextDiv>
+          <h1>제목:{clickedData?.title}</h1>
+        </Styled.TitleTextDiv>
+        <Styled.TitleTextDiv>
           <h3>작성자:{clickedData?.writer}</h3>
-        </div>
+        </Styled.TitleTextDiv>
       </Styled.TitleDiv>
+
       <Styled.DescDiv>
         <h3>{clickedData?.content}</h3>
       </Styled.DescDiv>
@@ -43,7 +44,9 @@ export default function CommunityDetail({
       <Styled.CommentDiv>
         <Styled.WriteCommentDiv>
           <Styled.Input placeholder="댓글을 작성해주세요" />
-          <Styled.Btn>등록하기</Styled.Btn>
+          <Styled.BtnDiv>
+            <Btn1 title="등록하기" />
+          </Styled.BtnDiv>
         </Styled.WriteCommentDiv>
         <Styled.CommentAreaDiv>
           <Styled.CommentListDiv>

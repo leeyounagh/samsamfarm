@@ -14,7 +14,7 @@ import SelectPlantPage from "./pages/selectplant/SelectPlantPage";
 import SelectMbtiPlantPage from "./pages/selectmbti/SelectMbtiPlantPage";
 import PlantDescriptionPage from "./pages/plantdescription/PlantDescriptionPage";
 import GetPlant from "./pages/getplant/GetPlant";
-import StartPage from "./pages/startpage/StartPage";
+import StartPage from "./pages/StartPage/StartPage";
 import { useEffect } from "react";
 import { MusicProvider } from "./components/audioplayer/AudioPlayer";
 import { setData } from "./slice/DataSlice";
