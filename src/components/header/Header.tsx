@@ -6,8 +6,8 @@ import LogoImage from "../../../public/logo/logo.png";
 import * as Styled from "./header.styled";
 import Sidebar from "./sidebar/Sidebar";
 import { AudioPlayer } from "../audioplayer/AudioPlayer";
-import { TbMusic } from "react-icons/Tb";
-import { TbMusicOff } from "react-icons/Tb";
+import { TbMusic } from "react-icons/tb";
+import { TbMusicOff } from "react-icons/tb";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState<boolean>(false);

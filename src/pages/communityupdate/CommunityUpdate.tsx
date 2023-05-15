@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import * as Styled from "./communityupdate.styled";
 import axios from "axios";
+import AxiosInstance from "../../api/AxiosIntance";
+import { decodeToken } from "react-jwt";
 
 const CommunityUpdate = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const JwtToken: any = decodeToken(localStorage.JWtToken);
 
+  console.log(JwtToken);
   const handleSubmit = async () => {
     try {
-      await axios.post("http://34.64.51.215/samsamfarm/api/article", {
+      await AxiosInstance.post("/article", {
         title: title,
         content: content,
-        user_id: 1,
+        user_id: JwtToken?.id,
       });
       alert("글이 작성되었습니다.");
       window.location.href = "/";
