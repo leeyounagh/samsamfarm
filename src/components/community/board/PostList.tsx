@@ -16,10 +16,10 @@ interface Post {
 type PostList = Post[];
 
 interface PostListProps {
-  posts: PostList;
+  filteredPosts: Post[];
 }
 
-const PostList: React.FC<PostListProps> = ({ posts }) => {
+const PostList: React.FC<PostListProps> = ({ filteredPosts }) => {
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
   const [clickedData, setClickedData] = useState<CommunityType>({
     id: 0,
@@ -42,7 +42,7 @@ const PostList: React.FC<PostListProps> = ({ posts }) => {
           </Styled.TableRow>
         </Styled.TableHead>
         <tbody>
-          {posts.map((post) => (
+          {filteredPosts.map((post) => (
             <Styled.TableRow
               key={post.id}
               onClick={() => {
