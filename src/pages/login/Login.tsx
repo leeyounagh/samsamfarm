@@ -4,7 +4,6 @@ import Input from "../../components/forms/input/Input";
 import Button from "../../components/forms/button/Button";
 import { emailValidation } from "../../utils/regExp.utils";
 import axios from "axios";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -18,7 +17,6 @@ export default function Login() {
     password: true,
   });
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement> | FormEvent<HTMLFormElement>
