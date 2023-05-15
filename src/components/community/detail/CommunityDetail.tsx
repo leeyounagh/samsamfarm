@@ -30,7 +30,7 @@ export default function CommunityDetail({
 
       <Styled.TitleDiv>
         <div>
-          <h1>{clickedData?.title}</h1>
+          <h1>제목:{clickedData?.title}</h1>
         </div>
         <div>
           <h3>작성자:{clickedData?.writer}</h3>

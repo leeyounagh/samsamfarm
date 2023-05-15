@@ -18,6 +18,7 @@ export const TitleDiv = styled.div`
   width: 80%;
   height: 10vh;
   background-color: white;
+  border: 3px solid blue;
   opacity: 0.6;
   text-align: center;
   padding-top: 30px;
@@ -25,6 +26,11 @@ export const TitleDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "양진체";
+  src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
   h3 {
     margin-top: 15px;
     font-size: 1.5rem;
