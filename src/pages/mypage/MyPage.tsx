@@ -40,7 +40,7 @@ export default function MyPage() {
     };
     handleDevice();
   }, []);
-  console.log("확인", isOpenUserInfo);
+
   const handleStatus = (status: string, value: string | number) => {
     const mapper: plantMapperType = {
       bright: 30,

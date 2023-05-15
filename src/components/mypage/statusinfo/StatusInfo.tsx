@@ -48,7 +48,12 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
         light_command: false,
       };
       const response = await AxiosInstance.post("/device/control", body);
-      console.log(response);
+      const { data } = response.data;
+      if (data === "success") {
+        alert("수치가 내려가고 있습니다.");
+      }
+
+      console.log(data);
     } catch (err) {
       alert(err);
     }

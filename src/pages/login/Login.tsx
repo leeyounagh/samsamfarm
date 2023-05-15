@@ -4,8 +4,6 @@ import Input from "../../components/forms/input/Input";
 import Button from "../../components/forms/button/Button";
 import { emailValidation } from "../../utils/regExp.utils";
 import axios from "axios";
-import { decodeToken } from "react-jwt";
-import { setUser } from "../../slice/UserSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -74,7 +72,6 @@ export default function Login() {
         body
       );
       localStorage.setItem("JWtToken", response.data.data.accessToken);
-      dispatch(setUser(decodeToken(response.data.data.accessToken)));
       navigate("/story/introduce");
     } catch (err) {
       if (err) {

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import LogoImage from "../../../public/logo/logo.png";
-// import { Nav, NavMenu } from "./header.styled";
 import * as Styled from "./header.styled";
 import Sidebar from "./sidebar/Sidebar";
 
