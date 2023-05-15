@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const Layout = styled.main`
   border: 1px solid black;
-  width: 80vw;
+  width: 90vw;
   height: 60ch;
   display: flex;
   justify-content: center;
+  padding-right: 100px;
 `;
 
 export const SwiperDiv = styled.div`

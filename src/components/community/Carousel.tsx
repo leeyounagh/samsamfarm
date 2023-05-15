@@ -6,14 +6,12 @@ import * as Styled from "./carousel.styled";
 import CommunityImg from "../../data/CommunityImg";
 import { v4 as uuidv4 } from "uuid";
 import { Navigation } from "swiper";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
 import { useEffect, useState } from "react";
 import { CommunityType } from "../../types";
 import Btn1 from "../button/Btn1";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import axios from "axios";
 import AxiosInstance from "../../api/AxiosIntance";
+import "swiper/swiper-bundle.css";
 interface SwiperStyle extends React.CSSProperties {
   "--swiper-navigation-color": string;
 }

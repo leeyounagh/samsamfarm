@@ -26,12 +26,10 @@ function App() {
 
   useEffect(() => {
     if (!jwtToken) {
-      navigate("/");
+      navigate("/login");
     }
   }, []);
-  // useEffect(() => {
 
-  // }, []);
   return (
     <>
       <MusicProvider>
