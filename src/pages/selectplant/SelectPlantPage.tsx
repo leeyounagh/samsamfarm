@@ -28,7 +28,7 @@ export default function SelectPlantPage() {
             otherPlant();
           }}
         >
-          <Styled.OtherImg src="/public/asset/other.png" />
+          <Styled.OtherImg src="./asset/other.png" />
         </Styled.OtherDiv>
       </Styled.LayoutInnerDiv>
 
