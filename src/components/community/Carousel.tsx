@@ -6,22 +6,17 @@ import * as Styled from "./carousel.styled";
 import CommunityImg from "../../data/CommunityImg";
 import { v4 as uuidv4 } from "uuid";
 import { Navigation } from "swiper";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
 import { useEffect, useState } from "react";
 import { CommunityType } from "../../types";
 import Btn1 from "../button/Btn1";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import axios from "axios";
 import AxiosInstance from "../../api/AxiosIntance";
+import "swiper/swiper-bundle.css";
 interface SwiperStyle extends React.CSSProperties {
   "--swiper-navigation-color": string;
 }
 
 export default function Carousel() {
-  const communityData = useSelector((state: RootState) => {
-    return state?.community;
-  });
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
   const [newData, setNewData] = useState<any[]>([]);
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -34,7 +29,7 @@ export default function Carousel() {
     created_at: "2023-05-09",
     updated_at: "2023-05-09",
   });
-  // const [mobileData, setMobileData] = useState<any[]>([]);
+
   const mobileSize = useMediaQuery("(max-width: 480px)");
 
   useEffect(() => {
@@ -64,7 +59,11 @@ export default function Carousel() {
   }
 
   const dataRenderer = () => {
-    return newData?.map((item: CommunityType) => {
+    let filteredData = newData;
+    if (mobileSize) {
+      filteredData = filteredData.slice(0, 3);
+    }
+    return filteredData?.map((item: CommunityType) => {
       return (
         <Styled.InfoBox id="infobox">
           <h1>
@@ -127,12 +126,12 @@ export default function Carousel() {
           })}
         </Styled.Layout>
       </Swiper>
-      {isOpenModal ? (
+      {isOpenModal && (
         <CommunityDetail
           setIsOpenModal={setIsOpenModal}
           clickedData={clickedData}
         />
-      ) : null}
+      )}
     </>
   );
 }

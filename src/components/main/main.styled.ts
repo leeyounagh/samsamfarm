@@ -3,23 +3,22 @@ import styled from "styled-components";
 export const Layout = styled.main`
   width: 100vw;
   z-index: 10;
-  height: 70vh;
   position: relative;
+  margin-bottom: 100px;
 `;
 
 export const MobileLayout = styled.main`
   width: 80%;
-  height: 30rem;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   @media (max-width: 768px) {
-    height: 16rem;
+    height: 50rem;
   }
   @media (max-width: 480px) {
-    height: 100%;
-    height: 30rem;
+    width: 60%;
+    height: 25rem;
   }
 `;
 
@@ -60,13 +59,7 @@ export const FieldLayOut = styled.div`
     background-repeat: no-repeat;
   }
   @media (max-width: 480px) {
-    display: flex;
-    justify-content: center;
-    background-image: url("./asset/농장배경2.png");
-    background-size: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: 30rem;
   }
 `;
 
@@ -150,7 +143,7 @@ export const MainPlantLayout = styled.div`
 `;
 export const FieldLayoutDiv = styled.div`
   width: 60%;
-  height: 100vh;
+  height: 55rem;
   display: flex;
   margin-top: 50px;
   justify-content: center;
@@ -165,12 +158,11 @@ export const FieldLayoutDiv = styled.div`
   @media (max-width: 1400px) {
     width: 60%;
     height: 60rem;
-    margin-top: 250px;
+    margin-top: 0px;
   }
   @media (max-width: 1024px) {
-    height: 68rem;
+    height: 75rem;
     width: 40rem;
-    margin-top: 400px;
   }
 `;
 export const BtnStyle = styled.button`
@@ -250,7 +242,7 @@ export const MobileInnerLayout = styled.div`
   justify-content: center;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  height: 20rem;
+
   @media (max-width: 768px) {
     width: 100%;
     height: 40rem;
@@ -262,11 +254,12 @@ export const MobileInnerLayout = styled.div`
     padding-left: 90px;
   }
   @media (max-width: 480px) {
-    width: 80%;
+    /* width: 50%; */
+    margin-right: 20px;
     background-image: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    height: 30rem;
+    height: 20rem;
   }
 `;

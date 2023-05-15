@@ -1,18 +1,7 @@
 import * as Styled from "./noticedevice.styled";
 import Btn1 from "../button/Btn1";
-// import AxiosInstance from "../../api/AxiosIntance";
 
 export default function NoticeDevice() {
-  //   const registerDevice = async () => {
-  //     try {
-  //       const response = await AxiosInstance.post("/device", {
-  //         id: 1,
-  //       });
-  //       console.log(response);
-  //     } catch (err) {
-  //       alert(err);
-  //     }
-  //   };
   return (
     <Styled.Layout>
       <Styled.CellPhoneDiv>

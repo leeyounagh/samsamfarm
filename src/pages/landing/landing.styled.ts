@@ -4,23 +4,28 @@ import color from "../../styles/color";
 export const Layout = styled.main`
   width: 100%;
   background-color: white;
+  @media (max-width: 480px) {
+    height: 50rem;
+  }
 `;
 
 export const TitleDiv = styled.div`
   width: 100%;
-  height: 20%;
+  height: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  margin-bottom: 100px;
+
   @media (max-width: 1024px) {
+    width: 100%;
+    height: 8rem;
     margin-top: 0px;
     margin-bottom: 0px;
   }
   @media (max-width: 480px) {
     width: 100%;
-    height: 7rem;
+    height: 4rem;
   }
 `;
 
@@ -32,23 +37,22 @@ export const Title = styled.h1`
   display: flex;
   align-items: center;
   height: 8vh;
-  width: 24ch;
+  width: 26ch;
   font-weight: 500;
   font-size: 2.5rem;
   color: ${color.main};
   @media (max-width: 1024px) {
-    height: 20%;
+    height: 6vh;
     font-size: 2.5rem;
-    margin-top: 50px;
-    margin-bottom: 50px;
   }
   @media (max-width: 768px) {
+    width: 26ch;
     height: 30%;
     font-size: 2rem;
   }
   @media (max-width: 468px) {
-    height: 20%;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    width: 23ch;
   }
 
   font-family: "bitbit";

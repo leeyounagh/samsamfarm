@@ -5,6 +5,7 @@ import Pagination from "./Pagenation";
 import { Link } from "react-router-dom";
 import { RootState } from "../../../store";
 import PostList from "./PostList";
+import AxiosInstance from "../../../api/AxiosIntance";
 
 interface Post {
   id: number;
@@ -17,24 +18,39 @@ interface Post {
 }
 
 function Board() {
-  const communityData = useSelector((state: RootState) => {
-    return state?.community;
-  });
-
-  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태값 =>백엔드에 보내줄값
-  const [searchKeyword, setSearchKeyword] = useState(""); // 검색어 상태값
-  const [filteredPosts, setFilteredPosts] = useState<Post[]>([]); // 검색된 게시글 목록 상태값
-  const postsPerPage = 10; // 페이지 당 게시글 수
-  const totalPages = Math.ceil(communityData?.length / postsPerPage); // 총 페이지 수 =>예는 백엔드에서 보내줄거임
-  const indexOfLastPost = currentPage * postsPerPage; // 마지막 게시글 인덱스
-  const indexOfFirstPost = indexOfLastPost - postsPerPage; // 첫 번째 게시글 인덱스
-  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost); // 현재 페이지의 게시글 목록
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const [totalData, setTotalData] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
+  const postsPerPage = 10;
+  const totalPages = Math.ceil(totalData?.length / postsPerPage);
   const jwtToken = localStorage.getItem("JWtToken");
 
   useEffect(() => {
-    setFilteredPosts(communityData);
-    // 리덕스 state
-  }, [communityData]);
+    const handleAllcommunity = async () => {
+      const response = await AxiosInstance.get("/article");
+      const { data } = await response.data;
+      setTotalData(data);
+    };
+
+    handleAllcommunity();
+  }, []);
+
+  useEffect(() => {
+    const handlecommunity = async () => {
+      const response = await AxiosInstance.get("/article", {
+        params: {
+          page: `${currentPage}`,
+          perPage: postsPerPage,
+        },
+      });
+
+      const { data } = await response.data;
+      setFilteredPosts(data);
+    };
+    handlecommunity();
+  }, [currentPage]);
+
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
@@ -44,16 +60,14 @@ function Board() {
     setSearchKeyword(event.target.value);
   };
 
-  // 검색 버튼 클릭 핸들러 함수
   const handleSearchClick = () => {
-    const searchResult = communityData?.filter((data: any) =>
+    const searchResult = totalData?.filter((data: Post) =>
       data.title.includes(searchKeyword)
     );
     setFilteredPosts(searchResult);
     setCurrentPage(1);
   };
 
-  // enter 기능
   function handleKeyPress(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Enter") {
       handleSearchClick();
@@ -74,7 +88,7 @@ function Board() {
           />
           <Styled.SearchBtn onClick={handleSearchClick}>검색</Styled.SearchBtn>
         </Styled.Search>
-        <PostList posts={currentPosts} />
+        <PostList filteredPosts={filteredPosts} />
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const Layout = styled.main`
   border: 1px solid black;
-  width: 80vw;
+  width: 90vw;
   height: 60ch;
   display: flex;
   justify-content: center;
+  padding-right: 100px;
 `;
 
 export const SwiperDiv = styled.div`
@@ -17,16 +18,31 @@ export const SwiperDiv = styled.div`
     position: absolute;
     top: 31%;
     left: 13%;
+    @media screen and (max-width: 480px) {
+      position: absolute;
+      top: 21%;
+      left: 15%;
+    }
   }
   #infobox:nth-child(2n) {
     position: absolute;
     top: 25%;
     left: 33%;
+    @media screen and (max-width: 480px) {
+      position: absolute;
+      top: 8%;
+      left: 40%;
+    }
   }
   #infobox:nth-child(3n) {
     position: absolute;
     top: 35%;
     left: 53%;
+    @media screen and (max-width: 480px) {
+      position: absolute;
+      top: 26%;
+      left: 65%;
+    }
   }
   #infobox:nth-child(4n) {
     position: absolute;
@@ -58,6 +74,10 @@ export const character1Img = styled.img`
   width: 100px;
   height: 100px;
   cursor: pointer;
+  @media screen and (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 export const character2Img = styled.img`
   z-index: 50;
@@ -67,6 +87,13 @@ export const character2Img = styled.img`
   width: 100px;
   height: 100px;
   cursor: pointer;
+  @media screen and (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+  }
 `;
 export const character3Img = styled.img`
   z-index: 50;
@@ -76,6 +103,13 @@ export const character3Img = styled.img`
   width: 100px;
   height: 100px;
   cursor: pointer;
+  @media screen and (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 60%;
+    left: 58%;
+  }
 `;
 export const character4Img = styled.img`
   z-index: 50;
@@ -120,6 +154,19 @@ export const InfoBox = styled.div`
     }
     h3 {
       font-size: 0.8rem;
+      height: 1rem;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    width: 80px;
+    height: 80px;
+    h1 {
+      font-size: 0.6rem;
+      height: 1rem;
+      padding-top: 10px;
+    }
+    h3 {
+      font-size: 0.4rem;
       height: 1rem;
     }
   }
