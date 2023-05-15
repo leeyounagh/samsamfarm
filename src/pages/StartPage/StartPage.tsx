@@ -1,5 +1,5 @@
 import React from "react";
-import useSnowData from "./StartPageData";
+import useSnowData from "../../hooks/useSnowData";
 import * as Styled from "./startpage.styled";
 import mainImage from "../../../public/asset/mainimg.png";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +10,9 @@ const Snows = ({ color }: { color?: string }) => {
   const handleStartClick = () => {
     navigate("/login");
   };
+
   const [snows] = useSnowData(30);
+
   return (
     <>
       <Styled.SnowContainer>
@@ -20,7 +22,7 @@ const Snows = ({ color }: { color?: string }) => {
             key={idx}
             style={{
               position: "absolute",
-              fontSize: "35px",
+              fontSize: window.innerWidth <= 768 ? "20px" : "35px",
               color: `${color}`,
               left: `${data.x}px`,
               top: `${data.y}px`,

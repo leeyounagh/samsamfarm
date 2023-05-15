@@ -16,6 +16,7 @@ import PlantDescriptionPage from "./pages/plantdescription/PlantDescriptionPage"
 import GetPlant from "./pages/getplant/GetPlant";
 import StartPage from "./pages/startpage/StartPage";
 import { useEffect } from "react";
+import { MusicProvider } from "./components/audioplayer/AudioPlayer";
 import { setData } from "./slice/DataSlice";
 import { useDispatch } from "react-redux";
 
@@ -36,35 +37,37 @@ function App() {
   // }, []);
   return (
     <>
-      {!isMainPage && <Header />}
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="/startpage" element={<StartPage />} />
+      <MusicProvider>
+        {!isMainPage && <Header />}
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/startpage" element={<StartPage />} />
 
-        <Route path="/communityupdate" element={<CommunityUpdate />} />
-        <Route path="/mypage" element={<MyPage />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/story/introduce" element={<Introduce />} />
-        <Route
-          path="/story/introduceReturnPage"
-          element={<IntroduceReturnPage />}
-        />
-        <Route path="/story/selectPlantPage" element={<SelectPlantPage />} />
+          <Route path="/communityupdate" element={<CommunityUpdate />} />
+          <Route path="/mypage" element={<MyPage />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/story/introduce" element={<Introduce />} />
+          <Route
+            path="/story/introduceReturnPage"
+            element={<IntroduceReturnPage />}
+          />
+          <Route path="/story/selectPlantPage" element={<SelectPlantPage />} />
 
-        <Route
-          path="/story/selectMbtiPlantPage"
-          element={<SelectMbtiPlantPage />}
-        />
+          <Route
+            path="/story/selectMbtiPlantPage"
+            element={<SelectMbtiPlantPage />}
+          />
 
-        <Route
-          path="/story/plantDescriptionPage/:plantId"
-          element={<PlantDescriptionPage />}
-        />
-        <Route path="/story/getplant" element={<GetPlant />} />
-      </Routes>
-      {!isMainPage && <Footer />}
+          <Route
+            path="/story/plantDescriptionPage/:plantId"
+            element={<PlantDescriptionPage />}
+          />
+          <Route path="/story/getplant" element={<GetPlant />} />
+        </Routes>
+        {!isMainPage && <Footer />}
+      </MusicProvider>
     </>
   );
 }

@@ -29,6 +29,17 @@ export const Logo = styled.img`
   }
 `;
 
+export const MusicPlay = styled.div`
+  .icon {
+    font-size: 32px;
+    color: #b3933b;
+
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+    }
+  }
+`;
+
 export const LoginButton = styled.button`
   font-weight: 600;
   color: #b3933b;
