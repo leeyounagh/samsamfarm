@@ -79,9 +79,14 @@ export default function Header() {
   return (
     <>
       <Styled.Nav scrolled={scrolled}>
-        <Link to="/">
+        {JwtToken ? (
+          <Link to="/">
+            <Styled.Logo src={LogoImage} alt="로고 이미지" />
+          </Link>
+        ) : (
           <Styled.Logo src={LogoImage} alt="로고 이미지" />
-        </Link>
+        )}
+
         <Styled.NavMenu>
           <Styled.MusicPlay>
             {isPlaying ? (
