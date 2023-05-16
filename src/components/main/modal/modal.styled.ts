@@ -198,7 +198,7 @@ export const GridLayout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("./asset/모달 농장.jpg");
+  background-image: url("/asset/모달 농장.jpg");
   background-size: cover;
 
   @media (max-width: 768px) {
@@ -207,7 +207,7 @@ export const GridLayout = styled.div`
 `;
 
 export const GridDiv = styled.div`
-  background-image: url("./asset/밭누끼.png");
+  background-image: url("/asset/밭누끼.png");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;

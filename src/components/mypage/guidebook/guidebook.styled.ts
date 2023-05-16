@@ -6,7 +6,7 @@ export const Layout = styled.div`
   z-index: 500;
   position: absolute;
   left: 15%;
-  background-image: url("./asset/지침서.gif");
+  background-image: url("/asset/지침서.gif");
   background-size: cover;
   display: grid;
   justify-content: center;
@@ -47,7 +47,7 @@ export const CloseImg = styled.img`
 export const MemoDiv = styled.div`
   width: 40rem;
   height: 30rem;
-  background-image: url("./asset/메모장1.png");
+  background-image: url("/asset/메모장1.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;

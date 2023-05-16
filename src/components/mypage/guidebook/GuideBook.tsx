@@ -10,7 +10,7 @@ function GuideBook({ setIsGuideOpen }: GuideBookType) {
     <Styled.Layout>
       <Styled.CloseDiv>
         <Styled.CloseImg
-          src="./asset/closebtn.png"
+          src="/asset/closebtn.png"
           onClick={() => {
             setIsGuideOpen(false);
           }}

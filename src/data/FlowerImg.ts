@@ -10,9 +10,9 @@ type FlowerImgType = {
 
 const FlowerImg: FlowerImgType[] = [
   {
-    character: "/public/asset/istj.png",
+    character: "/asset/istj.png",
     mbti: "ISTJ",
-    flower: "/public/asset/벚꽃.gif",
+    flower: "/asset/벚꽃.gif",
     name: "벚꽃",
     story1:
       "벚꽃은 예민하고 감성적인 아름다움을 상징하며,  내적인 세계와 감정에 민감하며 깊이 있게 반응하는 경향이 있습니다. ",
@@ -21,9 +21,9 @@ const FlowerImg: FlowerImgType[] = [
     id: 0,
   },
   {
-    character: "/public/asset/isfj.png",
+    character: "/asset/isfj.png",
     mbti: "ISFJ",
-    flower: "/public/asset/장미.png",
+    flower: "/asset/장미.png",
     name: "장미",
     story1:
       "당신은 사랑과 열정을 표현하는 데 능숙한 사람으로 장미와 관련짓기에 적합합니다.",
@@ -32,9 +32,9 @@ const FlowerImg: FlowerImgType[] = [
     id: 1,
   },
   {
-    character: "/public/asset/infj.png",
+    character: "/asset/infj.png",
     mbti: "INFJ",
-    flower: "/public//asset/해바라기.png",
+    flower: "/asset/해바라기.png",
     name: "해바라기",
     story1:
       " 해바라기는 태양을 따라 회전하는 특징을 가지고 있으며,  활동적이고 에너지가 넘치는 성격으로 알려져 있습니다. ",
@@ -43,9 +43,9 @@ const FlowerImg: FlowerImgType[] = [
     id: 2,
   },
   {
-    character: "/public/asset/intj.png",
+    character: "/asset/intj.png",
     mbti: "INTJ",
-    flower: "/public//asset/5번꽃.png",
+    flower: "/asset/5번꽃.png",
     name: "아메시아",
     story1:
       "아메시아는 심오하고 정신적인 에너지를 상징합니다. 당신은 진심과 동정심으로 주변 사람들을 이해하고 지원하는 경향이 있습니다.",
@@ -54,9 +54,9 @@ const FlowerImg: FlowerImgType[] = [
     id: 3,
   },
   {
-    character: "/public/asset/istp.png",
+    character: "/asset/istp.png",
     mbti: "ISTP",
-    flower: "/public/asset/선인장.png",
+    flower: "/asset/선인장.png",
     name: "선인장",
     story1: "선인장은 독특한 형태와 내구성을 가지고 있습니다. ",
     story2:
@@ -64,9 +64,9 @@ const FlowerImg: FlowerImgType[] = [
     id: 4,
   },
   {
-    character: "/public/asset/isfp.png",
+    character: "/asset/isfp.png",
     mbti: "ISFP",
-    flower: "/public/asset/5번꽃.png",
+    flower: "/asset/5번꽃.png",
     name: "라일락",
     story1: "라일락은 감성적이고 아름다운 향기를 풍긴다는 점이 있습니다.",
     story2:
@@ -74,9 +74,9 @@ const FlowerImg: FlowerImgType[] = [
     id: 5,
   },
   {
-    character: "/public/asset/infp.png",
+    character: "/asset/infp.png",
     mbti: "INFP",
-    flower: "/public/asset/연꽃.png",
+    flower: "/asset/연꽃.png",
     name: "연꽃",
     story1:
       "연꽃은 아름다운 꽃잎을 물 위에 펼치는 모습으로 많은 사람들의 관심을 끌어옵니다. ",
@@ -85,9 +85,9 @@ const FlowerImg: FlowerImgType[] = [
     id: 6,
   },
   {
-    character: "/public/asset/intp.png",
+    character: "/asset/intp.png",
     mbti: "INTP",
-    flower: "/public/asset/수수꽃다리.png",
+    flower: "/asset/수수꽃다리.png",
     name: "수수꽃다리",
     story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
     story2:
@@ -95,9 +95,9 @@ const FlowerImg: FlowerImgType[] = [
     id: 7,
   },
   {
-    character: "/public/asset/estp.png",
+    character: "/asset/estp.png",
     mbti: "ESTP",
-    flower: "/public/asset/팬지.png",
+    flower: "/asset/팬지.png",
     name: "팬지",
     story1:
       "팬지는 다양한 색상과 화려한 꽃잎을 가지고 있으며, 사람들 사이에서 주목을 받는 경향이 있습니다. ",
@@ -106,7 +106,7 @@ const FlowerImg: FlowerImgType[] = [
     id: 8,
   },
   {
-    character: "/public/asset/esfp.png",
+    character: "/asset/esfp.png",
     mbti: "ESFP",
     flower: "/public/asset/수수꽃다리.png",
     name: "수수꽃다리",
@@ -117,9 +117,9 @@ const FlowerImg: FlowerImgType[] = [
   },
 
   {
-    character: "/public/asset/enfp.png",
+    character: "/asset/enfp.png",
     mbti: "ENFP",
-    flower: "/public/asset/알리움.gif",
+    flower: "/asset/알리움.gif",
     name: "알리움",
     story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
     story2:
@@ -127,9 +127,9 @@ const FlowerImg: FlowerImgType[] = [
     id: 10,
   },
   {
-    character: "/public/asset/estj.png",
+    character: "/asset/estj.png",
     mbti: "ESTJ",
-    flower: "/public/asset/카네이션.png",
+    flower: "/asset/카네이션.png",
     name: "카네이션",
     story1:
       "카네이션은 다양한 색상과 아름다운 꽃잎으로 사람들의 관심을 끌어옵니다. 이와 유사하게 당신은 사회적이고 친근한 성향을 가지며, 다른 사람들과의 관계를 중요시합니다.",
@@ -138,9 +138,9 @@ const FlowerImg: FlowerImgType[] = [
     id: 11,
   },
   {
-    character: "/public/asset/esfj.png",
+    character: "/asset/esfj.png",
     mbti: "ESFJ",
-    flower: "/public/asset/백합.png",
+    flower: "/asset/백합.png",
     name: "백합",
     story1: "백합은 다양한 색상과 아름다운 꽃잎을 가진 꽃입니다.  ",
     story2:
@@ -148,9 +148,9 @@ const FlowerImg: FlowerImgType[] = [
     id: 12,
   },
   {
-    character: "/public/asset/enfj.png",
+    character: "/asset/enfj.png",
     mbti: "ENFJ",
-    flower: "/public/asset/홍시화.png",
+    flower: "/asset/홍시화.png",
     name: "홍시화",
     story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
     story2:
@@ -158,7 +158,7 @@ const FlowerImg: FlowerImgType[] = [
     id: 13,
   },
   {
-    character: "/public/asset/entj.png",
+    character: "/asset/entj.png",
     mbti: "ENTJ",
     flower: "/public/asset/수수꽃다리.png",
     name: "수수꽃다리",
@@ -168,9 +168,9 @@ const FlowerImg: FlowerImgType[] = [
     id: 14,
   },
   {
-    character: "/public/asset/entp.png",
+    character: "/asset/entp.png",
     mbti: "ENTP",
-    flower: "/public/asset/벼.png",
+    flower: "/asset/벼.png",
     name: "벼",
     story1:
       "벼는 꾸준한 관리와 정확한 작업을 요구하는 농사 일에 적합한 예시일 수 있습니다. ",

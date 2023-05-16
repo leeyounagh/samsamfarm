@@ -20,7 +20,7 @@ export const Layout = styled.main`
 export const BackgroundDiv = styled.div`
   width: 80%;
   height: 100%;
-  background-image: url("./asset/마이페이지배경.jpg");
+  background-image: url("/asset/마이페이지배경.jpg");
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -114,7 +114,7 @@ export const IconImg = styled.img`
 export const ConsoleInnerDiv = styled.div`
   width: 80%;
   height: 100%;
-  background-image: url("./asset/게임기누끼2.png");
+  background-image: url("/asset/게임기누끼2.png");
   background-size: 100% 100%;
   display: grid;
   justify-content: center;

@@ -5,7 +5,7 @@ export const Layout = styled.div`
   width: 60vw;
   height: 85vh;
   position: fixed;
-  background-image: url("./asset/유저정보배경.gif");
+  background-image: url("/asset/유저정보배경.gif");
   font-family: "양진체";
   src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
     format("woff");

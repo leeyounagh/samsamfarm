@@ -8,7 +8,7 @@ export const Layout = styled.div`
   top: 13%;
   left: 22%;
   z-index: 50;
-  background-image: url("./asset/status배경.gif");
+  background-image: url("/asset/status배경.gif");
   @media screen and (max-width: 1024px) {
     width: 60rem;
     height: 85vh;

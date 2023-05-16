@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import street from "../../../public/asset/스타벅스.gif";
 
 export const Layout = styled.div`
   width: 100%;
@@ -12,7 +11,7 @@ export const Layout = styled.div`
 `;
 
 export const Introduce_backgroundImg = styled.div`
-  background-image: url(${street});
+  background-image: url("/asset/스타벅스.gif");
   background-size: 100% 100%;
   width: 100vw;
   height: 70vh;

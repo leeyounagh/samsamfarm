@@ -5,7 +5,7 @@ export default function NoticeDevice() {
   return (
     <Styled.Layout>
       <Styled.CellPhoneDiv>
-        <Styled.CellphoneImg src="./asset/핸드폰.gif" />
+        <Styled.CellphoneImg src="/asset/핸드폰.gif" />
       </Styled.CellPhoneDiv>
       <Styled.TextDiv>
         <h1>디바이스를 등록해 주세요</h1>

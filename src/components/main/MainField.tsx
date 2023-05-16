@@ -74,10 +74,10 @@ export default function MainField() {
 
   const plantsRenderer = (id: string | number | undefined) => {
     const mapper: PlantMapper = {
-      "1": "./asset/씨앗.png",
-      "2": "./asset/새싹.png",
-      "3": "./asset/중간새싹.png",
-      "4": "./asset/2번꽃.png",
+      "1": "/asset/씨앗.png",
+      "2": "/asset/새싹.png",
+      "3": "/asset/중간새싹.png",
+      "4": "/asset/2번꽃.png",
     };
     return (
       <Styled.MainPlantImg key={uuidv4()} src={mapper[`${id}`]} id="plants" />

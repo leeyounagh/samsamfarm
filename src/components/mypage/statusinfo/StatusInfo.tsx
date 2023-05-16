@@ -85,7 +85,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
           setIsOpenStatus(false);
         }}
       >
-        <Styled.CloseImg src="./asset/closebtn.png" />
+        <Styled.CloseImg src="/asset/closebtn.png" />
       </Styled.CloseDiv>
 
       <Styled.MainInfoDiv>
@@ -112,7 +112,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
         <Styled.ButtonDiv>
           {isChangeBtn === false ? (
             <Styled.ButtonImg
-              src="./asset/off버튼.png"
+              src="/asset/off버튼.png"
               onClick={() => {
                 setIsChangeBtn(!isChangeBtn);
                 handleSwitch();
@@ -120,7 +120,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
             />
           ) : (
             <Styled.ButtonImg
-              src="./asset/on버튼.png"
+              src="/asset/on버튼.png"
               onClick={() => {
                 setIsChangeBtn(!isChangeBtn);
               }}
@@ -138,7 +138,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
           setIsGuideOpen(true);
         }}
       >
-        <Styled.GuidBookImg src="./asset/책아이콘1.png" />
+        <Styled.GuidBookImg src="/asset/책아이콘1.png" />
       </Styled.GuideBookDiv>
     </Styled.Layout>
   );
