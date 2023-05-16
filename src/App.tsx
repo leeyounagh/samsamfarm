@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     if (!jwtToken) {
-      navigate("/login");
+      navigate("/startpage");
     }
   }, []);
 
