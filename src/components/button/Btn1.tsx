@@ -57,6 +57,10 @@ const SBtn1 = styled.button`
       transform: translate3d(0, 0, -1em);
     }
   }
+  @media (max-width: 768px) {
+    font-size: 14px;
+    width: 80%;
+  }
 `;
 type Btn1Props = {
   title: string;
