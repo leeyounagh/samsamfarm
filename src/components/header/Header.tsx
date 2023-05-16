@@ -94,7 +94,7 @@ export default function Header() {
               </TbMusicOff>
             )}
             <audio ref={audioRef}>
-              <source src="../../../public/audio/bg.mp3" type="audio/mpeg" />
+              <source src="/audio/bg.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
           </Styled.MusicPlay>

@@ -3,7 +3,7 @@ import * as Styled from "../community.styled";
 import CommunityDetail from "../detail/CommunityDetail";
 import { CommunityType } from "../../../types";
 
-interface Post {
+export interface Post {
   id: number;
   title: string;
   content: string;
