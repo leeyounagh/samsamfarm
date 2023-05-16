@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import * as Styled from "./communityupdate.styled";
-import axios from "axios";
 import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
 

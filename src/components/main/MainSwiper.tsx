@@ -7,7 +7,6 @@ import CommunityThumbnail from "../../data/CommunityThumbnail";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import useMediaQuery from "../../hooks/useMediaQuery";
 import AxiosInstance from "../../api/AxiosIntance";
 import { useEffect, useState } from "react";
 import { CommunityType } from "../../types";

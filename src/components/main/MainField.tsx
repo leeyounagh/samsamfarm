@@ -4,7 +4,6 @@ import Modal from "./modal/Modal";
 import MainCharacter from "../../data/mainCharacter";
 import { MainType } from "../../types";
 import AxiosInstance from "../../api/AxiosIntance";
-import axios from "axios";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { v4 as uuidv4 } from "uuid";
 import MobileCharacter from "../../data/MobileCharacter";
@@ -36,16 +35,6 @@ export default function MainField() {
   const mobileSize = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
-    // const getMainData = async () => {
-    //   try {
-    //     const response = await axios.get("/maintest.json");
-    //     const data = await response.data.data;
-    //     setMainData(data);
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // };
-    // getMainData();
     const getData = async () => {
       try {
         const response = await AxiosInstance.get("/plant", {
