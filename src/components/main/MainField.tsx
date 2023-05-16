@@ -48,7 +48,7 @@ export default function MainField() {
             perPage: 8,
           },
         });
-        console.log(response);
+        console.log("확인", response);
       } catch (err) {
         alert(err);
       }

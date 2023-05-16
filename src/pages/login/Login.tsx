@@ -58,7 +58,7 @@ export default function Login() {
       }
     }
   };
-  console.log(forms.email, forms.password);
+
   const handleLoginClick = async () => {
     const body = {
       email: forms.email,
