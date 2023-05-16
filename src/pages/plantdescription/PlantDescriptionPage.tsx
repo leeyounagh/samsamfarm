@@ -24,10 +24,14 @@ export default function PlantDesriptionPage() {
       </Styled.FlowerDiv>
       <Styled.DescForm>
         <Styled.DescInnerDiv>
-          <h2>{FlowerImg[Number(plantId)]?.story1}</h2>
+          <Styled.StoryText>
+            {FlowerImg[Number(plantId)]?.story1}
+          </Styled.StoryText>
           <br />
           <br />
-          <h2>{FlowerImg[Number(plantId)]?.story2}</h2>
+          <Styled.StoryText>
+            {FlowerImg[Number(plantId)]?.story2}
+          </Styled.StoryText>
           <br />
           <br />
           <Styled.BtnDiv>
@@ -46,7 +50,7 @@ export default function PlantDesriptionPage() {
                 navigate("/story/selectMbtiPlantPage");
               }}
             >
-              <Btn1 title="  다른걸 선택할래....!" />
+              <Btn1 title="  다른걸 선택할래..!" />
             </Styled.BtnLayout>
           </Styled.BtnDiv>
         </Styled.DescInnerDiv>

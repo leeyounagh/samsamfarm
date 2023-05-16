@@ -45,6 +45,7 @@ export const LoginButton = styled.button`
   cursor: pointer;
   font-weight: 600;
   color: #b3933b;
+  white-space: nowrap;
   text-transform: uppercase;
   padding: 1.25em 2em;
   margin-bottom: 10px;

@@ -13,11 +13,12 @@ export const MobileLayout = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+
   @media (max-width: 768px) {
     height: 50rem;
   }
   @media (max-width: 480px) {
-    width: 60%;
+    width: 70%;
     height: 25rem;
   }
 `;
@@ -59,6 +60,7 @@ export const FieldLayOut = styled.div`
     background-repeat: no-repeat;
   }
   @media (max-width: 480px) {
+    width: 25.5rem;
     height: 30rem;
   }
 `;
@@ -242,7 +244,6 @@ export const MobileInnerLayout = styled.div`
   justify-content: center;
   grid-template-columns: 0.8fr 0.8fr;
   align-items: center;
-
   @media (max-width: 768px) {
     width: 100%;
     height: 40rem;
@@ -254,7 +255,7 @@ export const MobileInnerLayout = styled.div`
     padding-left: 90px;
   }
   @media (max-width: 480px) {
-    /* width: 50%; */
+    width: 30rem;
     margin-right: 20px;
     background-image: none;
     display: grid;

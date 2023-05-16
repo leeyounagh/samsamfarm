@@ -12,7 +12,7 @@ export const Layout = styled.main`
 
 export const TitleDiv = styled.div`
   width: 100%;
-  height: 6rem;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;

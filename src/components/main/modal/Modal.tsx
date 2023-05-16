@@ -106,7 +106,7 @@ export default function Modal({
         </Styled.CloseDiv>
 
         <Styled.GridLayout>
-          {MainCharacter && userId !== undefined ? (
+          {MainCharacter && userId !== undefined && (
             <Styled.CharacterImg
               src={
                 MainCharacter[userId]
@@ -116,7 +116,7 @@ export default function Modal({
               width="40%"
               height="80%"
             />
-          ) : null}
+          )}
           <Styled.GridDiv>
             {plantsRenderer(
               mainData && userId !== undefined
@@ -148,18 +148,17 @@ export default function Modal({
           <Styled.CommentBtn type="submit">댓글 작성</Styled.CommentBtn>
         </Styled.CommentDiv>
         <Styled.CommentArea>
-          {commentList?.length !== 0
-            ? commentList?.map((item: ContentType) => {
-                return (
-                  <>
-                    <Styled.CommentDiv>
-                      <Styled.Comment>{item.content}</Styled.Comment>
-                      <Styled.Writer>작성자: {item.writer}</Styled.Writer>
-                    </Styled.CommentDiv>
-                  </>
-                );
-              })
-            : null}
+          {commentList?.length !== 0 &&
+            commentList?.map((item: ContentType) => {
+              return (
+                <>
+                  <Styled.CommentDiv>
+                    <Styled.Comment>{item.content}</Styled.Comment>
+                    <Styled.Writer>작성자: {item.writer}</Styled.Writer>
+                  </Styled.CommentDiv>
+                </>
+              );
+            })}
         </Styled.CommentArea>
       </Styled.CommentLayout>
     </Styled.Layout>

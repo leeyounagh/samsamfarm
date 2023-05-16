@@ -52,6 +52,7 @@ export const DescBtnDiv = styled.div`
   display: flex;
   align-items: center;
   white-space: nowrap;
+  margin-right: 10px;
   @media screen and (max-width: 480px) {
     font-size: 0.8rem;
     width: 20%;

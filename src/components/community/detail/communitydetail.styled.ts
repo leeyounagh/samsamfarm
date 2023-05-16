@@ -7,7 +7,7 @@ export const Layout = styled.section`
   z-index: 300;
   background-color: black;
   position: fixed;
-  top: 10%;
+  top: 5%;
   left: 20%;
   background-image: url("./asset/커뮤니티모달.gif");
   background-size: cover;

@@ -12,7 +12,7 @@ export const Layout = styled.div`
   font-style: normal;
 
   @media (max-width: 768px) {
-    height: 60vh;
+    height: 75vh;
   }
 `;
 
@@ -26,10 +26,6 @@ export const FlowerDiv = styled.div`
   @media (max-width: 768px) {
     width: 50%;
   }
-
-  @media (max-width: 480px) {
-    width: 100%;
-  }
 `;
 
 export const DescForm = styled.div`
@@ -40,15 +36,16 @@ export const DescForm = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    width: 70%;
-  }
-
-  @media (max-width: 480px) {
-    width: 100%;
+    width: 60%;
   }
 `;
 
-export const FlowerImg = styled.img``;
+export const FlowerImg = styled.img`
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 40%;
+  }
+`;
 
 export const DescInnerDiv = styled.div`
   width: 60%;
@@ -57,9 +54,12 @@ export const DescInnerDiv = styled.div`
   @media (max-width: 768px) {
     width: 80%;
   }
+`;
+export const StoryText = styled.h2`
+  font-size: 1.8rem;
 
-  @media (max-width: 480px) {
-    width: 100%;
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
   }
 `;
 
@@ -74,13 +74,4 @@ export const BtnDiv = styled.div`
 export const BtnLayout = styled.div`
   margin-right: 50px;
   white-space: nowrap;
-
-  @media (max-width: 768px) {
-    margin-right: 20px;
-  }
-
-  @media (max-width: 480px) {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
 `;

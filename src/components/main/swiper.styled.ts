@@ -6,6 +6,11 @@ export const Layout = styled.div`
   margin-top: 100px;
   display: flex;
   justify-content: center;
+  font-family: "양진체";
+  src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 
   @media (max-width: 768px) {
     margin-top: 100px;
@@ -34,6 +39,7 @@ export const ListDiv = styled.div`
     width: 150px;
     height: 100px;
     margin-bottom: 50px;
+    font-size: 0.8rem;
   }
 `;
 
@@ -54,7 +60,6 @@ export const InnerLayout = styled.div`
   width: 100%;
   padding: auto;
   padding-left: 150px;
-  /* margin-left: 80px; */
   margin: auto;
   @media (max-width: 1024px) {
     margin-bottom: 30px;

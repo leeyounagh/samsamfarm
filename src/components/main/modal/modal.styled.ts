@@ -30,7 +30,7 @@ export const Layout = styled.div`
     height: 63vh;
   }
   @media (max-width: 480px) {
-    width: 100vw;
+    width: 22rem;
     height: 75vh;
     left: 0px;
   }
@@ -200,6 +200,7 @@ export const GridLayout = styled.div`
   align-items: center;
   background-image: url("./asset/모달 농장.jpg");
   background-size: cover;
+
   @media (max-width: 768px) {
     height: 20rem;
   }
@@ -259,9 +260,9 @@ export const CommentBtn = styled.button`
     font-size: 0.8rem;
   }
   @media (max-width: 480px) {
-    width: 6.5rem;
-    height: 20%;
-    white-space: nowrap;
+    width: 4rem;
+    height: 2rem;
+    font-size: 0.1rem;
   }
   width: 10rem;
   height: 40%;
