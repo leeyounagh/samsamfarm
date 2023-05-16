@@ -79,21 +79,12 @@ export default function CommunityDetail({
       </Styled.CloseDiv>
 
       <Styled.TitleDiv>
-<<<<<<< HEAD
-        <div>
-          <h1>제목:{clickedData?.title}</h1>
-        </div>
-        <div>
-          <h3>작성자:{clickedData?.writer}</h3>
-        </div>
-=======
         <Styled.TitleTextDiv>
           <h1>제목:{clickedData?.title}</h1>
         </Styled.TitleTextDiv>
         <Styled.TitleTextDiv>
           <h3>작성자:{clickedData?.nickname}</h3>
         </Styled.TitleTextDiv>
->>>>>>> feature/main
       </Styled.TitleDiv>
 
       <Styled.DescDiv>
