@@ -11,7 +11,7 @@ export interface CommunityType {
   id: number;
   title: string;
   content: string;
-  writer: string;
+  nickname: string;
   date: string;
   created_at: string;
   updated_at: string;
@@ -39,4 +39,15 @@ export interface DataType {
     bright: number;
     id: number;
   };
+}
+
+export interface Post {
+  id: number;
+  title: string;
+  content: string;
+  nickname: string;
+  date: string;
+  created_at: string;
+  updated_at: string;
+  view_count: number;
 }

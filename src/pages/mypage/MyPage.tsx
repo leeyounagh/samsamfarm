@@ -77,7 +77,7 @@ export default function MyPage() {
           </Styled.CharacterDiv>
 
           <Styled.ConsoleDiv>
-            {JwtToken?.deivce_id == null ? (
+            {JwtToken?.deivce_id === null ? (
               <NoticeDevice />
             ) : (
               <Styled.ConsoleInnerDiv>

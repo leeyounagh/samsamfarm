@@ -17,7 +17,6 @@ interface SwiperStyle extends CSSProperties {
 }
 
 export default function MainSwiper() {
-  const mobileSize = useMediaQuery("(max-width: 480px)");
   const [communityData, setCommunityData] = useState<CommunityType[]>([
     {
       id: 0,

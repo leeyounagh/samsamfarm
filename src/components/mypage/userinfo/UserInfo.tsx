@@ -37,7 +37,7 @@ export default function UserInfo({ setIsOpenUserInfo }: userInfoType) {
     };
     getUserInfo();
   }, []);
-  console.log(userInfo);
+
   return (
     <Styled.Layout>
       <Styled.CloseBtn>

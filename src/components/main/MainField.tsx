@@ -3,7 +3,7 @@ import * as Styled from "./main.styled";
 import Modal from "./modal/Modal";
 import MainCharacter from "../../data/mainCharacter";
 import { MainType } from "../../types";
-
+import AxiosInstance from "../../api/AxiosIntance";
 import axios from "axios";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { v4 as uuidv4 } from "uuid";
@@ -40,6 +40,20 @@ export default function MainField() {
       }
     };
     getMainData();
+    const getTestData = async () => {
+      try {
+        const response = await AxiosInstance.get("/plant", {
+          params: {
+            page: 1,
+            perPage: 8,
+          },
+        });
+        console.log(response);
+      } catch (err) {
+        alert(err);
+      }
+    };
+    getTestData();
   }, []);
 
   useEffect(() => {

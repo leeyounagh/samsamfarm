@@ -4,6 +4,7 @@ import color from "../../styles/color";
 export const Layout = styled.main`
   width: 100%;
   background-color: white;
+  margin-bottom: 100px;
   @media (max-width: 480px) {
     height: 50rem;
   }
@@ -11,12 +12,12 @@ export const Layout = styled.main`
 
 export const TitleDiv = styled.div`
   width: 100%;
-  height: 10%;
+  height: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-
+  padding-top: 10px;
   @media (max-width: 1024px) {
     width: 100%;
     height: 8rem;
@@ -37,7 +38,7 @@ export const Title = styled.h1`
   display: flex;
   align-items: center;
   height: 8vh;
-  width: 26ch;
+  width: 24ch;
   font-weight: 500;
   font-size: 2.5rem;
   color: ${color.main};
@@ -46,7 +47,7 @@ export const Title = styled.h1`
     font-size: 2.5rem;
   }
   @media (max-width: 768px) {
-    width: 26ch;
+    width: 23ch;
     height: 30%;
     font-size: 2rem;
   }

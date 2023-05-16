@@ -19,7 +19,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
   const [isChangeBtn, setIsChangeBtn] = useState<boolean>(false);
   const [isGuideOpen, setIsGuideOpen] = useState<boolean>(false);
   const [currentStatus, setCurrentStatus] = useState<number>(0);
-  console.log(currentStatus);
+
   useEffect(() => {
     if (ClickedStatus === 0) {
       setCurrentStatus(Number(element?.temperature));
@@ -52,8 +52,6 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
       if (data === "success") {
         alert("수치가 내려가고 있습니다.");
       }
-
-      console.log(data);
     } catch (err) {
       alert(err);
     }
@@ -109,8 +107,6 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
               {currentStatus}
             </>
           ) : null}
-
-          <Styled.StatusTextDiv>{currentStatus}</Styled.StatusTextDiv>
         </Styled.StatusDiv>
 
         <Styled.ButtonDiv>

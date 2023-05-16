@@ -2,18 +2,7 @@ import React, { useState } from "react";
 import * as Styled from "../community.styled";
 import CommunityDetail from "../detail/CommunityDetail";
 import { CommunityType } from "../../../types";
-
-interface Post {
-  id: number;
-  title: string;
-  content: string;
-  writer: string;
-  date: string;
-  created_at: string;
-  updated_at: string;
-}
-
-type PostList = Post[];
+import { Post } from "../../../types";
 
 interface PostListProps {
   filteredPosts: Post[];
@@ -25,17 +14,18 @@ const PostList: React.FC<PostListProps> = ({ filteredPosts }) => {
     id: 0,
     title: "test",
     content: "test contents",
-    writer: "test writer",
+    nickname: "test writer",
     date: "2023-05-09",
     created_at: "2023-05-09",
     updated_at: "2023-05-09",
   });
+
   return (
     <>
       <Styled.Table>
         <Styled.TableHead>
           <Styled.TableRow>
-            <Styled.TableData>번호</Styled.TableData>
+            <Styled.TableData>조회수</Styled.TableData>
             <Styled.TableData>제목</Styled.TableData>
             <Styled.TableData>작성자</Styled.TableData>
             <Styled.TableData>작성일</Styled.TableData>
@@ -50,10 +40,12 @@ const PostList: React.FC<PostListProps> = ({ filteredPosts }) => {
                 setClickedData(post);
               }}
             >
-              <Styled.TableData>{post.id}</Styled.TableData>
+              <Styled.TableData>{post.view_count}</Styled.TableData>
               <Styled.TableData>{post.title}</Styled.TableData>
-              <Styled.TableData>{post.writer}</Styled.TableData>
-              <Styled.TableData>{post.created_at}</Styled.TableData>
+              <Styled.TableData>{post.nickname}</Styled.TableData>
+              <Styled.TableData>
+                {post.created_at.substring(0, 10)}
+              </Styled.TableData>
             </Styled.TableRow>
           ))}
         </tbody>

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Layout = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 20vh;
-  margin-top: 200px;
+  margin-top: 100px;
   display: flex;
   justify-content: center;
 
@@ -51,14 +51,17 @@ export const TitleDiv = styled.div`
 `;
 
 export const InnerLayout = styled.div`
-  width: 80%;
+  width: 100%;
   padding: auto;
+  padding-left: 150px;
   /* margin-left: 80px; */
   margin: auto;
   @media (max-width: 1024px) {
     margin-bottom: 30px;
+    padding-left: 0px;
   }
   @media (max-width: 480px) {
+    padding-left: 0px;
     .list-style {
       margin-left: 30px;
     }

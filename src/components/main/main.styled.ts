@@ -240,7 +240,7 @@ export const MobileInnerLayout = styled.div`
   width: 80%;
   display: grid;
   justify-content: center;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 0.8fr;
   align-items: center;
 
   @media (max-width: 768px) {

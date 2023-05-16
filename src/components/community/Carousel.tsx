@@ -24,7 +24,7 @@ export default function Carousel() {
     id: 0,
     title: "test",
     content: "test contents",
-    writer: "test writer",
+    nickname: "test writer",
     date: "2023-05-09",
     created_at: "2023-05-09",
     updated_at: "2023-05-09",
@@ -49,6 +49,7 @@ export default function Carousel() {
         },
       });
       const { data } = await response.data;
+      console.log(data);
       setNewData(data);
     };
     handlecommunity();
@@ -70,7 +71,7 @@ export default function Carousel() {
             제목:
             {item?.title.length > 8 ? item?.title.substring(0, 6) : item?.title}
           </h1>
-          <h3>글쓴이: {item?.writer}</h3>
+          <h3>글쓴이: {item?.nickname}</h3>
           <Styled.BtnDiv
             onClick={() => {
               setIsOpenModal(true);

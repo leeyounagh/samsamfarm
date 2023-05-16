@@ -62,6 +62,11 @@ export const IconLayout = styled.div`
   align-items: center;
   cursor: pointer;
   padding-top: 10%;
+
+  @media (max-width: 1024px) {
+    width: 15rem;
+    height: 12rem;
+  }
 `;
 export const IconImg = styled.img`
   z-index: 50;
@@ -86,20 +91,21 @@ export const ConsoleInnerDiv = styled.div`
   justify-content: center;
 `;
 export const StatusDiv = styled.div`
-  width: 100%;
+  width: 30rem;
   height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1024px) {
+    width: 15rem;
+    height: 10rem;
+  }
 `;
 export const StatusTextDiv = styled.div`
   h2 {
     margin-right: 10px;
     margin-bottom: 100px;
     font-size: 1rem;
-    @media (max-width: 1024px) {
-      font-size: 0.8rem;
-    }
   }
 `;
 export const CharacterDiv = styled.div`
@@ -119,6 +125,9 @@ export const CharacterDiv = styled.div`
 `;
 export const TextDiv = styled.div`
   text-align: center;
+  @media (max-width: 1024px) {
+    font-size: 0.6rem;
+  }
 `;
 
 export const MypageBtnDiv = styled.div``;
@@ -126,11 +135,21 @@ export const MypageBtnDiv = styled.div``;
 export const StatusImg = styled.img`
   width: 5rem;
   height: 5rem;
+  margin-right: 10px;
+  @media (max-width: 1024px) {
+    width: 3rem;
+    height: 3rem;
+  }
 `;
 
 export const IconDiv = styled.div`
-  width: 25%;
-  height: 100%;
+  width: 5rem;
+  height: 5rem;
   display: flex;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 `;

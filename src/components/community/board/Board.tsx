@@ -4,16 +4,7 @@ import Pagination from "./Pagenation";
 import { Link } from "react-router-dom";
 import PostList from "./PostList";
 import AxiosInstance from "../../../api/AxiosIntance";
-
-interface Post {
-  id: number;
-  title: string;
-  content: string;
-  writer: string;
-  date: string;
-  created_at: string;
-  updated_at: string;
-}
+import { Post } from "../../../types";
 
 function Board() {
   const [currentPage, setCurrentPage] = useState(1);
