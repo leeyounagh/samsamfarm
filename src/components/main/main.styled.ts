@@ -52,7 +52,7 @@ export const FieldLayOut = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    background-image: url("/public/asset/농장배경2.png");
+    background-image: url("/asset/농장배경2.png");
     background-size: 100%;
     background-position: center;
     background-size: cover;

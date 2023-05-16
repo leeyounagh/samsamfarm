@@ -17,30 +17,36 @@ export default function MainField() {
   const [isMainModalOpen, setIsMainModalOpen] = useState<boolean>(false);
   const [mainData, setMainData] = useState<MainType[]>([]);
   const [userId, setUserId] = useState<number>(0);
-  const [mobileData, setMobieData] = useState<MainType[]>([
+  const [mobileData, setMobileData] = useState<MainType[]>([
     {
-      visiter_id: 0,
-      contents: "asfdasd",
-      writer: "dsfasd",
-      create_at: "fdsaf",
-      delete_at: "dasfdas",
-      plants_id: 1,
+      created_at: "2023-05-14T15:24:48.000Z",
+      current_grade: "1",
+      deleted_at: null,
+      device_id: 1,
+      id: 1,
+      nickname: "준기쨩",
+      plant_grade_update_time: null,
+      plant_type: "Aloe Vera",
+      updated_at: "2023-05-14T15:24:48.000Z",
+      user_id: 6,
+      delete_at: "", // 누락된 속성 추가
+      plants_id: 0, // 누락된 속성 추가
     },
   ]);
   const mobileSize = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
-    const getMainData = async () => {
-      try {
-        const response = await axios.get("/maintest.json");
-        const data = await response.data.data;
-        setMainData(data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getMainData();
-    const getTestData = async () => {
+    // const getMainData = async () => {
+    //   try {
+    //     const response = await axios.get("/maintest.json");
+    //     const data = await response.data.data;
+    //     setMainData(data);
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // };
+    // getMainData();
+    const getData = async () => {
       try {
         const response = await AxiosInstance.get("/plant", {
           params: {
@@ -48,12 +54,14 @@ export default function MainField() {
             perPage: 8,
           },
         });
-        console.log("확인", response);
+        const { data } = await response.data;
+        setMainData(data);
+        console.log("확인", data);
       } catch (err) {
         alert(err);
       }
     };
-    getTestData();
+    getData();
   }, []);
 
   useEffect(() => {
@@ -64,7 +72,7 @@ export default function MainField() {
     }
   }, [isMainModalOpen]);
 
-  const plantsRenderer = (id: number | undefined) => {
+  const plantsRenderer = (id: string | number | undefined) => {
     const mapper: PlantMapper = {
       "1": "./asset/씨앗.png",
       "2": "./asset/새싹.png",
@@ -78,7 +86,7 @@ export default function MainField() {
 
   useEffect(() => {
     {
-      mobileSize && setMobieData(mainData.slice(0, 4));
+      mobileSize && setMobileData(mainData.slice(0, 4));
     }
   }, [mobileSize, mainData]);
 
@@ -93,7 +101,7 @@ export default function MainField() {
                   <Styled.TitleDiv>
                     <Styled.CharacterImg src={item.img} />
                     <Styled.MainPlantLayout>
-                      {plantsRenderer(mobileData[index]?.plants_id)}
+                      {plantsRenderer(mobileData[index]?.current_grade)}
                     </Styled.MainPlantLayout>
                   </Styled.TitleDiv>
                   <Styled.BtnStyle
@@ -116,14 +124,14 @@ export default function MainField() {
                 <Styled.TitleDiv>
                   <Styled.CharacterImg src={item.img} />
                   <Styled.MainPlantLayout>
-                    {plantsRenderer(mainData[index]?.plants_id)}
+                    {plantsRenderer(mainData[index]?.current_grade)}
                   </Styled.MainPlantLayout>
                 </Styled.TitleDiv>
                 <Styled.BtnStyle
                   id={`button-${item.id}`}
                   onClick={() => {
                     setIsMainModalOpen(!isMainModalOpen);
-                    setUserId(item.id);
+                    setUserId(index);
                   }}
                 >
                   놀러가기

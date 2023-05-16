@@ -31,10 +31,12 @@ export default function Modal({
   mainData,
   userId,
 }: ModalType) {
+  console.log(userId);
   const getInitialGuestBook = () => {
     const guestBook = localStorage.getItem("guestbook");
     const guestBookData = guestBook ? JSON.parse(guestBook) : [];
     const getCommentList: any[] = [];
+
     guestBookData?.map((item: any) => {
       if (Number(item.ownerId) === userId) {
         getCommentList.push(item);
@@ -50,7 +52,7 @@ export default function Modal({
   useEffect(() => {
     getInitialGuestBook();
   }, []);
-  const plantsRenderer = (id: number) => {
+  const plantsRenderer = (id: number | string) => {
     const mapper: PlantMapper = {
       "1": <Styled.HomePlantImg src="./asset/씨앗.png" id="plants" />,
       "2": <Styled.HomePlantImg src="./asset/새싹.png" id="plants" />,
@@ -117,7 +119,9 @@ export default function Modal({
           ) : null}
           <Styled.GridDiv>
             {plantsRenderer(
-              mainData && userId !== undefined ? mainData[userId].plants_id : 1
+              mainData && userId !== undefined
+                ? mainData[userId]?.current_grade
+                : 1
             )}
           </Styled.GridDiv>
         </Styled.GridLayout>
@@ -125,7 +129,7 @@ export default function Modal({
       <Styled.CommentLayout onSubmit={handleSubmit}>
         <h1>
           {mainData && userId !== undefined
-            ? `${mainData[userId].writer}님 농장`
+            ? `${mainData[userId]?.nickname}님 농장`
             : ""}
         </h1>
         <Styled.CommentDiv>

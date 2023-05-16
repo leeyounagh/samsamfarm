@@ -1,10 +1,16 @@
 export interface MainType {
-  visiter_id: number;
-  contents: string;
-  writer: string;
-  create_at: string;
+  created_at: string;
   delete_at: string;
   plants_id: number;
+  current_grade: string;
+  deleted_at: null;
+  device_id: number;
+  id: number;
+  nickname: string;
+  plant_grade_update_time: null;
+  plant_type: string;
+  updated_at: string;
+  user_id: number;
 }
 
 export interface CommunityType {
