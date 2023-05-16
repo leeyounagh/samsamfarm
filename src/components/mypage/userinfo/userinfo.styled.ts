@@ -11,15 +11,30 @@ export const Layout = styled.div`
     format("woff");
   font-weight: normal;
   font-style: normal;
+  @media (max-width: 1024px) {
+    width: 30rem;
+    height: 40rem;
+  }
 `;
 export const CloseBtn = styled.div`
   width: 100%;
   height: 10vh;
   display: flex;
   justify-content: flex-end;
+  @media (max-width: 768px) {
+    width: 27rem;
+    height: 10vh;
+    align-items: center;
+  }
 `;
 export const CloseImg = styled.img`
   cursor: pointer;
+  width: 5rem;
+  height: 5rem;
+  @media (max-width: 768px) {
+    width: 3rem;
+    height: 3rem;
+  }
 `;
 export const UserProfileDiv = styled.div`
   width: 100%;
@@ -44,13 +59,22 @@ export const userInfoBox = styled.div`
   height: 100%;
   background-color: white;
   opacity: 0.6;
+  border-radius: 20px;
+  @media (max-width: 1024px) {
+    height: 20rem;
+  }
 `;
 export const InfoText = styled.div`
   width: 100%;
   height: 30%;
-  border: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;

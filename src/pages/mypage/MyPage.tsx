@@ -3,13 +3,12 @@ import UserInfo from "../../components/mypage/userinfo/UserInfo";
 import StatusInfo from "../../components/mypage/statusinfo/StatusInfo";
 import { useEffect, useState } from "react";
 import Btn1 from "../../components/button/Btn1";
-import axios from "axios";
 import MypageImg from "../../data/mypageImg";
 import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
 import { UserType } from "../../types";
 import NoticeDevice from "../../components/mypage/NoticeDevice";
-
+import useMediaQuery from "../../hooks/useMediaQuery";
 interface plantType {
   bright: number;
   humid: string;
@@ -30,6 +29,7 @@ export default function MyPage() {
   const [getPlantData, setPlantData] = useState<plantType[]>([]);
   const [ClickedStatus, setClickedStatus] = useState<number>(0);
   const JwtToken: any = decodeToken(localStorage.JWtToken);
+  const mobileSize = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
     const handleDevice = async () => {
@@ -50,12 +50,12 @@ export default function MyPage() {
 
     return Number(value) > Number(mapper[status]) ? (
       <>
-        <Styled.TextDiv>{status}</Styled.TextDiv>
+        <Styled.TextDiv>{!mobileSize && <h3>{status}</h3>}</Styled.TextDiv>
         <Styled.StatusImg src="./asset/위험.png" />
       </>
     ) : (
       <>
-        <Styled.TextDiv>{status}</Styled.TextDiv>
+        <Styled.TextDiv>{!mobileSize && <h3>{status}</h3>}</Styled.TextDiv>
         <Styled.StatusImg src="./asset/스마일2.png" />
       </>
     );

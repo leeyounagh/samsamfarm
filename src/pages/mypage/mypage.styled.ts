@@ -5,11 +5,16 @@ export const Layout = styled.main`
   height: 80vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   font-family: "양진체";
   src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
+  @media (max-width: 480px) {
+    width: 100%;
+    height: 40rem;
+  }
 `;
 
 export const BackgroundDiv = styled.div`
@@ -20,6 +25,15 @@ export const BackgroundDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1024px) {
+    width: 90%;
+    height: 100%;
+  }
+  @media (max-width: 480px) {
+    width: 80%;
+    height: 30rem;
+    align-items: flex-start;
+  }
 `;
 export const UILayout = styled.div`
   width: 100%;
@@ -27,6 +41,9 @@ export const UILayout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 480px) {
+    display: grid;
+  }
 `;
 export const CharacterImg = styled.img`
   width: 300px;
@@ -34,6 +51,10 @@ export const CharacterImg = styled.img`
   @media (max-width: 1024px) {
     width: 200px;
     height: 200px;
+  }
+  @media (max-width: 480px) {
+    width: 5rem;
+    height: 5rem;
   }
 `;
 export const ConsoleDiv = styled.div`
@@ -44,6 +65,10 @@ export const ConsoleDiv = styled.div`
   @media (max-width: 1024px) {
     width: 50%;
     height: 50vh;
+  }
+  @media (max-width: 480px) {
+    width: 20rem;
+    height: 15rem;
   }
 `;
 export const ConsoleImg = styled.img`
@@ -66,6 +91,10 @@ export const IconLayout = styled.div`
   @media (max-width: 1024px) {
     width: 15rem;
     height: 12rem;
+  }
+  @media (max-width: 480px) {
+    width: 15rem;
+    height: 5rem;
   }
 `;
 export const IconImg = styled.img`
@@ -96,9 +125,14 @@ export const StatusDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   @media (max-width: 1024px) {
     width: 15rem;
     height: 10rem;
+  }
+  @media (max-width: 480px) {
+    width: 15rem;
+    height: 5rem;
   }
 `;
 export const StatusTextDiv = styled.div`
@@ -106,6 +140,11 @@ export const StatusTextDiv = styled.div`
     margin-right: 10px;
     margin-bottom: 100px;
     font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 2rem;
+    height: 3rem;
   }
 `;
 export const CharacterDiv = styled.div`
@@ -118,6 +157,11 @@ export const CharacterDiv = styled.div`
     width: 30%;
     height: 60%;
   }
+  @media (max-width: 480px) {
+    width: 20rem;
+    height: 10rem;
+  }
+
   button {
     width: 100%;
     height: 5vh;
@@ -125,20 +169,34 @@ export const CharacterDiv = styled.div`
 `;
 export const TextDiv = styled.div`
   text-align: center;
+  font-size: 0.4rem;
   @media (max-width: 1024px) {
-    font-size: 0.6rem;
+    font-size: 0.1rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 1px;
   }
 `;
 
-export const MypageBtnDiv = styled.div``;
+export const MypageBtnDiv = styled.div`
+  @media (max-width: 480px) {
+    width: 5rem;
+    height: 5rem;
+    white-space: nowrap;
+  }
+`;
 
 export const StatusImg = styled.img`
   width: 5rem;
   height: 5rem;
   margin-right: 10px;
   @media (max-width: 1024px) {
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  @media (max-width: 480px) {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 `;
 
