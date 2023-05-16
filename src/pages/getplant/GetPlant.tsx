@@ -18,12 +18,13 @@ export default function GetPlant() {
       <Styled.TitleDiv>
         <h2>꽃 배정이 완료 되었습니다.</h2>
         {isShowOpen ? (
-          <Styled.BtnDiv
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            <Btn1 title="메인으로 가기"></Btn1>
+          <Styled.BtnDiv>
+            <Btn1
+              title="메인으로 가기"
+              onClick={() => {
+                navigate("/");
+              }}
+            ></Btn1>
           </Styled.BtnDiv>
         ) : null}
       </Styled.TitleDiv>

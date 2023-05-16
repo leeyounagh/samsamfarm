@@ -19,7 +19,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
   const [isChangeBtn, setIsChangeBtn] = useState<boolean>(false);
   const [isGuideOpen, setIsGuideOpen] = useState<boolean>(false);
   const [currentStatus, setCurrentStatus] = useState<number>(0);
-  console.log(currentStatus);
+
   useEffect(() => {
     if (ClickedStatus === 0) {
       setCurrentStatus(Number(element?.temperature));
@@ -52,8 +52,6 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
       if (data === "success") {
         alert("수치가 내려가고 있습니다.");
       }
-
-      console.log(data);
     } catch (err) {
       alert(err);
     }
@@ -87,7 +85,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
           setIsOpenStatus(false);
         }}
       >
-        <Styled.CloseImg src="./asset/closebtn.png" />
+        <Styled.CloseImg src="/asset/closebtn.png" />
       </Styled.CloseDiv>
 
       <Styled.MainInfoDiv>
@@ -109,14 +107,12 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
               {currentStatus}
             </>
           ) : null}
-
-          <Styled.StatusTextDiv>{currentStatus}</Styled.StatusTextDiv>
         </Styled.StatusDiv>
 
         <Styled.ButtonDiv>
           {isChangeBtn === false ? (
             <Styled.ButtonImg
-              src="./asset/off버튼.png"
+              src="/asset/off버튼.png"
               onClick={() => {
                 setIsChangeBtn(!isChangeBtn);
                 handleSwitch();
@@ -124,7 +120,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
             />
           ) : (
             <Styled.ButtonImg
-              src="./asset/on버튼.png"
+              src="/asset/on버튼.png"
               onClick={() => {
                 setIsChangeBtn(!isChangeBtn);
               }}
@@ -142,7 +138,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
           setIsGuideOpen(true);
         }}
       >
-        <Styled.GuidBookImg src="./asset/책아이콘1.png" />
+        <Styled.GuidBookImg src="/asset/책아이콘1.png" />
       </Styled.GuideBookDiv>
     </Styled.Layout>
   );

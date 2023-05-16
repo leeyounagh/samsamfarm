@@ -30,7 +30,7 @@ export const Layout = styled.div`
     height: 63vh;
   }
   @media (max-width: 480px) {
-    width: 100vw;
+    width: 22rem;
     height: 75vh;
     left: 0px;
   }
@@ -198,15 +198,16 @@ export const GridLayout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("./asset/모달 농장.jpg");
+  background-image: url("/asset/모달 농장.jpg");
   background-size: cover;
+
   @media (max-width: 768px) {
     height: 20rem;
   }
 `;
 
 export const GridDiv = styled.div`
-  background-image: url("./asset/밭누끼.png");
+  background-image: url("/asset/밭누끼.png");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -259,9 +260,9 @@ export const CommentBtn = styled.button`
     font-size: 0.8rem;
   }
   @media (max-width: 480px) {
-    width: 6.5rem;
-    height: 20%;
-    white-space: nowrap;
+    width: 4rem;
+    height: 2rem;
+    font-size: 0.1rem;
   }
   width: 10rem;
   height: 40%;

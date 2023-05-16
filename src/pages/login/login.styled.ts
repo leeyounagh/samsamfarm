@@ -5,13 +5,15 @@ export const LoginStyled = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
   max-width: 650px;
   padding: 50px;
   background-color: #ffffff;
-  margin: 0 auto;
+  margin: 50px auto;
   height: 100vh;
   box-shadow: 0px 1px 1px rgb(0 0 0 / 10%), 0px 2px 4px rgb(0 0 0 / 20%);
+  @media (max-width: 768px) {
+    margin: 0 auto;
+  }
 `;
 
 export const LoginTitleStyled = styled.h1`
@@ -21,6 +23,10 @@ export const LoginTitleStyled = styled.h1`
   margin-bottom: 40px;
   padding-top: 110px;
   text-align: center;
+  @media (max-width: 768px) {
+    font-size: 24px;
+    padding-top: 80px;
+  }
 `;
 
 export const LoginFormStyled = styled.div`
@@ -28,6 +34,7 @@ export const LoginFormStyled = styled.div`
 
   input {
     margin-bottom: 10px;
+    width: 100%;
   }
 `;
 
@@ -44,6 +51,7 @@ export const LoginButtonWrapStyled = styled.div`
 
   button {
     margin-bottom: 10px;
+    width: 100%;
   }
 `;
 
@@ -67,5 +75,16 @@ export const LoginFindIdAndPasswordStyled = styled.div`
     cursor: pointer;
     font-size: 14px;
     letter-spacing: -0.5px;
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+
+    span {
+      height: 16px;
+    }
+
+    a {
+      font-size: 12px;
+    }
   }
 `;

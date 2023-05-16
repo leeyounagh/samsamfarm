@@ -15,7 +15,7 @@ const SBtn1 = styled.button`
   margin-bottom: 10px;
   margin-top: 10px;
   width: 100%;
-  height: 3rem;
+  height: 2rem;
   background: white;
   border: 2px solid;
   border-radius: 0.75em;
@@ -57,15 +57,19 @@ const SBtn1 = styled.button`
       transform: translate3d(0, 0, -1em);
     }
   }
+  @media (max-width: 768px) {
+    font-size: 14px;
+    width: 80%;
+  }
 `;
 type Btn1Props = {
   title: string;
   onClick?: () => void; // onClick prop 추가
 };
-function Btn1({ title }: Btn1Props) {
+function Btn1({ title, onClick }: Btn1Props) {
   return (
     <Slayout>
-      <SBtn1>{title}</SBtn1>
+      <SBtn1 onClick={onClick}>{title}</SBtn1>
     </Slayout>
   );
 }

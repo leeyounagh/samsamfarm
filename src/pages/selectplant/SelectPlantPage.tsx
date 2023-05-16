@@ -28,13 +28,15 @@ export default function SelectPlantPage() {
             otherPlant();
           }}
         >
-          <Styled.OtherImg src="./asset/other.png" />
+          <Styled.OtherImg src="/asset/other.png" />
         </Styled.OtherDiv>
       </Styled.LayoutInnerDiv>
 
       <Styled.TextDiv>
-        <h2>너에게 맞는 꽃은 {FlowerImg[RandomNum].name}이야. </h2>
-        <h2>하지만 다른꽃도 선택 할수 있어 어떤걸 선택할래?</h2>
+        <h2>
+          너에게 맞는 꽃은 {FlowerImg[RandomNum].name}이야. 하지만 다른꽃도 선택
+          할수 있어 어떤걸 선택할래?
+        </h2>
       </Styled.TextDiv>
     </Styled.Layout>
   );

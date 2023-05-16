@@ -5,6 +5,11 @@ export const Layout = styled.div`
   height: 100%;
   display: grid;
   justify-content: center;
+
+  @media screen and (max-width: 1024px) {
+    width: 60%;
+    height: 80%;
+  }
 `;
 
 export const CellPhoneDiv = styled.div`
@@ -12,6 +17,10 @@ export const CellPhoneDiv = styled.div`
   height: 25rem;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: 80%;
+  }
 `;
 
 export const CellphoneImg = styled.img`
@@ -23,6 +32,9 @@ export const TextDiv = styled.div`
   width: 100%;
   height: 5rem;
   text-align: center;
+  @media screen and (max-width: 480px) {
+    font-size: 0.5rem;
+  }
 `;
 
 export const RegisterDiv = styled.div`
@@ -30,6 +42,10 @@ export const RegisterDiv = styled.div`
   height: 5rem;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 480px) {
+    font-size: 0.5rem;
+    white-space: nowrap;
+  }
 `;
 export const BtnDiv = styled.div`
   width: 50%;

@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import sunflower from "../../../public/asset/해바라기.png";
-import otherPlant from "../../../public/asset/other.png";
 
 export const IntroduceReturnPage_div = styled.div`
   display: flex;
@@ -26,7 +24,7 @@ export const SelectPlantPage_div = styled.div`
 `;
 
 export const SelectPlantPage_userPlant = styled.div`
-  background-image: url(${sunflower});
+  background-image: url("/asset/해바라기.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 30%;
@@ -38,7 +36,7 @@ export const SelectPlantPage_userPlant = styled.div`
   }
 `;
 export const SelectPlantPage_otherPlant = styled.div`
-  background-image: url(${otherPlant});
+  background-image: url("/asset/other.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 30%;

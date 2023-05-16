@@ -7,7 +7,7 @@ import MypageImg from "../../data/mypageImg";
 import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
 import NoticeDevice from "../../components/mypage/NoticeDevice";
-
+import useMediaQuery from "../../hooks/useMediaQuery";
 interface plantType {
   bright: number;
   humid: string;
@@ -28,6 +28,7 @@ export default function MyPage() {
   const [getPlantData, setPlantData] = useState<plantType[]>([]);
   const [ClickedStatus, setClickedStatus] = useState<number>(0);
   const JwtToken: any = decodeToken(localStorage.JWtToken);
+  const mobileSize = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
     const handleDevice = async () => {
@@ -48,27 +49,23 @@ export default function MyPage() {
 
     return Number(value) > Number(mapper[status]) ? (
       <>
-        <Styled.TextDiv>{status}</Styled.TextDiv>
-        <Styled.StatusImg src="./asset/위험.png" />
+        <Styled.TextDiv>{!mobileSize && <h3>{status}</h3>}</Styled.TextDiv>
+        <Styled.StatusImg src="/asset/위험.png" />
       </>
     ) : (
       <>
-        <Styled.TextDiv>{status}</Styled.TextDiv>
-        <Styled.StatusImg src="./asset/스마일2.png" />
+        <Styled.TextDiv>{!mobileSize && <h3>{status}</h3>}</Styled.TextDiv>
+        <Styled.StatusImg src="/asset/스마일2.png" />
       </>
     );
   };
-  console.log(
-    getPlantData?.filter((_element, index) => {
-      return index === getPlantData.length - 1;
-    })
-  );
+
   return (
     <Styled.Layout>
       <Styled.BackgroundDiv>
         <Styled.UILayout>
           <Styled.CharacterDiv>
-            <Styled.CharacterImg src="./asset/님피아.gif" />
+            <Styled.CharacterImg src="/asset/님피아.gif" />
             <Styled.MypageBtnDiv
               onClick={() => {
                 setIsOpenUserInfo(true);
@@ -79,9 +76,7 @@ export default function MyPage() {
           </Styled.CharacterDiv>
 
           <Styled.ConsoleDiv>
-            {JwtToken?.deivce_id == null ? (
-              <NoticeDevice />
-            ) : (
+            {JwtToken?.device_id === 1 ? (
               <Styled.ConsoleInnerDiv>
                 <Styled.IconLayout>
                   {MypageImg.map((item) => {
@@ -126,6 +121,8 @@ export default function MyPage() {
                     ))}
                 </Styled.StatusDiv>
               </Styled.ConsoleInnerDiv>
+            ) : (
+              <NoticeDevice />
             )}
           </Styled.ConsoleDiv>
         </Styled.UILayout>

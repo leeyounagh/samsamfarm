@@ -31,10 +31,12 @@ export default function Modal({
   mainData,
   userId,
 }: ModalType) {
+  console.log(userId);
   const getInitialGuestBook = () => {
     const guestBook = localStorage.getItem("guestbook");
     const guestBookData = guestBook ? JSON.parse(guestBook) : [];
     const getCommentList: any[] = [];
+
     guestBookData?.map((item: any) => {
       if (Number(item.ownerId) === userId) {
         getCommentList.push(item);
@@ -50,12 +52,12 @@ export default function Modal({
   useEffect(() => {
     getInitialGuestBook();
   }, []);
-  const plantsRenderer = (id: number) => {
+  const plantsRenderer = (id: number | string) => {
     const mapper: PlantMapper = {
-      "1": <Styled.HomePlantImg src="./asset/씨앗.png" id="plants" />,
-      "2": <Styled.HomePlantImg src="./asset/새싹.png" id="plants" />,
-      "3": <Styled.HomePlantImg src="./asset/중간새싹.png" id="plants" />,
-      "4": <Styled.HomePlantImg src="./asset/2번꽃.png" id="plants" />,
+      "1": <Styled.HomePlantImg src="/asset/씨앗.png" id="plants" />,
+      "2": <Styled.HomePlantImg src="/asset/새싹.png" id="plants" />,
+      "3": <Styled.HomePlantImg src="/asset/중간새싹.png" id="plants" />,
+      "4": <Styled.HomePlantImg src="/asset/2번꽃.png" id="plants" />,
     };
 
     return mapper[id !== undefined ? `${id}` : "4"];
@@ -95,7 +97,7 @@ export default function Modal({
           }}
         >
           <img
-            src="./asset/closebtnblack.png"
+            src="/asset/closebtnblack.png"
             style={{ marginRight: "50px" }}
             width="50px"
             height="50px"
@@ -104,20 +106,22 @@ export default function Modal({
         </Styled.CloseDiv>
 
         <Styled.GridLayout>
-          {MainCharacter && userId !== undefined ? (
+          {MainCharacter && userId !== undefined && (
             <Styled.CharacterImg
               src={
                 MainCharacter[userId]
                   ? String(MainCharacter[userId]?.img)
-                  : "./asset/곰돌이.gif"
+                  : "/asset/곰돌이.gif"
               }
               width="40%"
               height="80%"
             />
-          ) : null}
+          )}
           <Styled.GridDiv>
             {plantsRenderer(
-              mainData && userId !== undefined ? mainData[userId].plants_id : 1
+              mainData && userId !== undefined
+                ? mainData[userId]?.current_grade
+                : 1
             )}
           </Styled.GridDiv>
         </Styled.GridLayout>
@@ -125,7 +129,7 @@ export default function Modal({
       <Styled.CommentLayout onSubmit={handleSubmit}>
         <h1>
           {mainData && userId !== undefined
-            ? `${mainData[userId].writer}님 농장`
+            ? `${mainData[userId]?.nickname}님 농장`
             : ""}
         </h1>
         <Styled.CommentDiv>
@@ -144,18 +148,17 @@ export default function Modal({
           <Styled.CommentBtn type="submit">댓글 작성</Styled.CommentBtn>
         </Styled.CommentDiv>
         <Styled.CommentArea>
-          {commentList?.length !== 0
-            ? commentList?.map((item: ContentType) => {
-                return (
-                  <>
-                    <Styled.CommentDiv>
-                      <Styled.Comment>{item.content}</Styled.Comment>
-                      <Styled.Writer>작성자: {item.writer}</Styled.Writer>
-                    </Styled.CommentDiv>
-                  </>
-                );
-              })
-            : null}
+          {commentList?.length !== 0 &&
+            commentList?.map((item: ContentType) => {
+              return (
+                <>
+                  <Styled.CommentDiv>
+                    <Styled.Comment>{item.content}</Styled.Comment>
+                    <Styled.Writer>작성자: {item.writer}</Styled.Writer>
+                  </Styled.CommentDiv>
+                </>
+              );
+            })}
         </Styled.CommentArea>
       </Styled.CommentLayout>
     </Styled.Layout>

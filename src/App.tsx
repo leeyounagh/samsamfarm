@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Landing from "./pages/landing/Landing";
 import Login from "./pages/login/Login";
 import "./App.css";
@@ -19,23 +19,19 @@ import { useEffect } from "react";
 import { MusicProvider } from "./components/audioplayer/AudioPlayer";
 
 function App() {
-  const location = useLocation();
-  const isMainPage = location.pathname === "/startpage";
   const jwtToken = localStorage.getItem("JWtToken");
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!jwtToken) {
-      navigate("/");
+      navigate("/login");
     }
   }, []);
-  // useEffect(() => {
 
-  // }, []);
   return (
     <>
       <MusicProvider>
-        {!isMainPage && <Header />}
+        <Header />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
@@ -63,7 +59,7 @@ function App() {
           />
           <Route path="/story/getplant" element={<GetPlant />} />
         </Routes>
-        {!isMainPage && <Footer />}
+        <Footer />
       </MusicProvider>
     </>
   );

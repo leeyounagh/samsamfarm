@@ -60,6 +60,22 @@ export default function Header() {
     }
   };
 
+  useEffect(() => {
+    const audioElement = audioRef.current;
+    if (audioElement) {
+      audioElement.play();
+      togglePlay();
+    }
+
+    return () => {
+      if (audioElement) {
+        audioElement.play();
+        audioElement.currentTime = 0;
+        togglePlay();
+      }
+    };
+  }, []);
+
   return (
     <>
       <Styled.Nav scrolled={scrolled}>
@@ -78,7 +94,7 @@ export default function Header() {
               </TbMusicOff>
             )}
             <audio ref={audioRef}>
-              <source src="../../../public/audio/bg.mp3" type="audio/mpeg" />
+              <source src="/audio/bg.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
           </Styled.MusicPlay>

@@ -30,12 +30,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
             />
           </Styled.CloseButton>
           <Styled.SidebarButton>
-            <Link to="/">
-              <Styled.SidebarButtonDetail>Main Page</Styled.SidebarButtonDetail>
-            </Link>
-
             {JwtToken ? (
               <>
+                <Link to="/">
+                  <Styled.SidebarButtonDetail>
+                    Main Page
+                  </Styled.SidebarButtonDetail>
+                </Link>
                 <Link to="/community">
                   <Styled.SidebarButtonDetail>
                     Community

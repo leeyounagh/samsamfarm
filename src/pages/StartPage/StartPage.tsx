@@ -1,7 +1,6 @@
 import React from "react";
 import useSnowData from "../../hooks/useSnowData";
 import * as Styled from "./startpage.styled";
-import mainImage from "../../../public/asset/mainimg.png";
 import { useNavigate } from "react-router-dom";
 
 const Snows = ({ color }: { color?: string }) => {
@@ -16,7 +15,7 @@ const Snows = ({ color }: { color?: string }) => {
   return (
     <>
       <Styled.SnowContainer>
-        <Styled.CenteredImage src={mainImage} alt="Background Image" />
+        <Styled.CenteredImage src="/asset/mainimg.png" alt="Background Image" />
         {snows.map((data, idx) => (
           <div
             key={idx}

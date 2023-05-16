@@ -37,19 +37,19 @@ export default function UserInfo({ setIsOpenUserInfo }: userInfoType) {
     };
     getUserInfo();
   }, []);
-  console.log(userInfo);
+
   return (
     <Styled.Layout>
       <Styled.CloseBtn>
         <Styled.CloseImg
-          src="./asset/closebtn.png"
+          src="/asset/closebtn.png"
           onClick={() => {
             setIsOpenUserInfo(false);
           }}
         />
       </Styled.CloseBtn>
       <Styled.UserProfileDiv>
-        <Styled.ProfileImg src="./asset/잠만보.png" />
+        <Styled.ProfileImg src="/asset/잠만보.png" />
       </Styled.UserProfileDiv>
       <Styled.userInfoDiv>
         <Styled.userInfoBox>

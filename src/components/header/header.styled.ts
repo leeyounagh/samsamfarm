@@ -33,6 +33,7 @@ export const MusicPlay = styled.div`
   .icon {
     font-size: 32px;
     color: #b3933b;
+    cursor: pointer;
 
     @media screen and (max-width: 768px) {
       font-size: 20px;
@@ -41,8 +42,10 @@ export const MusicPlay = styled.div`
 `;
 
 export const LoginButton = styled.button`
+  cursor: pointer;
   font-weight: 600;
   color: #b3933b;
+  white-space: nowrap;
   text-transform: uppercase;
   padding: 1.25em 2em;
   margin-bottom: 10px;
@@ -51,6 +54,7 @@ export const LoginButton = styled.button`
   border: 2px solid;
   border-radius: 0.75em;
   transform-style: preserve-3d;
+
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
     background 150ms cubic-bezier(0, 0, 0.58, 1);
   &::before {
@@ -70,7 +74,6 @@ export const LoginButton = styled.button`
   }
 
   &:hover {
-    /* background: ${(props) => props.theme.pink}; */
     transform: translate(0, 0.25em);
     &::before {
       box-shadow: 0 0 0 2px, 0 0.5em 0 0;
@@ -79,11 +82,15 @@ export const LoginButton = styled.button`
   }
 
   &:active {
-    /* background: ${(props) => props.theme.pink}; */
     transform: translate(0em, 0.75em);
     &::before {
       box-shadow: 0 0 0 2px, 0 0;
       transform: translate3d(0, 0, -1em);
     }
+  }
+  @media (max-width: 768px) {
+    padding: 1em 1.5em;
+    height: 40px;
+    font-size: 14px;
   }
 `;

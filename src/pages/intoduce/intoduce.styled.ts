@@ -1,58 +1,59 @@
 import styled from "styled-components";
-import street from "../../../public/asset/스타벅스.gif";
 
-export const Layout = styled.div``;
+export const Layout = styled.div`
+  width: 100%;
+  height: 55rem;
+  font-family: "NeoDunggeunmoPro-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+`;
+
 export const Introduce_backgroundImg = styled.div`
-  background-image: url(${street});
+  background-image: url("/asset/스타벅스.gif");
   background-size: 100% 100%;
   width: 100vw;
   height: 70vh;
   background-repeat: no-repeat;
 `;
-
-export const Introduce_Script = styled.div`
+export const Introduce_DescDiv = styled.div`
   width: 100%;
-  height: 20vh;
+  height: 15rem;
+`;
+export const MainBtnDiv = styled.div`
+  height: 3rem;
+`;
+export const BtnDiv = styled.div`
+  width: 15rem;
+  white-space: nowrap;
+`;
+export const DescDiv = styled.div`
+  width: 100%;
+  height: 8rem;
   display: flex;
-  font-family: "DOSPilgiMedium";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
 `;
 
-export const Introduce_div = styled.div`
-  margin-top: 5%;
-  width: 80%;
+export const DescTitle = styled.div`
+  width: 70%;
+  height: 8rem;
+  font-size: 1.3rem;
   display: flex;
+  align-items: center;
   justify-content: center;
-  p {
-    display: flex;
-    justify-content: center;
+  @media screen and (max-width: 480px) {
+    font-size: 0.8rem;
+    width: 60%;
   }
 `;
-
-export const Introduce_buttonDiv = styled.div`
-  font-size: 1.5em;
-  width: 8rem;
-  height: 6rem;
-  white-space: nowrap;
-  padding-top: 10px;
-`;
-
-export const GOBackMainDiv = styled.div`
-  font-family: "DOSPilgiMedium";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  width: 20%;
-  height: 10%;
-`;
-
-export const TextDiv = styled.div`
+export const DescBtnDiv = styled.div`
+  width: 15%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-right: 50px;
+  white-space: nowrap;
+  margin-right: 10px;
+  @media screen and (max-width: 480px) {
+    font-size: 0.8rem;
+    width: 20%;
+  }
 `;

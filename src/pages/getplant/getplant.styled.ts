@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Layout = styled.div`
   width: 100%;
   height: 90vh;
-  background-image: url("/public/asset/꽃배정.gif");
+  background-image: url("/asset/꽃배정.gif");
   background-size: 100%;
   background-position: center;
   background-size: cover;

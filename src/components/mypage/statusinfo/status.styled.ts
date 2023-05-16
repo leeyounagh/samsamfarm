@@ -2,31 +2,70 @@ import styled from "styled-components";
 import color from "../../../styles/color";
 
 export const Layout = styled.div`
-  border: 1px solid black;
   width: 60vw;
   height: 85vh;
   position: fixed;
   top: 13%;
   left: 22%;
   z-index: 50;
-  background-image: url("./asset/status배경.gif");
+  background-image: url("/asset/status배경.gif");
+  @media screen and (max-width: 1024px) {
+    width: 60rem;
+    height: 85vh;
+    position: fixed;
+    top: 10%;
+    left: 2%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 40rem;
+    height: 85vh;
+    position: fixed;
+    top: 10%;
+    left: 2%;
+  }
+  @media screen and (max-width: 480px) {
+    width: 22rem;
+    height: 38rem;
+    position: fixed;
+    top: 10%;
+    left: 2%;
+  }
 `;
 export const CloseDiv = styled.div`
-  width: 100%;
-  height: 10vh;
+  width: 5rem;
+  height: 7rem;
   display: flex;
   justify-content: flex-end;
-  color: white;
+  align-items: center;
   cursor: pointer;
+  @media screen and (max-width: 480px) {
+    width: 3rem;
+    height: 5rem;
+  }
 `;
 
-export const CloseImg = styled.img``;
+export const CloseImg = styled.img`
+  width: 4rem;
+  height: 4rem;
+  @media (max-width: 1024px) {
+    width: 3rem;
+    height: 3rem;
+  }
+`;
 export const MainInfoDiv = styled.div`
   width: 100%;
   height: 60%;
   display: flex;
   margin-top: 50px;
   padding-left: 80px;
+
+  @media screen and (max-width: 480px) {
+    padding-left: 0px;
+    width: 100%;
+    height: 20rem;
+    display: grid;
+    align-items: center;
+  }
 `;
 export const StatusDiv = styled.div`
   opacity: 0.6;
@@ -38,6 +77,11 @@ export const StatusDiv = styled.div`
   h1 {
     text-align: center;
     margin-top: 30px;
+  }
+  @media screen and (max-width: 480px) {
+    width: 15rem;
+    height: 20rem;
+    margin-left: 60px;
   }
 `;
 
@@ -58,7 +102,6 @@ export const StatusTextDiv = styled.div`
   }
 `;
 export const StatusInnerDiv = styled.div`
-  border: 1px solid yellow;
   width: 60%;
   height: 100%;
   display: grid;
@@ -71,13 +114,48 @@ export const ButtonDiv = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
   h2 {
     color: ${color.main};
   }
+
+  @media screen and (max-width: 1024px) {
+    width: 18rem;
+    height: 20rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  @media screen and (max-width: 768px) {
+    width: 15rem;
+    height: 15rem;
+
+    h2 {
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    width: 23rem;
+    height: 5rem;
+
+    h2 {
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
 `;
 export const ButtonImg = styled.img`
-  width: 200px;
-  height: 100px;
+  width: 10rem;
+  height: 5rem;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: 7rem;
+  }
+  @media screen and (max-width: 480px) {
+    width: 7rem;
+    height: 5rem;
+  }
 `;
 
 export const GuideBookDiv = styled.div`

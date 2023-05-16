@@ -42,7 +42,7 @@ export const FooterLogo = styled.img`
   width: 250px;
 
   @media screen and (max-width: 768px) {
-    width: 150px;
+    width: 180px;
     margin-left: 10px;
   }
 `;
