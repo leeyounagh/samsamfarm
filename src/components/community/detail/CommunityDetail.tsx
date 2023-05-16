@@ -32,6 +32,7 @@ export default function CommunityDetail({
       view_count: 1,
     },
   ]);
+
   const [comment, setComment] = useState<string>("");
   const JwtToken: any = decodeToken(localStorage.JWtToken);
 

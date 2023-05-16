@@ -92,6 +92,7 @@ export const CloseDiv = styled.div`
   top: 30px;
   left: 92%;
   cursor: pointer;
+
   @media screen and (max-width: 768px) {
     position: absolute;
     top: 30px;

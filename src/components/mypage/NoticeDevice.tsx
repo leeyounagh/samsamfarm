@@ -11,12 +11,13 @@ export default function NoticeDevice() {
         <h1>디바이스를 등록해 주세요</h1>
       </Styled.TextDiv>
       <Styled.RegisterDiv>
-        <Styled.BtnDiv
-          onClick={() => {
-            alert("서비스 준비중 입니다.");
-          }}
-        >
-          <Btn1 title="등록하기" />
+        <Styled.BtnDiv>
+          <Btn1
+            title="등록하기"
+            onClick={() => {
+              alert("서비스 준비중 입니다.");
+            }}
+          />
         </Styled.BtnDiv>
       </Styled.RegisterDiv>
     </Styled.Layout>

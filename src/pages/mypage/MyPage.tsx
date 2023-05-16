@@ -6,7 +6,6 @@ import Btn1 from "../../components/button/Btn1";
 import MypageImg from "../../data/mypageImg";
 import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
-import { UserType } from "../../types";
 import NoticeDevice from "../../components/mypage/NoticeDevice";
 import useMediaQuery from "../../hooks/useMediaQuery";
 interface plantType {
@@ -77,9 +76,7 @@ export default function MyPage() {
           </Styled.CharacterDiv>
 
           <Styled.ConsoleDiv>
-            {JwtToken?.deivce_id === null ? (
-              <NoticeDevice />
-            ) : (
+            {JwtToken?.device_id === 1 ? (
               <Styled.ConsoleInnerDiv>
                 <Styled.IconLayout>
                   {MypageImg.map((item) => {
@@ -124,6 +121,8 @@ export default function MyPage() {
                     ))}
                 </Styled.StatusDiv>
               </Styled.ConsoleInnerDiv>
+            ) : (
+              <NoticeDevice />
             )}
           </Styled.ConsoleDiv>
         </Styled.UILayout>

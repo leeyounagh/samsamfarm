@@ -49,7 +49,7 @@ export default function Carousel() {
         },
       });
       const { data } = await response.data;
-      console.log(data);
+
       setNewData(data);
     };
     handlecommunity();
@@ -72,13 +72,14 @@ export default function Carousel() {
             {item?.title.length > 8 ? item?.title.substring(0, 6) : item?.title}
           </h1>
           <h3>글쓴이: {item?.nickname}</h3>
-          <Styled.BtnDiv
-            onClick={() => {
-              setIsOpenModal(true);
-              setClickedData(item);
-            }}
-          >
-            <Btn1 title="바로가기" />
+          <Styled.BtnDiv>
+            <Btn1
+              title="바로가기"
+              onClick={() => {
+                setIsOpenModal(true);
+                setClickedData(item);
+              }}
+            />
           </Styled.BtnDiv>
         </Styled.InfoBox>
       );

@@ -62,10 +62,10 @@ type Btn1Props = {
   title: string;
   onClick?: () => void; // onClick prop 추가
 };
-function Btn1({ title }: Btn1Props) {
+function Btn1({ title, onClick }: Btn1Props) {
   return (
     <Slayout>
-      <SBtn1>{title}</SBtn1>
+      <SBtn1 onClick={onClick}>{title}</SBtn1>
     </Slayout>
   );
 }
