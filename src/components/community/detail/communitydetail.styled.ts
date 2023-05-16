@@ -50,22 +50,21 @@ export const TitleDiv = styled.div`
   width: 40vw;
   height: 8rem;
   background-color: white;
-  border: 3px solid blue;
   opacity: 0.6;
   text-align: center;
   margin-top: 20px;
   display: grid;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
+
   font-family: "양진체";
   src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
-=======
+
   border-radius: 20px;
->>>>>>> feature/main
+
   h3 {
     margin-top: 15px;
     font-size: 1.5rem;
