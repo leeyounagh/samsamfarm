@@ -2,18 +2,8 @@ import React, { useEffect, useState } from "react";
 import * as Styled from "../community.styled";
 import Pagination from "./Pagenation";
 import { Link } from "react-router-dom";
-import PostList from "./PostList";
+import PostList, { Post } from "./PostList";
 import AxiosInstance from "../../../api/AxiosIntance";
-
-interface Post {
-  id: number;
-  title: string;
-  content: string;
-  writer: string;
-  date: string;
-  created_at: string;
-  updated_at: string;
-}
 
 function Board() {
   const [currentPage, setCurrentPage] = useState(1);
