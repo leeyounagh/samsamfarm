@@ -3,7 +3,6 @@ import color from "../../../styles/color";
 
 export const Layout = styled.div`
   width: 70rem;
-  height: 45rem;
   z-index: 300;
   background: white;
   position: fixed;

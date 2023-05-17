@@ -53,12 +53,10 @@ export default function MyPage() {
 
     return Number(value) > Number(mapper[status]) ? (
       <>
-        {/* <Styled.TextDiv>{!mobileSize && <h3>{status}</h3>}</Styled.TextDiv> */}
         <Styled.StatusImg src="/asset/위험.png" />
       </>
     ) : (
       <>
-        {/* <Styled.TextDiv>{!mobileSize && <h3>{status}</h3>}</Styled.TextDiv> */}
         <Styled.StatusImg src="/asset/스마일2.png" />
       </>
     );

@@ -9,8 +9,6 @@ export default function NoticeDevice() {
       </Styled.CellPhoneDiv>
       <Styled.TextDiv>
         <h1>디바이스를 등록해 주세요</h1>
-      </Styled.TextDiv>
-      <Styled.RegisterDiv>
         <Styled.BtnDiv>
           <Btn1
             title="등록하기"
@@ -19,7 +17,7 @@ export default function NoticeDevice() {
             }}
           />
         </Styled.BtnDiv>
-      </Styled.RegisterDiv>
+      </Styled.TextDiv>
     </Styled.Layout>
   );
 }

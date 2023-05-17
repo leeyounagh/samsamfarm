@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Layout = styled.main`
   width: 100%;
-  height: 80vh;
+  background-image: url("/asset/마이페이지배경.jpg");
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,8 +21,7 @@ export const Layout = styled.main`
 export const BackgroundDiv = styled.div`
   width: 80%;
   height: 100%;
-  background-image: url("/asset/마이페이지배경.jpg");
-  background-size: cover;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,8 +53,8 @@ export const CharacterImg = styled.img`
     height: 200px;
   }
   @media (max-width: 480px) {
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
   }
 `;
 export const ConsoleDiv = styled.div`
@@ -69,6 +69,7 @@ export const ConsoleDiv = styled.div`
     height: 50vh;
   }
   @media (max-width: 480px) {
+    margin-top: 10px;
     width: 20rem;
     height: 15rem;
   }
@@ -119,6 +120,10 @@ export const ConsoleInnerDiv = styled.div`
   background-size: 100% 100%;
   display: grid;
   justify-content: center;
+  @media (max-width: 480px) {
+    width: 16rem;
+    height: 16rem;
+  }
 `;
 export const StatusDiv = styled.div`
   width: 30rem;
@@ -159,7 +164,7 @@ export const CharacterDiv = styled.div`
   }
   @media (max-width: 480px) {
     width: 20rem;
-    height: 10rem;
+    height: 8rem;
   }
 
   button {
@@ -172,9 +177,6 @@ export const TextDiv = styled.div`
   font-size: 0.4rem;
   @media (max-width: 1024px) {
     font-size: 0.1rem;
-  }
-  @media (max-width: 480px) {
-    font-size: 1px;
   }
 `;
 
