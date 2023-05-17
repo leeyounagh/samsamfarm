@@ -48,103 +48,90 @@ const SignupForm = () => {
   };
 
   return (
-    <Styled.register>
-      <div style={{ fontSize: "2.5em" }}>회원가입</div>
-      <Styled.form onSubmit={handleSubmit(onSubmitHandler)}>
-        <Styled.table>
-          <tr>
-            <Styled.td>
-              <label>이메일</label>
-            </Styled.td>
-            <td>
-              <input
-                {...register("email", {
-                  required: true,
-                })}
-                type="email"
-                style={{ width: "90%", fontSize: "1.3em" }}
-              />
-            </td>
-          </tr>
-          <tr>
-            <Styled.td>
-              <label>비밀번호</label>
-            </Styled.td>
-            <td>
-              <input
-                {...register("password", {
-                  minLength: {
-                    value: 5,
-                    message: "Not enough password length(5)",
-                  },
-                })}
-                type="password"
-                style={{ width: "90%", fontSize: "1.3em" }}
-              />
-              <span>{errors?.password?.message}</span>
-            </td>
-          </tr>
-          <tr>
-            <Styled.td>
-              <label>비밀번호 확인</label>
-            </Styled.td>
-            <td>
-              <input
-                {...register("password_confirm", {
-                  validate: (value: string) => {
-                    return value != watch("password")
-                      ? "password not equal"
-                      : true;
-                  },
-                })}
-                type="password"
-                style={{ width: "90%", fontSize: "1.3em" }}
-              />
-              <span>{errors?.password_confirm?.message}</span>
-            </td>
-          </tr>
-          <tr>
-            <Styled.td>
-              <label>닉네임</label>
-            </Styled.td>
-            <td>
-              <input
-                {...register("nickname")}
-                style={{ width: "90%", fontSize: "1.3em" }}
-              />
-            </td>
-          </tr>
-          <tr>
-            <Styled.td>
-              <label>휴대폰 번호</label>
-            </Styled.td>
-            <td>
-              <input
-                {...register("phone", {
-                  pattern: {
-                    value: /^010-[0-9]{4}-[0-9]{4}$/,
-                    message: "Invalid phone number",
-                  },
-                })}
-                style={{ width: "90%", fontSize: "1.3em" }}
-              />
-              <span>{errors?.phone?.message}</span>
-            </td>
-          </tr>
-          <Styled.td>
-            <label>MBTI</label>
-          </Styled.td>
-          <td>
-            <input
-              {...register("mbti")}
-              style={{ width: "90%", fontSize: "1.3em" }}
-            />
-          </td>
-        </Styled.table>
-        <Styled.RegisterButton type="submit">회원가입</Styled.RegisterButton>
-      </Styled.form>
-    </Styled.register>
+    <Styled.JoinStyled onSubmit={handleSubmit(onSubmitHandler)}>
+      <img
+        className="logo"
+        style={{
+          width: "100%",
+          maxWidth: "450px",
+          height: "auto",
+          maxHeight: "140px",
+        }}
+        src="/logo/logo.png"
+        alt="Logo"
+      />
+      <Styled.JoinTitleStyled>회원가입</Styled.JoinTitleStyled>
+      <Styled.JoinFormsTitleStyled>기본정보</Styled.JoinFormsTitleStyled>
+      <Styled.JoinFormStyled>
+        <Styled.InputLabelStyled>* 이메일</Styled.InputLabelStyled>
+        <Styled.InputStyled
+          {...register("email", {
+            required: true,
+          })}
+          type="email"
+        />
+        <Styled.InputLabelStyled>* 비밀번호</Styled.InputLabelStyled>
+        <Styled.InputStyled
+          {...register("password", {
+            minLength: {
+              value: 5,
+              message: "비밀번호는 5자리 이상 입력 해주세요",
+            },
+          })}
+          type="password"
+        />
+        <span
+          style={{
+            color: "red",
+          }}
+        >
+          {errors?.password?.message}
+        </span>
+        <Styled.InputLabelStyled>* 비밀번호 확인</Styled.InputLabelStyled>
+        <Styled.InputStyled
+          {...register("password_confirm", {
+            validate: (value: string) => {
+              return value != watch("password")
+                ? "비밀번호가 일치하지 않습니다."
+                : true;
+            },
+          })}
+          type="password"
+        />
+        <span
+          style={{
+            color: "red",
+          }}
+        >
+          {errors?.password_confirm?.message}
+        </span>
+        <Styled.InputLabelStyled>* 닉네임</Styled.InputLabelStyled>
+        <Styled.InputStyled {...register("nickname")} />
+        <Styled.InputLabelStyled>* 연락처</Styled.InputLabelStyled>
+        <Styled.InputStyled
+          {...register("phone", {
+            pattern: {
+              value: /^010-[0-9]{4}-[0-9]{4}$/,
+              message: "올바른 연락처 형식이 아닙니다.",
+            },
+          })}
+        />
+        <span
+          style={{
+            color: "red",
+          }}
+        >
+          {errors?.phone?.message}
+        </span>
+      </Styled.JoinFormStyled>
+      <Styled.JoinFormsTitleStyled>추가정보</Styled.JoinFormsTitleStyled>
+      <Styled.JoinFormStyled>
+        <Styled.InputLabelStyled>* MBTI</Styled.InputLabelStyled>
+        <Styled.InputStyled {...register("mbti")} />
+      </Styled.JoinFormStyled>
+
+      <Styled.RegisterButton type="submit">회원가입</Styled.RegisterButton>
+    </Styled.JoinStyled>
   );
 };
-
 export default SignupForm;
