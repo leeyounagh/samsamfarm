@@ -50,12 +50,12 @@ const PostList: React.FC<PostListProps> = ({ filteredPosts }) => {
           ))}
         </tbody>
       </Styled.Table>
-      {isOpenModal ? (
+      {isOpenModal && (
         <CommunityDetail
           setIsOpenModal={setIsOpenModal}
           clickedData={clickedData}
         />
-      ) : null}
+      )}
     </>
   );
 };
