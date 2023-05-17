@@ -12,6 +12,15 @@ export const IntroduceReturnPage_div = styled.div`
   font-style: normal;
 `;
 
+export const Image = styled.img`
+  width: 700px;
+  height: auto;
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    height: auto;
+  }
+`;
+
 export const IntroduceReturnPage_p = styled.p`
   font-size: 1.8em;
 `;

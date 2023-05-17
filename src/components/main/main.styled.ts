@@ -60,7 +60,7 @@ export const FieldLayOut = styled.div`
     background-repeat: no-repeat;
   }
   @media (max-width: 480px) {
-    width: 25.5rem;
+    /* width: 25.5rem; */
     height: 30rem;
   }
 `;
@@ -255,7 +255,7 @@ export const MobileInnerLayout = styled.div`
     padding-left: 90px;
   }
   @media (max-width: 480px) {
-    width: 30rem;
+    width: 100%;
     margin-right: 20px;
     background-image: none;
     display: grid;

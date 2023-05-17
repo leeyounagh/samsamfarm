@@ -8,7 +8,7 @@ export default function IntroduceReturnPage() {
   return (
     <div style={{ height: "70vh" }}>
       <Styled.IntroduceReturnPage_div>
-        <img src="/asset/게임오버.gif" />
+        <Styled.Image src="/asset/게임오버.gif" />
       </Styled.IntroduceReturnPage_div>
       <Styled.IntroduceReturnPage_div>
         <Styled.IntroduceReturnPage_p>
