@@ -45,7 +45,6 @@ export default function MainField() {
         });
         const { data } = await response.data;
         setMainData(data);
-        console.log("확인", data);
       } catch (err) {
         alert(err);
       }

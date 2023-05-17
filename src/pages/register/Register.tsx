@@ -22,14 +22,15 @@ const SignupForm = () => {
 
   const navigate = useNavigate();
   const onSubmitHandler: SubmitHandler<FormValue> = async (data: FormValue) => {
+    const { email, password, password_confirm, phone, mbti, nickname } = data;
     const body = {
-      email: data.email,
-      password: data.password,
-      password_confirm: data.password_confirm,
-      phone: data.phone,
-      mbti: data.mbti.toUpperCase(),
-      nickname: data.nickname,
-      name: data.nickname,
+      email: email,
+      password: password,
+      password_confirm: password_confirm,
+      phone: phone,
+      mbti: mbti.toUpperCase(),
+      nickname: nickname,
+      name: nickname,
     };
 
     try {

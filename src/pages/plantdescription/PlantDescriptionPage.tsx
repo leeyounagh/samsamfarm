@@ -6,31 +6,32 @@ import Btn1 from "../../components/button/Btn1";
 
 export default function PlantDesriptionPage() {
   const { plantId } = useParams();
+  const selectedPlantId = Number(plantId);
   const navigate = useNavigate();
   const [flowerName, setFlowerName] = useState("");
 
   useEffect(() => {
-    if (plantId) {
-      setFlowerName(FlowerImg[Number(plantId)]?.name);
+    if (selectedPlantId) {
+      setFlowerName(FlowerImg[selectedPlantId]?.name);
     }
-  }, []);
+  }, [selectedPlantId]);
 
   return (
     <Styled.Layout>
       <Styled.FlowerDiv>
         {plantId && (
-          <Styled.FlowerImg src={`${FlowerImg[Number(plantId)].flower}`} />
+          <Styled.FlowerImg src={`${FlowerImg[selectedPlantId].flower}`} />
         )}
       </Styled.FlowerDiv>
       <Styled.DescForm>
         <Styled.DescInnerDiv>
           <Styled.StoryText>
-            {FlowerImg[Number(plantId)]?.story1}
+            {FlowerImg[selectedPlantId]?.story1}
           </Styled.StoryText>
           <br />
           <br />
           <Styled.StoryText>
-            {FlowerImg[Number(plantId)]?.story2}
+            {FlowerImg[selectedPlantId]?.story2}
           </Styled.StoryText>
           <br />
           <br />

@@ -4,7 +4,7 @@ import color from "../../../styles/color";
 export const Layout = styled.div`
   width: 65vw;
   height: 83vh;
-  z-index: 400;
+  z-index: 300;
   background: white;
   position: fixed;
   top: 5rem;
@@ -30,7 +30,7 @@ export const Layout = styled.div`
     height: 63vh;
   }
   @media (max-width: 480px) {
-    width: 22rem;
+    width: 25rem;
     height: 75vh;
     left: 0px;
   }
