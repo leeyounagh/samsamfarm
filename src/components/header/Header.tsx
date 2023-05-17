@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LogoImage from "../../../public/logo/logo.png";
 import * as Styled from "./header.styled";
 import Sidebar from "./sidebar/Sidebar";
@@ -11,6 +11,7 @@ import { TbMusicOff } from "react-icons/tb";
 export default function Header() {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const JwtToken = localStorage.getItem("JWtToken");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,14 +80,9 @@ export default function Header() {
   return (
     <>
       <Styled.Nav scrolled={scrolled}>
-        {JwtToken ? (
-          <Link to="/">
-            <Styled.Logo src={LogoImage} alt="로고 이미지" />
-          </Link>
-        ) : (
+        <Link to="/main">
           <Styled.Logo src={LogoImage} alt="로고 이미지" />
-        )}
-
+        </Link>
         <Styled.NavMenu>
           <Styled.MusicPlay>
             {isPlaying ? (
@@ -113,7 +109,7 @@ export default function Header() {
               로그아웃
             </Styled.LoginButton>
           ) : (
-            <Link to="/startpage">
+            <Link to="/">
               <Styled.LoginButton>로그인</Styled.LoginButton>
             </Link>
           )}

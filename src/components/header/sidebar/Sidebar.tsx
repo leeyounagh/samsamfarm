@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
           <Styled.SidebarButton>
             {JwtToken ? (
               <>
-                <Link to="/">
+                <Link to="/main">
                   <Styled.SidebarButtonDetail>
                     Main Page
                   </Styled.SidebarButtonDetail>

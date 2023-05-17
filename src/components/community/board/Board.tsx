@@ -27,16 +27,21 @@ function Board() {
 
   useEffect(() => {
     const handlecommunity = async () => {
-      const response = await AxiosInstance.get("/article", {
-        params: {
-          page: `${currentPage}`,
-          perPage: postsPerPage,
-        },
-      });
+      try {
+        const response = await AxiosInstance.get("/article", {
+          params: {
+            page: `${currentPage}`,
+            perPage: postsPerPage,
+          },
+        });
 
-      const { data } = await response.data;
-      setFilteredPosts(data);
+        const { data } = await response.data;
+        setFilteredPosts(data);
+      } catch (err) {
+        console.log(err);
+      }
     };
+
     handlecommunity();
   }, [currentPage]);
 

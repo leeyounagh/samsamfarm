@@ -8,7 +8,6 @@ const CommunityUpdate = () => {
   const [content, setContent] = useState("");
   const JwtToken: any = decodeToken(localStorage.JWtToken);
 
-  console.log(JwtToken);
   const handleSubmit = async () => {
     try {
       await AxiosInstance.post("/article", {
@@ -19,7 +18,7 @@ const CommunityUpdate = () => {
       alert("글이 작성되었습니다.");
       window.location.href = "/";
     } catch (error) {
-      console.error(error);
+      alert(error);
     }
   };
 

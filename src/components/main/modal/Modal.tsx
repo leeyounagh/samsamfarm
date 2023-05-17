@@ -31,27 +31,28 @@ export default function Modal({
   mainData,
   userId,
 }: ModalType) {
-  console.log(userId);
   const getInitialGuestBook = () => {
     const guestBook = localStorage.getItem("guestbook");
     const guestBookData = guestBook ? JSON.parse(guestBook) : [];
-    const getCommentList: any[] = [];
+    const CommentList: ContentType[] = [];
 
-    guestBookData?.map((item: any) => {
+    guestBookData?.map((item: ContentType) => {
       if (Number(item.ownerId) === userId) {
-        getCommentList.push(item);
+        CommentList.push(item);
       }
     });
-    return guestBook ? getCommentList : [];
+    return guestBook ? CommentList : [];
   };
 
   const [content, setContent] = useState<string>("");
   const [writer, setWriter] = useState<string>("");
   const [commentList, setCommentList] = useState(getInitialGuestBook());
-
+  const correctUserId = MainCharacter && userId !== undefined;
+  const restData = mainData && userId !== undefined;
   useEffect(() => {
     getInitialGuestBook();
   }, []);
+
   const plantsRenderer = (id: number | string) => {
     const mapper: PlantMapper = {
       "1": <Styled.HomePlantImg src="/asset/씨앗.png" id="plants" />,
@@ -62,7 +63,11 @@ export default function Modal({
 
     return mapper[id !== undefined ? `${id}` : "4"];
   };
+
   const handleSubmit = () => {
+    const guestBook = localStorage.getItem("guestbook");
+    const guestBookData = guestBook ? JSON.parse(guestBook) : [];
+    const newArr: any = [];
     const body = {
       content: content,
       writer: writer,
@@ -74,10 +79,9 @@ export default function Modal({
       setContent("");
       return;
     }
-    const guestBook = localStorage.getItem("guestbook");
-    const guestBookData = guestBook ? JSON.parse(guestBook) : [];
+
     guestBookData.push(body);
-    const newArr: any = [];
+
     newArr.concat(body);
     setCommentList(newArr);
     setWriter("");
@@ -106,7 +110,7 @@ export default function Modal({
         </Styled.CloseDiv>
 
         <Styled.GridLayout>
-          {MainCharacter && userId !== undefined && (
+          {correctUserId && (
             <Styled.CharacterImg
               src={
                 MainCharacter[userId]
@@ -118,20 +122,12 @@ export default function Modal({
             />
           )}
           <Styled.GridDiv>
-            {plantsRenderer(
-              mainData && userId !== undefined
-                ? mainData[userId]?.current_grade
-                : 1
-            )}
+            {plantsRenderer(restData ? mainData[userId]?.current_grade : 1)}
           </Styled.GridDiv>
         </Styled.GridLayout>
       </Styled.FieldDiv>
       <Styled.CommentLayout onSubmit={handleSubmit}>
-        <h1>
-          {mainData && userId !== undefined
-            ? `${mainData[userId]?.nickname}님 농장`
-            : ""}
-        </h1>
+        <h1>{restData ? `${mainData[userId]?.nickname}님 농장` : ""}</h1>
         <Styled.CommentDiv>
           <Styled.CommentInput
             placeholder="댓글을 작성해 주세요...."

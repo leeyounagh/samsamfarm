@@ -6,21 +6,14 @@ export default function SelectPlantPage() {
   const RandomNum = Math.floor(Math.random() * 16);
 
   const navigate = useNavigate();
-  const userPlant = () => {
-    navigate(`/story/plantDescriptionPage/${RandomNum}`);
-  };
-  const otherPlant = () => {
-    navigate(`/story/selectMbtiPlantPage`);
-  };
+  const userPlant = () => navigate(`/story/plantDescriptionPage/${RandomNum}`);
+
+  const otherPlant = () => navigate(`/story/selectMbtiPlantPage`);
 
   return (
     <Styled.Layout>
       <Styled.LayoutInnerDiv>
-        <Styled.FlowerDiv
-          onClick={() => {
-            userPlant();
-          }}
-        >
+        <Styled.FlowerDiv onClick={userPlant}>
           <Styled.FlowerImg src={`${FlowerImg[RandomNum]?.flower}`} />
         </Styled.FlowerDiv>
         <Styled.OtherDiv

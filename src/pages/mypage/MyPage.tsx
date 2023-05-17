@@ -32,10 +32,14 @@ export default function MyPage() {
 
   useEffect(() => {
     const handleDevice = async () => {
-      const response = await AxiosInstance.get(`/device/plant-data/1`);
-      const data = response.data.data;
-      const newItems = [data, ...getPlantData];
-      setPlantData(newItems);
+      try {
+        const response = await AxiosInstance.get(`/device/plant-data/1`);
+        const data = response.data.data;
+        const newItems = [data, ...getPlantData];
+        setPlantData(newItems);
+      } catch (err) {
+        console.log(err);
+      }
     };
     handleDevice();
   }, []);
