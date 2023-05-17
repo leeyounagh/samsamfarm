@@ -26,6 +26,9 @@ function App() {
     if (!jwtToken) {
       navigate("/");
     }
+    if (jwtToken) {
+      navigate("/main");
+    }
   }, []);
 
   return (
