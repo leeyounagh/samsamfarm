@@ -47,7 +47,7 @@ export default function MainField() {
         const { data } = await response.data;
         setMainData(data);
       } catch (err) {
-        alert(err);
+        console.log(err);
       }
     };
     if (jwtToken) {
@@ -132,14 +132,15 @@ export default function MainField() {
           </Styled.FieldLayoutDiv>
         )}
       </Styled.FieldLayOut>
-      {isMainModalOpen ? (
+
+      {isMainModalOpen && (
         <Modal
           isMainModalOpen={isMainModalOpen}
           setIsMainModalOpen={setIsMainModalOpen}
           mainData={mainData}
           userId={userId}
         />
-      ) : null}
+      )}
     </Styled.Layout>
   );
 }

@@ -9,7 +9,7 @@ export const Layout = styled.section`
   position: fixed;
   top: 5%;
   left: 20%;
-  background-image: url("./asset/커뮤니티모달.gif");
+  background-image: url("/asset/커뮤니티모달.gif");
   background-size: cover;
   display: grid;
   place-items: center;

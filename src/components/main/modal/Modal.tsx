@@ -35,7 +35,7 @@ export default function Modal({
     const guestBook = localStorage.getItem("guestbook");
     const guestBookData = guestBook ? JSON.parse(guestBook) : [];
     const CommentList: ContentType[] = [];
-
+    console.log(isMainModalOpen);
     guestBookData?.map((item: ContentType) => {
       if (Number(item.ownerId) === userId) {
         CommentList.push(item);
@@ -101,7 +101,7 @@ export default function Modal({
           }}
         >
           <img
-            src="/asset/closebtnblack.png"
+            src="/asset/closebtn.png"
             style={{ marginRight: "50px" }}
             width="50px"
             height="50px"
@@ -127,7 +127,10 @@ export default function Modal({
         </Styled.GridLayout>
       </Styled.FieldDiv>
       <Styled.CommentLayout onSubmit={handleSubmit}>
-        <h1>{restData ? `${mainData[userId]?.nickname}님 농장` : ""}</h1>
+        <Styled.UserInfoDiv>
+          <h1>{restData ? `${mainData[userId]?.nickname}님 농장` : ""}</h1>
+        </Styled.UserInfoDiv>
+
         <Styled.CommentDiv>
           <Styled.CommentInput
             placeholder="댓글을 작성해 주세요...."

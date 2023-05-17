@@ -28,6 +28,9 @@ export default function Introduce() {
     };
     return navigate(selected[title]);
   };
+  // 클릭이 안됐을때 자동호출 되서 yes만 받고 void를 반환한 상태에서 클릭 이벤트가 발생하면 내부함수가 다시
+  //호출
+  // 호출이 끝난 title 변수를 참조할수 있는이유는 자바스크립트의 클로저의 개념이 있기때문에!
 
   return (
     <Styled.Layout>
