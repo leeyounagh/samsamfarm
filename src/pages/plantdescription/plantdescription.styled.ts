@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const Layout = styled.div`
   width: 100%;
   padding: 10rem;
-
-  /* height: 80vh; */
   display: flex;
   justify-content: center;
   font-family: "DOSPilgiMedium";
@@ -12,9 +10,11 @@ export const Layout = styled.div`
     format("woff2");
   font-weight: normal;
   font-style: normal;
-
-  @media (max-width: 768px) {
-    height: 75vh;
+  @media (max-width: 1024px) {
+    padding: 1rem;
+  }
+  @media (max-width: 480px) {
+    padding: 3rem;
   }
 `;
 
@@ -24,9 +24,11 @@ export const FlowerDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   @media (max-width: 768px) {
     width: 50%;
+  }
+  @media (max-width: 480px) {
+    height: 20rem;
   }
 `;
 
@@ -55,6 +57,9 @@ export const DescInnerDiv = styled.div`
 
   @media (max-width: 768px) {
     width: 80%;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
   }
 `;
 export const StoryText = styled.h2`
