@@ -11,7 +11,6 @@ import { TbMusicOff } from "react-icons/tb";
 export default function Header() {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const JwtToken = localStorage.getItem("JWtToken");
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {

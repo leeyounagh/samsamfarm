@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Layout = styled.div`
   width: 100%;
   height: 55rem;
+
   font-family: "NeoDunggeunmoPro-Regular";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2")
     format("woff2");
