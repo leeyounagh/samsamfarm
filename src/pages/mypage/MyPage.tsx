@@ -28,7 +28,6 @@ export default function MyPage() {
   const [getPlantData, setPlantData] = useState<plantType[]>([]);
   const [ClickedStatus, setClickedStatus] = useState<number>(0);
   const JwtToken: any = decodeToken(localStorage.JWtToken);
-  const mobileSize = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
     const handleDevice = async () => {
