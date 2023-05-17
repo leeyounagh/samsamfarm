@@ -24,21 +24,23 @@ const CommunityUpdate = () => {
 
   return (
     <Styled.Container>
-      <h1>글쓰기 페이지</h1>
-      <Styled.TitleInput
-        type="text"
-        placeholder="제목을 입력하세요."
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <Styled.ContentInput
-        placeholder="내용을 입력하세요."
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-      />
-      <Styled.SubmitButton onClick={handleSubmit}>
-        글 올리기
-      </Styled.SubmitButton>
+      <Styled.InnerContainer>
+        <h1>글쓰기 페이지</h1>
+        <Styled.TitleInput
+          type="text"
+          placeholder="제목을 입력하세요."
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <Styled.ContentInput
+          placeholder="내용을 입력하세요."
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        />
+        <Styled.SubmitButton onClick={handleSubmit}>
+          글 올리기
+        </Styled.SubmitButton>
+      </Styled.InnerContainer>
     </Styled.Container>
   );
 };

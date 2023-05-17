@@ -38,6 +38,7 @@ export const TitleDiv = styled.div`
     @media (max-width: 468px) {
       height: 20%;
       font-size: 1.5rem;
+      margin-left: 10px;
     }
 
     font-family: "bitbit";
@@ -60,5 +61,6 @@ export const TitleDiv = styled.div`
 export const BtnDiv = styled.div`
   display: flex;
   justify-content: center;
+  margin-left: 40px;
 `;
 export const Btn = styled.button``;

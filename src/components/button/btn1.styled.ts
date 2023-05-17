@@ -61,4 +61,7 @@ export const Btn1 = styled.button`
     font-size: 14px;
     width: 80%;
   }
+  @media screen and (max-width: 480px) {
+    font-size: 10px;
+  }
 `;

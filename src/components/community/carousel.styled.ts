@@ -160,6 +160,7 @@ export const InfoBox = styled.div`
   @media screen and (max-width: 480px) {
     width: 80px;
     height: 80px;
+    font-size: 1rem;
     h1 {
       font-size: 0.6rem;
       height: 1rem;
@@ -174,6 +175,13 @@ export const InfoBox = styled.div`
 
 export const BtnDiv = styled.div`
   @media screen and (max-width: 1024px) {
+    height: 4rem;
+    white-space: nowrap;
+  }
+  @media screen and (max-width: 480px) {
+    display: flex;
+    padding: 10px;
+    width: 4rem;
     height: 4rem;
     white-space: nowrap;
   }

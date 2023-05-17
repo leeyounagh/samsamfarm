@@ -132,14 +132,15 @@ export default function MainField() {
           </Styled.FieldLayoutDiv>
         )}
       </Styled.FieldLayOut>
-      {isMainModalOpen ? (
+
+      {isMainModalOpen && (
         <Modal
           isMainModalOpen={isMainModalOpen}
           setIsMainModalOpen={setIsMainModalOpen}
           mainData={mainData}
           userId={userId}
         />
-      ) : null}
+      )}
     </Styled.Layout>
   );
 }

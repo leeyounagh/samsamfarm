@@ -2,36 +2,38 @@ import styled from "styled-components";
 import color from "../../../styles/color";
 
 export const Layout = styled.div`
-  width: 65vw;
-  height: 83vh;
+  width: 70rem;
   z-index: 300;
   background: white;
   position: fixed;
-  top: 5rem;
-  left: 20rem;
-  font-family: "DOSPilgiMedium";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2")
-    format("woff2");
+  top: 3rem;
+  left: 25rem;
+  font-family: "양진체";
+  src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
   position: fixed;
   top: 120px;
-  background-color: ${color.main};
+  background-color: rgb(252, 243, 169);
   @media (max-width: 1024px) {
     position: fixed;
     top: 120px;
-    left: 20%;
+    left: 3%;
     font-size: 1rem;
+    width: 60rem;
   }
 
   @media (max-width: 768px) {
     position: fixed;
     top: 120px;
-    height: 63vh;
+    height: 30rem;
+    left: 0px;
+    width: 45rem;
   }
   @media (max-width: 480px) {
     width: 25rem;
-    height: 75vh;
+    /* height: 75vh; */
     left: 0px;
   }
   h1 {
@@ -49,8 +51,8 @@ export const CloseDiv = styled.div`
   padding-top: 30px;
   z-index: 50;
   position: absolute;
-  left: 90%;
-  top: 5%;
+  left: 93%;
+  top: 3%;
 
   @media (max-width: 768px) {
     position: absolute;
@@ -164,20 +166,15 @@ export const Button = styled.button`
 
 export const CommentLayout = styled.form`
   width: 100%;
-  height: 50%;
-  background-color: ${color.main};
-  padding-top: 30px;
+  height: 18rem;
+
+  background-color: rgb(252, 243, 169);
   h1 {
     text-align: center;
     @media (max-width: 1024px) {
       font-size: 1rem;
     }
   }
-  font-family: "DOSPilgiMedium";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
 `;
 export const MobileFiledImg = styled.img`
   width: 100%;
@@ -198,8 +195,11 @@ export const GridLayout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("/asset/모달 농장.jpg");
+  background-image: url("/asset/모달농장1.jpg");
+  background-size: 100%;
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 
   @media (max-width: 768px) {
     height: 20rem;
@@ -219,22 +219,24 @@ export const GridDiv = styled.div`
   align-items: center;
 
   @media (max-width: 480px) {
-    width: 50vw;
+    width: 20rem;
     height: 250px;
   }
 `;
 export const CommentDiv = styled.div`
-  height: 30%;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #b3933b;
+  border-bottom: 1px solid lightgray;
+  background-color: #f2f3f5;
+  background-color: rgb(252, 243, 169);
   @media (max-width: 480px) {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
 `;
 export const CommentInput = styled.input`
-  height: 40%;
+  height: 3rem;
   width: 60%;
   padding-left: 50px;
   font-size: 1.5rem;
@@ -316,7 +318,7 @@ export const CommentBtn = styled.button`
 
 export const CommentArea = styled.div`
   width: 100%;
-  height: 50%;
+  height: 100%;
   overflow-y: auto;
   @media (max-width: 480px) {
     font-size: 0.8rem;
@@ -334,6 +336,10 @@ export const Comment = styled.div`
   @media (max-width: 1024px) {
     width: 60%;
   }
+  @media (max-width: 480px) {
+    width: 50%;
+    font-size: 1rem;
+  }
 `;
 export const Writer = styled.div`
   width: 20%;
@@ -345,10 +351,13 @@ export const Writer = styled.div`
   @media (max-width: 1024px) {
     width: 15%;
   }
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 export const WriterInput = styled.input`
   width: 10%;
-  height: 40%;
+  height: 3rem;
   padding-left: 20px;
   font-size: 1.5rem;
   border: none;
@@ -366,4 +375,13 @@ export const WriterInput = styled.input`
   @media (max-width: 480px) {
     font-size: 0.8rem;
   }
+`;
+
+export const UserInfoDiv = styled.div`
+  height: 5rem;
+  border-bottom: 5px solid rgb(247, 201, 146);
+  background-color: #2e8b57;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

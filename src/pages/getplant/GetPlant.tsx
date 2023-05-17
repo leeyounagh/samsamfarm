@@ -22,7 +22,7 @@ export default function GetPlant() {
             <Btn1
               title="메인으로 가기"
               onClick={() => {
-                navigate("/");
+                navigate("/main");
               }}
             ></Btn1>
           </Styled.BtnDiv>

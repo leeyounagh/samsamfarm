@@ -10,6 +10,11 @@ export const Aside = styled.div`
   width: 300px;
   height: 100%;
   z-index: 150;
+
+  @media (max-width: 768px) {
+    width: 50%;
+    height: 100%;
+  }
 `;
 
 export const CloseButton = styled.div`
@@ -52,8 +57,17 @@ export const SidebarButtonDetail = styled.button`
     background: #ff7c7c;
     transition: 400ms ease all;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
 `;
 
 export const SidebarButton = styled.div`
   margin-top: 30px;
+  @media (max-width: 768px) {
+    margin-top: 0;
+  }
 `;

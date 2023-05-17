@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Layout = styled.main`
   width: 100%;
-  height: 80vh;
+  background-image: url("/asset/마이페이지배경.jpg");
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,8 +21,7 @@ export const Layout = styled.main`
 export const BackgroundDiv = styled.div`
   width: 80%;
   height: 100%;
-  background-image: url("/asset/마이페이지배경.jpg");
-  background-size: cover;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,20 +53,23 @@ export const CharacterImg = styled.img`
     height: 200px;
   }
   @media (max-width: 480px) {
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
   }
 `;
 export const ConsoleDiv = styled.div`
   width: 60%;
-  height: 60vh;
+  height: 50rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+
   @media (max-width: 1024px) {
     width: 50%;
     height: 50vh;
   }
   @media (max-width: 480px) {
+    margin-top: 10px;
     width: 20rem;
     height: 15rem;
   }
@@ -81,13 +84,12 @@ export const ConsoleImg = styled.img`
 `;
 export const IconLayout = styled.div`
   width: 100%;
-  height: 13rem;
+  height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   padding-top: 10%;
-
   @media (max-width: 1024px) {
     width: 15rem;
     height: 12rem;
@@ -112,12 +114,16 @@ export const IconImg = styled.img`
   }
 `;
 export const ConsoleInnerDiv = styled.div`
-  width: 80%;
-  height: 100%;
+  width: 40rem;
+  height: 30rem;
   background-image: url("/asset/게임기누끼2.png");
   background-size: 100% 100%;
   display: grid;
   justify-content: center;
+  @media (max-width: 480px) {
+    width: 16rem;
+    height: 16rem;
+  }
 `;
 export const StatusDiv = styled.div`
   width: 30rem;
@@ -125,7 +131,6 @@ export const StatusDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   @media (max-width: 1024px) {
     width: 15rem;
     height: 10rem;
@@ -159,7 +164,7 @@ export const CharacterDiv = styled.div`
   }
   @media (max-width: 480px) {
     width: 20rem;
-    height: 10rem;
+    height: 8rem;
   }
 
   button {
@@ -173,9 +178,6 @@ export const TextDiv = styled.div`
   @media (max-width: 1024px) {
     font-size: 0.1rem;
   }
-  @media (max-width: 480px) {
-    font-size: 1px;
-  }
 `;
 
 export const MypageBtnDiv = styled.div`
@@ -187,8 +189,8 @@ export const MypageBtnDiv = styled.div`
 `;
 
 export const StatusImg = styled.img`
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   margin-right: 10px;
   @media (max-width: 1024px) {
     width: 2rem;

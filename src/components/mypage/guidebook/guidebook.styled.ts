@@ -17,7 +17,7 @@ export const Layout = styled.div`
   @media screen and (max-width: 480px) {
     position: absolute;
     left: 0%;
-    width: 25rem;
+    width: 23rem;
     height: 40rem;
   }
 `;
@@ -57,7 +57,7 @@ export const MemoDiv = styled.div`
   }
   @media screen and (max-width: 480px) {
     width: 25rem;
-    height: 24rem;
+    height: 28rem;
     font-size: 0.8rem;
   }
 `;
