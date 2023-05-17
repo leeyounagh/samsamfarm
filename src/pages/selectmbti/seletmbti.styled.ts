@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Layout = styled.div`
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
+  padding: 10rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -15,16 +16,11 @@ export const Layout = styled.div`
 
 export const InnerLayout = styled.div`
   width: 60rem;
-  height: 80%;
+
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   padding: 20px 0px 20px 0px;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 10px;
-  }
 `;
 
 export const CharacterDiv = styled.div`
@@ -36,11 +32,15 @@ export const CharacterDiv = styled.div`
 
   h2 {
     text-align: center;
+    @media (max-width: 768px) {
+      height: 2rem;
+    }
   }
 
   @media (max-width: 768px) {
     width: 100%;
-    height: auto;
+    height: 10rem;
+    margin: 10px;
     margin: 10px;
   }
 `;
@@ -50,8 +50,8 @@ export const CharacterImg = styled.img`
   height: 10rem;
 
   @media (max-width: 768px) {
-    width: 8rem;
-    height: 8rem;
+    width: 6rem;
+    height: 6rem;
   }
 `;
 
@@ -65,10 +65,5 @@ export const SelectDiv = styled.div`
 
   &:hover {
     transform: scale(1.2);
-  }
-
-  @media (max-width: 768px) {
-    width: 8rem;
-    height: 8rem;
   }
 `;
