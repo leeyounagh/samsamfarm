@@ -33,10 +33,11 @@ function App() {
       <MusicProvider>
         <Header />
         <Routes>
+          <Route path="/startpage" element={<StartPage />} />
           <Route path="/" element={<Landing />} />
+          {/* 토큰이 있어야 되는데 없어서 에러가남 */}
           <Route path="/login" element={<Login />} />
           <Route path="/community" element={<Community />} />
-          <Route path="/startpage" element={<StartPage />} />
 
           <Route path="/communityupdate" element={<CommunityUpdate />} />
           <Route path="/mypage" element={<MyPage />} />
