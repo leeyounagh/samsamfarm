@@ -42,15 +42,19 @@ export default function Carousel() {
 
   useEffect(() => {
     const handlecommunity = async () => {
-      const response = await AxiosInstance.get("/article", {
-        params: {
-          page: `${activeIndex + 1}`,
-          perPage: 4,
-        },
-      });
-      const { data } = await response.data;
+      try {
+        const response = await AxiosInstance.get("/article", {
+          params: {
+            page: `${activeIndex + 1}`,
+            perPage: 4,
+          },
+        });
+        const { data } = await response.data;
 
-      setNewData(data);
+        setNewData(data);
+      } catch (err) {
+        console.log(err);
+      }
     };
     handlecommunity();
   }, []);
