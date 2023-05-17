@@ -50,14 +50,14 @@ export default function Carousel() {
           },
         });
         const { data } = await response.data;
-
+        console.log(data);
         setNewData(data);
       } catch (err) {
         console.log(err);
       }
     };
     handlecommunity();
-  }, []);
+  }, [activeIndex]);
 
   function handleSlideChange(swiper: any) {
     setActiveIndex(swiper.activeIndex);
@@ -76,14 +76,15 @@ export default function Carousel() {
             {item?.title.length > 8 ? item?.title.substring(0, 6) : item?.title}
           </h1>
           <h3>글쓴이: {item?.nickname}</h3>
-
-          <Btn1
-            title="바로가기"
-            onClick={() => {
-              setIsOpenModal(true);
-              setClickedData(item);
-            }}
-          />
+          <Styled.BtnDiv>
+            <Btn1
+              title="바로가기"
+              onClick={() => {
+                setIsOpenModal(true);
+                setClickedData(item);
+              }}
+            />
+          </Styled.BtnDiv>
         </Styled.InfoBox>
       );
     });

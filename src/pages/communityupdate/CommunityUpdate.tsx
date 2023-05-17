@@ -16,7 +16,7 @@ const CommunityUpdate = () => {
         user_id: JwtToken?.id,
       });
       alert("글이 작성되었습니다.");
-      window.location.href = "/";
+      window.location.href = "/community";
     } catch (error) {
       alert(error);
     }

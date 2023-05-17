@@ -15,6 +15,7 @@ interface PlantMapper {
 export default function MainField() {
   const [isMainModalOpen, setIsMainModalOpen] = useState<boolean>(false);
   const [mainData, setMainData] = useState<MainType[]>([]);
+  const [characterId, setCharacterId] = useState<number>(0);
   const [userId, setUserId] = useState<number>(0);
   const jwtToken = localStorage.getItem("JWtToken");
   const [mobileData, setMobileData] = useState<MainType[]>([
@@ -38,21 +39,22 @@ export default function MainField() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await AxiosInstance.get("/plant", {
-          params: {
-            page: 1,
-            perPage: 8,
-          },
-        });
-        const { data } = await response.data;
-        setMainData(data);
+        if (jwtToken) {
+          const response = await AxiosInstance.get("/plant", {
+            params: {
+              page: 1,
+              perPage: 8,
+            },
+          });
+          const { data } = await response.data;
+          setMainData(data);
+        }
       } catch (err) {
         console.log(err);
       }
     };
-    if (jwtToken) {
-      getData();
-    }
+
+    getData();
   }, []);
 
   useEffect(() => {
@@ -74,7 +76,7 @@ export default function MainField() {
       <Styled.MainPlantImg key={uuidv4()} src={mapper[`${id}`]} id="plants" />
     );
   };
-
+  console.log(mainData);
   useEffect(() => {
     {
       mobileSize && setMobileData(mainData.slice(0, 4));
@@ -99,7 +101,8 @@ export default function MainField() {
                     id={`button-${item.id}`}
                     onClick={() => {
                       setIsMainModalOpen(!isMainModalOpen);
-                      setUserId(item.id);
+                      setCharacterId(item.id);
+                      setUserId(mobileData[index]?.id);
                     }}
                   >
                     놀러가기
@@ -122,7 +125,8 @@ export default function MainField() {
                   id={`button-${item.id}`}
                   onClick={() => {
                     setIsMainModalOpen(!isMainModalOpen);
-                    setUserId(index);
+                    setCharacterId(index);
+                    setUserId(mainData[index]?.user_id);
                   }}
                 >
                   놀러가기
@@ -138,6 +142,7 @@ export default function MainField() {
           isMainModalOpen={isMainModalOpen}
           setIsMainModalOpen={setIsMainModalOpen}
           mainData={mainData}
+          characterId={characterId}
           userId={userId}
         />
       )}

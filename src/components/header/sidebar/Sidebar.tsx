@@ -22,6 +22,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
         <Styled.Aside ref={asideRef}>
           <Styled.CloseButton>
             <GrClose
+              style={{ cursor: "pointer" }}
               size={45}
               onClick={() => {
                 handleSidebarClose();

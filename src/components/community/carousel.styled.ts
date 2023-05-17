@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Layout = styled.main`
-  border: 1px solid black;
   width: 90vw;
   height: 60ch;
   display: flex;
@@ -128,14 +127,13 @@ export const InfoBox = styled.div`
   background-color: white;
   text-align: center;
   opacity: 0.8;
-  padding: 15px 0px 0px 15px;
   font-family: "양진체";
   src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
   h1 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     height: 1.5rem;
     padding-top: 10px;
   }
@@ -148,18 +146,19 @@ export const InfoBox = styled.div`
     height: 120px;
     padding: 0px 0px 0px 0px;
     h1 {
-      font-size: 1rem;
+      font-size: 10px;
       height: 1rem;
       padding-top: 10px;
     }
     h3 {
-      font-size: 0.8rem;
+      margin-top: 10px;
+      font-size: 0.7rem;
       height: 1rem;
     }
   }
   @media screen and (max-width: 480px) {
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 6rem;
     font-size: 1rem;
     h1 {
       font-size: 0.6rem;
@@ -174,15 +173,16 @@ export const InfoBox = styled.div`
 `;
 
 export const BtnDiv = styled.div`
+  width: 100%;
   @media screen and (max-width: 1024px) {
-    height: 4rem;
-    white-space: nowrap;
+    width: 9rem;
+    padding: 10px;
   }
   @media screen and (max-width: 480px) {
-    display: flex;
-    padding: 10px;
-    width: 4rem;
-    height: 4rem;
+    width: 100%;
+    height: 2rem;
+    font-size: 0.6rem;
+    padding-bottom: 10px;
     white-space: nowrap;
   }
 `;

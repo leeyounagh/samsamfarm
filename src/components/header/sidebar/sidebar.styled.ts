@@ -21,7 +21,6 @@ export const CloseButton = styled.div`
   margin-top: 10px;
   margin-left: 10px;
   z-index: 170;
-  cursor: pointer;
 `;
 
 export const SidebarButtonDetail = styled.button`

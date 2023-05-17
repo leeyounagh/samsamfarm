@@ -4,16 +4,19 @@ import {
   useState,
   ChangeEvent,
   useEffect,
+  SyntheticEvent,
 } from "react";
 import * as Styled from "./modal.styled";
 import { MainType } from "../../../types";
 import MainCharacter from "../../../data/mainCharacter";
+import AxiosInstance from "../../../api/AxiosIntance";
 
 type ModalType = {
   isMainModalOpen?: boolean;
   setIsMainModalOpen?: Dispatch<SetStateAction<boolean>>;
   mainData?: MainType[];
-  userId?: number;
+  characterId?: number;
+  userId: number;
 };
 
 interface PlantMapper {
@@ -21,37 +24,37 @@ interface PlantMapper {
 }
 interface ContentType {
   content: string;
+  user_id: number;
   writer: string;
-  ownerId: number;
 }
 
 export default function Modal({
   isMainModalOpen,
   setIsMainModalOpen,
   mainData,
+  characterId,
   userId,
 }: ModalType) {
-  const getInitialGuestBook = () => {
-    const guestBook = localStorage.getItem("guestbook");
-    const guestBookData = guestBook ? JSON.parse(guestBook) : [];
-    const CommentList: ContentType[] = [];
-    console.log(isMainModalOpen);
-    guestBookData?.map((item: ContentType) => {
-      if (Number(item.ownerId) === userId) {
-        CommentList.push(item);
-      }
-    });
-    return guestBook ? CommentList : [];
-  };
-
   const [content, setContent] = useState<string>("");
   const [writer, setWriter] = useState<string>("");
-  const [commentList, setCommentList] = useState(getInitialGuestBook());
-  const correctUserId = MainCharacter && userId !== undefined;
-  const restData = mainData && userId !== undefined;
+  const [commentList, setCommentList] = useState<ContentType[]>([
+    {
+      content: "안뇽",
+      user_id: 1,
+      writer: "호성",
+    },
+  ]);
+  const correctUserId = MainCharacter && characterId !== undefined;
+  const restData = mainData && characterId !== undefined;
+
   useEffect(() => {
-    getInitialGuestBook();
-  }, []);
+    const getGuestBook = async () => {
+      const response = await AxiosInstance.get(`/guestBook/${userId}`);
+      const { data } = await response.data;
+      setCommentList(data);
+    };
+    getGuestBook();
+  }, [commentList]);
 
   const plantsRenderer = (id: number | string) => {
     const mapper: PlantMapper = {
@@ -64,30 +67,30 @@ export default function Modal({
     return mapper[id !== undefined ? `${id}` : "4"];
   };
 
-  const handleSubmit = () => {
-    const guestBook = localStorage.getItem("guestbook");
-    const guestBookData = guestBook ? JSON.parse(guestBook) : [];
-    const newArr: any = [];
+  const handleSubmit = async (event: SyntheticEvent) => {
+    event.preventDefault();
     const body = {
+      user_id: userId,
       content: content,
       writer: writer,
-      ownerId: userId,
     };
+
     if (body.content.length === 0 || body.writer.length === 0) {
       alert("값을 모두 입력해주셔야됩니다.");
       setWriter("");
       setContent("");
       return;
     }
-
-    guestBookData.push(body);
-
-    newArr.concat(body);
-    setCommentList(newArr);
-    setWriter("");
-    setContent("");
-
-    localStorage.setItem("guestbook", JSON.stringify(guestBookData));
+    try {
+      const response = await AxiosInstance.post("/guestBook", body);
+      if (response.status === 200) {
+        alert("댓글이 작성되었습니다.");
+        setWriter("");
+        setContent("");
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -113,8 +116,8 @@ export default function Modal({
           {correctUserId && (
             <Styled.CharacterImg
               src={
-                MainCharacter[userId]
-                  ? String(MainCharacter[userId]?.img)
+                MainCharacter[characterId]
+                  ? String(MainCharacter[characterId]?.img)
                   : "/asset/곰돌이.gif"
               }
               width="40%"
@@ -122,23 +125,27 @@ export default function Modal({
             />
           )}
           <Styled.GridDiv>
-            {plantsRenderer(restData ? mainData[userId]?.current_grade : 1)}
+            {plantsRenderer(
+              restData ? mainData[characterId]?.current_grade : 1
+            )}
           </Styled.GridDiv>
         </Styled.GridLayout>
       </Styled.FieldDiv>
       <Styled.CommentLayout onSubmit={handleSubmit}>
         <Styled.UserInfoDiv>
-          <h1>{restData ? `${mainData[userId]?.nickname}님 농장` : ""}</h1>
+          <h1>{restData ? `${mainData[characterId]?.nickname}님 농장` : ""}</h1>
         </Styled.UserInfoDiv>
 
         <Styled.CommentDiv>
           <Styled.CommentInput
+            value={content}
             placeholder="댓글을 작성해 주세요...."
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               setContent(event.target.value)
             }
           />
           <Styled.WriterInput
+            value={writer}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               setWriter(event.target.value)
             }
@@ -147,7 +154,7 @@ export default function Modal({
           <Styled.CommentBtn type="submit">댓글 작성</Styled.CommentBtn>
         </Styled.CommentDiv>
         <Styled.CommentArea>
-          {commentList?.length !== 0 &&
+          {commentList &&
             commentList?.map((item: ContentType) => {
               return (
                 <>

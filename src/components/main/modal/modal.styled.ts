@@ -6,8 +6,12 @@ export const Layout = styled.div`
   z-index: 300;
   background: white;
   position: fixed;
-  top: 3rem;
-  left: 25rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
   font-family: "양진체";
   src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
     format("woff");
