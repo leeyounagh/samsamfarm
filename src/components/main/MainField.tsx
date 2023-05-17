@@ -47,7 +47,7 @@ export default function MainField() {
         const { data } = await response.data;
         setMainData(data);
       } catch (err) {
-        console.log(err);
+        alert(err);
       }
     };
     if (jwtToken) {
