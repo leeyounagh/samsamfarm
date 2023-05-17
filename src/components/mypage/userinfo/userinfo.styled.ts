@@ -5,14 +5,20 @@ export const Layout = styled.div`
   width: 60vw;
   height: 85vh;
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   background-image: url("/asset/유저정보배경.gif");
   font-family: "양진체";
   src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
-  @media (max-width: 1024px) {
-    width: 30rem;
+
+  @media (max-width: 480px) {
+    width: 20rem;
     height: 40rem;
   }
 `;
@@ -20,10 +26,11 @@ export const CloseBtn = styled.div`
   width: 100%;
   height: 10vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   @media (max-width: 768px) {
-    width: 27rem;
-    height: 10vh;
+    align-items: center;
+  }
+  @media (max-width: 480px) {
     align-items: center;
   }
 `;
@@ -76,5 +83,8 @@ export const InfoText = styled.div`
   }
   @media (max-width: 768px) {
     font-size: 0.8rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.6rem;
   }
 `;

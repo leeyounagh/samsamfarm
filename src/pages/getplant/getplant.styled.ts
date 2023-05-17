@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Layout = styled.div`
   width: 100%;
-  height: 90vh;
+  padding: 23rem;
   background-image: url("/asset/꽃배정.gif");
   background-size: 100%;
   background-position: center;
@@ -11,8 +11,13 @@ export const Layout = styled.div`
   display: grid;
   align-items: center;
   justify-content: center;
+  @media (max-width: 480px) {
+    padding: 10rem;
+  }
 `;
 export const TitleDiv = styled.div`
+  display: grid;
+  justify-content: center;
   h2 {
     animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
     white-space: nowrap;
@@ -21,7 +26,7 @@ export const TitleDiv = styled.div`
     display: flex;
     align-items: center;
     height: 8vh;
-    width: 16ch;
+    width: 17ch;
     font-weight: 100;
     font-size: 2.5rem;
     color: black;
@@ -61,6 +66,6 @@ export const TitleDiv = styled.div`
 export const BtnDiv = styled.div`
   display: flex;
   justify-content: center;
-  margin-left: 40px;
+  width: 100%;
 `;
 export const Btn = styled.button``;

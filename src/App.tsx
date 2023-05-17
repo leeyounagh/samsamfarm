@@ -35,7 +35,6 @@ function App() {
         <Routes>
           <Route path="/" element={<StartPage />} />
           <Route path="/main" element={<Landing />} />
-          {/* 토큰이 있어야 되는데 없어서 에러가남 */}
           <Route path="/login" element={<Login />} />
           <Route path="/community" element={<Community />} />
 

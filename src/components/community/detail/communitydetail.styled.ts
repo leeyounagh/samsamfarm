@@ -3,12 +3,15 @@ import color from "../../../styles/color";
 
 export const Layout = styled.section`
   width: 60vw;
-  height: 90vh;
+  height: 60rem;
   z-index: 300;
   background-color: black;
   position: fixed;
-  top: 5%;
-  left: 20%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   background-image: url("/asset/커뮤니티모달.gif");
   background-size: cover;
   display: grid;

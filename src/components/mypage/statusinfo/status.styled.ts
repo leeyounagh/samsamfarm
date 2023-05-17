@@ -2,8 +2,8 @@ import styled from "styled-components";
 import color from "../../../styles/color";
 
 export const Layout = styled.div`
-  width: 80rem;
-
+  width: 70rem;
+  height: 50rem;
   position: fixed;
   top: 13%;
   left: 22%;
@@ -19,13 +19,9 @@ export const Layout = styled.div`
   @media screen and (max-width: 768px) {
     width: 100%;
     height: 85vh;
-    position: fixed;
-    top: 10%;
-    left: 2%;
   }
   @media screen and (max-width: 480px) {
-    width: 100%;
-    position: fixed;
+    width: 50rem;
   }
 `;
 export const CloseDiv = styled.div`

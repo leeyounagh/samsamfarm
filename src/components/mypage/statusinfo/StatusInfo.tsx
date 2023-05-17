@@ -30,7 +30,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
     if (ClickedStatus === 2) {
       setCurrentStatus(Number(element?.humid));
     }
-  }, []);
+  }, [currentStatus]);
 
   const handleSwitch = async () => {
     setIsChangeBtn(true);

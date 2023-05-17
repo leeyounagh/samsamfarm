@@ -38,7 +38,12 @@ export default function Introduce() {
       <Styled.Introduce_DescDiv>
         <Styled.MainBtnDiv>
           <Styled.BtnDiv>
-            <Btn1 title="메인 페이지로 가기"></Btn1>
+            <Btn1
+              onClick={() => {
+                navigate("/main");
+              }}
+              title="메인 페이지로 가기"
+            ></Btn1>
           </Styled.BtnDiv>
         </Styled.MainBtnDiv>
         <Styled.DescDiv>

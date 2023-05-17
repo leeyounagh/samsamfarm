@@ -57,11 +57,17 @@ export const Btn1 = styled.button`
       transform: translate3d(0, 0, -1em);
     }
   }
+  @media (max-width: 1024px) {
+    font-size: 10px;
+    width: 80%;
+  }
   @media (max-width: 768px) {
     font-size: 14px;
     width: 80%;
   }
   @media screen and (max-width: 480px) {
     font-size: 10px;
+    width: 100%;
+    margin: 0;
   }
 `;

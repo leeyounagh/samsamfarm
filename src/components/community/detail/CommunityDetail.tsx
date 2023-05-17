@@ -38,9 +38,13 @@ export default function CommunityDetail({
 
   useEffect(() => {
     const handleList = async () => {
-      const response = await AxiosInstance.get(`/article/${clickedData.id}`);
-      const { data } = await response.data;
-      setCommentList(data);
+      try {
+        const response = await AxiosInstance.get(`/article/${clickedData.id}`);
+        const { data } = await response.data;
+        setCommentList(data);
+      } catch (err) {
+        console.log(err);
+      }
     };
     handleList();
   }, [comment]);
@@ -51,6 +55,9 @@ export default function CommunityDetail({
       article_id: clickedData.id,
       content: comment,
     };
+    if (comment.length === 0) {
+      alert("모든값을 입력해 주셔야 됩니다.");
+    }
     try {
       const response = await AxiosInstance.post("/article/comment", body);
       if (response.status === 200) {
@@ -58,7 +65,7 @@ export default function CommunityDetail({
         setComment("");
       }
     } catch (err) {
-      alert(err);
+      console.log(err);
     }
   };
 
@@ -70,7 +77,7 @@ export default function CommunityDetail({
         }}
       >
         <Styled.CloseImg
-          src="./asset/closebtn.png"
+          src="./asset/closebtnblack.png"
           style={{ marginRight: "50px" }}
           width="50px"
           height="50px"

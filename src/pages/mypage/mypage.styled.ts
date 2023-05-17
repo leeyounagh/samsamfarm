@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Layout = styled.main`
   width: 100%;
+  padding: 6rem;
   background-image: url("/asset/마이페이지배경.jpg");
   background-size: cover;
   display: flex;
@@ -12,6 +13,11 @@ export const Layout = styled.main`
     format("woff");
   font-weight: normal;
   font-style: normal;
+  h3 {
+    @media (max-width: 1024px) {
+      height: 1rem;
+    }
+  }
   @media (max-width: 480px) {
     width: 100%;
     height: 40rem;
@@ -21,7 +27,6 @@ export const Layout = styled.main`
 export const BackgroundDiv = styled.div`
   width: 80%;
   height: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,6 +69,9 @@ export const ConsoleDiv = styled.div`
   justify-content: center;
   align-items: center;
 
+  h3 {
+    text-align: center;
+  }
   @media (max-width: 1024px) {
     width: 50%;
     height: 50vh;
@@ -84,19 +92,21 @@ export const ConsoleImg = styled.img`
 `;
 export const IconLayout = styled.div`
   width: 100%;
-  height: 10rem;
+  height: 13rem;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   padding-top: 10%;
+
   @media (max-width: 1024px) {
-    width: 15rem;
-    height: 12rem;
+    width: 20rem;
+    height: 8rem;
+    padding-top: 8rem;
+    padding-left: 1rem;
   }
   @media (max-width: 480px) {
     width: 15rem;
-    height: 5rem;
   }
 `;
 export const IconImg = styled.img`
@@ -122,17 +132,17 @@ export const ConsoleInnerDiv = styled.div`
   justify-content: center;
   @media (max-width: 480px) {
     width: 16rem;
-    height: 16rem;
+    height: 25rem;
   }
 `;
 export const StatusDiv = styled.div`
   width: 30rem;
-  height: 10rem;
+  height: 13rem;
   display: flex;
   justify-content: center;
   align-items: center;
   @media (max-width: 1024px) {
-    width: 15rem;
+    width: 20rem;
     height: 10rem;
   }
   @media (max-width: 480px) {
@@ -165,6 +175,7 @@ export const CharacterDiv = styled.div`
   @media (max-width: 480px) {
     width: 20rem;
     height: 8rem;
+    margin-bottom: 100px;
   }
 
   button {
@@ -193,8 +204,8 @@ export const StatusImg = styled.img`
   height: 4rem;
   margin-right: 10px;
   @media (max-width: 1024px) {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
   @media (max-width: 480px) {
     width: 1.5rem;
@@ -203,13 +214,43 @@ export const StatusImg = styled.img`
 `;
 
 export const IconDiv = styled.div`
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   display: flex;
   align-items: center;
+
+  button {
+    background-color: #ebace9;
+    border-radius: 0.25em;
+    box-shadow: 0 0.25em 0 #7a5a7a;
+    color: #7a5a7a;
+    font-family: "양진체";
+    src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    transform: translateX(-10%);
+    transition: all 0.2s ease;
+    margin-right: 5px;
+    &:hover {
+      background-color: #d69dd5;
+      transform: translate(-10%, 0.15em);
+      box-shadow: 0 0.15em 0 #7a5a7a;
+    }
+
+    &:active {
+      box-shadow: 0 0 0 #7a5a7a;
+      transform: translate(-10%, 0.25em);
+    }
+  }
 
   @media (max-width: 1024px) {
     width: 2.5rem;
     height: 2.5rem;
+    font-size: 0.5rem;
   }
 `;

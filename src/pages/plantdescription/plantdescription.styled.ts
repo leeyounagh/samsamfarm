@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const Layout = styled.div`
   width: 100%;
-  height: 80vh;
+  padding: 10rem;
+
+  /* height: 80vh; */
   display: flex;
   justify-content: center;
   font-family: "DOSPilgiMedium";

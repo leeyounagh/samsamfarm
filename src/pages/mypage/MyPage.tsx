@@ -3,11 +3,11 @@ import UserInfo from "../../components/mypage/userinfo/UserInfo";
 import StatusInfo from "../../components/mypage/statusinfo/StatusInfo";
 import { useEffect, useState } from "react";
 import Btn1 from "../../components/button/Btn1";
-import MypageImg from "../../data/mypageImg";
+import MypageName from "../../data/mypageName";
 import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
 import NoticeDevice from "../../components/mypage/NoticeDevice";
-import useMediaQuery from "../../hooks/useMediaQuery";
+
 interface plantType {
   bright: number;
   humid: string;
@@ -28,7 +28,6 @@ export default function MyPage() {
   const [getPlantData, setPlantData] = useState<plantType[]>([]);
   const [ClickedStatus, setClickedStatus] = useState<number>(0);
   const JwtToken: any = decodeToken(localStorage.JWtToken);
-  const mobileSize = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
     const handleDevice = async () => {
@@ -52,19 +51,16 @@ export default function MyPage() {
     };
 
     return Number(value) > Number(mapper[status]) ? (
-      <>
-        <Styled.StatusImg src="/asset/위험.png" />
-      </>
+      <Styled.StatusImg src="/asset/위험.png" />
     ) : (
-      <>
-        <Styled.StatusImg src="/asset/스마일2.png" />
-      </>
+      <Styled.StatusImg src="/asset/스마일2.png" />
     );
   };
 
   return (
     <Styled.Layout>
       <Styled.BackgroundDiv>
+        {isOpenUserInfo && <UserInfo setIsOpenUserInfo={setIsOpenUserInfo} />}
         <Styled.UILayout>
           <Styled.CharacterDiv>
             <Styled.CharacterImg src="/asset/님피아.gif" />
@@ -81,23 +77,24 @@ export default function MyPage() {
             {JwtToken?.device_id === 1 ? (
               <Styled.ConsoleInnerDiv>
                 <Styled.IconLayout>
-                  {MypageImg.map((item) => {
+                  {MypageName.map((item) => {
                     return (
                       <>
                         <Styled.IconDiv>
-                          <Styled.IconImg
-                            src={item.img}
+                          <button
                             onClick={() => {
                               setIsOpenStatus(!isOpenStatus);
                               setClickedStatus(item.id);
                             }}
-                          />
+                          >
+                            {item.name}
+                          </button>
                         </Styled.IconDiv>
                       </>
                     );
                   })}
                 </Styled.IconLayout>
-
+                <h3>status</h3>
                 <Styled.StatusDiv>
                   {getPlantData
                     ?.filter((_element, index) => index === 0)
@@ -129,7 +126,6 @@ export default function MyPage() {
           </Styled.ConsoleDiv>
         </Styled.UILayout>
       </Styled.BackgroundDiv>
-      {isOpenUserInfo && <UserInfo setIsOpenUserInfo={setIsOpenUserInfo} />}
     </Styled.Layout>
   );
 }
