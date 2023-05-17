@@ -108,7 +108,7 @@ const FlowerImg: FlowerImgType[] = [
   {
     character: "/asset/esfp.png",
     mbti: "ESFP",
-    flower: "/public/asset/수수꽃다리.png",
+    flower: "/asset/수수꽃다리.png",
     name: "수수꽃다리",
     story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
     story2:
