@@ -7,7 +7,7 @@ import MypageImg from "../../data/mypageImg";
 import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
 import NoticeDevice from "../../components/mypage/NoticeDevice";
-import useMediaQuery from "../../hooks/useMediaQuery";
+
 interface plantType {
   bright: number;
   humid: string;
