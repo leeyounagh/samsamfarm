@@ -34,7 +34,7 @@ export const LoginFormStyled = styled.div`
 
   input {
     margin-bottom: 10px;
-    width: 100%;
+    width: 90%;
   }
 `;
 
