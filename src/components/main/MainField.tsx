@@ -16,6 +16,7 @@ export default function MainField() {
   const [isMainModalOpen, setIsMainModalOpen] = useState<boolean>(false);
   const [mainData, setMainData] = useState<MainType[]>([]);
   const [userId, setUserId] = useState<number>(0);
+  const jwtToken = localStorage.getItem("JWtToken");
   const [mobileData, setMobileData] = useState<MainType[]>([
     {
       created_at: "2023-05-14T15:24:48.000Z",
@@ -46,10 +47,12 @@ export default function MainField() {
         const { data } = await response.data;
         setMainData(data);
       } catch (err) {
-        alert(err);
+        console.log(err);
       }
     };
-    getData();
+    if (jwtToken) {
+      getData();
+    }
   }, []);
 
   useEffect(() => {
