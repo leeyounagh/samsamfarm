@@ -19,10 +19,10 @@ export const IntroduceReturnPage_div = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 20rem;
+  width: 40rem;
   height: auto;
   @media screen and (max-width: 480px) {
-    width: 100%;
+    width: 110%;
     height: auto;
   }
 `;
@@ -66,6 +66,11 @@ export const SelectPlantPage_otherPlant = styled.div`
   }
 `;
 export const Introduce_button_div = styled.div`
-  font-size: 1.5em;
+  font-size: 1.8em;
+  width: 120px;
+  @media screen and (max-width: 480px) {
+    width: 60px;
+    height: auto;
+  }
 `;
 export const Introuduce_Character = styled.img``;
