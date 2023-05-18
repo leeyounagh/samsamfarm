@@ -59,9 +59,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
                 >
                   LogOut
                 </Styled.SidebarButtonDetail>
-                <Styled.SidebarButtonDetail>
+                <Styled.KaKaoDiv>
                   <KakaoSharing />
-                </Styled.SidebarButtonDetail>
+                </Styled.KaKaoDiv>
               </>
             ) : (
               <Link to="/login">
