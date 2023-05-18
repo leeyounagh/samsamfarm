@@ -35,23 +35,28 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (deviceUser?.device_id) {
-      const handleDevice = async () => {
-        try {
-          const date = new Date();
-          const hours = date.getHours();
-          const minutes = date.getMinutes();
-          const timeObj = { time: `${hours}시:${minutes}분` };
-          const response = await AxiosInstance.get(`/device/plant-data/1`);
-          const data = await response.data.data;
-          const mergedData = Object.assign({}, timeObj, data);
-          dispatch(setData(mergedData));
-        } catch (err) {
-          console.log(err);
-        }
-      };
-      handleDevice();
-    }
+    const fetchData = async () => {
+      try {
+        const date = new Date();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const timeObj = { time: `${hours}시:${minutes}분` };
+        const response = await AxiosInstance.get("/device/plant-data/1");
+        const data = await response.data.data;
+        const mergedData = { ...timeObj, ...data };
+        dispatch(setData(mergedData));
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchData();
+
+    const interval = setInterval(fetchData, 60000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (

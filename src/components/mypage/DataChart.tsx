@@ -42,7 +42,7 @@ export function DataChart() {
       },
       title: {
         display: true,
-        text: "최근 수치 그래프",
+        text: "최근 1분간격 수치 그래프",
       },
     },
   };
