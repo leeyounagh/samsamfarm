@@ -33,19 +33,7 @@ function App() {
       navigate("/");
     }
   }, []);
-  const timeObj = { time: "10:40" };
 
-  const dataObj = {
-    temperature: "24.8",
-    humid: "37.0",
-    moisture: "100.0",
-    bright: 100,
-    id: 1,
-  };
-
-  const mergedObj = Object.assign({}, timeObj, { data: dataObj });
-
-  console.log(mergedObj);
   useEffect(() => {
     if (deviceUser.device_id) {
       const handleDevice = async () => {
