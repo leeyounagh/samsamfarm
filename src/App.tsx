@@ -35,7 +35,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (deviceUser.device_id) {
+    if (deviceUser?.device_id) {
       const handleDevice = async () => {
         try {
           const date = new Date();
