@@ -4,7 +4,6 @@ import StatusInfo from "../../components/mypage/statusinfo/StatusInfo";
 import { useEffect, useState } from "react";
 import Btn1 from "../../components/button/Btn1";
 import MypageName from "../../data/mypageName";
-import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
 import NoticeDevice from "../../components/mypage/NoticeDevice";
 import { setStatus } from "../../slice/CurrentStatusSlice";
