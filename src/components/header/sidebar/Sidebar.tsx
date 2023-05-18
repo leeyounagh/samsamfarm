@@ -19,7 +19,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
   return (
     <>
       {isOpen && (
-        <Styled.Aside ref={asideRef}>
+        <Styled.Aside
+          ref={asideRef}
+          className={`sidebar ${isOpen ? "open" : ""}`}
+        >
           <Styled.CloseButton>
             <GrClose
               style={{ cursor: "pointer" }}
@@ -56,6 +59,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
                 >
                   LogOut
                 </Styled.SidebarButtonDetail>
+                <Styled.SidebarButtonDetail>
+                  <KakaoSharing />
+                </Styled.SidebarButtonDetail>
               </>
             ) : (
               <Link to="/login">
@@ -63,8 +69,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
               </Link>
             )}
           </Styled.SidebarButton>
-
-          <KakaoSharing />
         </Styled.Aside>
       )}
     </>

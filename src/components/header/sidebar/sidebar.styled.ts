@@ -8,7 +8,7 @@ export const Aside = styled.div`
   top: 0;
   right: 0;
   width: 300px;
-  height: 100%;
+  height: 60rem;
   z-index: 150;
 
   @media (max-width: 768px) {
@@ -32,13 +32,10 @@ export const SidebarButtonDetail = styled.button`
   font-weight: 550;
   width: 240px;
   font-size: 25px;
-  padding: 0 2em;
   cursor: pointer;
   transition: 800ms ease all;
   outline: none;
   margin-bottom: 80px;
-  margin-left: 30px;
-  margin-top: 50px;
 
   &:hover {
     background: #fff;
@@ -62,10 +59,18 @@ export const SidebarButtonDetail = styled.button`
     margin-left: 0;
     margin-bottom: 10px;
   }
+  @media (max-width: 480px) {
+    width: 10rem;
+    font-size: 15px;
+    white-space: nowrap;
+    text-align: center;
+  }
 `;
 
 export const SidebarButton = styled.div`
   margin-top: 30px;
+  display: grid;
+  justify-content: center;
   @media (max-width: 768px) {
     margin-top: 0;
   }
