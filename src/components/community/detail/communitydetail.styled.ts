@@ -119,7 +119,7 @@ export const DescDiv = styled.div`
   background-color: white;
   opacity: 0.6;
   width: 45vw;
-  height: 10rem;
+  height: 30vh;
   text-align: center;
   padding-top: 30px;
   border-radius: 20px;
