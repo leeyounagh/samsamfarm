@@ -42,7 +42,6 @@ function App() {
           const hours = date.getHours();
           const minutes = date.getMinutes();
           const timeObj = { time: `${hours}시:${minutes}분` };
-          // 넘버인데 스트링으로 넘겨줘야됨
           const response = await AxiosInstance.get(`/device/plant-data/1`);
           const data = await response.data.data;
           const mergedData = Object.assign({}, timeObj, data);
