@@ -1,4 +1,4 @@
-import { useRef, SetStateAction, Dispatch } from "react";
+import { useRef } from "react";
 import useOnClickOutside from "../../../hooks/useOnclickOutside";
 import { GrClose } from "react-icons/gr";
 import * as Styled from "./sidebar.styled";

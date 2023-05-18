@@ -8,15 +8,7 @@ import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
 import NoticeDevice from "../../components/mypage/NoticeDevice";
 import { setStatus } from "../../slice/CurrentStatusSlice";
-import { useDispatch } from "react-redux";
-
-interface plantType {
-  bright: number;
-  humid: string;
-  id: number;
-  moisture: string;
-  temperature: string;
-}
+import { useDispatch, useSelector } from "react-redux";
 
 interface plantMapperType {
   bright: number;
@@ -27,25 +19,13 @@ interface plantMapperType {
 export default function MyPage() {
   const [isOpenStatus, setIsOpenStatus] = useState<boolean>(false);
   const [isOpenUserInfo, setIsOpenUserInfo] = useState<boolean>(false);
-  const [getPlantData, setPlantData] = useState<plantType[]>([]);
   const [ClickedStatus, setClickedStatus] = useState<number>(0);
   const JwtToken: any = decodeToken(localStorage.JWtToken);
   const dispatch = useDispatch();
+  const deviceData: any = useSelector((state) => {
+    return state;
+  });
 
-  useEffect(() => {
-    const handleDevice = async () => {
-      try {
-        const response = await AxiosInstance.get(`/device/plant-data/1`);
-        const data = response.data.data;
-        const newItems = [data, ...getPlantData];
-        setPlantData(newItems);
-        console.log(getPlantData);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    handleDevice();
-  }, []);
   useEffect(() => {
     if (isOpenUserInfo || isOpenStatus) {
       document.body.style.overflow = "hidden";
@@ -109,9 +89,9 @@ export default function MyPage() {
                 </Styled.IconLayout>
                 <h3>status</h3>
                 <Styled.StatusDiv>
-                  {getPlantData
-                    ?.filter((_element, index) => index === 0)
-                    .map((element) => (
+                  {deviceData.data
+                    ?.filter((_element: any, index: number) => index === 0)
+                    .map((element: any) => (
                       <>
                         {isOpenStatus && (
                           <StatusInfo
