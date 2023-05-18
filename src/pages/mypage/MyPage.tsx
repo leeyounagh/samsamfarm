@@ -7,7 +7,6 @@ import MypageName from "../../data/mypageName";
 import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
 import NoticeDevice from "../../components/mypage/NoticeDevice";
-import { useSelector } from "react-redux";
 import { setStatus } from "../../slice/CurrentStatusSlice";
 import { useDispatch } from "react-redux";
 
