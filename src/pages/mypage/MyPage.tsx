@@ -7,6 +7,9 @@ import MypageName from "../../data/mypageName";
 import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
 import NoticeDevice from "../../components/mypage/NoticeDevice";
+import { useSelector } from "react-redux";
+import { setStatus } from "../../slice/CurrentStatusSlice";
+import { useDispatch } from "react-redux";
 
 interface plantType {
   bright: number;
@@ -23,11 +26,16 @@ interface plantMapperType {
   [key: string]: number | string;
 }
 export default function MyPage() {
+  const Data = useSelector((state) => {
+    return state;
+  });
+  console.log(Data, "확인");
   const [isOpenStatus, setIsOpenStatus] = useState<boolean>(false);
   const [isOpenUserInfo, setIsOpenUserInfo] = useState<boolean>(false);
   const [getPlantData, setPlantData] = useState<plantType[]>([]);
   const [ClickedStatus, setClickedStatus] = useState<number>(0);
   const JwtToken: any = decodeToken(localStorage.JWtToken);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleDevice = async () => {
@@ -94,6 +102,7 @@ export default function MyPage() {
                             onClick={() => {
                               setIsOpenStatus(!isOpenStatus);
                               setClickedStatus(item.id);
+                              dispatch(setStatus(item.id));
                             }}
                           >
                             {item.name}

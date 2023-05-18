@@ -38,13 +38,12 @@ export interface MbtiType {
 
 export interface DataType {
   time: string;
-  data: {
-    temperature: string;
-    humid: string;
-    moisture: string;
-    bright: number;
-    id: number;
-  };
+
+  temperature: string;
+  humid: string;
+  moisture: string;
+  bright: number;
+  id: number;
 }
 
 export interface Post {
