@@ -25,7 +25,7 @@ export const FooterLogo = styled.img`
 
   @media screen and (max-width: 768px) {
     width: 200px;
-    margin-left: 70px;
+    margin-left: 0px;
     margin-bottom: 10px;
   }
 `;
@@ -36,6 +36,7 @@ export const FooterLeft = styled.div`
   @media screen and (max-width: 768px) {
     width: 100%;
     margin-bottom: 25px;
+    text-align: center;
   }
 `;
 
@@ -105,7 +106,7 @@ export const CenterText = styled.p`
     line-height: 2;
   }
   @media screen and (max-width: 768px) {
-    font-size: 13px;
+    font-size: 16px;
   }
 `;
 

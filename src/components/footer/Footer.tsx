@@ -29,7 +29,7 @@ const Footer = () => {
         <div>
           <BsPinMapFill className="icon" />
           <Styled.CenterText>
-            <span>ElICE Lab</span> 서울 성동구 아차산로17길 48 성수낙낙 2층
+            <span>ElICE Lab</span> 서울 성동구 아차산로17길 48
           </Styled.CenterText>
         </div>
         <div>
