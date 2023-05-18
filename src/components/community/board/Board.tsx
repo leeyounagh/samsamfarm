@@ -13,7 +13,6 @@ function Board() {
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
   const postsPerPage = 10;
   const totalPages = Math.ceil(totalData?.length / postsPerPage);
-  const jwtToken = localStorage.getItem("JWtToken");
 
   useEffect(() => {
     const handleAllcommunity = async () => {
