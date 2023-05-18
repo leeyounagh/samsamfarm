@@ -3,7 +3,7 @@ import color from "../../../styles/color";
 
 export const Layout = styled.section`
   width: 60vw;
-  height: 70vh;
+  height: 90vh;
   z-index: 300;
   background-color: black;
   position: fixed;
@@ -139,7 +139,7 @@ export const DescDiv = styled.div`
 `;
 export const CommentDiv = styled.div`
   width: 55vw;
-  height: 10rem;
+  height: 15rem;
   opacity: 0.6;
   background-color: white;
   border-radius: 20px;
