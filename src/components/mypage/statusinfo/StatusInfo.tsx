@@ -107,22 +107,22 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
           {ClickedStatus === 0 ? (
             <>
               <h1>온도</h1>
-              {currentStatus}
+              <h3>{currentStatus}</h3>
             </>
           ) : ClickedStatus === 1 ? (
             <>
               <h1>조도</h1>
-              {currentStatus}
+              <h3>{currentStatus}</h3>
             </>
           ) : ClickedStatus === 2 ? (
             <>
               <h1>습도</h1>
-              {currentStatus}
+              <h3>{currentStatus}</h3>
             </>
           ) : ClickedStatus === 3 ? (
             <>
               <h1>토양수분</h1>
-              {currentStatus}
+              <h3>{currentStatus}</h3>
             </>
           ) : null}
         </Styled.StatusDiv>

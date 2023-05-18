@@ -3,12 +3,13 @@ import color from "../../../styles/color";
 
 export const Layout = styled.div`
   width: 70rem;
-  height: 50rem;
+  height: 40rem;
   position: fixed;
   top: 13%;
   left: 22%;
   z-index: 50;
   background-image: url("/asset/status배경.gif");
+  padding-bottom: 50px;
   @media screen and (max-width: 1024px) {
     width: 60rem;
     height: 85vh;
@@ -21,12 +22,12 @@ export const Layout = styled.div`
     height: 85vh;
   }
   @media screen and (max-width: 480px) {
-    width: 50rem;
+    width: 40rem;
   }
 `;
 export const CloseDiv = styled.div`
   width: 5rem;
-  height: 7rem;
+  height: 5rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -64,18 +65,19 @@ export const StatusDiv = styled.div`
   opacity: 0.9;
   background-color: white;
   width: 50%;
-  height: 100%;
+  height: 24rem;
   border-radius: 50px;
   text-align: center;
 
   h1 {
+    font-size: 1rem;
     text-align: center;
     margin-top: 30px;
   }
   @media screen and (max-width: 480px) {
     width: 15rem;
-    height: 20rem;
-    margin-left: 60px;
+    height: 15rem;
+    margin-left: 40px;
   }
 `;
 

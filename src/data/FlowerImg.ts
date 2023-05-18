@@ -150,8 +150,8 @@ const FlowerImg: FlowerImgType[] = [
   {
     character: "/asset/enfj.png",
     mbti: "ENFJ",
-    flower: "/asset/홍시화.png",
-    name: "홍시화",
+    flower: "/asset/수수꽃다리.png",
+    name: "수수꽃다리",
     story1: "수수꽃다리는 물 위에서 수평하게 펼쳐진 잎을 가지고 있습니다. ",
     story2:
       "당신은 문제 해결에 대한 실용적인 접근과 관찰력을 가지고 있으며, 수수꽃다리의 실용적인 형태와 조용한 아름다움에 공감할 수 있을 것입니다. 그들은 고요한 환경에서 자신만의 공간을 찾으며, 수수꽃다리의 조용한 아름다움을 즐길 수 있을 것입니다.",
@@ -160,8 +160,8 @@ const FlowerImg: FlowerImgType[] = [
   {
     character: "/asset/entj.png",
     mbti: "ENTJ",
-    flower: "/public/asset/수수꽃다리.png",
-    name: "수수꽃다리",
+    flower: "/asset/홍시화.png",
+    name: "홍시화",
     story1: "홍시화는 독특한 모양과 색상을 가진 꽃 입니다.",
     story2:
       "독창적이고 창의적인 성향을 가지고 있으며, 새로운 아이디어와 개념을 탐구하는 것을 즐깁니다. 홍시화의 독특한 외모와 특이성에 대한 호기심을 가질 수 있을 것입니다.",

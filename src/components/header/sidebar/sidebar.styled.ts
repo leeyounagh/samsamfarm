@@ -6,7 +6,7 @@ export const Aside = styled.div`
   background-position: center;
   background-color: #fff2d7;
   top: 0;
-  right: 0;
+  right: 0px;
   width: 300px;
   height: 100vh;
   z-index: 150;
@@ -77,6 +77,4 @@ export const SidebarButton = styled.div`
 `;
 export const KaKaoDiv = styled.div`
   height: 58px;
-  display: flex;
-  justify-content: center;
 `;

@@ -65,7 +65,7 @@ export default function MyPage() {
     return Number(value) > Number(mapper[status]) ? (
       <Styled.StatusImg src="/asset/위험.png" />
     ) : (
-      <Styled.StatusImg src="/asset/스마일2.png" />
+      <Styled.StatusImg src="/asset/스마일3.png" />
     );
   };
 

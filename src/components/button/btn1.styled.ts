@@ -2,27 +2,22 @@ import styled from "styled-components";
 
 export const layout = styled.div`
   width: 100%;
-  height: 50px;
 `;
 
 export const Btn1 = styled.button`
   cursor: pointer;
-  overflow: hidden;
   font-weight: 600;
-  color: #b3933b;
-  text-transform: uppercase;
-  padding: 1.25em 2em;
-  margin-bottom: 10px;
-  margin-top: 10px;
   width: 100%;
-  height: 2rem;
+  color: #b3933b;
+  white-space: nowrap;
+  text-transform: uppercase;
+  /* padding: 1.25em; */
+  margin-bottom: 10px;
+  height: 30px;
   background: white;
   border: 2px solid;
   border-radius: 0.75em;
   transform-style: preserve-3d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
     background 150ms cubic-bezier(0, 0, 0.58, 1);

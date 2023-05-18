@@ -29,6 +29,7 @@ export function DataChart() {
   const currentStatus: any = useSelector((state) => {
     return state;
   });
+
   const timeTable = deviceData.data.reduce((cur: any, acc: any) => {
     return [...cur, acc.time];
   }, []);
