@@ -3,7 +3,7 @@ import color from "../../../styles/color";
 
 export const Layout = styled.section`
   width: 60vw;
-  height: 50rem;
+  height: 70vh;
   z-index: 300;
   background-color: black;
   position: fixed;
@@ -51,7 +51,7 @@ export const TitleTextDiv = styled.div`
 `;
 export const TitleDiv = styled.div`
   width: 40vw;
-  height: 8rem;
+  height: 6rem;
   background-color: white;
   opacity: 0.6;
   text-align: center;
@@ -59,7 +59,7 @@ export const TitleDiv = styled.div`
   display: grid;
   justify-content: center;
   align-items: center;
-
+  font-size: 0.8rem;
   font-family: "양진체";
   src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
     format("woff");
@@ -119,7 +119,7 @@ export const DescDiv = styled.div`
   background-color: white;
   opacity: 0.6;
   width: 45vw;
-  height: 20rem;
+  height: 10rem;
   text-align: center;
   padding-top: 30px;
   border-radius: 20px;
@@ -139,7 +139,7 @@ export const DescDiv = styled.div`
 `;
 export const CommentDiv = styled.div`
   width: 55vw;
-  height: 15rem;
+  height: 10rem;
   opacity: 0.6;
   background-color: white;
   border-radius: 20px;

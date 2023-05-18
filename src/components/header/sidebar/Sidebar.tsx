@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, SetStateAction, Dispatch } from "react";
 import useOnClickOutside from "../../../hooks/useOnclickOutside";
 import { GrClose } from "react-icons/gr";
 import * as Styled from "./sidebar.styled";
@@ -56,15 +56,21 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleSidebarClose }) => {
                 >
                   LogOut
                 </Styled.SidebarButtonDetail>
+                <Styled.KaKaoDiv>
+                  <KakaoSharing />
+                </Styled.KaKaoDiv>
               </>
             ) : (
-              <Link to="/login">
-                <Styled.SidebarButtonDetail>Login</Styled.SidebarButtonDetail>
-              </Link>
+              <>
+                <Link to="/login">
+                  <Styled.SidebarButtonDetail>Login</Styled.SidebarButtonDetail>
+                </Link>
+                <Styled.KaKaoDiv>
+                  <KakaoSharing />
+                </Styled.KaKaoDiv>
+              </>
             )}
           </Styled.SidebarButton>
-
-          <KakaoSharing />
         </Styled.Aside>
       )}
     </>

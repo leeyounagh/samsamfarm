@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import color from "../../styles/color";
 
 export const Layout = styled.main`
   width: 100%;
@@ -18,11 +17,13 @@ export const TitleDiv = styled.div`
   align-items: center;
   font-size: 1.5rem;
   padding-top: 10px;
+
   @media (max-width: 1024px) {
     width: 100%;
-    height: 8rem;
+    height: 14rem;
     margin-top: 0px;
     margin-bottom: 0px;
+    font-size: 2rem;
   }
   @media (max-width: 480px) {
     width: 25rem;
@@ -41,10 +42,10 @@ export const Title = styled.h1`
   width: 25ch;
   font-weight: 500;
   font-size: 2.5rem;
-  color: ${color.main};
+
   @media (max-width: 1024px) {
-    height: 6vh;
-    font-size: 2.5rem;
+    /* height: 6vh; */
+    font-size: 2rem;
   }
   @media (max-width: 768px) {
     width: 23ch;

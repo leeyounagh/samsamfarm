@@ -41,6 +41,8 @@ const ShareKakaotalk = () => {
 const Button = styled.button`
   border: none;
   z-index: 10;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
   background-color: rgb(255, 251, 30);
   margin-left: 40%;

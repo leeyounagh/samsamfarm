@@ -22,17 +22,16 @@ export const Layout = styled.div`
 
 export const ListDiv = styled.div`
   border: 1px solid lightgray;
-  width: 300px;
+  width: 15rem;
   height: 180px;
   background: white;
-
   cursor: pointer;
   @media (max-width: 1024px) {
     width: 200px;
     height: 180px;
   }
   @media (max-width: 768px) {
-    width: 200px;
+    width: 150px;
     height: 180px;
   }
   @media (max-width: 480px) {
@@ -57,13 +56,18 @@ export const TitleDiv = styled.div`
 `;
 
 export const InnerLayout = styled.div`
-  width: 100%;
+  width: 60%;
   padding: auto;
-  padding-left: 150px;
+  padding-left: 3%;
   margin: auto;
+
   @media (max-width: 1024px) {
     margin-bottom: 30px;
     padding-left: 0px;
+    width: 100%;
+  }
+  @media (max-width: 1024px) {
+    width: 40rem;
   }
   @media (max-width: 480px) {
     padding-left: 0px;

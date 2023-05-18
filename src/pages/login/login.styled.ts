@@ -40,6 +40,8 @@ export const LoginFormStyled = styled.div`
       height: 60px;
       font-size: 15px;
     }
+    margin-bottom: 10px;
+    width: 100%;
   }
 `;
 

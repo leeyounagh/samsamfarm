@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Layout = styled.main`
   width: 100%;
-  padding: 6rem;
+  padding: 1rem;
   background-image: url("/asset/마이페이지배경.jpg");
   background-size: cover;
   display: flex;
@@ -73,7 +73,7 @@ export const ConsoleDiv = styled.div`
     text-align: center;
   }
   @media (max-width: 1024px) {
-    width: 50%;
+    width: 80%;
     height: 50vh;
   }
   @media (max-width: 480px) {
@@ -98,7 +98,7 @@ export const IconLayout = styled.div`
   align-items: center;
   cursor: pointer;
   padding-top: 10%;
-  padding-left: 1rem;
+  padding-left: 3rem;
   @media (max-width: 1024px) {
     width: 20rem;
     height: 8rem;
@@ -111,6 +111,8 @@ export const IconLayout = styled.div`
     padding-top: 8rem;
     padding-left: 1rem;
     white-space: nowrap;
+    padding-bottom: 50px;
+    padding-left: 30px;
   }
 `;
 export const IconImg = styled.img`
@@ -134,18 +136,21 @@ export const ConsoleInnerDiv = styled.div`
   background-size: 100% 100%;
   display: grid;
   justify-content: center;
+
   @media (max-width: 480px) {
     width: 34rem;
     height: 25rem;
   }
 `;
 export const StatusDiv = styled.div`
-  width: 33rem;
-  padding: auto;
-  height: 13rem;
+  width: 35rem;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  height: 12rem;
   display: flex;
   justify-content: center;
   align-items: center;
+
   @media (max-width: 1024px) {
     width: 20rem;
     height: 10rem;
@@ -206,12 +211,12 @@ export const MypageBtnDiv = styled.div`
 `;
 
 export const StatusImg = styled.img`
-  width: 4rem;
+  width: 3rem;
   height: 4rem;
   margin-right: 10px;
   @media (max-width: 1024px) {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
   }
   @media (max-width: 480px) {
     width: 1.5rem;

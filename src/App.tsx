@@ -15,17 +15,48 @@ import SelectMbtiPlantPage from "./pages/selectmbti/SelectMbtiPlantPage";
 import PlantDescriptionPage from "./pages/plantdescription/PlantDescriptionPage";
 import GetPlant from "./pages/getplant/GetPlant";
 import StartPage from "./pages/StartPage/StartPage";
+import AxiosInstance from "./api/AxiosIntance";
 import { useEffect } from "react";
 import { MusicProvider } from "./components/audioplayer/AudioPlayer";
+import { decodeToken } from "react-jwt";
+import { setData } from "./slice/DataSlice";
+import { useDispatch } from "react-redux";
 
 function App() {
   const jwtToken = localStorage.getItem("JWtToken");
+  const deviceUser: any = decodeToken(localStorage.JWtToken);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!jwtToken) {
       navigate("/");
     }
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const date = new Date();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const timeObj = { time: `${hours}시:${minutes}분` };
+        const response = await AxiosInstance.get("/device/plant-data/1");
+        const data = await response.data.data;
+        const mergedData = { ...timeObj, ...data };
+        dispatch(setData(mergedData));
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchData();
+
+    const interval = setInterval(fetchData, 60000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (

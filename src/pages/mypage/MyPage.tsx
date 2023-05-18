@@ -7,6 +7,8 @@ import MypageName from "../../data/mypageName";
 import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
 import NoticeDevice from "../../components/mypage/NoticeDevice";
+import { setStatus } from "../../slice/CurrentStatusSlice";
+import { useDispatch } from "react-redux";
 
 interface plantType {
   bright: number;
@@ -28,6 +30,7 @@ export default function MyPage() {
   const [getPlantData, setPlantData] = useState<plantType[]>([]);
   const [ClickedStatus, setClickedStatus] = useState<number>(0);
   const JwtToken: any = decodeToken(localStorage.JWtToken);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleDevice = async () => {
@@ -62,7 +65,7 @@ export default function MyPage() {
     return Number(value) > Number(mapper[status]) ? (
       <Styled.StatusImg src="/asset/위험.png" />
     ) : (
-      <Styled.StatusImg src="/asset/스마일2.png" />
+      <Styled.StatusImg src="/asset/스마일3.png" />
     );
   };
 
@@ -94,6 +97,7 @@ export default function MyPage() {
                             onClick={() => {
                               setIsOpenStatus(!isOpenStatus);
                               setClickedStatus(item.id);
+                              dispatch(setStatus(item.id));
                             }}
                           >
                             {item.name}

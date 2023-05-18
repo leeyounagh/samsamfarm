@@ -43,7 +43,7 @@ export const BackGroundImg = styled.img`
 
 export const FieldLayOut = styled.div`
   width: 100%;
-  height: 100%;
+  height: 60rem;
   z-index: 10;
   display: flex;
   justify-content: center;
@@ -76,7 +76,7 @@ export const FieldDiv = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   @media (max-width: 1024px) {
-    width: 180px;
+    width: 160px;
     height: 100px;
   }
 
@@ -144,7 +144,7 @@ export const MainPlantLayout = styled.div`
 `;
 export const FieldLayoutDiv = styled.div`
   width: 60%;
-  height: 55rem;
+  height: 60rem;
   display: flex;
   margin-top: 50px;
   justify-content: center;
@@ -162,7 +162,7 @@ export const FieldLayoutDiv = styled.div`
     margin-top: 0px;
   }
   @media (max-width: 1024px) {
-    height: 75rem;
+    height: 70rem;
     width: 40rem;
   }
 `;

@@ -66,6 +66,8 @@ export const TitleDiv = styled.div`
 export const BtnDiv = styled.div`
   display: flex;
   justify-content: center;
-  width: 100%;
+  height: 50px;
+  font-size: 1rem;
+  font-weight: 300;
 `;
 export const Btn = styled.button``;

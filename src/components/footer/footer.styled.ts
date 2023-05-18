@@ -1,12 +1,17 @@
 import styled from "styled-components";
+import color from "../../styles/color";
 
 export const FooterContainer = styled.footer`
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
   height: 150px;
-  background-color: #ffe387;
+  background-color: ${color.main};
   width: 100%;
+  @media screen and (max-width: 480px) {
+    height: 180px;
+    padding-top: 20px;
+  }
 `;
 
 export const Footerbox = styled.div`
