@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Layout = styled.main`
   width: 100%;
-  padding: 6rem;
+  padding: 4rem;
   background-image: url("/asset/마이페이지배경.jpg");
   background-size: cover;
   display: flex;
@@ -98,7 +98,7 @@ export const IconLayout = styled.div`
   align-items: center;
   cursor: pointer;
   padding-top: 10%;
-  padding-left: 1rem;
+  padding-left: 3rem;
   @media (max-width: 1024px) {
     width: 20rem;
     height: 8rem;
@@ -140,9 +140,10 @@ export const ConsoleInnerDiv = styled.div`
   }
 `;
 export const StatusDiv = styled.div`
-  width: 33rem;
-  padding: auto;
-  height: 13rem;
+  width: 35rem;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  height: 12rem;
   display: flex;
   justify-content: center;
   align-items: center;

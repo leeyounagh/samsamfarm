@@ -36,7 +36,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
     }
   }, [currentStatus]);
 
-  const handleSwitch = async (ClickedStatus: number) => {
+  const handleOnSwitch = async (ClickedStatus: number) => {
     setIsChangeBtn(true);
 
     try {
@@ -64,6 +64,25 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
 
       if (data === "success") {
         alert("수치가 내려가고 있습니다.");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const handleOffSwitch = async () => {
+    try {
+      const body = {
+        device_id: 1,
+        wind_command: false,
+        water_command: false,
+        light_command: false,
+      };
+
+      const response = await AxiosInstance.post("/device/control", body);
+      const { data } = await response.data;
+
+      if (data === "success") {
+        alert("전원을 off했습니다.");
       }
     } catch (err) {
       console.log(err);
@@ -114,7 +133,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
               src="/asset/off버튼.png"
               onClick={() => {
                 setIsChangeBtn(!isChangeBtn);
-                handleSwitch(ClickedStatus);
+                handleOnSwitch(ClickedStatus);
               }}
             />
           ) : (
@@ -122,6 +141,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
               src="/asset/on버튼.png"
               onClick={() => {
                 setIsChangeBtn(!isChangeBtn);
+                handleOffSwitch();
               }}
             />
           )}

@@ -26,10 +26,6 @@ interface plantMapperType {
   [key: string]: number | string;
 }
 export default function MyPage() {
-  const Data = useSelector((state) => {
-    return state;
-  });
-  console.log(Data, "확인");
   const [isOpenStatus, setIsOpenStatus] = useState<boolean>(false);
   const [isOpenUserInfo, setIsOpenUserInfo] = useState<boolean>(false);
   const [getPlantData, setPlantData] = useState<plantType[]>([]);
