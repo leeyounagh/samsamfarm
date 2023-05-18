@@ -2,8 +2,8 @@ import styled from "styled-components";
 import color from "../../../styles/color";
 
 export const Layout = styled.div`
-  width: 70rem;
-  height: 46rem;
+  width: 60rem;
+  height: 38rem;
   z-index: 300;
   background: white;
   position: fixed;
@@ -94,7 +94,7 @@ export const FarmDiv = styled.div`
 
 export const FieldDiv = styled.div`
   width: 100%;
-  height: 50%;
+  height: 55%;
   z-index: 300;
 
   @media (max-width: 768px) {
@@ -323,7 +323,7 @@ export const CommentBtn = styled.button`
 
 export const CommentArea = styled.div`
   width: 100%;
-  height: 10rem;
+  height: 8rem;
   overflow-y: auto;
   @media (max-width: 480px) {
     font-size: 0.8rem;
@@ -383,7 +383,7 @@ export const WriterInput = styled.input`
 `;
 
 export const UserInfoDiv = styled.div`
-  height: 6rem;
+  height: 5rem;
   border-bottom: 5px solid rgb(247, 201, 146);
   background-color: #2e8b57;
   display: flex;
