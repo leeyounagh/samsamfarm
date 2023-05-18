@@ -36,18 +36,27 @@ export default function MyPage() {
         const data = response.data.data;
         const newItems = [data, ...getPlantData];
         setPlantData(newItems);
+        console.log(getPlantData);
       } catch (err) {
         console.log(err);
       }
     };
     handleDevice();
   }, []);
+  useEffect(() => {
+    if (isOpenUserInfo || isOpenStatus) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpenUserInfo, isOpenStatus]);
 
   const handleStatus = (status: string, value: string | number) => {
     const mapper: plantMapperType = {
       bright: 30,
       humid: "80",
       temperature: "60",
+      moisture: "20",
     };
 
     return Number(value) > Number(mapper[status]) ? (
@@ -112,6 +121,9 @@ export default function MyPage() {
                         </Styled.StatusTextDiv>
                         <Styled.StatusTextDiv>
                           {handleStatus("humid", element.humid)}
+                        </Styled.StatusTextDiv>
+                        <Styled.StatusTextDiv>
+                          {handleStatus("temperature", element.temperature)}
                         </Styled.StatusTextDiv>
                         <Styled.StatusTextDiv>
                           {handleStatus("temperature", element.temperature)}

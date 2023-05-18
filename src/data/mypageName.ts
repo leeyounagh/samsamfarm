@@ -17,6 +17,11 @@ const MypageName: MypageNameType[] = [
 
     id: 2,
   },
+  {
+    name: "토양수분",
+
+    id: 3,
+  },
 ];
 
 export default MypageName;

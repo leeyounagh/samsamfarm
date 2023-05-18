@@ -1,4 +1,10 @@
 import styled from "styled-components";
+export const Layout = styled.div`
+  padding: 5rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const IntroduceReturnPage_div = styled.div`
   display: flex;
@@ -13,7 +19,7 @@ export const IntroduceReturnPage_div = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 700px;
+  width: 20rem;
   height: auto;
   @media screen and (max-width: 480px) {
     width: 100%;
@@ -23,6 +29,9 @@ export const Image = styled.img`
 
 export const IntroduceReturnPage_p = styled.p`
   font-size: 1.8em;
+  @media screen and (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 export const SelectPlantPage_div = styled.div`

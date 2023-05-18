@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Layout = styled.div`
   width: 100%;
-  padding: 10rem;
+  padding: 8rem;
   display: flex;
   justify-content: center;
   font-family: "DOSPilgiMedium";
@@ -38,7 +38,7 @@ export const DescForm = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  font-size: 1rem;
   @media (max-width: 768px) {
     width: 60%;
   }

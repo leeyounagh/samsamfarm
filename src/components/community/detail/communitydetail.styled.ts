@@ -3,7 +3,7 @@ import color from "../../../styles/color";
 
 export const Layout = styled.section`
   width: 60vw;
-  height: 60rem;
+  height: 50rem;
   z-index: 300;
   background-color: black;
   position: fixed;

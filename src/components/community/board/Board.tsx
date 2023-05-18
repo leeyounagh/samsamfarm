@@ -69,32 +69,29 @@ function Board() {
   }
 
   return (
-    <>
-      <Styled.Container>
-        <h1>게시판</h1>
-        <Styled.Search>
-          <Styled.Searchinput
-            type="text"
-            value={searchKeyword}
-            onChange={handleSearchKeywordChange}
-            onKeyPress={handleKeyPress}
-            placeholder="제목을 입력하세요"
-          />
-          <Styled.SearchBtn onClick={handleSearchClick}>검색</Styled.SearchBtn>
-        </Styled.Search>
-        <PostList filteredPosts={filteredPosts} />
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
+    <Styled.Container>
+      <h1>게시판</h1>
+      <Styled.Search>
+        <Styled.Searchinput
+          type="text"
+          value={searchKeyword}
+          onChange={handleSearchKeywordChange}
+          onKeyPress={handleKeyPress}
+          placeholder="제목을 입력하세요"
         />
-        {jwtToken && (
-          <Link to="/CommunityUpdate">
-            <Styled.WritingBtn> 글쓰기 </Styled.WritingBtn>
-          </Link>
-        )}
-      </Styled.Container>
-    </>
+        <Styled.SearchBtn onClick={handleSearchClick}>검색</Styled.SearchBtn>
+      </Styled.Search>
+      <PostList filteredPosts={filteredPosts} />
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
+
+      <Link to="/CommunityUpdate">
+        <Styled.WritingBtn> 글쓰기 </Styled.WritingBtn>
+      </Link>
+    </Styled.Container>
   );
 }
 

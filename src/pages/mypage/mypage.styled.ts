@@ -78,7 +78,7 @@ export const ConsoleDiv = styled.div`
   }
   @media (max-width: 480px) {
     margin-top: 10px;
-    width: 20rem;
+    width: 25rem;
     height: 15rem;
   }
 `;
@@ -91,14 +91,14 @@ export const ConsoleImg = styled.img`
   z-index: 10;
 `;
 export const IconLayout = styled.div`
-  width: 100%;
+  width: 33rem;
   height: 13rem;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   padding-top: 10%;
-
+  padding-left: 1rem;
   @media (max-width: 1024px) {
     width: 20rem;
     height: 8rem;
@@ -106,7 +106,11 @@ export const IconLayout = styled.div`
     padding-left: 1rem;
   }
   @media (max-width: 480px) {
-    width: 15rem;
+    width: 14rem;
+    height: 10rem;
+    padding-top: 8rem;
+    padding-left: 1rem;
+    white-space: nowrap;
   }
 `;
 export const IconImg = styled.img`
@@ -131,12 +135,13 @@ export const ConsoleInnerDiv = styled.div`
   display: grid;
   justify-content: center;
   @media (max-width: 480px) {
-    width: 16rem;
+    width: 34rem;
     height: 25rem;
   }
 `;
 export const StatusDiv = styled.div`
-  width: 30rem;
+  width: 33rem;
+  padding: auto;
   height: 13rem;
   display: flex;
   justify-content: center;
@@ -176,6 +181,7 @@ export const CharacterDiv = styled.div`
     width: 20rem;
     height: 8rem;
     margin-bottom: 100px;
+    padding-left: 120px;
   }
 
   button {
@@ -229,7 +235,7 @@ export const IconDiv = styled.div`
       format("woff");
     font-weight: normal;
     font-style: normal;
-    font-size: 2em;
+    font-size: 1rem;
     width: 100%;
     height: 100%;
     text-decoration: none;
@@ -245,6 +251,12 @@ export const IconDiv = styled.div`
     &:active {
       box-shadow: 0 0 0 #7a5a7a;
       transform: translate(-10%, 0.25em);
+    }
+    @media (max-width: 480px) {
+      width: 3rem;
+      height: 2rem;
+      font-size: 0.6rem;
+      /* font-size: 0.5rem; */
     }
   }
 

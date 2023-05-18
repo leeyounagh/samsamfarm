@@ -3,7 +3,7 @@ import { DataType } from "../types";
 
 const initialState: DataType[] = [
   {
-    time: "2023-05-15",
+    time: "10:40",
     data: {
       temperature: "24.8",
       humid: "37.0",

@@ -110,8 +110,8 @@ export const CharacterImg = styled.img`
 `;
 
 export const MainPlantImg = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 80px;
   @media (max-width: 768px) {
     width: 60px;
     height: 60px;
@@ -140,7 +140,6 @@ export const TitleDiv = styled.div`
 `;
 
 export const MainPlantLayout = styled.div`
-  width: 100rem;
   z-index: 10;
 `;
 export const FieldLayoutDiv = styled.div`

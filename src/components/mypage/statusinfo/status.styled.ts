@@ -61,12 +61,13 @@ export const MainInfoDiv = styled.div`
   }
 `;
 export const StatusDiv = styled.div`
-  opacity: 0.6;
+  opacity: 0.9;
   background-color: white;
   width: 50%;
   height: 100%;
   border-radius: 50px;
   text-align: center;
+
   h1 {
     text-align: center;
     margin-top: 30px;
@@ -106,7 +107,6 @@ export const ButtonDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 
   h2 {
     color: ${color.main};
@@ -141,6 +141,7 @@ export const ButtonDiv = styled.div`
 export const ButtonImg = styled.img`
   width: 10rem;
   height: 5rem;
+  cursor: pointer;
   @media screen and (max-width: 1024px) {
     width: 100%;
     height: 7rem;

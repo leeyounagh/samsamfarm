@@ -49,12 +49,16 @@ export default function Modal({
 
   useEffect(() => {
     const getGuestBook = async () => {
-      const response = await AxiosInstance.get(`/guestBook/${userId}`);
-      const { data } = await response.data;
-      setCommentList(data);
+      try {
+        const response = await AxiosInstance.get(`/guestBook/${userId}`);
+        const { data } = await response.data;
+        setCommentList(data);
+      } catch (err) {
+        console.log(err);
+      }
     };
     getGuestBook();
-  }, [commentList]);
+  }, [userId]);
 
   const plantsRenderer = (id: number | string) => {
     const mapper: PlantMapper = {
@@ -87,6 +91,7 @@ export default function Modal({
         alert("댓글이 작성되었습니다.");
         setWriter("");
         setContent("");
+        window.location.reload();
       }
     } catch (err) {
       console.log(err);

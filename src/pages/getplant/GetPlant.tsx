@@ -17,16 +17,17 @@ export default function GetPlant() {
     <Styled.Layout>
       <Styled.TitleDiv>
         <h2>꽃 배정이 완료 되었습니다.</h2>
-        {isShowOpen ? (
+        {isShowOpen && (
           <Styled.BtnDiv>
             <Btn1
               title="메인으로 가기"
               onClick={() => {
                 navigate("/main");
+                window.location.reload();
               }}
             ></Btn1>
           </Styled.BtnDiv>
-        ) : null}
+        )}
       </Styled.TitleDiv>
     </Styled.Layout>
   );

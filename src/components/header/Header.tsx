@@ -113,7 +113,7 @@ export default function Header() {
               로그아웃
             </Styled.LoginButton>
           ) : (
-            <Link to="/">
+            <Link to="/login">
               <Styled.LoginButton>로그인</Styled.LoginButton>
             </Link>
           )}

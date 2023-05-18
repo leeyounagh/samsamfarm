@@ -12,7 +12,7 @@ export const Layout = styled.main`
 
 export const TitleDiv = styled.div`
   width: 100%;
-  height: 4rem;
+  height: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,7 @@ export const Title = styled.h1`
   display: flex;
   align-items: center;
   height: 8vh;
-  width: 24ch;
+  width: 25ch;
   font-weight: 500;
   font-size: 2.5rem;
   color: ${color.main};

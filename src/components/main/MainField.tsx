@@ -55,7 +55,7 @@ export default function MainField() {
     };
 
     getData();
-  }, []);
+  }, [jwtToken]);
 
   useEffect(() => {
     if (isMainModalOpen) {
@@ -76,7 +76,7 @@ export default function MainField() {
       <Styled.MainPlantImg key={uuidv4()} src={mapper[`${id}`]} id="plants" />
     );
   };
-  console.log(mainData);
+
   useEffect(() => {
     {
       mobileSize && setMobileData(mainData.slice(0, 4));

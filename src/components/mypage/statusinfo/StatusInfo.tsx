@@ -3,6 +3,7 @@ import GuideBook from "../guidebook/GuideBook";
 import * as Styled from "./status.styled";
 import { DataChart } from "../DataChart";
 import AxiosInstance from "../../../api/AxiosIntance";
+
 interface StatusType {
   setIsOpenStatus: Dispatch<SetStateAction<boolean>>;
   element: {
@@ -30,49 +31,42 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
     if (ClickedStatus === 2) {
       setCurrentStatus(Number(element?.humid));
     }
+    if (ClickedStatus === 3) {
+      setCurrentStatus(Number(element?.moisture));
+    }
   }, [currentStatus]);
 
-  const handleSwitch = async () => {
+  const handleSwitch = async (ClickedStatus: number) => {
     setIsChangeBtn(true);
-    if (currentStatus < -50) {
-      return setIsChangeBtn(false);
-    }
-    setCurrentStatus((prev) => {
-      return prev - 30;
-    });
+
     try {
       const body = {
         device_id: 1,
-        wind_command: true,
+        wind_command: false,
         water_command: false,
         light_command: false,
       };
+
+      if (ClickedStatus === 0) {
+        body.wind_command = true;
+      }
+      if (ClickedStatus === 1) {
+        body.light_command = true;
+      }
+      if (ClickedStatus === 2) {
+        body.wind_command = true;
+      }
+      if (ClickedStatus === 3) {
+        body.water_command = true;
+      }
       const response = await AxiosInstance.post("/device/control", body);
-      const { data } = response.data;
+      const { data } = await response.data;
+
       if (data === "success") {
         alert("수치가 내려가고 있습니다.");
       }
     } catch (err) {
-      alert(err);
-    }
-
-    {
-      ClickedStatus === 0 ? (
-        <>
-          <h1>현재 온도</h1>
-          {currentStatus}
-        </>
-      ) : ClickedStatus === 1 ? (
-        <>
-          <h1>조도</h1>
-          {currentStatus}
-        </>
-      ) : ClickedStatus === 2 ? (
-        <>
-          <h1>습도</h1>
-          {currentStatus}
-        </>
-      ) : null;
+      console.log(err);
     }
   };
 
@@ -93,7 +87,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
           <DataChart />
           {ClickedStatus === 0 ? (
             <>
-              <h1>현재 온도</h1>
+              <h1>온도</h1>
               {currentStatus}
             </>
           ) : ClickedStatus === 1 ? (
@@ -106,6 +100,11 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
               <h1>습도</h1>
               {currentStatus}
             </>
+          ) : ClickedStatus === 3 ? (
+            <>
+              <h1>토양수분</h1>
+              {currentStatus}
+            </>
           ) : null}
         </Styled.StatusDiv>
 
@@ -115,7 +114,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
               src="/asset/off버튼.png"
               onClick={() => {
                 setIsChangeBtn(!isChangeBtn);
-                handleSwitch();
+                handleSwitch(ClickedStatus);
               }}
             />
           ) : (
@@ -127,7 +126,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
             />
           )}
           {isChangeBtn ? (
-            <h2>fan이 돌아가고 있습니다.</h2>
+            <h2>status를 낮추고 있습니다.</h2>
           ) : currentStatus < -50 ? (
             <h2>더이상 낮출수 없습니다. 돌아 가세요</h2>
           ) : null}

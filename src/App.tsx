@@ -26,9 +26,6 @@ function App() {
     if (!jwtToken) {
       navigate("/");
     }
-    if (jwtToken) {
-      navigate("/main");
-    }
   }, []);
 
   return (
@@ -40,7 +37,6 @@ function App() {
           <Route path="/main" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/community" element={<Community />} />
-
           <Route path="/communityupdate" element={<CommunityUpdate />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/register" element={<Register />} />
@@ -50,12 +46,10 @@ function App() {
             element={<IntroduceReturnPage />}
           />
           <Route path="/story/selectPlantPage" element={<SelectPlantPage />} />
-
           <Route
             path="/story/selectMbtiPlantPage"
             element={<SelectMbtiPlantPage />}
           />
-
           <Route
             path="/story/plantDescriptionPage/:plantId"
             element={<PlantDescriptionPage />}

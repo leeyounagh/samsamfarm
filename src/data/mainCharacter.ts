@@ -6,7 +6,7 @@ const MainCharacter: MainCharacterType[] = [
     id: 0,
   },
   {
-    img: "/asset/커비2.gif",
+    img: "/asset/커비1.gif",
     id: 1,
   },
   {
@@ -14,7 +14,7 @@ const MainCharacter: MainCharacterType[] = [
     id: 2,
   },
   {
-    img: "/asset/악마스펀지밥.gif",
+    img: "/asset/쿠로미6.gif",
     id: 3,
   },
   {
@@ -22,11 +22,11 @@ const MainCharacter: MainCharacterType[] = [
     id: 4,
   },
   {
-    img: "/asset/유니콘.gif",
+    img: "/asset/술.gif",
     id: 5,
   },
   {
-    img: "./asset/주먹밥2.gif",
+    img: "/asset/주먹밥2.gif",
     id: 6,
   },
   {

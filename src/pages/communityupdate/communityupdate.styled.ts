@@ -69,6 +69,10 @@ export const ContentInput = styled.textarea`
     width: 20rem;
     height: 15rem;
   }
+  @media screen and (max-width: 480px) {
+    width: 20rem;
+    height: 10rem;
+  }
 `;
 
 // export const SubmitButton = styled.button`
@@ -112,5 +116,9 @@ export const SubmitButton = styled.button`
     top: 9px;
     box-shadow: 0 0 0 1px ${color.main} inset,
       0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+  }
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    height: 3.5rem;
   }
 `;

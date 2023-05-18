@@ -10,6 +10,9 @@ const CommunityUpdate = () => {
 
   const handleSubmit = async () => {
     try {
+      if (title.length === 0 || content.length === 0) {
+        alert("모든 값을 입력해 주세요");
+      }
       await AxiosInstance.post("/article", {
         title: title,
         content: content,
@@ -18,7 +21,7 @@ const CommunityUpdate = () => {
       alert("글이 작성되었습니다.");
       window.location.href = "/community";
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   };
 
