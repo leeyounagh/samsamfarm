@@ -80,4 +80,10 @@ export const SidebarButton = styled.div`
 `;
 export const KaKaoDiv = styled.div`
   height: 58px;
+
+  @media (max-width: 480px) {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
 `;
