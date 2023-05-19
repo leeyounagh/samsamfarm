@@ -29,7 +29,6 @@ function App() {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
 
-  console.log(pathname);
   useEffect(() => {
     if (!jwtToken) {
       navigate("/");
