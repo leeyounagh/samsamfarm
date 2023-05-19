@@ -27,7 +27,8 @@ export const TitleDiv = styled.div`
   }
   @media (max-width: 480px) {
     width: 25rem;
-    height: 4rem;
+    height: 12rem;
+    /* height: 4rem; */
   }
 `;
 
