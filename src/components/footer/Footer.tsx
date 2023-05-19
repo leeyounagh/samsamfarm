@@ -48,13 +48,21 @@ const Footer = () => {
           <Styled.CompanyAboutSpan>
             About the samsamfarm
           </Styled.CompanyAboutSpan>
-          여기엔 무슨 내용을 적을까요오오오오
+          SSF은 유저들끼리 연결되어 있는 인터넷으로 연결된 IoT 기기를 통해
+          씨앗과 식물을 공유하는 플랫폼입니다. 함께 성장하고 공유하는 SSF에서
+          당신의 초록 생활을 시작해보세요.
         </Styled.FooterCompanyAbout>
         <Styled.FooterIcons>
-          <AiFillFacebook className="iconLink" />
-          <GrInstagram className="iconLink" />
+          <a href="https://www.facebook.com/elice.track">
+            <AiFillFacebook className="iconLink" />
+          </a>
+          <a href="https://www.instagram.com/elice.track">
+            <GrInstagram className="iconLink" />
+          </a>
           <BsGithub className="iconLink" />
-          <AiFillGitlab className="iconLink" />
+          <a href="https://kdt-gitlab.elice.io/iot_track/class_01/iot_project/team3">
+            <AiFillGitlab className="iconLink" />
+          </a>
         </Styled.FooterIcons>
       </Styled.FooterRight>
     </Styled.FooterContainer>
