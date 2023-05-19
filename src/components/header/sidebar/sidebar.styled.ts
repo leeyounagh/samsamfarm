@@ -54,9 +54,9 @@ export const SidebarButtonDetail = styled.button`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
+    /* width: 100%;
     margin-left: 0;
-    margin-bottom: 10px;
+    margin-bottom: 10px; */
   }
   @media (max-width: 480px) {
     width: 10rem;

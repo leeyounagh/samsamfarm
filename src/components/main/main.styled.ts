@@ -123,6 +123,7 @@ export const MainPlantImg = styled.img`
 `;
 
 export const TitleDiv = styled.div`
+  /* border: 3px solid black; */
   height: 8rem;
   display: flex;
   justify-content: center;

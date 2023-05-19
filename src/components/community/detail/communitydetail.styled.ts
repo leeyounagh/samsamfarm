@@ -182,6 +182,8 @@ export const BtnDiv = styled.div`
   height: 3rem;
   margin-left: 10px;
   white-space: nowrap;
+  border: 3px solid black;
+  padding-top: 5px;
   @media screen and (max-width: 480px) {
     width: 5rem;
     height: 3rem;

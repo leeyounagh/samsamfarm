@@ -102,7 +102,7 @@ export default function MainField() {
                     onClick={() => {
                       setIsMainModalOpen(!isMainModalOpen);
                       setCharacterId(item.id);
-                      setUserId(mobileData[index]?.id);
+                      setUserId(mobileData[index]?.user_id);
                     }}
                   >
                     놀러가기
