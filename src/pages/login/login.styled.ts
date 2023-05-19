@@ -31,8 +31,15 @@ export const LoginTitleStyled = styled.h1`
 
 export const LoginFormStyled = styled.div`
   width: 100%;
-
   input {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 70px;
+    font-size: 20px;
+    @media (max-width: 768px) {
+      height: 60px;
+      font-size: 15px;
+    }
     margin-bottom: 10px;
     width: 100%;
   }
@@ -41,8 +48,11 @@ export const LoginFormStyled = styled.div`
 export const LoginFormsValidStyled = styled.p`
   width: 100%;
   color: #ff0000;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: -0.5px;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 export const LoginButtonWrapStyled = styled.div`

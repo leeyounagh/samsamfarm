@@ -1,20 +1,62 @@
 import * as Styled from "./footer.styled";
 import FooterLogo from "../../../public/logo/FtLogo.png";
+import { BsPinMapFill } from "react-icons/bs";
+import { BiPhoneCall } from "react-icons/bi";
+import { GrMail } from "react-icons/gr";
+import { AiFillFacebook } from "react-icons/ai";
+import { GrInstagram } from "react-icons/gr";
+import { BsGithub } from "react-icons/bs";
+import { AiFillGitlab } from "react-icons/ai";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <Styled.FooterContainer>
-      <Styled.Footerbox>
+      <Styled.FooterLeft>
         <Styled.FooterLogo src={FooterLogo} alt="로고" />
-
-        <Styled.FooterText>
-          <ul>
-            <li>© 2023 SamSamFarm Co. All rights reserved. | Privacy Policy</li>
-            <li>Tel:010-1234-5678 Email : amu@mail.com</li>
-            <li>대표 : Jeon We</li>
-          </ul>
-        </Styled.FooterText>
-      </Styled.Footerbox>
+        <Styled.FooterLinks>
+          <Styled.FooterLink href="/main" className="link-1">
+            Home |
+          </Styled.FooterLink>
+          <Styled.FooterLink href="#">Blog |</Styled.FooterLink>
+          <Styled.FooterLink href="#">Pricing |</Styled.FooterLink>
+          <Styled.FooterLink href="#">About |</Styled.FooterLink>
+          <Styled.FooterLink href="#">Faq |</Styled.FooterLink>
+          <Styled.FooterLink href="#">Contact</Styled.FooterLink>
+        </Styled.FooterLinks>
+        <Styled.FooterCompanyName>Company Name © 2023</Styled.FooterCompanyName>
+      </Styled.FooterLeft>
+      <Styled.FooterCenter>
+        <div>
+          <BsPinMapFill className="icon" />
+          <Styled.CenterText>
+            <span>ElICE Lab</span> 서울 성동구 아차산로17길 48
+          </Styled.CenterText>
+        </div>
+        <div>
+          <BiPhoneCall className="icon" />
+          <Styled.CenterText>+010-1234-8283</Styled.CenterText>
+        </div>
+        <div>
+          <GrMail className="icon" />
+          <Styled.CenterText>
+            <a href="https://academy.elice.io/explore">contact@elice.io</a>
+          </Styled.CenterText>
+        </div>
+      </Styled.FooterCenter>
+      <Styled.FooterRight>
+        <Styled.FooterCompanyAbout>
+          <Styled.CompanyAboutSpan>
+            About the samsamfarm
+          </Styled.CompanyAboutSpan>
+          여기엔 무슨 내용을 적을까요오오오오
+        </Styled.FooterCompanyAbout>
+        <Styled.FooterIcons>
+          <AiFillFacebook className="iconLink" />
+          <GrInstagram className="iconLink" />
+          <BsGithub className="iconLink" />
+          <AiFillGitlab className="iconLink" />
+        </Styled.FooterIcons>
+      </Styled.FooterRight>
     </Styled.FooterContainer>
   );
 };
