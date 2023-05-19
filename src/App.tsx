@@ -28,6 +28,7 @@ function App() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { pathname } = useLocation();
+
   console.log(pathname);
   useEffect(() => {
     if (!jwtToken) {
@@ -36,7 +37,7 @@ function App() {
     if (pathname === "/login" && jwtToken) {
       navigate("/main");
     }
-  }, []);
+  }, [pathname, jwtToken]);
 
   useEffect(() => {
     if (deviceUser?.device_id) {
