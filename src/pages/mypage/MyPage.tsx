@@ -89,7 +89,10 @@ export default function MyPage() {
                 <h3>status</h3>
                 <Styled.StatusDiv>
                   {deviceData.data
-                    ?.filter((_element: any, index: number) => index === 0)
+                    ?.filter(
+                      (_element: any, index: number) =>
+                        index === deviceData.data.length - 1
+                    )
                     .map((element: any) => (
                       <>
                         {isOpenStatus && (
