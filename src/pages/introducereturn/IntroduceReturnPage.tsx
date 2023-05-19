@@ -6,7 +6,7 @@ export default function IntroduceReturnPage() {
   const navigate = useNavigate();
 
   return (
-    <Styled.Layout style={{ height: "70vh" }}>
+    <Styled.Layout>
       <Styled.IntroduceReturnPage_div>
         <Styled.Image src="/asset/게임오버.gif" />
       </Styled.IntroduceReturnPage_div>
