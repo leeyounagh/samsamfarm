@@ -12,20 +12,36 @@ export const Container = styled.div`
   h1 {
     text-align: center;
   }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
 `;
 
 export const Search = styled.div`
-  float: right;
-  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
+
 export const Searchinput = styled.input`
-  width: 300px;
+  width: 200px;
   height: 30px;
   padding: 5px;
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid gray;
   margin-right: 10px;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
 `;
 
 export const SearchBtn = styled.button`
@@ -37,6 +53,12 @@ export const SearchBtn = styled.button`
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 40%;
+    margin-bottom: 10px;
+  }
+
   &:hover {
     background-color: #b48a01;
   }
@@ -49,6 +71,11 @@ export const SearchBtn = styled.button`
 export const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const TableHead = styled.thead`
@@ -65,6 +92,10 @@ export const TableRow = styled.tr`
 export const TableData = styled.td`
   padding: 15px;
   border: 1px solid #ddd;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 export const PaginationContainer = styled.div`
@@ -91,6 +122,10 @@ export const PaginationButton = styled.button<{ active?: boolean }>`
     opacity: 0.5;
     cursor: not-allowed;
   }
+
+  @media (max-width: 768px) {
+    margin: 5px 3px;
+  }
 `;
 
 export const WritingBtn = styled.button`
@@ -101,11 +136,16 @@ export const WritingBtn = styled.button`
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  /* margin: 0 30px 30px 0; */
   border-radius: 5px;
 
   &:hover {
     background-color: #b48a01;
   }
+
   float: right;
+
+  @media (max-width: 768px) {
+    /* float: non; */
+    margin: 20px 0;
+  }
 `;

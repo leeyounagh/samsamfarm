@@ -139,7 +139,7 @@ export const DescDiv = styled.div`
 `;
 export const CommentDiv = styled.div`
   width: 55vw;
-  height: 10rem;
+  height: 13rem;
   opacity: 0.6;
   background-color: white;
   border-radius: 20px;
