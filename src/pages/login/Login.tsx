@@ -2,21 +2,21 @@ import * as Styled from "./login.styled";
 import { ChangeEvent, FormEvent, useState } from "react";
 import Input from "../../components/forms/input/Input";
 import Button from "../../components/forms/button/Button";
-
-// import { emailValidation } from "../../utils/regExp.utils";
-import Checkbox from "../../components/forms/checkbox/Checkbox";
+import { emailValidation } from "../../utils/regExp.utils";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [forms, setForms] = useState({
     email: "",
     password: "",
-    isRemember: false,
   });
 
   const [valid, setValid] = useState({
     email: true,
     password: true,
   });
+  const navigate = useNavigate();
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement> | FormEvent<HTMLFormElement>
@@ -59,20 +59,37 @@ export default function Login() {
     }
   };
 
-  const handleLoginClick = () => {
-    alert("로그인 API");
-  };
-
-  const handleJoinClick = () => {
-    alert("회원가입 페이지 이동");
+  const handleLoginClick = async () => {
+    const body = {
+      email: forms.email,
+      password: forms.password,
+    };
+    try {
+      const response = await axios.post(
+        "http://34.64.51.215/samsamfarm/api/v1/auth/sign-in",
+        body
+      );
+      localStorage.setItem("JWtToken", response.data.data.accessToken);
+      navigate("/story/introduce");
+    } catch (err) {
+      if (err) {
+        alert(err);
+      }
+    }
   };
 
   return (
     <Styled.LoginStyled>
       <img
         className="logo"
-        style={{ width: "450px", height: "140px" }}
+        style={{
+          width: "100%",
+          maxWidth: "450px",
+          height: "auto",
+          maxHeight: "140px",
+        }}
         src="/logo/logo.png"
+        alt="Logo"
       />
       <Styled.LoginTitleStyled>로그인</Styled.LoginTitleStyled>
       <Styled.LoginFormStyled>
@@ -91,15 +108,6 @@ export default function Login() {
           onChange={handleChange}
         />
       </Styled.LoginFormStyled>
-      <Styled.LoginRememberStyled>
-        <Checkbox
-          checked={forms.isRemember}
-          onChange={handleChange}
-          name="isRemember"
-        >
-          로그인 상태 유지
-        </Checkbox>
-      </Styled.LoginRememberStyled>
       {!valid.email && (
         <Styled.LoginFormsValidStyled>
           올바른 이메일 형식이 아닙니다.
@@ -118,8 +126,14 @@ export default function Login() {
         >
           로그인
         </Button>
-        <Styled.LoginFindIdAndPasswordStyled></Styled.LoginFindIdAndPasswordStyled>
-        <Button id="join-button" outline onClick={handleJoinClick}>
+
+        <Button
+          id="join-button"
+          outline
+          onClick={() => {
+            navigate("/register");
+          }}
+        >
           회원가입
         </Button>
       </Styled.LoginButtonWrapStyled>

@@ -1,45 +1,116 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const register = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  min-width: 375px;
-`;
-export const table = styled.table`
-  border: 1px solid #444444;
-  font-size: 1.2em;
-  border-collapse: collapse;
-  width: 70%;
-`;
-export const form = styled.form`
-  width: 60%;
+export const JoinStyled = styled.form`
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+  max-width: 650px;
+  padding: 50px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  min-height: 100vh;
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 10%), 0px 2px 4px rgb(0 0 0 / 20%);
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
-export const td = styled.td`
-  background-color: whitesmoke;
-  padding: 5%;
-  width: 35%;
-  text-align: left;
+
+export const JoinTitleStyled = styled.h1`
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-bottom: 40px;
+  text-align: center;
+  margin-top: 110px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+`;
+
+export const InputLabelStyled = styled.span`
+  color: #666;
+  font-size: 14px;
+`;
+
+export const JoinFormsTitleStyled = styled.h3`
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e3e3e3;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+`;
+
+export const JoinFormStyled = styled.div`
+  width: 100%;
+
+  input {
+    margin-bottom: 10px;
+  }
+
+  margin-bottom: 30px;
+`;
+
+export const InputStyled = styled.input`
+  width: 100%;
+  padding: 16px;
+  font-size: 1.3rem;
+  border-radius: 4px;
+  height: 55px;
+  border: 1px solid #e3e3e3;
+  margin-top: 5px;
+  outline: none;
+  transition: border-color 0.15s ease-in-out;
+
+  &:focus {
+    border-color: #b3933b;
+  }
+
+  &:hover {
+    border-color: #b3933b;
+  }
+
+  &:disabled {
+    border-color: #e3e3e3;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    height: 45px;
+    width: 100%;
+  }
 `;
 
 export const RegisterButton = styled.button`
   margin-top: 10px;
-  padding: 10px 20px;
-  margin-right: 30px;
-  margin-bottom: 10px;
-  background-color: rgb(99, 230, 95);
+  width: 60%;
+  padding: 24px 20px;
+  background-color: #b3933b;
   color: #fff;
   border-radius: 4px;
   border: none;
-  font-size: 1.3em;
+  font-size: 1.5em;
   cursor: pointer;
   text-decoration-line: none;
+
   &:hover {
     background-color: #008000;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 16px;
+    margin-right: 0;
+    margin-bottom: 20px;
+    font-size: 1.1em;
   }
 `;

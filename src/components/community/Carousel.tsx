@@ -5,43 +5,90 @@ import "swiper/css/navigation";
 import * as Styled from "./carousel.styled";
 import CommunityImg from "../../data/CommunityImg";
 import { v4 as uuidv4 } from "uuid";
-// import required modules
 import { Navigation } from "swiper";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
 import { useEffect, useState } from "react";
-import { CommunityType } from "../../type/type";
+import { CommunityType } from "../../types";
+import Btn1 from "../button/Btn1";
+import useMediaQuery from "../../hooks/useMediaQuery";
+import AxiosInstance from "../../api/AxiosIntance";
+import "swiper/swiper-bundle.css";
 interface SwiperStyle extends React.CSSProperties {
   "--swiper-navigation-color": string;
 }
 
 export default function Carousel() {
-  const communityData = useSelector((state: RootState) => {
-    return state?.community;
-  });
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
-  const [newData, setNewData] = useState<any[]>([]); // 자른 데이터 배열
+  const [newData, setNewData] = useState<any[]>([]);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [clickedData, setClickedData] = useState<CommunityType>({
+    id: 0,
     title: "test",
-    content: "adfdasfa",
-    writer: "이수욘",
-    user_id: 0,
+    content: "test contents",
+    nickname: "test writer",
+    date: "2023-05-09",
+    created_at: "2023-05-09",
+    updated_at: "2023-05-09",
   });
 
-  useEffect(() => {
-    const dataArr = [];
+  const mobileSize = useMediaQuery("(max-width: 480px)");
 
-    for (let i = 0; i < 16; i += 4) {
-      dataArr.push(communityData?.slice(i, i + 4));
-      setNewData(dataArr);
+  useEffect(() => {
+    if (isOpenModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
     }
-  }, [communityData]);
+  }, [isOpenModal]);
+
+  useEffect(() => {
+    const handlecommunity = async () => {
+      try {
+        const response = await AxiosInstance.get("/article", {
+          params: {
+            page: `${activeIndex + 1}`,
+            perPage: 4,
+          },
+        });
+        const { data } = await response.data;
+
+        setNewData(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    handlecommunity();
+  }, [activeIndex]);
 
   function handleSlideChange(swiper: any) {
     setActiveIndex(swiper.activeIndex);
   }
 
+  const dataRenderer = () => {
+    let filteredData = newData;
+    if (mobileSize) {
+      filteredData = filteredData.slice(0, 3);
+    }
+    return filteredData?.map((item: CommunityType) => {
+      return (
+        <Styled.InfoBox id="infobox">
+          <h1>
+            제목:
+            {item?.title.length > 8 ? item?.title.substring(0, 6) : item?.title}
+          </h1>
+          <h3>글쓴이: {item?.nickname}</h3>
+          <Styled.BtnDiv>
+            <Btn1
+              title="바로가기"
+              onClick={() => {
+                setIsOpenModal(true);
+                setClickedData(item);
+              }}
+            />
+          </Styled.BtnDiv>
+        </Styled.InfoBox>
+      );
+    });
+  };
   return (
     <>
       <Swiper
@@ -50,7 +97,7 @@ export default function Carousel() {
             "--swiper-navigation-color": "black",
           } as React.CSSProperties & SwiperStyle
         }
-        navigation={true}
+        navigation={mobileSize ? false : true}
         pagination={{ clickable: true }}
         modules={[Navigation]}
         className="mySwiper"
@@ -69,98 +116,15 @@ export default function Carousel() {
                   }}
                 >
                   <Styled.SwiperDiv key={uuidv4()}>
-                    {activeIndex === 0 ? (
-                      <>
-                        {newData?.[0]?.map((item: CommunityType) => {
-                          return (
-                            <>
-                              <Styled.InfoBox id="infobox">
-                                <h1>{item?.title}</h1>
-                                <h3>글쓴이: {item?.writer}</h3>
-                                <button
-                                  onClick={() => {
-                                    setIsOpenModal(true);
-                                    console.log(item, "테스트");
-                                    setClickedData(item);
-                                  }}
-                                >
-                                  바로가기
-                                </button>
-                              </Styled.InfoBox>
-                            </>
-                          );
-                        })}
-                      </>
-                    ) : activeIndex === 1 ? (
-                      <>
-                        {newData?.[1]?.map((item: CommunityType) => {
-                          return (
-                            <>
-                              <Styled.InfoBox id="infobox">
-                                <h1>{item?.title}</h1>
-                                <h3>글쓴이: {item?.writer}</h3>
-                                <button
-                                  onClick={() => {
-                                    setIsOpenModal(true);
-                                    setClickedData(item);
-                                  }}
-                                >
-                                  바로가기
-                                </button>
-                              </Styled.InfoBox>
-                            </>
-                          );
-                        })}
-                      </>
-                    ) : activeIndex === 2 ? (
-                      <>
-                        {newData?.[2]?.map((item: CommunityType) => {
-                          return (
-                            <>
-                              <Styled.InfoBox id="infobox">
-                                <h1>{item?.title}</h1>
-                                <h3>글쓴이: {item?.writer}</h3>
-                                <button
-                                  onClick={() => {
-                                    setIsOpenModal(true);
-                                    setClickedData(item);
-                                  }}
-                                >
-                                  바로가기
-                                </button>
-                              </Styled.InfoBox>
-                            </>
-                          );
-                        })}
-                      </>
-                    ) : (
-                      <>
-                        {newData?.[3]?.map((item: CommunityType) => {
-                          return (
-                            <>
-                              <Styled.InfoBox id="infobox">
-                                <h1>{item?.title}</h1>
-                                <h3>글쓴이: {item?.writer}</h3>
-                                <button
-                                  onClick={() => {
-                                    setIsOpenModal(true);
-                                    setClickedData(item);
-                                  }}
-                                >
-                                  바로가기
-                                </button>
-                              </Styled.InfoBox>
-                            </>
-                          );
-                        })}
-                      </>
-                    )}
+                    {dataRenderer()}
 
                     <Styled.BackgroundImg src={item.backgroundImg} />
                     <Styled.character1Img src={item.characterImg1} />
                     <Styled.character2Img src={item.characterImg2} />
                     <Styled.character3Img src={item.characterImg3} />
-                    <Styled.character4Img src={item.characterImg4} />
+                    {!mobileSize && (
+                      <Styled.character4Img src={item.characterImg4} />
+                    )}
                   </Styled.SwiperDiv>
                 </SwiperSlide>
               </>
@@ -168,12 +132,12 @@ export default function Carousel() {
           })}
         </Styled.Layout>
       </Swiper>
-      {isOpenModal ? (
+      {isOpenModal && (
         <CommunityDetail
           setIsOpenModal={setIsOpenModal}
           clickedData={clickedData}
         />
-      ) : null}
+      )}
     </>
   );
 }

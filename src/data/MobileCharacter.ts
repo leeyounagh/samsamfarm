@@ -2,19 +2,19 @@ type MainCharacterType = { img: string; id: number };
 
 const MobileCharacter: MainCharacterType[] = [
   {
-    img: "./asset/운동 햄토리.gif",
+    img: "/asset/하트햄토리.gif",
     id: 0,
   },
   {
-    img: "./asset/뮤.gif",
+    img: "/asset/커비2.gif",
     id: 1,
   },
   {
-    img: "./asset/스펀지밥.gif",
+    img: "/asset/스폰지밥2.gif",
     id: 2,
   },
   {
-    img: "./asset/키티1.gif",
+    img: "/asset/악마스펀지밥.gif",
     id: 3,
   },
 ];

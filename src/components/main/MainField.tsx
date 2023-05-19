@@ -1,159 +1,151 @@
 import { useState, useEffect } from "react";
 import * as Styled from "./main.styled";
-import Modal from "./modal/modal";
+import Modal from "./modal/Modal";
 import MainCharacter from "../../data/mainCharacter";
-import { MainType } from "../../type/type";
-import axios from "axios";
+import { MainType } from "../../types";
+import AxiosInstance from "../../api/AxiosIntance";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { v4 as uuidv4 } from "uuid";
 import MobileCharacter from "../../data/MobileCharacter";
 
+interface PlantMapper {
+  [key: string]: string | undefined;
+}
+
 export default function MainField() {
   const [isMainModalOpen, setIsMainModalOpen] = useState<boolean>(false);
   const [mainData, setMainData] = useState<MainType[]>([]);
+  const [characterId, setCharacterId] = useState<number>(0);
   const [userId, setUserId] = useState<number>(0);
-  const [mobileData, setMobieData] = useState<MainType[]>([
+  const jwtToken = localStorage.getItem("JWtToken");
+  const [mobileData, setMobileData] = useState<MainType[]>([
     {
-      visiter_id: 0,
-      contents: "asfdasd",
-      writer: "dsfasd",
-      create_at: "fdsaf",
-      delete_at: "dasfdas",
-      plants_id: 1,
+      created_at: "2023-05-14T15:24:48.000Z",
+      current_grade: "1",
+      deleted_at: null,
+      device_id: 1,
+      id: 1,
+      nickname: "준기쨩",
+      plant_grade_update_time: null,
+      plant_type: "Aloe Vera",
+      updated_at: "2023-05-14T15:24:48.000Z",
+      user_id: 6,
+      delete_at: "", // 누락된 속성 추가
+      plants_id: 0, // 누락된 속성 추가
     },
   ]);
   const mobileSize = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
-    const getMainData = async () => {
+    const getData = async () => {
       try {
-        const response = await axios.get("/maintest.json");
-        const data = await response.data.data;
-        setMainData(data);
+        if (jwtToken) {
+          const response = await AxiosInstance.get("/plant", {
+            params: {
+              page: 1,
+              perPage: 8,
+            },
+          });
+          const { data } = await response.data;
+          setMainData(data);
+        }
       } catch (err) {
         console.log(err);
       }
     };
-    getMainData();
-  }, []);
-  const plantsRenderer = (id: number | undefined) => {
-    interface PlantMapper {
-      [key: string]: string | undefined;
-    }
 
+    getData();
+  }, [jwtToken]);
+
+  useEffect(() => {
+    if (isMainModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMainModalOpen]);
+
+  const plantsRenderer = (id: string | number | undefined) => {
     const mapper: PlantMapper = {
-      "1": "./asset/씨앗.png",
-      "2": "./asset/새싹.png",
-      "3": "./asset/중간새싹.png",
-      "4": "./asset/꽃.png",
+      "1": "/asset/씨앗.png",
+      "2": "/asset/새싹.png",
+      "3": "/asset/중간새싹.png",
+      "4": "/asset/2번꽃.png",
     };
     return (
       <Styled.MainPlantImg key={uuidv4()} src={mapper[`${id}`]} id="plants" />
     );
   };
+
   useEffect(() => {
     {
-      mobileSize && setMobieData(mainData.slice(0, 4));
+      mobileSize && setMobileData(mainData.slice(0, 4));
     }
   }, [mobileSize, mainData]);
 
   return (
     <Styled.Layout>
-      {mobileSize ? (
-        <Styled.MobileLayout>
-          <Styled.MobileMaiBackgroundImg src="./asset/모바일배경.jpg" />
-        </Styled.MobileLayout>
-      ) : (
-        <Styled.BackGroundImg src="./asset/배경.png" />
-      )}
-
-      <Styled.MainPlantLayout>
-        {mobileSize ? (
-          <>
-            {mobileData.map((item) => {
-              return <>{plantsRenderer(item?.plants_id)}</>;
-            })}
-          </>
-        ) : (
-          <>
-            {mainData?.map((item) => {
-              return <>{plantsRenderer(item?.plants_id)}</>;
-            })}
-          </>
-        )}
-      </Styled.MainPlantLayout>
-
       <Styled.FieldLayOut>
         {mobileSize ? (
-          <>
-            {MobileCharacter?.map((item) => {
-              return (
-                <>
-                  <Styled.FieldDiv id="item" key={uuidv4()}>
-                    <Styled.TitleDiv>
-                      <Styled.CharacterImg
-                        src={item.img}
-                        width="60rem"
-                        height="60rem"
-                        key={uuidv4()}
-                      />
-
-                      <button
-                        id="button"
-                        key={uuidv4()}
-                        onClick={() => {
-                          setIsMainModalOpen(!isMainModalOpen);
-                          setUserId(item.id);
-                        }}
-                      >
-                        놀러가기
-                      </button>
-                    </Styled.TitleDiv>
-                  </Styled.FieldDiv>
-                </>
-              );
-            })}
-          </>
+          <Styled.MobileLayout>
+            <Styled.MobileInnerLayout>
+              {MobileCharacter?.map((item, index) => (
+                <Styled.FieldDiv key={item.id}>
+                  <Styled.TitleDiv>
+                    <Styled.CharacterImg src={item.img} />
+                    <Styled.MainPlantLayout>
+                      {plantsRenderer(mobileData[index]?.current_grade)}
+                    </Styled.MainPlantLayout>
+                  </Styled.TitleDiv>
+                  <Styled.BtnStyle
+                    id={`button-${item.id}`}
+                    onClick={() => {
+                      setIsMainModalOpen(!isMainModalOpen);
+                      setCharacterId(item.id);
+                      setUserId(mobileData[index]?.user_id);
+                    }}
+                  >
+                    놀러가기
+                  </Styled.BtnStyle>
+                </Styled.FieldDiv>
+              ))}
+            </Styled.MobileInnerLayout>
+          </Styled.MobileLayout>
         ) : (
-          <>
-            {MainCharacter?.map((item) => {
-              return (
-                <>
-                  <Styled.FieldDiv id="item" key={uuidv4()}>
-                    <Styled.TitleDiv>
-                      <Styled.CharacterImg
-                        src={item.img}
-                        width="60rem"
-                        height="60rem"
-                        key={uuidv4()}
-                      />
-
-                      <Styled.BtnStyle
-                        id="button"
-                        key={uuidv4()}
-                        onClick={() => {
-                          setIsMainModalOpen(!isMainModalOpen);
-                          setUserId(item.id);
-                        }}
-                      >
-                        놀러가기
-                      </Styled.BtnStyle>
-                    </Styled.TitleDiv>
-                  </Styled.FieldDiv>
-                </>
-              );
-            })}
-          </>
+          <Styled.FieldLayoutDiv>
+            {MainCharacter?.map((item, index) => (
+              <Styled.FieldDiv key={item.id} id="item">
+                <Styled.TitleDiv>
+                  <Styled.CharacterImg src={item.img} />
+                  <Styled.MainPlantLayout>
+                    {plantsRenderer(mainData[index]?.current_grade)}
+                  </Styled.MainPlantLayout>
+                </Styled.TitleDiv>
+                <Styled.BtnStyle
+                  id={`button-${item.id}`}
+                  onClick={() => {
+                    setIsMainModalOpen(!isMainModalOpen);
+                    setCharacterId(index);
+                    setUserId(mainData[index]?.user_id);
+                  }}
+                >
+                  놀러가기
+                </Styled.BtnStyle>
+              </Styled.FieldDiv>
+            ))}
+          </Styled.FieldLayoutDiv>
         )}
       </Styled.FieldLayOut>
-      {isMainModalOpen ? (
+
+      {isMainModalOpen && (
         <Modal
           isMainModalOpen={isMainModalOpen}
           setIsMainModalOpen={setIsMainModalOpen}
           mainData={mainData}
+          characterId={characterId}
           userId={userId}
         />
-      ) : null}
+      )}
     </Styled.Layout>
   );
 }

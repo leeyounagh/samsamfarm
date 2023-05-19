@@ -11,14 +11,19 @@ export const InputStyled = styled.input`
   transition: border-color 0.15s ease-in-out;
 
   &:focus {
-    border-color: #7a99ff;
+    border-color: #b3933b;
   }
 
   &:hover {
-    border-color: #7a99ff;
+    border-color: #b3933b;
   }
 
   &:disabled {
     border-color: #e3e3e3;
+  }
+  @media (max-width: 768px) {
+    height: 40px;
+    font-size: 14px;
+    padding: 12px;
   }
 `;

@@ -2,24 +2,32 @@ import styled from "styled-components";
 
 export const Layout = styled.main`
   width: 100%;
-  /* border: 1px solid black; */
-  height: 100vh;
+  background-color: white;
+  margin-bottom: 100px;
+  @media (max-width: 480px) {
+    height: 50rem;
+  }
 `;
 
 export const TitleDiv = styled.div`
   width: 100%;
-  height: 15%;
+  height: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    text-align: center;
+  padding-top: 10px;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 14rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 2rem;
   }
   @media (max-width: 480px) {
-    font-size: 0.7rem;
-    text-align: center;
+    width: 25rem;
+    height: 4rem;
   }
 `;
 
@@ -28,11 +36,28 @@ export const Title = styled.h1`
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
-  height: 60%;
-  width: 24ch;
-  @media (max-width: 768px) {
-    height: 30%;
+  display: flex;
+  align-items: center;
+  height: 8vh;
+  width: 25ch;
+  font-weight: 500;
+  font-size: 2.5rem;
+
+  @media (max-width: 1024px) {
+    /* height: 6vh; */
+    font-size: 2rem;
   }
+  @media (max-width: 768px) {
+    width: 23ch;
+    height: 30%;
+    font-size: 2rem;
+  }
+  @media (max-width: 468px) {
+    font-size: 1.3rem;
+    width: 23ch;
+    height: 10vh;
+  }
+
   font-family: "bitbit";
   src: url("//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff"),
     url("//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff2");

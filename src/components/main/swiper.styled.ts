@@ -1,23 +1,44 @@
 import styled from "styled-components";
 
 export const Layout = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 20vh;
-  margin-top: 50px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  font-family: "양진체";
+  src: url("https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+  }
+  @media (max-width: 480px) {
+    margin-top: 0px;
+  }
 `;
 
 export const ListDiv = styled.div`
-  border: 1px solid black;
-  width: 300px;
+  border: 1px solid lightgray;
+  width: 15rem;
   height: 180px;
   background: white;
-  @media (max-width: 768px) {
+  cursor: pointer;
+  @media (max-width: 1024px) {
     width: 200px;
+    height: 180px;
+  }
+  @media (max-width: 768px) {
+    width: 150px;
     height: 180px;
   }
   @media (max-width: 480px) {
     width: 150px;
     height: 100px;
+    margin-bottom: 50px;
+    font-size: 0.8rem;
   }
 `;
 
@@ -32,4 +53,30 @@ export const TitleDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const InnerLayout = styled.div`
+  width: 60%;
+  padding: auto;
+  padding-left: 3%;
+  margin: auto;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 30px;
+    padding-left: 0px;
+    width: 100%;
+  }
+  @media (max-width: 1024px) {
+    width: 40rem;
+  }
+  @media (max-width: 480px) {
+    padding-left: 0px;
+    .list-style {
+      margin-left: 30px;
+    }
+  }
+`;
+export const CommunityInnerDiv = styled.div`
+  width: 60%;
+  background-color: blue;
 `;
