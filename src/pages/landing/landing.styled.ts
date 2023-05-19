@@ -55,6 +55,7 @@ export const Title = styled.h1`
   @media (max-width: 468px) {
     font-size: 1.3rem;
     width: 23ch;
+    height: 10vh;
   }
 
   font-family: "bitbit";
