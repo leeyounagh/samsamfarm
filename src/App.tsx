@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Landing from "./pages/landing/Landing";
 import Login from "./pages/login/Login";
 import "./App.css";
@@ -27,10 +27,14 @@ function App() {
   const deviceUser: any = decodeToken(localStorage.JWtToken);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  const { pathname } = useLocation();
+  console.log(pathname);
   useEffect(() => {
     if (!jwtToken) {
       navigate("/");
+    }
+    if (pathname === "/login" && jwtToken) {
+      navigate("/main");
     }
   }, []);
 
@@ -68,6 +72,7 @@ function App() {
         <Routes>
           <Route path="/" element={<StartPage />} />
           <Route path="/main" element={<Landing />} />
+
           <Route path="/login" element={<Login />} />
           <Route path="/community" element={<Community />} />
           <Route path="/communityupdate" element={<CommunityUpdate />} />
