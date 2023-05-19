@@ -124,7 +124,7 @@ export const FooterCompanyAbout = styled.p`
   font-size: 16px;
   font-weight: normal;
   margin: 0;
-  text-align: center;
+  /* text-align: center; */
 `;
 
 export const CompanyAboutSpan = styled.span`
@@ -133,6 +133,7 @@ export const CompanyAboutSpan = styled.span`
   font-size: 23px;
   font-weight: bold;
   margin-bottom: 20px;
+  text-align: center;
 `;
 
 export const FooterIcons = styled.div`

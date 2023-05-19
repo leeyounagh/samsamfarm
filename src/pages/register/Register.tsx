@@ -81,13 +81,13 @@ const SignupForm = () => {
           })}
           type="password"
         />
-        <span
+        <p
           style={{
             color: "red",
           }}
         >
           {errors?.password?.message}
-        </span>
+        </p>
         <Styled.InputLabelStyled>* 비밀번호 확인</Styled.InputLabelStyled>
         <Styled.InputStyled
           {...register("password_confirm", {
@@ -99,13 +99,13 @@ const SignupForm = () => {
           })}
           type="password"
         />
-        <span
+        <p
           style={{
             color: "red",
           }}
         >
           {errors?.password_confirm?.message}
-        </span>
+        </p>
         <Styled.InputLabelStyled>* 닉네임</Styled.InputLabelStyled>
         <Styled.InputStyled {...register("nickname")} />
         <Styled.InputLabelStyled>* 연락처</Styled.InputLabelStyled>

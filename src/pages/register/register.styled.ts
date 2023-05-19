@@ -34,8 +34,7 @@ export const JoinTitleStyled = styled.h1`
 
 export const InputLabelStyled = styled.span`
   color: #666;
-  font-size: 12px;
-  margin-bottom: 5px;
+  font-size: 14px;
 `;
 
 export const JoinFormsTitleStyled = styled.h3`
@@ -67,8 +66,9 @@ export const InputStyled = styled.input`
   padding: 16px;
   font-size: 1.3rem;
   border-radius: 4px;
-  height: 48px;
+  height: 55px;
   border: 1px solid #e3e3e3;
+  margin-top: 5px;
   outline: none;
   transition: border-color 0.15s ease-in-out;
 
@@ -86,8 +86,8 @@ export const InputStyled = styled.input`
 
   @media (max-width: 768px) {
     font-size: 1.1rem;
-    height: 40px;
-    width: 90%;
+    height: 45px;
+    width: 100%;
   }
 `;
 
