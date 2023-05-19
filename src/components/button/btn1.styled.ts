@@ -58,7 +58,7 @@ export const Btn1 = styled.button`
   }
   @media (max-width: 768px) {
     font-size: 14px;
-    width: 80%;
+    width: 100%;
   }
   @media screen and (max-width: 480px) {
     font-size: 10px;

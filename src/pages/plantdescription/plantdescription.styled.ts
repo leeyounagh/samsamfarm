@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Layout = styled.div`
   width: 100%;
-  padding: 8rem;
+  padding: 10rem;
   display: flex;
   justify-content: center;
   font-family: "DOSPilgiMedium";
@@ -24,6 +24,10 @@ export const FlowerDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    width: 15rem;
+  }
   @media (max-width: 768px) {
     width: 50%;
   }
@@ -38,15 +42,22 @@ export const DescForm = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+
+  @media (max-width: 1024px) {
+    width: 30rem;
+  }
   @media (max-width: 768px) {
-    width: 60%;
+    width: 25rem;
   }
 `;
 
 export const FlowerImg = styled.img`
+  @media (max-width: 1024px) {
+    width: 20rem;
+    height: 40%;
+  }
   @media (max-width: 768px) {
-    width: 100%;
+    width: 15rem;
     height: 40%;
   }
 `;
@@ -63,10 +74,13 @@ export const DescInnerDiv = styled.div`
   }
 `;
 export const StoryText = styled.h2`
-  font-size: 1.8rem;
+  font-size: 1.3rem;
 
   @media (max-width: 768px) {
     font-size: 1.1rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
   }
 `;
 
@@ -81,4 +95,10 @@ export const BtnDiv = styled.div`
 export const BtnLayout = styled.div`
   margin-right: 50px;
   white-space: nowrap;
+  @media (max-width: 1024px) {
+    width: 20rem;
+  }
+  @media (max-width: 768px) {
+    width: 25rem;
+  }
 `;
