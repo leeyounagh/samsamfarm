@@ -27,7 +27,6 @@ function App() {
   const deviceUser: any = decodeToken(localStorage.JWtToken);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { pathname } = useLocation();
 
   useEffect(() => {
     if (!jwtToken) {
