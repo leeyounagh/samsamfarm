@@ -50,7 +50,7 @@ export default function Carousel() {
           },
         });
         const { data } = await response.data;
-        console.log(data);
+
         setNewData(data);
       } catch (err) {
         console.log(err);

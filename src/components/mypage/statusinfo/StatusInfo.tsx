@@ -38,7 +38,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
 
   const handleOnSwitch = async (ClickedStatus: number) => {
     setIsChangeBtn(true);
-
+    setIsChangeBtn(!isChangeBtn);
     try {
       const body = {
         device_id: 1,
@@ -70,6 +70,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
     }
   };
   const handleOffSwitch = async () => {
+    setIsChangeBtn(!isChangeBtn);
     try {
       const body = {
         device_id: 1,
@@ -91,7 +92,7 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
 
   return (
     <Styled.Layout>
-      {isGuideOpen ? <GuideBook setIsGuideOpen={setIsGuideOpen} /> : null}
+      {isGuideOpen && <GuideBook setIsGuideOpen={setIsGuideOpen} />}
 
       <Styled.CloseDiv
         onClick={() => {
@@ -132,7 +133,6 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
             <Styled.ButtonImg
               src="/asset/off버튼.png"
               onClick={() => {
-                setIsChangeBtn(!isChangeBtn);
                 handleOnSwitch(ClickedStatus);
               }}
             />
@@ -140,7 +140,6 @@ function StatusInfo({ setIsOpenStatus, element, ClickedStatus }: StatusType) {
             <Styled.ButtonImg
               src="/asset/on버튼.png"
               onClick={() => {
-                setIsChangeBtn(!isChangeBtn);
                 handleOffSwitch();
               }}
             />
