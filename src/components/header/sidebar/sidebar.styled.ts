@@ -74,7 +74,12 @@ export const SidebarButton = styled.div`
   @media (max-width: 768px) {
     margin-top: 0;
   }
+  @media (max-width: 480px) {
+    margin-top: 50px;
+  }
 `;
 export const KaKaoDiv = styled.div`
   height: 58px;
+  display: flex;
+  justify-content: center;
 `;
