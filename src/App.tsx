@@ -34,10 +34,7 @@ function App() {
     if (!jwtToken) {
       navigate("/");
     }
-    if (pathname === "/login" && jwtToken) {
-      navigate("/main");
-    }
-  }, [pathname, jwtToken]);
+  }, []);
 
   useEffect(() => {
     if (deviceUser?.device_id) {

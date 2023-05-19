@@ -5,9 +5,13 @@ import { useNavigate } from "react-router-dom";
 
 const Snows = ({ color }: { color?: string }) => {
   const navigate = useNavigate();
-
+  const jwtToken = localStorage.getItem("JWtToken");
   const handleStartClick = () => {
-    navigate("/login");
+    if (jwtToken) {
+      navigate("/main");
+    } else {
+      navigate("/login");
+    }
   };
 
   const [snows] = useSnowData(30);
