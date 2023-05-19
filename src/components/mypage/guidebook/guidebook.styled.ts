@@ -17,7 +17,7 @@ export const Layout = styled.div`
   @media screen and (max-width: 480px) {
     position: absolute;
     left: 0%;
-    width: 23rem;
+    width: 26rem;
     height: 40rem;
   }
 `;
