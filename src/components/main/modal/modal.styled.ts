@@ -18,28 +18,15 @@ export const Layout = styled.div`
     format("woff");
   font-weight: normal;
   font-style: normal;
-  position: fixed;
-  top: 120px;
+
   background-color: rgb(252, 243, 169);
   @media (max-width: 1024px) {
-    position: fixed;
-    top: 120px;
-    left: 3%;
     font-size: 1rem;
     width: 60rem;
   }
 
-  @media (max-width: 768px) {
-    position: fixed;
-    top: 120px;
-    height: 30rem;
-    left: 0px;
-    width: 45rem;
-  }
   @media (max-width: 480px) {
     width: 25rem;
-    /* height: 75vh; */
-    left: 0px;
   }
   h1 {
     text-align: center;

@@ -11,7 +11,7 @@ export const Layout = styled.div`
   background-image: url("/asset/status배경.gif");
   padding-bottom: 50px;
   @media screen and (max-width: 1024px) {
-    width: 60rem;
+    width: 50rem;
     height: 85vh;
     position: fixed;
     top: 10%;
@@ -19,10 +19,11 @@ export const Layout = styled.div`
   }
   @media screen and (max-width: 768px) {
     width: 100%;
-    height: 85vh;
+    height: 75vh;
   }
   @media screen and (max-width: 480px) {
-    width: 40rem;
+    width: 25rem;
+    height: 35rem;
   }
 `;
 export const CloseDiv = styled.div`
@@ -77,7 +78,7 @@ export const StatusDiv = styled.div`
   @media screen and (max-width: 480px) {
     width: 15rem;
     height: 15rem;
-    margin-left: 40px;
+    margin-left: 80px;
   }
 `;
 
@@ -112,6 +113,7 @@ export const ButtonDiv = styled.div`
 
   h2 {
     color: ${color.main};
+    margin-left: 30px;
   }
 
   @media screen and (max-width: 1024px) {
@@ -149,8 +151,9 @@ export const ButtonImg = styled.img`
     height: 7rem;
   }
   @media screen and (max-width: 480px) {
-    width: 7rem;
+    width: 10rem;
     height: 5rem;
+    margin-left: 30px;
   }
 `;
 
