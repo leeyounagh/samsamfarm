@@ -80,6 +80,4 @@ export const SidebarButton = styled.div`
 `;
 export const KaKaoDiv = styled.div`
   height: 58px;
-  display: flex;
-  justify-content: center;
 `;
