@@ -139,7 +139,11 @@ export const DescDiv = styled.div`
 `;
 export const CommentDiv = styled.div`
   width: 55vw;
+<<<<<<< HEAD
   height: 15rem;
+=======
+  height: 13rem;
+>>>>>>> 4109a40dba1c70211dc3246226019bdfd6b02b35
   opacity: 0.6;
   background-color: white;
   border-radius: 20px;

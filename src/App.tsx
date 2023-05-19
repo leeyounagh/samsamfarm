@@ -46,7 +46,6 @@ function App() {
           const timeObj = { time: `${hours}시:${minutes}분` };
           const response = await AxiosInstance.get("/device/plant-data/1");
           const data = await response.data.data;
-          console.log(data);
           const mergedData = { ...timeObj, ...data };
           dispatch(setData(mergedData));
         } catch (err) {
