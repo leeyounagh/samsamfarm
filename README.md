@@ -17,10 +17,14 @@
 - Redux Toolkit
 - Styled-Component
 - Vite
+
 **DEVICE**
+
 - ESP32
 - MQTT
 **BACK-END**
+
+
 - Node.js
 - MySql
 - swagger
