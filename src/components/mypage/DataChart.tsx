@@ -11,6 +11,8 @@ import {
 import { Line } from "react-chartjs-2";
 import * as Styled from "./datachart.styled";
 import { useSelector } from "react-redux";
+import { RootState } from "../../store";
+import { DataType } from "../../types";
 
 ChartJS.register(
   CategoryScale,
@@ -23,14 +25,12 @@ ChartJS.register(
 );
 
 export function DataChart() {
-  const deviceData: any = useSelector((state) => {
-    return state;
-  });
-  const currentStatus: any = useSelector((state) => {
-    return state;
+  const deviceData = useSelector((state: RootState) => state.data);
+  const currentStatus = useSelector((state: RootState) => {
+    return state.status;
   });
 
-  const timeTable = deviceData.data.reduce((cur: any, acc: any) => {
+  const timeTable = deviceData.reduce((cur: string[], acc: DataType) => {
     return [...cur, acc.time];
   }, []);
 
@@ -52,17 +52,17 @@ export function DataChart() {
     datasets: [
       {
         label: "수치",
-        data: deviceData?.data?.map((item: any) => {
-          if (currentStatus.status === 0) {
+        data: deviceData?.map((item: DataType) => {
+          if (currentStatus === 0) {
             return item.temperature;
           }
-          if (currentStatus.status === 1) {
+          if (currentStatus === 1) {
             return item.bright;
           }
-          if (currentStatus.status === 2) {
+          if (currentStatus === 2) {
             return item.humid;
           }
-          if (currentStatus.status === 3) {
+          if (currentStatus === 3) {
             return item.moisture;
           }
         }),
@@ -71,7 +71,7 @@ export function DataChart() {
       },
     ],
   };
-  // 급해서 이방법을 썻지만... 끝나고 리팩토링 열심히 하겠습니다..
+
   return (
     <Styled.Layout>
       <Line options={options} data={data} />;

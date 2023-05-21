@@ -2,11 +2,12 @@ import { useState } from "react";
 import * as Styled from "./communityupdate.styled";
 import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
+import { UserType } from "../../types";
 
 const CommunityUpdate = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const JwtToken: any = decodeToken(localStorage.JWtToken);
+  const JwtToken: UserType | null = decodeToken(localStorage.JWtToken);
 
   const handleSubmit = async () => {
     try {

@@ -21,10 +21,11 @@ import { MusicProvider } from "./components/audioplayer/AudioPlayer";
 import { decodeToken } from "react-jwt";
 import { setData } from "./slice/DataSlice";
 import { useDispatch } from "react-redux";
+import { UserType } from "./types";
 
 function App() {
   const jwtToken = localStorage.getItem("JWtToken");
-  const deviceUser: any = decodeToken(localStorage.JWtToken);
+  const deviceUser: UserType | null = jwtToken ? decodeToken(jwtToken) : null;
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

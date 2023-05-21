@@ -4,6 +4,7 @@ import { CommunityType } from "../../../types";
 import Btn1 from "../../button/Btn1";
 import AxiosInstance from "../../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
+import { UserType } from "../../../types";
 interface ModalType {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;
   clickedData: CommunityType;
@@ -34,7 +35,7 @@ export default function CommunityDetail({
   ]);
 
   const [comment, setComment] = useState<string>("");
-  const JwtToken: any = decodeToken(localStorage.JWtToken);
+  const JwtToken: UserType | null = decodeToken(localStorage.JWtToken);
 
   useEffect(() => {
     const handleList = async () => {
@@ -51,7 +52,7 @@ export default function CommunityDetail({
 
   const registerComment = async () => {
     const body = {
-      user_id: JwtToken.id,
+      user_id: JwtToken?.id,
       article_id: clickedData.id,
       content: comment,
     };

@@ -8,7 +8,7 @@ import { decodeToken } from "react-jwt";
 import NoticeDevice from "../../components/mypage/NoticeDevice";
 import { setStatus } from "../../slice/CurrentStatusSlice";
 import { useDispatch, useSelector } from "react-redux";
-
+import { RootState } from "../../store";
 interface plantMapperType {
   bright: number;
   humid: string;
@@ -21,8 +21,8 @@ export default function MyPage() {
   const [ClickedStatus, setClickedStatus] = useState<number>(0);
   const JwtToken: any = decodeToken(localStorage.JWtToken);
   const dispatch = useDispatch();
-  const deviceData: any = useSelector((state) => {
-    return state;
+  const deviceData = useSelector((state: RootState) => {
+    return state.data;
   });
 
   useEffect(() => {
@@ -88,10 +88,10 @@ export default function MyPage() {
                 </Styled.IconLayout>
                 <h3>status</h3>
                 <Styled.StatusDiv>
-                  {deviceData.data
+                  {deviceData
                     ?.filter(
                       (_element: any, index: number) =>
-                        index === deviceData.data.length - 1
+                        index === deviceData.length - 1
                     )
                     .map((element: any) => (
                       <>
