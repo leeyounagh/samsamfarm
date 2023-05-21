@@ -52,7 +52,7 @@ https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDAwNzY3MTQyODhkYTE2Y2VhNjNjODJ
 
 - 토양수분
 
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWQ5OTVkMzFkMDhiODI0M2U0Zjg4NmYzMmE0YTk5MmJiNThkNmVlNiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/tHifDz1SE9GEk7xPeL/giphy-downsized-large.gif)
+https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWQ5OTVkMzFkMDhiODI0M2U0Zjg4NmYzMmE0YTk5MmJiNThkNmVlNiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/tHifDz1SE9GEk7xPeL/giphy-downsized-large.gif
 
 - 조도
 
