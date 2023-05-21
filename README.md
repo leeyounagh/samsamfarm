@@ -32,6 +32,10 @@
 
 ## 서비스 소개
 
+**디바이스 연결 유저 액츄에이터 제어및 유저간 커뮤니티**
+
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDAwNzY3MTQyODhkYTE2Y2VhNjNjODJhYWZiMDNkNTNiZWE0NmE4YiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/gYF0BFYm651npxgm2A/giphy-downsized-large.gif)
+
 **회원가입,로그인**
 
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGRhMjRmNGYyM2UyMDdjZDFhZjk3MjJmY2EyZjdhODM1N2NhYjhiNyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/DpuKBI25U9wrQnddmh/giphy.gif)
@@ -40,9 +44,6 @@
 
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjVkYmExMmJjMzhhNTYyYjExYmYxYjI5ZDMzODBmNjEzNGM0Y2I4NiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/anWJgZq8cxpetCYz02/giphy.gif)
 
-**디바이스 연결 유저 액츄에이터 제어및 유저간 커뮤니티**
-
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDAwNzY3MTQyODhkYTE2Y2VhNjNjODJhYWZiMDNkNTNiZWE0NmE4YiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/gYF0BFYm651npxgm2A/giphy-downsized-large.gif)
 
 ## 각각의 status에 따른 액츄에이터 반응
 
