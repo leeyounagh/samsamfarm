@@ -61,7 +61,7 @@ https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWQ5OTVkMzFkMDhiODI0M2U0Zjg4NmY
 
 - 습도 
 
-![](https://media.giphy.com/media/IrwilFkK9cB6gkwJhQ/giphy-downsized-large.gif)
+https://media.giphy.com/media/IrwilFkK9cB6gkwJhQ/giphy-downsized-large.gif
 
 
 ## 주요기능
