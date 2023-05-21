@@ -44,7 +44,7 @@
 
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDAwNzY3MTQyODhkYTE2Y2VhNjNjODJhYWZiMDNkNTNiZWE0NmE4YiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/gYF0BFYm651npxgm2A/giphy-downsized-large.gif)
 
-**각각의 status에 따른 액츄에이터 반응**
+## 각각의 status에 따른 액츄에이터 반응
 
 - 온도
 
