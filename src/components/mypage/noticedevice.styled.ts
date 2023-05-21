@@ -52,7 +52,6 @@ export const TextDiv = styled.div`
 
 export const RegisterDiv = styled.div`
   width: 100%;
-  /* height: 5rem; */
   display: flex;
   justify-content: center;
   border: 3px solid red;

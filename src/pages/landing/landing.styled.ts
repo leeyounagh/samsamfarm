@@ -20,14 +20,14 @@ export const TitleDiv = styled.div`
 
   @media (max-width: 1024px) {
     width: 100%;
-    height: 14rem;
+    height: 10rem;
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 2rem;
   }
   @media (max-width: 480px) {
     width: 25rem;
-    height: 4rem;
+    height: 8rem;
   }
 `;
 

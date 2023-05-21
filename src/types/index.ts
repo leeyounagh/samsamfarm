@@ -29,6 +29,7 @@ export interface UserType {
   iat: number;
   exp: number;
   iss: string;
+  device_id: number;
 }
 
 export interface MbtiType {
@@ -38,7 +39,6 @@ export interface MbtiType {
 
 export interface DataType {
   time: string;
-
   temperature: string;
   humid: string;
   moisture: string;
