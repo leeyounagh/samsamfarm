@@ -52,13 +52,11 @@
 
 - 토양수분
 
-
 ![](https://media.giphy.com/media/5szO2ueVFJMs51lHC9/giphy-downsized-large.gif)
 
 - 조도
 
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTNkNWFiNzQ1YjNlN2I1MDllY2M0OTA3ZGZlMjI4ZTI2ZTkzMjY2NiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/24qpNeZUTCX7T12QbR/giphy-downsized-large.gif)
-
 
 - 습도 
 
