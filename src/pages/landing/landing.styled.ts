@@ -28,7 +28,6 @@ export const TitleDiv = styled.div`
   @media (max-width: 480px) {
     width: 25rem;
     height: 8rem;
-    /* height: 4rem; */
   }
 `;
 

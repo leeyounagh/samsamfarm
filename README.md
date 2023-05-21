@@ -1,15 +1,77 @@
-# Requirements
+<img src="./삼삼팜도입부.png" width="100%"  title="Github_Logo"/>
 
-### react 18.2.0
+## 팀구성
 
-### typeScript 5.0.2
+<img src="./삼삼팜팀구성.png" width="100%"  title="Github_Logo"/>
 
-### Redux
+## 서비스설명
 
-### React-router-dom 6.10.0
+**ssf는 인터넷으로 연결된 IOT기기를 통해 씨앗과 식물을 공유하는 카뮤니티 플랫폼 입니다.**
 
-### Node 18.16.0
+## 사용기술스택
 
-# Description
+**FRONT-END**
 
-### Front-End for SamSamFarm
+- TypeScript
+- React.js
+- Redux Toolkit
+- Styled-Component
+- Vite
+  **DEVICE**
+- ESP32
+- MQTT
+  **BACK-END**
+- Node.js
+- MySql
+- swagger
+
+## 서비스 소개
+
+**회원가입,로그인**
+
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGRhMjRmNGYyM2UyMDdjZDFhZjk3MjJmY2EyZjdhODM1N2NhYjhiNyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/DpuKBI25U9wrQnddmh/giphy.gif)
+
+**유저 mbti별 꽃 추천 및 작물의 상태에 따른 유저 미니홈피**
+
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjVkYmExMmJjMzhhNTYyYjExYmYxYjI5ZDMzODBmNjEzNGM0Y2I4NiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/anWJgZq8cxpetCYz02/giphy.gif)
+
+**디바이스 연결 유저 액츄에이터 제어및 유저간 커뮤니티**
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDAwNzY3MTQyODhkYTE2Y2VhNjNjODJhYWZiMDNkNTNiZWE0NmE4YiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/gYF0BFYm651npxgm2A/giphy-downsized-large.gif)
+<br>
+
+<br>
+
+<br>
+
+## 주요기능
+
+**모든 페이지는 유저전용 서비스 입니다**
+테스트 계정:user@example.com
+비밀번호:password123
+
+- 로그인, 회원가입
+- 메인페이지: 작물의 4단계 상태에 따른 삼삼팜 유저간 미니홈피 기능
+- 커뮤니티: 최신 게시물 캐릭터 스와이퍼 및 게시판 조회수, 페이지네이션, 글작성 기능
+- 마이페이지: 유저 정보 확인 및 액츄에이터 제어, 실시간 데이터 그래프
+- mbti 페이지: 유저 mbti별 꽃 추천 및 꽃 부여
+- 그외기능: bgm, 카카오톡 공유하기
+
+## 배포사이트링크
+
+http://34.64.139.64/
+
+## 깃 커밋 컨벤션
+
+- feature : 새로운 기능 추가
+
+- fix : 버그 수정
+
+- docs : 문서 수정
+
+- test : 테스트 코드 추가
+
+- refactor : 코드 리팩토링
+
+- style : 코드 의미에 영향을 주지 않는 변경사항
+
+- chore : 빌드 부분 혹은 패키지 매니저 수정사항
