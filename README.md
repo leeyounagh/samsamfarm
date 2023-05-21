@@ -17,10 +17,10 @@
 - Redux Toolkit
 - Styled-Component
 - Vite
-  **DEVICE**
+**DEVICE**
 - ESP32
 - MQTT
-  **BACK-END**
+**BACK-END**
 - Node.js
 - MySql
 - swagger
@@ -37,11 +37,7 @@
 
 **디바이스 연결 유저 액츄에이터 제어및 유저간 커뮤니티**
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDAwNzY3MTQyODhkYTE2Y2VhNjNjODJhYWZiMDNkNTNiZWE0NmE4YiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/gYF0BFYm651npxgm2A/giphy-downsized-large.gif)
-<br>
 
-<br>
-
-<br>
 
 ## 주요기능
 
