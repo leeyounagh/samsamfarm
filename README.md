@@ -1,4 +1,4 @@
-<img src="./삼삼팜도입부.png" width="100%"  title="Github_Logo"/>
+<a href="https://ibb.co/HdhPZ0Q"><img src="https://i.ibb.co/jRJwtdF/image.png" alt="image" border="0"></a>
 
 ## 팀구성
 
