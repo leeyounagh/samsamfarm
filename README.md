@@ -2,7 +2,7 @@
 
 ## 팀구성
 
-<img src="./삼삼팜팀구성.png" width="100%"  title="Github_Logo"/>
+<a href="https://ibb.co/10bR0hp"><img src="https://i.ibb.co/BfwTfd7/image.png" alt="image" border="0"></a>
 
 ## 서비스설명
 
