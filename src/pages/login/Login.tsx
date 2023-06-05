@@ -37,8 +37,17 @@ export default function Login() {
     }
   };
 
+  const handlePasswordKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      loginEnter();
+    }
+  };
+
   const handleEmailKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value;
+    if (e.key === "Enter") {
+      loginEnter();
+    }
     if (emailValidation(value)) {
       setValid((current) => ({
         ...current,
@@ -60,6 +69,10 @@ export default function Login() {
   };
 
   const handleLoginClick = async () => {
+    await loginEnter();
+  };
+
+  const loginEnter = async () => {
     const body = {
       email: forms.email,
       password: forms.password,
@@ -106,6 +119,7 @@ export default function Login() {
           value={forms.password}
           name="password"
           onChange={handleChange}
+          onKeyUp={handlePasswordKeyUp}
         />
       </Styled.LoginFormStyled>
       {!valid.email && (
