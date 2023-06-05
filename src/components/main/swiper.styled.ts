@@ -67,7 +67,7 @@ export const InnerLayout = styled.div`
     width: 100%;
   }
   @media (max-width: 1024px) {
-    width: 40rem;
+    /* width: 40rem; */
   }
   @media (max-width: 480px) {
     padding-left: 0px;
