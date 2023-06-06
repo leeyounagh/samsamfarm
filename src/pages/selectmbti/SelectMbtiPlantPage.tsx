@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import * as Styled from "./seletmbti.styled";
 import FlowerImg from "../../data/FlowerImg";
+import { withAuth } from "../../utils/withAuth";
 
-export default function SelectMbtiPlantPage() {
+function SelectMbtiPlantPage() {
   const navigate = useNavigate();
   navigate(`/story/plantDescriptionPage`);
 
@@ -27,3 +28,6 @@ export default function SelectMbtiPlantPage() {
     </Styled.Layout>
   );
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export default withAuth(SelectMbtiPlantPage);

@@ -2,8 +2,9 @@ import * as Styled from "./landing.styled";
 import MainField from "../../components/main/MainField";
 import MainSwiper from "../../components/main/MainSwiper";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import { withAuth } from "../../utils/withAuth";
 
-export default function Landing() {
+function Landing() {
   const middleSize = useMediaQuery("(max-width: 1024px)");
   const mobileSize = useMediaQuery("(max-width: 768px)");
   return (
@@ -24,3 +25,6 @@ export default function Landing() {
     </Styled.Layout>
   );
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export default withAuth(Landing);

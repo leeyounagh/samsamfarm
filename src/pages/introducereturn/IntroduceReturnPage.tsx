@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import * as Styled from "./introduce.returnstyled";
 import Btn1 from "../../components/button/Btn1";
+import { withAuth } from "../../utils/withAuth";
 
-export default function IntroduceReturnPage() {
+function IntroduceReturnPage() {
   const navigate = useNavigate();
 
   return (
@@ -27,3 +28,5 @@ export default function IntroduceReturnPage() {
     </Styled.Layout>
   );
 }
+// eslint-disable-next-line react-refresh/only-export-components
+export default withAuth(IntroduceReturnPage);

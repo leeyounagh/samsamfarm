@@ -1,12 +1,13 @@
 import * as Styled from "./intoduce.styled";
 import { useNavigate } from "react-router-dom";
 import Btn1 from "../../components/button/Btn1";
+import { withAuth } from "../../utils/withAuth";
 
 type selectedType = {
   [key: string]: string;
 };
 
-export default function Introduce() {
+function Introduce() {
   const handleStory = (title: string) => {
     const selected: selectedType = {
       yes: "좋아!",
@@ -59,3 +60,6 @@ export default function Introduce() {
     </Styled.Layout>
   );
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export default withAuth(Introduce);

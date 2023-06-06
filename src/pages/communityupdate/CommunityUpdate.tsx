@@ -3,6 +3,7 @@ import * as Styled from "./communityupdate.styled";
 import AxiosInstance from "../../api/AxiosIntance";
 import { decodeToken } from "react-jwt";
 import { UserType } from "../../types";
+import { withAuth } from "../../utils/withAuth";
 
 const CommunityUpdate = () => {
   const [title, setTitle] = useState("");
@@ -49,4 +50,5 @@ const CommunityUpdate = () => {
   );
 };
 
-export default CommunityUpdate;
+// eslint-disable-next-line react-refresh/only-export-components
+export default withAuth(CommunityUpdate);

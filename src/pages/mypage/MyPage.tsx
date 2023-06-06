@@ -9,13 +9,14 @@ import NoticeDevice from "../../components/mypage/NoticeDevice";
 import { setStatus } from "../../slice/CurrentStatusSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
+import { withAuth } from "../../utils/withAuth";
 interface plantMapperType {
   bright: number;
   humid: string;
   temperature: string;
   [key: string]: number | string;
 }
-export default function MyPage() {
+function MyPage() {
   const [isOpenStatus, setIsOpenStatus] = useState<boolean>(false);
   const [isOpenUserInfo, setIsOpenUserInfo] = useState<boolean>(false);
   const [ClickedStatus, setClickedStatus] = useState<number>(0);
@@ -127,3 +128,6 @@ export default function MyPage() {
     </Styled.Layout>
   );
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export default withAuth(MyPage);

@@ -26,14 +26,7 @@ import { UserType } from "./types";
 function App() {
   const jwtToken = localStorage.getItem("JWtToken");
   const deviceUser: UserType | null = jwtToken ? decodeToken(jwtToken) : null;
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!jwtToken) {
-      navigate("/");
-    }
-  }, []);
 
   useEffect(() => {
     if (deviceUser?.device_id) {
