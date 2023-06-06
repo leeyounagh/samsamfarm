@@ -58,6 +58,7 @@ export const FieldLayOut = styled.div`
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 50px;
   }
   @media (max-width: 480px) {
     /* width: 25.5rem; */
@@ -157,6 +158,7 @@ export const FieldLayoutDiv = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 50px;
   @media (max-width: 1400px) {
     width: 60%;
     height: 60rem;
