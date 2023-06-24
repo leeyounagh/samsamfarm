@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import * as Styled from "./getplant.styled";
 import { useNavigate } from "react-router-dom";
 import Btn1 from "../../components/button/Btn1";
+import { withAuth } from "../../utils/withAuth";
 
-export default function GetPlant() {
+function GetPlant() {
   const [isShowOpen, setIsShowOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -32,3 +33,6 @@ export default function GetPlant() {
     </Styled.Layout>
   );
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export default withAuth(GetPlant);

@@ -79,7 +79,7 @@ https://media.giphy.com/media/IrwilFkK9cB6gkwJhQ/giphy-downsized-large.gif
 
 ## 배포사이트링크
 
-http://reactjs.wo.tc/
+ http://3.35.174.216/
 
 ## 깃 커밋 컨벤션
 

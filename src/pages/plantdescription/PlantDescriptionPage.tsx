@@ -3,8 +3,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import * as Styled from "./plantdescription.styled";
 import { useEffect, useState } from "react";
 import Btn1 from "../../components/button/Btn1";
+import { withAuth } from "../../utils/withAuth";
 
-export default function PlantDesriptionPage() {
+function PlantDesriptionPage() {
   const { plantId } = useParams();
   const selectedPlantId = Number(plantId);
   const navigate = useNavigate();
@@ -59,3 +60,6 @@ export default function PlantDesriptionPage() {
     </Styled.Layout>
   );
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export default withAuth(PlantDesriptionPage);

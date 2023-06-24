@@ -40,10 +40,12 @@ export default function Header() {
   }, []);
 
   const [isOpenedSidebar, setIsOpenedSidebar] = useState<boolean>(false);
-
+  const [isFirstSideBarOpen, setIsFirstSideBarOpen] = useState(false);
   const handleSidebarOpen = () => setIsOpenedSidebar(true);
 
   const handleSidebarClose = () => setIsOpenedSidebar(false);
+
+  console.log(isOpenedSidebar);
 
   const { isPlaying, togglePlay } = useContext(AudioPlayer);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -123,15 +125,18 @@ export default function Header() {
             size={45}
             onClick={() => {
               handleSidebarOpen();
+              setIsFirstSideBarOpen(true);
             }}
             color="#b3933b"
           />
         </Styled.NavMenu>
       </Styled.Nav>
-      <Sidebar
-        isOpen={isOpenedSidebar}
-        handleSidebarClose={handleSidebarClose}
-      />
+      {isFirstSideBarOpen && (
+        <Sidebar
+          isOpen={isOpenedSidebar}
+          handleSidebarClose={handleSidebarClose}
+        />
+      )}
     </>
   );
 }

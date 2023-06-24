@@ -35,7 +35,7 @@ const SignupForm = () => {
 
     try {
       const response = await axios.post(
-        "http://34.64.51.215/samsamfarm/api/v1/auth/sign-up",
+        "http://43.202.43.17/samsamfarm/api/v1/auth/sign-up",
         body
       );
       if (response.status === 200) {

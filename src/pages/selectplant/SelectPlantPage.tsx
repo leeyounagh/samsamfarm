@@ -1,8 +1,9 @@
 import * as Styled from "./selectplant.syled";
 import { useNavigate } from "react-router-dom";
 import FlowerImg from "../../data/FlowerImg";
+import { withAuth } from "../../utils/withAuth";
 
-export default function SelectPlantPage() {
+function SelectPlantPage() {
   const RandomNum = Math.floor(Math.random() * 16);
 
   const navigate = useNavigate();
@@ -34,3 +35,6 @@ export default function SelectPlantPage() {
     </Styled.Layout>
   );
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export default withAuth(SelectPlantPage);
