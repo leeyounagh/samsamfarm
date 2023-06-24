@@ -27,4 +27,4 @@ function Landing() {
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
-export default withAuth(Landing);
+export default Landing;

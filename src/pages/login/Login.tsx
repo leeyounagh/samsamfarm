@@ -79,7 +79,7 @@ export default function Login() {
     };
     try {
       const response = await axios.post(
-        "http://34.64.51.215/samsamfarm/api/v1/auth/sign-in",
+        "http://43.202.43.17/samsamfarm/api/v1/auth/sign-in",
         body
       );
       localStorage.setItem("JWtToken", response.data.data.accessToken);

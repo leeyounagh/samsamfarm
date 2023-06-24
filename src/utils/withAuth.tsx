@@ -10,7 +10,7 @@ export const withAuth =
       if (!jwtToken) {
         navigate("/login");
       }
-    }, []);
+    }, [jwtToken, navigate]);
 
     return <Component {...props} />;
   };
